@@ -1,0 +1,181 @@
+:root{
+    /*Thème du site*/
+    --fonce: #09A7A1;
+    --clair: #9de0de;
+    --fond: #cbf2f1;
+    background-color: var(--fonce);   
+}
+
+body{
+    margin: 0px 
+}
+header{
+    background-color: var(--fonce);
+    color: white;
+    font-family: "arial";
+    margin: 0px;
+    padding: 10px 10px 0px;
+    position: sticky;
+    top: -20px;
+    z-index: 2;
+}
+
+.titre-sec{
+    background-color: var(--clair);
+    color: white;
+    font-family: arial;
+    padding: 10px 0px 3px 10px;
+}
+
+nav{
+    position: sticky;
+    top: 50px;
+    background-color: var(--fonce);
+    z-index: 2;
+}
+
+nav ul {
+    background-color: var(--fonce);
+    margin: 0px;
+    padding: 5px 5px 5px 20px;
+    position: absolute; 
+    right: 0px; 
+    top: -30px
+}
+
+nav li {
+    display: inline;
+    margin-right: 20px;
+}
+
+nav a{
+    text-decoration: none;
+    color: white;
+    font-family: arial;
+    font-weight: bolder;  
+}
+
+nav a:hover{
+    text-decoration: underline;
+}
+
+main{
+    background-color: var(--fond);  
+}
+
+#titre-accueil{
+    text-align: center;
+    font-family: arial;
+    font-size: 50px;
+    color: var(--fonce);
+    border-bottom: solid;
+    margin: 20px 20px 0px; 
+}
+
+#sous-titre-accueil{
+    text-align: center;
+    font-family: monospace;
+    letter-spacing: 5px;
+    margin-top: 8px;
+    color: var(--fonce);    
+}
+
+.texte-presentation{
+    font-family: monospace;
+    color: var(--fonce);
+    margin: 10px;
+    font-size: 20px
+}
+
+.conteneur{
+    margin: 10px;
+    align-items: 
+        
+}
+
+.vignette{
+    display: inline-block;
+    background-color: var(--clair);
+    width: 336px;
+    margin: 20px 50px;
+    padding: 0px;
+    text-decoration: none; 
+    border: solid 2px var(--fonce)
+}
+
+.vignette:hover{
+    box-shadow: 10px 10px 4px var(--clair);
+}
+.img-vignette{
+    width: 336px
+}
+
+.titre-vignette{
+    font-family: arial;
+    text-align: center;
+    color: var(--fonce);
+    margin-top: 5px;
+    text-decoration: underline;
+    font-size: 15px
+}
+
+.texte-vignette{
+    font-family: monospace;
+    color: var(--fonce);
+    padding: 5px;
+    margin-top: 5px      
+}
+
+#bouton{
+    border: solid 4px var(--fonce);
+    background-color: var(--clair);
+    color: var(--fonce);
+    padding: 10px;
+    font-family: monospace;
+    text-decoration: none;      
+}
+
+#bouton:hover{
+    box-shadow: 10px 10px 4px var(--clair); 
+}
+
+#titre-contact{
+    margin: 0px 10px;
+    background-color: var(--fonce)
+}
+
+.vignette-contact{
+    font-family: arial;
+    color: white;
+    padding: 20px;
+    padding-top: 0px;
+    display: inline-grid;
+}
+
+#contact-1{
+    padding-right: 29%;
+    border-right: 2px solid white
+}
+
+#espace-com{
+    background-color: var(--fond);
+    width: calc(120% - 50px);
+    height: 50px        
+}   
+
+#texte-bas-de-page{
+    font-family: arial;
+    color: white;
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.liens-bas-de-page{
+    text-decoration: none;
+    color: inherit;
+}
+
+.liens-bas-de-page:hover{
+    text-decoration: underline;
+}

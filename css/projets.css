@@ -1,0 +1,80 @@
+#intro-projets{
+    padding: 40px 0px
+}
+
+.texte{
+    font-family: monospace;
+    color: var(--fonce);
+    margin: 10px;
+    font-size: 15px
+}
+
+.conteneur-liens{
+    float: right;
+    margin: 15px;
+    border-left: solid 4px var(--fonce)
+}
+
+.conteneur-liens-bas{
+    margin: 10px 10%;
+    padding-bottom: 40px
+}
+
+.conteneur-lien{
+    margin: 10px;
+}
+
+.conteneur-lien-bas{
+    display: inline-block;
+    margin: 0px 13.5%
+}
+
+.separateur-texte-liens-bas{
+    height: 4px;
+    background-color: var(--fonce);
+    margin: 20px 60px 0px;      
+}
+
+.titre-lien{
+    color: var(--fonce);
+    font-family: arial;
+    text-decoration: underline;
+    text-align: center;
+}
+
+.icone-lien{
+    border: solid 2px var(--fonce);
+    border-radius: 20px  
+}
+
+.icone-lien:hover{
+    box-shadow: 10px 10px 5px var(--clair)
+}
+
+.icone-taille{
+    width: 50px;
+    padding: 30px;
+}
+
+#icone-winrar-pour-portfolio{
+    margin-left: 110px;
+}
+
+#icone-winrar-pour-apprentissage{
+    margin-left: 70px
+}
+
+#icone-winrar-pour-petit-questionnaire{
+    margin-left: 13px
+}
+.date-online{
+    font-size: 12px;
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+}
+
+.titre-projet{
+    position: relative;
+    z-index: 1;
+}

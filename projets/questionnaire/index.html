@@ -1,0 +1,27 @@
+<!doctype html>
+
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <title>Petit questionnaire de satisfaction</title>
+    </head>
+    <body>
+        <div>
+            <h3>Petit questionnaire de satisfaction</h3>
+            <p class="texte-arial">Notre site est toujours <span class="gras">en cours de dévellopement</span>. Nous avons besoin de l'avis des utilisateurs afin de l'améliorer. Ce questionnaire a ainsi pour but de connaitre votre avis par rapport au site. Veuillez répondre honnêtement.</p>
+        </div>
+        <div class="case-fine">
+            <p class="texte-arial italique">Selon vous, le site est:</p>
+            <form action="#">
+                <label for="tres-satisfaisant" class="texte-arial"><input type="radio" name="satisfaction" id="tres-satisfaisant" value="tres-satisfaisant" checked>Très satisfaisant</label>
+                <label for="satisfaisant" class="texte-arial"><input type="radio" name="satisfaction" id="satisfaisant" value="satisfaisant">Satisfaisant</label>
+                <label for="moyennement-satisfaisant" class="texte-arial"><input type="radio" name="satisfaction" id="moyennement-satisfaisant" value="moyennement-satisfaisant">Moyennement satisfaisant</label>
+                <label for="peu-satisfaisant" class="texte-arial"><input type="radio" name="satisfaction" id="peu-satisfaisant" value="peu-satisfaisant">Peu satisfaisant</label>
+                <label for="pas-satisfaisant" class="texte-arial"><input type="radio" name="satisfaction" id="pas-satisfaisant" value="pas-satisfaisant">Pas satisfaisant</label><br><br>
+                <p class="texte-arial italique">Avez-vous un éventuel commentaire ?</p>
+                <textarea name="commentaire"></textarea><br><br>
+                <button type="submit">Valider</button>
+            </form>      
+        </div>
+    </body>  
+</html>
