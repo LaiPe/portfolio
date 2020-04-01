@@ -63,6 +63,10 @@ main{
     background-color: var(--fond);  
 }
 
+#vignette-accueil{
+    padding: 30vh 20vw; 
+}
+
 #titre-accueil{
     text-align: center;
     font-family: arial;
