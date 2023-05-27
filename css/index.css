@@ -1,23 +1,55 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
 :root{
     /*Thème du site*/
     --fonce: #09A7A1;
     --clair: #9de0de;
     --fond: #ceedec;
-    background-color: var(--fonce);   
+    --size-header: 100px;
+    --size-header-scroll: 80px;
+    background-color: var(--fonce);
+    font-family: "Poppins";   
 }
 
-body{
-    margin: 0px 
-}
-header{
+body > header{
     background-color: var(--fonce);
     color: white;
-    font-family: "Poppins";
-    margin: 0px;
-    padding: 10px 20px 0px;
+
+    height: var(--size-header);
+
     position: sticky;
-    top: -20px;
-    z-index: 2;
+    top: calc(var(--size-header-scroll) - var(--size-header));
+}
+body > header > h1{
+    position: absolute;
+    bottom: 0px;
+
+    margin: 10px 20px
+}
+
+#nav-full{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 20px;
+}
+nav ul{
+    list-style-type: none;
+}
+#nav-full li{
+    display: inline;
+    margin: 0px 10px;
+}
+#nav-full li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#nav-full li a:hover{
+    text-decoration: underline;
 }
 
 .titre-sec{
@@ -27,37 +59,6 @@ header{
     padding: 10px 0px 3px 20px;
 }
 
-nav{
-    position: sticky;
-    top: 59px;
-    background-color: var(--fonce);
-    z-index: 2;
-}
-
-nav ul {
-    background-color: var(--fonce);
-    margin: 0px;
-    padding: 5px 5px 0px 20px;
-    position: absolute; 
-    right: 0px; 
-    top: -30px
-}
-
-nav li {
-    display: inline;
-    margin-right: 20px;
-}
-
-nav a{
-    text-decoration: none;
-    color: white;
-    font-family: "Poppins";
-    font-weight: bolder;  
-}
-
-nav a:hover{
-    text-decoration: underline;
-}
 
 main{
     background-color: var(--fond);  
