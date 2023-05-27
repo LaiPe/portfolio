@@ -8,8 +8,12 @@
     --fonce: #09A7A1;
     --clair: #9de0de;
     --fond: #ceedec;
-    --size-header: 100px;
-    --size-header-scroll: 80px;
+
+    --size-header: 10vh;
+    --size-header-scroll: 8vh;
+
+    --res: calc(0.01 * 10vmin);
+
     background-color: var(--fonce);
     font-family: "Poppins";   
 }
@@ -25,23 +29,25 @@ body > header{
 }
 body > header > h1{
     position: absolute;
-    bottom: 0px;
+    bottom: 10%;
+    left: 1%;
 
-    margin: 10px 20px
+    font-size: calc(35 * var(--res));
 }
 
 #nav-full{
     position: absolute;
     bottom: 0;
     right: 0;
-    margin: 0px 20px;
+    margin: 0px 40px;
 }
 nav ul{
     list-style-type: none;
 }
 #nav-full li{
     display: inline;
-    margin: 0px 10px;
+    margin: 0px 15px;
+    font-size: calc(20 * var(--res));
 }
 #nav-full li a{
     color: white;
@@ -52,136 +58,25 @@ nav ul{
     text-decoration: underline;
 }
 
-.titre-sec{
-    background-color: var(--clair);
-    color: white;
-    font-family: "Poppins";
-    padding: 10px 0px 3px 20px;
-}
-
-
 main{
     background-color: var(--fond);  
 }
-
-#vignette-accueil{
-    padding: 30vh 20vw; 
+.slide{
+    height: calc(100vh - var(--size-header));
 }
 
-#titre-accueil{
+main > header{
+    color: var(--fonce);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    font-family: "Poppins";
-    font-size: 50px;
-    color: var(--fonce);
-    border-bottom: solid;
-    margin: 20px 20px 0px;
-    width: 
 }
-
-#sous-titre-accueil{
-    text-align: center;
-    font-family: "courier new";
-    letter-spacing: 5px;
-    margin-top: 8px;
-    color: var(--fonce);    
+main > header h2{
+    font-size: calc(60 * var(--res));
+    border-bottom: solid 2px var(--fonce);
 }
-
-.texte-presentation{
-    font-family: "Inconsolata";
-    color: var(--fonce);
-    margin: 10px 20px 0px;
-    font-size: 20px
-}
-
-.conteneur{
-    margin: 10px;
-    align-items: 
-        
-}
-
-.vignette{
-    display: inline-block;
-    background-color: var(--clair);
-    width: 336px;
-    margin: 20px 50px;
-    padding: 0px;
-    text-decoration: none; 
-    border: solid 2px var(--fonce)
-}
-
-.vignette:hover{
-    box-shadow: 10px 10px 4px var(--clair);
-}
-.img-vignette{
-    width: 336px
-}
-
-.titre-vignette{
-    font-family: arial;
-    text-align: center;
-    color: var(--fonce);
-    margin-top: 5px;
-    text-decoration: underline;
-    font-size: 15px
-}
-
-.texte-vignette{
-    font-family: monospace;
-    color: var(--fonce);
-    padding: 5px;
-    margin-top: 5px      
-}
-
-#bouton{
-    border: solid 4px var(--fonce);
-    background-color: var(--clair);
-    color: var(--fonce);
-    padding: 10px;
-    font-family: monospace;
-    text-decoration: none;      
-}
-
-#bouton:hover{
-    box-shadow: 10px 10px 4px var(--clair); 
-}
-
-#titre-contact{
-    margin: 0px 10px;
-    background-color: var(--fonce)
-}
-
-.vignette-contact{
-    font-family: arial;
-    color: white;
-    padding: 20px;
-    padding-top: 0px;
-    display: inline-grid;
-}
-
-#contact-1{
-    padding-right: 29%;
-    border-right: 2px solid white
-}
-
-#espace-com{
-    background-color: var(--fond);
-    width: calc(120% - 50px);
-    height: 50px        
-}   
-
-#texte-bas-de-page{
-    font-family: arial;
-    color: white;
-    font-size: 15px;
-    text-align: center;
-    font-weight: bold;
-}
-
-.liens-bas-de-page{
-    text-decoration: none;
-    color: inherit;
-}
-
-.liens-bas-de-page:hover{
-    text-decoration: underline;
+main > header h3{
+    margin-top: 1.5%;
+    font-size: calc(25 * var(--res));
 }
