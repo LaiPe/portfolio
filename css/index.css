@@ -13,3 +13,56 @@ main > header h3{
     margin-top: 1.5%;
     font-size: calc(25 * var(--res));
 }
+
+main > section#profil{
+    display: grid;
+    place-items: center;
+}
+main > section#profil > div{
+    position: relative;
+    height:80vh;
+    width: 30vw;
+    padding: 5%;
+
+    background-color: var(--clair);
+    box-shadow:  -20px 20px 60px #85bebd,
+             20px -20px 60px #b5ffff;
+    border-radius: 5%;
+
+    font-family: "Inconsolata";
+    font-size: calc(17 * var(--res));
+    line-height: 2em;
+}
+main > section#profil > div > ul{
+    list-style-type: "-> ";
+    margin-left: var(--tab);
+}
+
+a#button {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%,-10%);
+
+    padding: 10px 20px;
+    border: none;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    text-decoration: none;
+
+    background: var(--fonce);
+    box-shadow: 0 0 25px var(--fonce);
+  }
+  
+  a#button:hover {
+    box-shadow: 0 0 5px var(--fonce),
+                0 0 25px var(--fonce),
+                0 0 50px var(--fonce),
+                0 0 100px var(--fonce);
+  }

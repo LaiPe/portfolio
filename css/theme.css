@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 :root{
@@ -10,9 +11,10 @@
     --fond: #ceedec;
 
     --size-header: 10vh;
-    --size-header-scroll: 8vh;
+    --size-header-scroll: 7.5vh;
 
     --res: calc(0.01 * 10vmin);
+    --tab: 3em;
 
     background-color: var(--fonce);
     font-family: "Poppins";   
