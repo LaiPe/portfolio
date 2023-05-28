@@ -1,4 +1,5 @@
-main > header{
+main > header.slide{
+    height: calc(100vh - var(--size-header));
     color: var(--fonce);
     display: flex;
     align-items: center;

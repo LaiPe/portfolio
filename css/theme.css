@@ -64,5 +64,5 @@ main{
     background-color: var(--fond);  
 }
 .slide{
-    height: calc(100vh - var(--size-header));
+    height: calc(100vh - var(--size-header-scroll));
 }
