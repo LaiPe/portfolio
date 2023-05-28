@@ -1,7 +1,7 @@
 const textes = [];
-textes.push("profil \"Léo Peyronnet\"");
-textes.push("competences \"Léo Peyronnet\"");
-textes.push("autres \"Léo Peyronnet\"");
+textes.push("profil");
+textes.push("competences");
+textes.push("autres");
 
 const intervalMin = 50; // Intervalle de temps minimal entre chaque caractère (en millisecondes)
 const intervalMax = 200; // Intervalle de temps maximal entre chaque caractère (en millisecondes)
