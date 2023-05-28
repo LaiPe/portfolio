@@ -34,7 +34,7 @@ main > section#profil{
     background-color: var(--clair);
     box-shadow:  -20px 20px 60px #85bebd,
              20px -20px 60px #b5ffff;
-    border-radius: 5%;
+    border-radius: 2vmin;
 
     font-family: "Inconsolata";
     font-size: 2vmin;
@@ -82,7 +82,7 @@ main > section#profil{
     margin-left: var(--tab);
 }
 
-a.button {
+/*a.button {
     position: absolute;
     bottom: 10%;
     left: 50%;
@@ -109,4 +109,4 @@ a.button {
                 0 0 25px var(--fonce),
                 0 0 50px var(--fonce),
                 0 0 100px var(--fonce);
-  }
+  }*/
