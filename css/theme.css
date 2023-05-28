@@ -25,9 +25,9 @@ body > header{
     color: white;
 
     height: var(--size-header);
-
     position: sticky;
     top: calc(var(--size-header-scroll) - var(--size-header));
+    z-index: 100;
 }
 body > header > h1{
     position: absolute;

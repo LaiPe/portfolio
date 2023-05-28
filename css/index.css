@@ -28,8 +28,8 @@ main > section#profil{
 
     position: relative;
     height:80vh;
-    width: 30vw;
-    padding: 5%;
+    width: 60vmin;
+    padding: 8vmin;
 
     background-color: var(--clair);
     box-shadow:  -20px 20px 60px #85bebd,
@@ -37,7 +37,7 @@ main > section#profil{
     border-radius: 5%;
 
     font-family: "Inconsolata";
-    font-size: calc(17 * var(--res));
+    font-size: 2vmin;
     line-height: 2em;
 }
 #console > *{
