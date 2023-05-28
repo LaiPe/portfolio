@@ -45,7 +45,7 @@ main > section#profil{
 }
 
 #console .commande::before{
-    content: "> ";
+    content: "leo@portfolio> ";
 }
 
 

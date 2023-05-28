@@ -1,6 +1,6 @@
 const textes = [];
 textes.push("profil \"Léo Peyronnet\"");
-textes.push("competence \"Léo Peyronnet\"");
+textes.push("competences \"Léo Peyronnet\"");
 textes.push("autres \"Léo Peyronnet\"");
 
 const intervalMin = 50; // Intervalle de temps minimal entre chaque caractère (en millisecondes)
