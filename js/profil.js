@@ -1,24 +1,6 @@
-const textes = [];
-textes.push("profil");
-textes.push("competences");
-textes.push("autres");
-
-const intervalMin = 50; // Intervalle de temps minimal entre chaque caractère (en millisecondes)
-const intervalMax = 200; // Intervalle de temps maximal entre chaque caractère (en millisecondes)
-
-const commandes = [];
-commandes.push(document.getElementById("commande_1"));
-commandes.push(document.getElementById("commande_2"));
-commandes.push(document.getElementById("commande_3"));
-commandes.push(document.getElementById("commande_4"));
-
-const reponses = [];
-reponses.push(document.getElementById("reponse_1"));
-reponses.push(document.getElementById("reponse_2"));
-reponses.push(document.getElementById("reponse_3"));
-
-
 function afficherCaractereSuivant(texte, commande, i, callback) {
+    const intervalMin = 50; // Intervalle de temps minimal entre chaque caractère (en millisecondes)
+    const intervalMax = 200; // Intervalle de temps maximal entre chaque caractère (en millisecondes)
     if (i < texte.length) {
         commande.textContent += texte.charAt(i);
         i++;
@@ -82,6 +64,22 @@ function handleIntersection(entries, observer) {
         }
     });
 }
+
+const textes = [];
+textes.push("profil");
+textes.push("competences");
+textes.push("autres");
+
+const commandes = [];
+commandes.push(document.getElementById("commande_1"));
+commandes.push(document.getElementById("commande_2"));
+commandes.push(document.getElementById("commande_3"));
+commandes.push(document.getElementById("commande_4"));
+
+const reponses = [];
+reponses.push(document.getElementById("reponse_1"));
+reponses.push(document.getElementById("reponse_2"));
+reponses.push(document.getElementById("reponse_3"));
 
 const options = {
     root: null, // Utilise la fenêtre comme racine de l'observation

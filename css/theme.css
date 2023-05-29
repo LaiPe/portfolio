@@ -12,6 +12,7 @@
 
     --size-header: 10vh;
     --size-header-scroll: 7.5vh;
+    --size-h2: 4vh;
 
     --res: calc(0.01 * 10vmin);
     --tab: 3em;
@@ -65,4 +66,16 @@ main{
 }
 .slide{
     height: calc(100vh - var(--size-header-scroll));
+}
+.slide:first-child{
+    height: calc(100vh - var(--size-header));
+}
+main section > h2{
+    position: relative;
+    background-color: var(--clair);
+    color: white;
+    padding-left: 1%;
+    padding-top: 0.35vh;
+    font-size: calc(28 * var(--res));
+    height: var(--size-h2);
 }
