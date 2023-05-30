@@ -3,12 +3,19 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Projets</title>
+        <title>Portfolio Léo Peyronnet</title>
         <link rel="stylesheet" href="css/theme.css">
         <link rel="stylesheet" href="css/projets.css">
         <link rel="icon" href="img/icone.bmp">
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css?family=Poppins:500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet"> 
+        <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     </head>
     <body>
         <header>
@@ -17,87 +24,84 @@
                 <ul>
                     <li><a href="index.html">Accueil</a></li>
                     <li><a href="projets.html">Projets</a></li>
-                    <li><a href="index.html#contact">Contact</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <section id="intro-projets">
-                <p class="texte-presentation">Vous retrouverez ici l’entièreté de mes projets ayant pour thème le développement web. Même si, dans un premier temps, ils vont tourner autour de l’apprentissage, j’espère pouvoir vous proposer dans un futur proche des projets plus élaborés autour de mes passions, etc…</p>
+            <section class="slide">
+                <h2>Projets</h2>
+                <div class="conteneur">
+                    <div id="carousel">
+                        <div class="prev tuille" id="la-reussite-des-alliances">
+                            <div class="couverture">
+                                <p>La Réussite des Alliances</p>
+                                <label for="open-lrda" class="material-symbols-outlined">expand_more</label>
+                                <input type="checkbox" id="open-lrda">
+                            </div>
+                            <div class="contenu">
+                                <div class="sous-contenu titre-lien">
+                                    <h3>La Réussite des alliances</h3>
+                                    <a>Vers le projet</a>
+                                </div>
+                                <div class="sous-contenu texte-contenu">
+                                    <p>Modélisation du jeu de cartes "La Réussite". Codé en Python, doté d'un "débug-mode" ainsi que d'une rédaction explicative.</p>
+                                </div>
+                                <label for="close-lrda" class="material-symbols-outlined">close</label>
+                                <input type="checkbox" id="close-lrda" checked>
+                            </div>
+                        </div>
+                    
+                        <div class="selected tuille" id="sokoban">
+                            <div class="couverture">
+                                <p>sokoban_</p>
+                                <label for="open-sokoban" class="material-symbols-outlined">expand_more</label>
+                                <input type="checkbox" id="open-sokoban">
+                            </div>
+                            <div class="contenu">
+                                <div class="sous-contenu titre-lien">
+                                    <h3>sokoban_</h3>
+                                    <a>Vers le projet</a>
+                                </div>
+                                <div class="sous-contenu texte-contenu">
+                                    <p>Jeu de réflexion. Codé en C, il est accompagné d'une rédaction explicative.</p>
+                                </div>
+                                <label for="close-sokoban" class="material-symbols-outlined">close</label>
+                                <input type="checkbox" id="close-sokoban" checked>
+                            </div>
+                        </div>
+                    
+                        <div class="next tuille" id="jazz-com">
+                            <div class="couverture">
+                                <p>Jazz.com</p>
+                                <label for="open-jazz-com" class="material-symbols-outlined">expand_more</label>
+                                <input type="checkbox" id="open-jazz-com">
+                            </div>
+                            <div class="contenu">
+                                <div class="sous-contenu titre-lien">
+                                    <h3>Jazz.com</h3>
+                                    <a>Vers le projet</a>
+                                </div>
+                                <div class="sous-contenu texte-contenu">
+                                    <p>Site web statique ayant pour sujet l'histoire du jazz, détaillé par artistes et par styles.</p>
+                                </div>
+                                <label for="close-jazz-com" class="material-symbols-outlined">close</label>
+                                <input type="checkbox" id="close-jazz-com" checked>
+                            </div>
+                        </div>
+                        <script src="js/projets/main/checkboxs-tuilles.js"></script>
+                    </div>
+                    
+                    <div class="buttons">
+                        <button id="prev">Prev</button>
+                        <button id="next">Next</button>
+                    </div>
+                </div>
             </section>
-            <section id="conteneur-projets">
-                <div class="conteneur-projet" id="portfolio">
-                    <div class="titre-projet">
-                        <h2 class="titre-sec">Portfolio en ligne<span class="date-online">04/03/2020</span></h2>
-                    </div>
-                    <div class="conteneur-liens">
-                        <div class="conteneur-lien">
-                            <h4 class="titre-lien">Lien vers le portefolio :</h4>
-                            <a href="index.html"><img src="img/image-portfolio.bmp" class="img-vignette icone-lien"></a>
-                        </div>
-                        <div class="conteneur-lien">
-                            <h4 class="titre-lien">Lien vers l'archive :</h4>
-                            <a href="archives/porte-folio.rar" target="_blank"><img src="img/winrar_icon.png" class="icone-lien icone-taille" id="icone-winrar-pour-portfolio"></a>
-                        </div>
-                        &nbsp;
-                    </div>
-                    <p class="texte">Le portfolio en ligne représente à ce jour mon projet le plus ambitieux en termes de développement web. Il m’a permis de me rendre compte de mes progrès mais également mes limites, ce qui plutôt une bonne chose. Bien sûr, son intérêt principal est d’être un support pour exposer mes futurs projets.<br><br>
-                    De plus, ce projet s’inscrit dans une continuité qu’est mon projet de réorientation. J’espère donc qu’avec ce site, je puis témoigner de quelques compétences en termes de développement web.<br><br>
-                    Comme sous-entendu précédemment, ce projet m’a permis de mettre en application bon nombre de fonctions, outils et propriétés que j’ai appris ces derniers mois. J’ai pu par exemple, mettre en application la pseudo classe « :hover » mais également les propriétés CSS « position » et « display ». J’ai pu également utiliser dans un réel contexte les propriétés personnalisées qui se sont révélées plus qu’utiles lors de la mise en couleur du site. Ce portfolio en ligne m’as également permis de m’intéresser à l’architecture web, comment organiser les différentes pages d’un site etc… <br><br>
-                    Outre la conception du site, j’ai pu également expérimenter la mise en ligne d’un site web pour la première fois. Cela m’a permis de me familiariser avec des outils comme Git Bash qui m’a permis de mettre mon site sur GitHub. J’ai ensuite utiliser Netlify qui permet gratuitement de mettre en ligne des sites statiques en prenant pour base un « dépôt » GitHub.<br><br>
-                    Cependant, l’enseignement principal que je tire de ce projet est plutôt général : s’investir, comprendre, appliquer, tenir des délais. J’ai pu pour la première fois expérimenter la gestion de projet. Alors bien sûr, cela reste un projet en « solo » qui ne m’a pas permis d’expérimenter le travail en équipe, cependant, je pense qu’il m'a donné une certaine expérience en terme d’autonomie.<br><br>
-                    Bien sûr, ce projet reste inabouti. En effet, par manque de compétences techniques, notamment en JavaScript mais également en PHP, je n’ai pas pu combler l’entièreté de mes exigences pour ce premier « gros » projet. De fait, ce site possède des défauts, le majeur étant le manque de responsive design sur certains éléments comme les vignettes de projets sur la page principale ou bien encore l’onglet « contact ». Je vous conseille donc pour une expérience optimale une résolution de 1366 x 768 px.<br><br>
-                    Il est donc prévu dans un futur proche de mettre à jour ce site lorsque que j’aurais acquis de plus grandes compétences dans les domaines que me font défaut actuellement et ainsi, pouvoir continuer d'y présenter mes projets.</p>   
-                </div>
-                <div>
-                    <div class="titre-projet" id="apprentissage-front-dev">
-                        <h2 class="titre-sec">Apprentissage front-dev<span class="date-online">04/03/2020</span></h2>
-                    </div>
-                    <p class="texte"><em>Je vais résumer ici mon apprentissage du front-dev en « autodidacte » qui je tiens à le préciser, n’est pas terminé. Par conséquent, ce post risque d’être compléter/modifier au cours du temps.</em></p><br>
-                    <div class="conteneur-liens">
-                        <div class="conteneur-lien">
-                            <h4 class="titre-lien">Lien vers l'archive des notes :</h4>
-                            <a href="archives/notes.rar" target="_blank"><img src="img/winrar_icon.png" class="icone-lien icone-taille" id="icone-winrar-pour-apprentissage"></a>
-                        </div>
-                        &nbsp;
-                        <div class="conteneur-lien">
-                            <h4 class="titre-lien">Lien vers l'archive des exercices :</h4>
-                            <a href="archives/exercices.rar" target="_blank"><img src="img/winrar_icon.png" class="icone-lien icone-taille" id="icone-winrar-pour-apprentissage"></a>
-                        </div>
-                        &nbsp;
-                    </div>
-                    <p class="texte">Le font-dev représente pour moi le point d’entrée dans le dev web. Il était donc important pour moi de me trouver un fil conducteur, une plateforme me donnant un programme à suivre. Après une longue recherche, j’ai choisi <a style="color: var(--fonce)" href="https://www.freecodecamp.org/" target="_blank">freecodecamp.org</a>. J’ai choisi cet organisme car la méthode d’enseignement qu’ils utilisent est celle qui, je trouve, me correspond le mieux. De plus, j’ai préféré me diriger vers un organisme anglophone afin de maintenir un bon niveau en anglais mais également pour m’habituer aux termes et acronymes anglophones.<br><br>
-                    Les cours proposées par freecodecamp couvrent l’entièreté du dev web (front, end, API, sécurité…). De fait, ils sont organisés en grandes parties portant chacun sur un grand domaine du dev web. A ce jour, je suis sur la première partie nommée « Responsive Web Design Certification ».<br><br>
-                    Dans cette partie, j’ai pu étudier deux langages, le HTML et le CSS. J’ai donc commencé dans le premier chapitre par les bases du HTML (paragraphes, insertions d’images, font-dev d’un formulaire…). Puis, dans le deuxième chapitre, j’ai pu apprendre la base du CSS (mise en couleur, classes, id, propriétés personnalisées). Enfin, dans le troisième chapitre où je suis actuellement et se nommant « Applied Visual Design », j’ai pu approfondir mes connaissances en CSS avec entre autres l’utilisation de propriétés comme « box-shadow », « position » ou encore « display ».<br><br>
-                        Cependant, je ne me suis pas contenté du contenu fourni par cette formation, j’ai cherché à compléter les informations fournies par freecodecamp. J’ai pour cela écumé des sites comme <a style="color: var(--fonce)" href="https://developer.mozilla.org/fr/" target="_blank">MDN</a>, le forum de stack overflow ou encore celui de openclassroom lorsque j’avais des soucis de compréhension avec l’anglais.<br><br>
-                    Afin de ne pas perdre les informations apprises, j’ai décidé de prendre des notes de tout ce que je pensais utile. J’ai également décidé, outre les projets, de m’exercer régulièrement afin de constater mes progrès mais également déceler mes lacunes.<br><br>
-                    Vous pouvez ainsi accéder à mes notes et mes exercices si vous souhaitez connaitre plus précisément mon niveau mais également ma méthodologie personnelle.</p>
-                </div>
-                <div>
-                    <div class="titre-projet" id="petit-questionnaire">
-                        <h2 class="titre-sec">Petit questionnaire de satisfaction<span class="date-online">20/01/2020</span></h2>
-                    </div>
-                    <p class="texte">Ce questionnaire est mon premier « projet ». Il se différencie de mes exercices par le fait que je l’ai fait dans une optique d’arriver à un certain objectif plutôt que d’être une simple démo technique.<br><br>
-                    J’avais donc pour idée de réaliser une petite interface de questionnaire ayant pour thème la satisfaction des utilisateurs. Attention, ceci n’est que l’interface, les informations ne sont pas récupérées car je n’ai pas encore les compétences techniques, notamment en PHP.</p>
-                    <div class="separateur-texte-liens-bas"></div>
-                    <div class="conteneur-liens-bas">
-                        <div class="conteneur-lien-bas">
-                            <h4 class="titre-lien">Lien vers le questionnaire</h4>
-                            <a href="projets/questionnaire/index.html" target="_blank"><img src="img/icone-petit-questionnaire.bmp" class="img-vignette icone-lien"></a>
-                        </div>
-                        <div class="conteneur-lien-bas">
-                            <h4 class="titre-lien">Lien vers l'archive</h4>
-                            <a href="archives/petit-questionnaire.rar" target="_blank"><img src="img/winrar_icon.png" class="icone-lien icone-taille" id="icone-winrar-pour-petit-questionnaire"></a>
-                        </div>
-                    </div>
-                </div>
+            <section id="projets">
+                <article></article>
+                <article></article>
+                <article></article>
             </section>
         </main>
-        <footer style="margin-top: 20px">
-            <p id="texte-bas-de-page">
-                <a href="projets.html" class="liens-bas-de-page">Retour en haut des projets</a> -
-                <a href="index.html" class="liens-bas-de-page">Retour à la page principale</a>
-            </p>
-        </footer>
     </body>
-</html>
