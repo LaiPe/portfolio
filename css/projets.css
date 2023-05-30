@@ -7,9 +7,6 @@
     display: grid;
     place-items: center;
 }
-#carousel{
-    display: inline-flex;
-}
 
 .tuille{
     --size-tuille: 25vh;
