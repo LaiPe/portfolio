@@ -1,0 +1,10 @@
+.conteneur{
+    --size-conteneur: calc(100vh - calc(var(--size-h2) + var(--size-header)));
+    --prct-size-conteneur: calc(0.01 * var(--size-conteneur));
+
+    width: 100vw;
+    height: var(--size-conteneur);
+    display: grid;
+    place-items: center;
+}
+
