@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    /*Thème du site*/
+    --fonce: #09A7A1;
+    --clair: #9de0de;
+    --fond: #ceedec;
+
+    --size-header: 10vh;
+    --size-header-scroll: 7.5vh;
+    --size-h2: 4.7vh;
+
+    --res: calc(0.01 * 10vmin);
+    --tab: 3em;
+
+    background-color: var(--fonce);
+    font-family: "Poppins";   
+}
+
+body > header{
+    background-color: var(--fonce);
+    color: white;
+
+    height: var(--size-header);
+    position: sticky;
+    top: calc(var(--size-header-scroll) - var(--size-header));
+    z-index: 100;
+}
+body > header > h1{
+    position: absolute;
+    bottom: 10%;
+    left: 1%;
+
+    font-size: calc(35 * var(--res));
+}
+
+#nav-full{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0px 40px;
+}
+nav ul{
+    list-style-type: none;
+}
+#nav-full li{
+    display: inline;
+    margin: 0px 15px;
+    font-size: calc(20 * var(--res));
+}
+#nav-full li a{
+    color: white;
+    text-decoration: none;
+    font-weight: bolder;
+}
+#nav-full li a:hover{
+    text-decoration: underline;
+}
+
+main{
+    background-color: var(--fond);  
+}
+.slide{
+    height: calc(100vh - var(--size-header-scroll));
+}
+.slide:first-child{
+    height: calc(100vh - var(--size-header));
+}
+main section > h2{
+    position: relative;
+    background-color: var(--clair);
+    color: white;
+    padding-left: 1%;
+    padding-top: 0.35vh;
+    font-size: calc(28 * var(--res));
+    height: var(--size-h2);
+}

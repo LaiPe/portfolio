@@ -1,0 +1,59 @@
+#carousel{
+    height: 50%;
+    width: inherit;
+}
+
+.tuille{
+    position: absolute;
+    transition: transform 1s, left 1s, opacity 1s, z-index 0s;
+    opacity: 1;
+}  
+.tuille.prev {
+    z-index: 5;
+    left: 30%;
+    transform: translateY(50px) translateX(-50%) scale(0.8);
+}
+    
+.tuille.prevLeftSecond {
+z-index: 4;
+left: 15%;
+transform: translateY(50%) translateX(-50%) scale(0.6);
+opacity: 0.7;
+}
+
+.tuille.selected {
+z-index: 10;
+left: 50%;
+transform: translateY(0px) translateX(-50%);
+}
+
+.tuille.next {
+z-index: 5;
+left: 70%;
+transform: translateY(50px) translateX(-50%) scale(0.8);
+}
+
+.tuille.nextRightSecond {
+z-index: 4;
+left: 85%;
+transform: translateY(50%) translateX(-50%) scale(0.6);
+opacity: 0.7;
+}
+
+.buttons{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%) scale(2.5);
+}
+.buttons input{
+    display: none;
+}
+.buttons label{
+    cursor: pointer;
+}
+.buttons#b-prev{
+    left: 10%;
+}
+.buttons#b-next{
+    right: 10%;
+}

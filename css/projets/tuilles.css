@@ -1,0 +1,146 @@
+.tuille{
+    --size-tuille: 25vh;
+    --prct-size-tuille: calc(0.01 * var(--size-tuille));
+
+    position: relative;
+    height: var(--size-tuille);
+    width: 50vmin;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+.tuille#sokoban{
+    --couleur-tuille: rgb(70, 69, 69);
+    --couleur-bouton : rgb(122, 122, 122);
+    font-family: 'Roboto Mono', monospace;
+    color: var(--couleur-tuille);
+    background: rgb(191,191,191);
+    background: linear-gradient(45deg, rgba(191,191,191,1) 0%, rgba(219,219,219,1) 35%, rgba(229,229,229,1) 100%);
+}
+.tuille#la-reussite-des-alliances{
+    --couleur-tuille: white;
+    --couleur-bouton: rgb(2, 82, 187);
+    font-family: 'Shadows Into Light', cursive;
+    color: var(--couleur-tuille);
+    background: rgb(0,111,255);
+    background: linear-gradient(45deg, rgba(0,111,255,1) 0%, rgba(105,180,255,1) 35%, rgb(79, 210, 250) 100%); 
+}
+.tuille#jazz-com{
+    --couleur-tuille: black;
+    --couleur-bouton: rgb(80, 44, 31);
+    font-family: 'Lora', serif;
+    color: var(--couleur-tuille);
+    background: rgb(110,60,42);
+    background: linear-gradient(45deg, rgba(110,60,42,1) 0%, rgba(121,69,50,1) 35%, rgba(171,131,117,1) 100%); 
+}
+
+.tuille .couverture{
+    z-index: 5;
+    position: relative;
+    height: inherit;
+    width: inherit;
+    display: grid;
+    place-items: center;
+    box-shadow: 0px 5px 15px 5px #323232;
+    background: inherit;
+}
+.tuille .couverture.ouverte{
+    animation: ouverture 1s forwards;
+}
+.tuille .couverture.fermee{
+    animation: fermeture 1s forwards;
+}
+@keyframes ouverture {
+    0%{top: 0;}
+    100%{top: -100%;}
+}
+@keyframes fermeture {
+    0%{top: -100%;}
+    100%{top: 0;}
+}
+
+.tuille .couverture p{
+    text-align: center;
+}
+.tuille .couverture label{
+    transform: scale(2);
+    position: absolute;
+    bottom: 8%;
+    cursor: pointer;
+}
+.tuille .couverture input{
+    display: none;
+    position: absolute;
+    right: 0;
+}
+.tuille#sokoban .couverture{
+    font-size: calc(70 * var(--res)); 
+}
+.tuille#la-reussite-des-alliances .couverture{
+    font-size: calc(55 * var(--res));
+}
+.tuille#jazz-com .couverture{
+    font-size: calc(70 * var(--res));
+}
+
+.tuille .contenu{
+    z-index: 4;
+    position: absolute;
+    height: inherit;
+    width: inherit;
+    display: inline-flex;
+}
+.tuille .contenu .sous-contenu{
+    height: calc(80 * var(--prct-size-tuille));
+    width: 50%;
+    margin: calc(10 * var(--prct-size-tuille)) 0;
+    padding: 0 calc(10 * var(--prct-size-tuille));
+}
+.tuille .contenu .titre-lien{
+    border-right: 2px solid var(--couleur-tuille);
+    display: grid;
+    place-items: center;
+    text-align: center;
+}
+.tuille .contenu .titre-lien input{
+    padding: 10px 20px;
+    border: none;
+    font-size: calc(10 * var(--res));
+    color: #fff;
+    border-radius: 7px;
+    letter-spacing: 4px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    transition: 0.5s;
+    transition-property: box-shadow;
+    text-decoration: none;
+
+    background: var(--couleur-bouton);
+    box-shadow: 0 0 25px var(--couleur-bouton);
+}
+.tuille .contenu .titre-lien input:hover{
+    box-shadow: 0 0 5px var(--couleur-bouton),
+                0 0 25px var(--couleur-bouton),
+                0 0 50px var(--couleur-bouton),
+                0 0 100px var(--couleur-bouton);   
+}
+.tuille#sokoban .contenu .titre-lien h3{
+    font-size: calc(30 * var(--res));
+}
+.tuille#jazz-com .contenu .titre-lien h3{
+    font-size: calc(35 * var(--res));
+}
+
+.tuille .contenu .texte-contenu{
+    padding: calc(10 * var(--prct-size-tuille));
+    padding-right: calc(15 * var(--prct-size-tuille));
+}
+.tuille .contenu input[type="checkbox"]{
+    display: none;
+}
+.tuille .contenu label{
+    position: absolute;
+    top: 5%;
+    right: 2.5%;
+    cursor: pointer;
+}
