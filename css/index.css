@@ -1,82 +1,32 @@
-main > header.slide{
-    color: var(--fonce);
+header{
+    height: 25vh;
+    position: sticky;
+    top: -17vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5vh 0 2vh;
+
+    background-color: white;
+    border-bottom: 1px black solid;
+}
+header > a{
+    position: initial;
+}
+
+main{
+    height: 75vh;
+    background-color: var(--fond);
+    font-family: 'Nixie One', cursive;
+}
+main #sous-titre{
+    height: 25%;
     display: flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
 }
-main > header h2{
-    font-size: calc(60 * var(--res));
-    border-bottom: solid 2px var(--fonce);
-}
-main > header h3{
-    margin-top: 1.5%;
-    font-size: calc(25 * var(--res));
-}
-
-main > section#profil{
-    display: grid;
-    place-items: center;
-}
-
-#console{
-    --affichCurseur1: inline-block;
-    --affichCurseur2: inline-block; 
-    --affichCurseur3: inline-block; 
-    --affichCurseur4: inline-block;
-
-    position: relative;
-    height:80vh;
-    width: 60vmin;
-    padding: 8vmin;
-
-    background-color: var(--clair);
-    box-shadow:  -20px 20px 60px #85bebd,
-             20px -20px 60px #b5ffff;
-    border-radius: 2vmin;
-
-    font-family: "Inconsolata";
-    font-size: 2vmin;
-    line-height: 2em;
-}
-#console > *{
-    display: none;
-}
-
-#console .commande::before{
-    content: "leo@portfolio> ";
-}
-
-
-#console .commande::after{
-    content: "";
-    width: 0.4em;
-    height: 1.1em;
-    background-color: black;
-    animation: blink 0.7s infinite;
-    position:relative;
-    bottom: -0.15em;
-}
-@keyframes blink {
-    0% { opacity: 0; }
-    50% { opacity: 1; }
-    100% { opacity: 0; }
-}
-
-#console #commande_1::after{
-    display: var(--affichCurseur1);
-}
-#console #commande_2::after{
-    display: var(--affichCurseur2);
-}
-#console #commande_3::after{
-    display: var(--affichCurseur3);
-}
-#console #commande_4::after{
-    display: var(--affichCurseur4);
-}
-
-#console ul{
-    list-style-type: "-> ";
-    margin-left: var(--tab);
+main #sous-titre h2{
+    font-weight: 400;
 }

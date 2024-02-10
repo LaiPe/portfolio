@@ -2,80 +2,142 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    text-underline-offset: 0.25rem;
 }
-
 :root{
-    /*Thème du site*/
-    --fonce: #09A7A1;
-    --clair: #9de0de;
-    --fond: #ceedec;
-
-    --size-header: 10vh;
-    --size-header-scroll: 7.5vh;
-    --size-h2: 4.7vh;
-
-    --res: calc(0.01 * 10vmin);
-    --tab: 3em;
-
-    background-color: var(--fonce);
-    font-family: "Poppins";   
+    font-size: 14px;
+    font-family: "Montserrat", sans-serif;
+    --fond: #ececec;
 }
 
-body > header{
-    background-color: var(--fonce);
-    color: white;
-
-    height: var(--size-header);
-    position: sticky;
-    top: calc(var(--size-header-scroll) - var(--size-header));
-    z-index: 100;
+.logo{
+    background-color: red;
+    width: 70px;
+    height: 70px;
 }
-body > header > h1{
-    position: absolute;
-    bottom: 10%;
-    left: 1%;
-
-    font-size: calc(35 * var(--res));
+.grand{
+    width: 350px;
+    height: 130px;
+}
+.petit{
+    width: 4vh;
+    height: 4vh;
 }
 
-#nav-full{
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    margin: 0px 40px;
-}
-nav ul{
-    list-style-type: none;
-}
-#nav-full li{
-    display: inline;
-    margin: 0px 15px;
-    font-size: calc(20 * var(--res));
-}
-#nav-full li a{
-    color: white;
+a{
+    color: black;
     text-decoration: none;
-    font-weight: bolder;
 }
-#nav-full li a:hover{
+a:hover{
     text-decoration: underline;
 }
 
-main{
-    background-color: var(--fond);  
+header{
+    height: 8vh;
+    position: sticky;
+    top: 0;
+
+    background-color: white;
+    border-bottom: 1px black solid;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
-.slide{
-    height: calc(100vh - var(--size-header-scroll));
+header nav > ul {
+    width: 60vw;
+    list-style: none;
+    font-size: 2.5rem;
+    font-family: "Jura", sans-serif;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
 }
-.slide:first-child{
-    height: calc(100vh - var(--size-header));
+header > a{
+    position: absolute;
+    top: 2vh;
+    left: 10%;
 }
-main section > h2{
+
+footer{
+    border-top: 1px solid black;
+    overflow: hidden;
+}
+footer #feuille-contact{
+    height: 30vh;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 1.5rem;
+    font-family: "Jura", sans-serif;
+}
+footer #feuille-contact > *{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2% 0;
+}
+footer #feuille-contact #conteneur-logo{
+    border-right: 1px solid black;
+}
+footer #feuille-contact #contacts ul{
+    list-style: none;
     position: relative;
-    background-color: var(--clair);
-    color: white;
-    padding-left: 1%;
-    padding-top: 0.35vh;
-    font-size: calc(28 * var(--res));
-    height: var(--size-h2);
+    right: 20px
 }
+footer #feuille-contact #contacts ul li{
+    margin: 15px 0;
+}
+footer #feuille-contact #contacts ul img{
+    margin-right: 10px;
+    width: 35px;
+    position: relative;
+    top: 11px;
+}
+footer #autres-mentions{
+    margin-left: 60px;
+    padding-bottom: 30px;
+}
+footer #autres-mentions a{
+    position: relative;
+    padding: 5px;
+    right: 5px;
+    text-decoration: underline;
+}
+footer #autres-mentions a:hover::before{
+    content: '';
+    animation: "apparition" 1s ease forwards;
+
+    position: relative;
+    left: 150px;
+    z-index: -1;
+
+    padding: 100px;
+
+    background: rgb(157,224,222);
+    background: radial-gradient(circle, rgba(157,224,222,0.85) 0%, rgba(157,224,222,0) 70%);
+}
+footer #autres-mentions a:hover{
+    right: 205px;
+    animation: "changeFont" 0.5s linear;
+    animation-iteration-count: 2;
+}
+
+@keyframes apparition{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+@keyframes changeFont {
+    0%{ font-family: inherit;}
+    25% { font-family: 'Courier New', monospace;}
+    50% { font-family: "Jura", sans-serif; }
+    75% { font-family: 'Nixie One', cursive; }
+  }

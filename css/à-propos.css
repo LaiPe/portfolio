@@ -1,0 +1,75 @@
+main{
+    font-size: 1.35rem;
+}
+main > section{
+    min-height: 92vh;
+    display: inline-flex;
+    padding: 5% 3% 7%;
+}
+
+.texte{
+    width: 60%;
+    padding-right: 3%;
+}
+.texte h3{
+    font-size: 3rem;
+    font-family: "Jura", sans-serif;
+    padding-bottom: 1rem;
+}
+.texte p{
+    margin-top: 1.5rem;
+}
+
+.visuel{
+    width: 40%;
+    padding: 3% 2% 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+.visuel > img{
+    width: 35%;
+    min-width: 150px;
+}
+#mon-histoire .visuel > img{
+    width: 45%;
+    min-width: 200px;
+    border: 1px #ccc solid;
+    padding: 5px;
+}
+
+#mes-études .visuel > img{
+    padding: 1%;
+    background: #ffffff;
+    box-shadow:  26px 26px 52px #e3e3e3,
+             -26px -26px 52px #ffffff;
+
+}
+#mes-études .visuel > img:nth-of-type(4){
+    padding: 0%;
+}
+#mes-études .visuel > img:nth-of-type(1){
+    padding: 3%;
+}
+
+#mes-études .visuel > img, #mes-experiences-pro .visuel > img{
+    aspect-ratio: 1/1;
+    object-fit: contain;
+} 
+
+#mes-experiences-pro .visuel > img{
+    width: 28%;
+    padding: 2%;
+    background: #ffffff;
+    box-shadow:  26px 26px 52px #e3e3e3,
+             -26px -26px 52px #ffffff;
+    
+}
+#mes-experiences-pro .visuel > img:nth-of-type(1), #mes-experiences-pro .visuel > img:nth-of-type(2){
+    background: #e0e0e0;
+    box-shadow:  26px 26px 52px #c7c7c7,
+             -26px -26px 52px #f9f9f9;
+}

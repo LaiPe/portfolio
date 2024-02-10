@@ -1,206 +1,46 @@
-<!doctype html>
-
-<html lang="fr">
+<html>
     <head>
-        <meta charset="utf-8">
-        <title>Portfolio Léo Peyronnet</title>
+        <title>Portfolio Achille Bernard</title>
         <link rel="stylesheet" href="css/theme.css">
-        <link rel="stylesheet" href="css/projets/projets.css">
-        <link rel="stylesheet" href="css/projets/tuilles.css">
-        <link rel="stylesheet" href="css/projets/carousel.css">
-        <link rel="icon" href="img/icone.bmp">
-
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+        <link rel="stylesheet" href="css/projets.css">
+        <script src="js/scroll-contact.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css?family=Poppins:500&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Inconsolata&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@1,700&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css2?family=Cambay&display=swap" rel="stylesheet"> 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+        <link href="https://fonts.googleapis.com/css2?family=Jura&family=Montserrat&family=Nixie+One&display=swap" rel="stylesheet">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
     <body>
         <header>
-            <h1>Léo Peyronnet /portfolio/</h1>
-            <nav id="nav-full">
+            <a href="index.html"><img class="logo petit"></a>
+            <nav>
                 <ul>
-                    <li><a href="index.html">Accueil</a></li>
                     <li><a href="projets.html">Projets</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="à-propos.html">À propos</a></li>
+                    <li><a href="#" id="ancre-contact">Contact</a></li>
                 </ul>
             </nav>
         </header>
         <main>
-            <section class="slide">
-                <h2>Projets</h2>
-                <div class="conteneur">
-                    <div id="carousel">
-                        <div class="prev tuille" id="la-reussite-des-alliances">
-                            <div class="couverture">
-                                <p>La Réussite des Alliances</p>
-                                <label for="open-lrda" class="material-symbols-outlined">expand_more</label>
-                                <input type="checkbox" id="open-lrda">
-                            </div>
-                            <div class="contenu">
-                                <div class="sous-contenu titre-lien">
-                                    <h3>La Réussite des alliances</h3>
-                                    <input type="button" id="scroll-lrda" value="Vers le projet">
-                                </div>
-                                <div class="sous-contenu texte-contenu">
-                                    <p>Modélisation du jeu de cartes "La Réussite". Codé en Python, doté d'un "débug-mode" ainsi que d'une rédaction explicative.</p>
-                                </div>
-                                <label for="close-lrda" class="material-symbols-outlined">close</label>
-                                <input type="checkbox" id="close-lrda" checked>
-                            </div>
-                        </div>
-                    
-                        <div class="selected tuille" id="sokoban">
-                            <div class="couverture">
-                                <p>sokoban_</p>
-                                <label for="open-sokoban" class="material-symbols-outlined">expand_more</label>
-                                <input type="checkbox" id="open-sokoban">
-                            </div>
-                            <div class="contenu">
-                                <div class="sous-contenu titre-lien">
-                                    <h3>sokoban_</h3>
-                                    <input type="button" id="scroll-sokoban" value="Vers le projet">
-                                </div>
-                                <div class="sous-contenu texte-contenu">
-                                    <p>Jeu de réflexion. Codé en C, il est accompagné d'une rédaction explicative.</p>
-                                </div>
-                                <label for="close-sokoban" class="material-symbols-outlined">close</label>
-                                <input type="checkbox" id="close-sokoban" checked>
-                            </div>
-                        </div>
-                    
-                        <div class="next tuille" id="jazz-com">
-                            <div class="couverture">
-                                <p>Jazz.com</p>
-                                <label for="open-jazz-com" class="material-symbols-outlined">expand_more</label>
-                                <input type="checkbox" id="open-jazz-com">
-                            </div>
-                            <div class="contenu">
-                                <div class="sous-contenu titre-lien">
-                                    <h3>Jazz.com</h3>
-                                    <input type="button" id="scroll-jazz-com" value="Vers le projet">
-                                </div>
-                                <div class="sous-contenu texte-contenu">
-                                    <p>Site web statique ayant pour sujet l'histoire du jazz, détaillé par artistes et par styles.</p>
-                                </div>
-                                <label for="close-jazz-com" class="material-symbols-outlined">close</label>
-                                <input type="checkbox" id="close-jazz-com" checked>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="buttons" id="b-prev">
-                        <label class="material-symbols-outlined" for="prev">chevron_left</label>
-                        <input type="button" id="prev">
-                    </div>
-                    <div class="buttons" id="b-next">
-                        <label class="material-symbols-outlined" for="next">chevron_right</label>
-                        <input type="button" id="next">
-                    </div>
-                    <script src="js/projets/main/checkboxs-tuilles.js"></script>
-                    <script src="js/projets/main/carousel.js"></script>
-                </div>
-            </section>
-            <section id="projets">
-                <p>Vous retrouverez ici l'ensemble de mes projets, par ordre chronologique.</p>
-                <article id="article-sokoban">
-                    <h3>Sokoban</h3>
-                    <time datetime="2023-05-26">crée le 26/05/2023</time>
-                    <div class="contenu">
-                        <div class="texte-article">
-                            <p>Le jeu de Sokoban est un jeu de puzzle inventé au Japon dans les années 1980. Le joueur incarne un personnage qui doit pousser des caisses vers des 
-                                emplacements spécifiques dans un entrepôt. L'objectif est de déplacer toutes les caisses sur les emplacements cibles pour terminer chaque niveau.
-                                Le joueur se déplace dans un environnement en 2D, représenté généralement par une grille. Il peut se déplacer horizontalement ou verticalement, mais il 
-                                ne peut pas traverser les murs ni pousser les caisses de manière diagonale. Vous pourrez trouver de plus amples explications sur les règles du jeu de 
-                                Sokoban dans le fichier «README.md » joint au dépôt du projet. 
-                            </p>
-                            <p>Réalisé dans le cadre de mes études, ce projet est une modélisation du jeu de Sokoban codée en C. Pour l'instant, le programme ne peut jouer qu'une partie
-                                de "test". Cependant, il n'est pas impossible que j'ajoute dans de futures mises à jour des modes de jeu plus élaborés. De plus, le projet contient 
-                                également une rédaction disponible au format PDF détaillant les choix d’implémentations et de conception du programme. À noter que depuis la rédaction de 
-                                ce "compte-rendu", le projet a connu des évolutions. Ainsi, certains points de la rédaction peuvent être désuets au regard de l'état actuel du projet. 
-                                Cette rédaction est donc à replacer dans le contexte du projet tel qu'il était à sa version 0.1.0-alpha. Cette version est disponible ici ou bien en temps que
-                                realese sur le dépot Github.
-                            </p>
-                            <p>Le fichier README contient, en plus des règles du jeu, la liste des commandes ainsi que les instructions relatives à la compilation et à l'exécution du 
-                                programme.
-                            </p>
-                        </div>
-                        <aside class="liens-article">
-                            <a id="sokoban-github" href="https://github.com/LaiPe/sokoban">
-                                <img src="img/github-icon.png">
-                                <span class="texte-lien">Dépot GitHub</span>
-                            </a>
-                            <a href="ressources/sokoban/redaction-sokoban.pdf" target="_blank">
-                                <span class="material-symbols-outlined icon">picture_as_pdf</span>
-                                <span class="texte-lien">Rédaction</span>
-                            </a>  
-                            <a href="ressources/sokoban/sokoban-alpha.zip">
-                                <span class="material-symbols-outlined icon">folder_zip</span>
-                                <span class="texte-lien">Version 0.1.0-alpha</span>
-                            </a>
-                        </aside>
-                    </div>
-                </article>
-                <article id="article-jazz-com">
-                    <h3>Jazz.com</h3>
-                    <time datetime="2023-04-16">crée le 16/04/2023</time>
-                    <div class="contenu">
-                        <div class="texte-article">
-                            <p>Ce site est un recueil de biographies d’artistes et de résumés de styles de jazz. Il permet de se familiariser avec l’histoire du jazz en parcourant la vie des 
-                                grands de cette musique. Passionné par le jazz et par la musique de manière générale, je l’ai réalisé dans le cadre de mes études.
-                            </p>
-                            <p>Ce site est <strong>statique</strong>, ce qui veut dire qu’il ne traite aucune information qui lui est envoyé. Ainsi, bien qu’il y ait des formulaires de connexion et d’inscription, 
-                                les informations qu’il contiendront s’ils sont remplis ne seront pas traitées. Ces fonctionnalités ont été ajoutées car le sujet qui dirigeait ce projet l’exigeait. 
-                            </p>
-                        </div>
-                        <aside class="liens-article">
-                            <a href="https://github.com/LaiPe/jazz-com">
-                                <img src="img/github-icon.png">
-                                <span class="texte-lien">Dépot GitHub</span>
-                            </a>
-                            <a href="https://vocal-pastelito-42c412.netlify.app/">
-                                <span class="material-symbols-outlined icon">language</span>
-                                <span class="texte-lien">Lien vers le site</span>
-                            </a>
-                        </aside>
-                    </div>
-                </article>
-                <article id="article-lrda">
-                    <h3>La Réussite des Alliances</h3>
-                    <time datetime="2022-04-24">crée le 24/04/2022</time>
-                    <div class="contenu">
-                        <div class="texte-article">
-                            <p>La Réussite est un jeu de cartes solitaire. Dans ce projet, les règles de la Réussite ont été simplifiées mais restent dans les grandes lignes les 
-                                mêmes : regrouper les cartes en piles et essayer de posséder le moins de piles possibles. Ainsi, à chaque tour de jeu, le joueur pioche une carte qu’il 
-                                dispose sur un banc de cartes, les unes à la suite des autres. Une carte peut former une pile si les cartes adjacentes possèdent la même valeur ou la 
-                                même enseigne (carreau, trèfle, cœur ou pique). Si une des deux conditions est remplie, la carte sélectionnée pourra alors se poser sur la carte qui la 
-                                précède. Vous pourrez trouver de plus amples explications sur les règles du jeu dans la rédaction jointe au projet.
-                            </p>
-                            <p>Ce projet est donc la modélisation informatique de cette version de la Réussite. Réalisé dans le cadre de mes études, il est codé en Python et est accompagné par 
-                                un compte-rendu complet détaillant l’implémentation, les choix de conceptions, les options et autres fonctionnalités contenu dans le projet.
-                            </p>
-                            <p>De plus, est joint à ce projet un fichier README donnant les instructions nécessaires au démarrage du programme.</p>
-                        </div>
-                        <aside class="liens-article">
-                            <a href="https://github.com/LaiPe/la-reussite-des-alliances">
-                                <img src="img/github-icon.png">
-                                <span class="texte-lien">Dépot Github</span>
-                            </a>
-                            <a href="ressources/lrda/redaction-lrda.pdf" target="_blank">
-                                <span class="material-symbols-outlined icon">picture_as_pdf</span>
-                                <span class="texte-lien">Rédaction</span>
-                            </a>
-                        </aside>
-                    </div>
-                </article>
-            </section>
-            <script src="js/projets/main/scroll.js"></script>
+            <p>C'est bien vide ici ... pour le moment !</p>
         </main>
+        <footer>
+            <div id="feuille-contact">
+                <div id="conteneur-logo">
+                    <img class="logo grand">
+                </div>
+                <div id="contacts">
+                    <ul>
+                        <li id="contact-linkedin"><a href="#"><img src="img/icons/linkedIn-icon.png">Linkedin</a></li>
+                        <li id="contact-mail"><a href="mailto:achille.bernard@gmail.com"><img src="img/icons/email-icon.png">achille.bernard@gmail.com</a></li>
+                        <li id="contact-tel"><img src="img/icons/telephone.png">+33 (0)6 XX XX XX XX</li>
+                    </ul>
+                </div>
+            </div>
+            <div id="autres-mentions">
+                Site réalisé par <a href="https://portfolio-leo-peyronnet.netlify.app/" target="_blank">Léo Peyronnet</a>
+            </div>
+        </footer>
     </body>
+</html>
