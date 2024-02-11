@@ -20,13 +20,51 @@ main{
     height: 75vh;
     background-color: var(--fond);
     font-family: 'Nixie One', cursive;
-}
-main #sous-titre{
-    height: 25%;
     display: flex;
-    align-items: center;
-    justify-content: center;
 }
-main #sous-titre h2{
-    font-weight: 400;
+main .conteneur{
+    width: 50%;
+    padding: 5% 8%;
+}
+main .conteneur .tuille{
+    background-color: rgba(97, 96, 96, 0.85);
+    padding: 5% 7%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.tuille h2{
+    font-size: 2rem;
+    text-align: center;
+}
+.tuille hr{
+    background-color: black;
+    height: 1px;
+    border: 0;
+    margin: 5% 0;
+    width: 40%;
+}
+.tuille p{
+    font-size: 1.5rem;
+    margin-bottom: 3%;
+}
+.tuille a{
+    font-size: 1.7rem;
+    font-family: "Jura", sans-serif;
+    background-color: rgb(43, 43, 43);
+    color: white;
+    padding: 2%;
+    margin-top: 4%;
+}
+main .conteneur#sous-titrage{
+    background-image: url(../img/index/sous-titrage.jpg);
+    background-size: cover;
+}
+main .conteneur#dev-web{
+    background-image: url(../img/index/dev-web.jpg);
+    background-size: cover;
+
 }
