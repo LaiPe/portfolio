@@ -8,6 +8,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Jura&family=Montserrat&family=Nixie+One&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
 
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     </head>
@@ -23,7 +24,98 @@
             </nav>
         </header>
         <main>
-            <p>C'est bien vide ici ... pour le moment !</p>
+            <section id="projets">
+                <article id="article-sokoban">
+                    <h3>Sokoban</h3>
+                    <time datetime="2023-05-26">crée le 26/05/2023</time>
+                    <div class="contenu">
+                        <div class="texte-article">
+                            <p>Le jeu de Sokoban est un jeu de puzzle inventé au Japon dans les années 1980. Le joueur incarne un personnage qui doit pousser des caisses vers des 
+                                emplacements spécifiques dans un entrepôt. L'objectif est de déplacer toutes les caisses sur les emplacements cibles pour terminer chaque niveau.
+                                Le joueur se déplace dans un environnement en 2D, représenté généralement par une grille. Il peut se déplacer horizontalement ou verticalement, mais il 
+                                ne peut pas traverser les murs ni pousser les caisses de manière diagonale. Vous pourrez trouver de plus amples explications sur les règles du jeu de 
+                                Sokoban dans le fichier «README.md » joint au dépôt du projet. 
+                            </p>
+                            <p>Réalisé dans le cadre de mes études, ce projet est une modélisation du jeu de Sokoban codée en C. Pour l'instant, le programme ne peut jouer qu'une partie
+                                de "test". Cependant, il n'est pas impossible que j'ajoute dans de futures mises à jour des modes de jeu plus élaborés. De plus, le projet contient 
+                                également une rédaction disponible au format PDF détaillant les choix d’implémentations et de conception du programme. À noter que depuis la rédaction de 
+                                ce "compte-rendu", le projet a connu des évolutions. Ainsi, certains points de la rédaction peuvent être désuets au regard de l'état actuel du projet. 
+                                Cette rédaction est donc à replacer dans le contexte du projet tel qu'il était à sa version 0.1.0-alpha. Cette version est disponible ici ou bien en temps que
+                                realese sur le dépot Github.
+                            </p>
+                            <p>Le fichier README contient, en plus des règles du jeu, la liste des commandes ainsi que les instructions relatives à la compilation et à l'exécution du 
+                                programme.
+                            </p>
+                        </div>
+                        <aside class="liens-article">
+                            <a id="sokoban-github" href="https://github.com/LaiPe/sokoban">
+                                <img src="img/icons/github-icon.png">
+                                <span class="texte-lien">Dépot GitHub</span>
+                            </a>
+                            <a href="ressources/sokoban/redaction-sokoban.pdf" target="_blank">
+                                <span class="material-symbols-outlined icon">picture_as_pdf</span>
+                                <span class="texte-lien">Rédaction</span>
+                            </a>  
+                            <a href="ressources/sokoban/sokoban-alpha.zip">
+                                <span class="material-symbols-outlined icon">folder_zip</span>
+                                <span class="texte-lien">Version 0.1.0-alpha</span>
+                            </a>
+                        </aside>
+                    </div>
+                </article>
+                <article id="article-jazz-com" class="article-petit">
+                    <h3>Jazz.com</h3>
+                    <time datetime="2023-04-16">crée le 16/04/2023</time>
+                    <div class="contenu">
+                        <div class="texte-article">
+                            <p>Ce site est un recueil de biographies d’artistes et de résumés de styles de jazz. Il permet de se familiariser avec l’histoire du jazz en parcourant la vie des 
+                                grands de cette musique. Passionné par le jazz et par la musique de manière générale, je l’ai réalisé dans le cadre de mes études.
+                            </p>
+                            <p>Ce site est <strong>statique</strong>, ce qui veut dire qu’il ne traite aucune information qui lui est envoyé. Ainsi, bien qu’il y ait des formulaires de connexion et d’inscription, 
+                                les informations qu’il contiendront s’ils sont remplis ne seront pas traitées. Ces fonctionnalités ont été ajoutées car le sujet qui dirigeait ce projet l’exigeait. 
+                            </p>
+                        </div>
+                        <aside class="liens-article">
+                            <a href="https://github.com/LaiPe/jazz-com">
+                                <img src="img/icons/github-icon.png">
+                                <span class="texte-lien">Dépot GitHub</span>
+                            </a>
+                            <a href="https://vocal-pastelito-42c412.netlify.app/" target="_blank">
+                                <span class="material-symbols-outlined icon">language</span>
+                                <span class="texte-lien">Lien vers le site</span>
+                            </a>
+                        </aside>
+                    </div>
+                </article>
+                <article id="article-lrda">
+                    <h3>La Réussite des Alliances</h3>
+                    <time datetime="2022-04-24">crée le 24/04/2022</time>
+                    <div class="contenu">
+                        <div class="texte-article">
+                            <p>La Réussite est un jeu de cartes solitaire. Dans ce projet, les règles de la Réussite ont été simplifiées mais restent dans les grandes lignes les 
+                                mêmes : regrouper les cartes en piles et essayer de posséder le moins de piles possibles. Ainsi, à chaque tour de jeu, le joueur pioche une carte qu’il 
+                                dispose sur un banc de cartes, les unes à la suite des autres. Une carte peut former une pile si les cartes adjacentes possèdent la même valeur ou la 
+                                même enseigne (carreau, trèfle, cœur ou pique). Si une des deux conditions est remplie, la carte sélectionnée pourra alors se poser sur la carte qui la 
+                                précède. Vous pourrez trouver de plus amples explications sur les règles du jeu dans la rédaction jointe au projet.
+                            </p>
+                            <p>Ce projet est donc la modélisation informatique de cette version de la Réussite. Réalisé dans le cadre de mes études, il est codé en Python et est accompagné par 
+                                un compte-rendu complet détaillant l’implémentation, les choix de conceptions, les options et autres fonctionnalités contenu dans le projet.
+                            </p>
+                            <p>De plus, est joint à ce projet un fichier README donnant les instructions nécessaires au démarrage du programme.</p>
+                        </div>
+                        <aside class="liens-article">
+                            <a href="https://github.com/LaiPe/la-reussite-des-alliances">
+                                <img src="img/icons/github-icon.png">
+                                <span class="texte-lien">Dépot Github</span>
+                            </a>
+                            <a href="ressources/lrda/redaction-lrda.pdf" target="_blank">
+                                <span class="material-symbols-outlined icon">picture_as_pdf</span>
+                                <span class="texte-lien">Rédaction</span>
+                            </a>
+                        </aside>
+                    </div>
+                </article>
+            </section>
         </main>
         <footer>
             <div id="feuille-contact">
