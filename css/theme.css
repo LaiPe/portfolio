@@ -11,9 +11,7 @@
 }
 
 .logo{
-    background-color: red;
-    width: 70px;
-    height: 70px;
+    height: 90px;
 }
 .grand{
     width: 350px;
@@ -96,34 +94,6 @@ footer #feuille-contact #contacts ul img{
     width: 35px;
     position: relative;
     top: 11px;
-}
-footer #autres-mentions{
-    margin-left: 60px;
-    padding-bottom: 30px;
-}
-footer #autres-mentions a{
-    position: relative;
-    padding: 5px;
-    right: 5px;
-    text-decoration: underline;
-}
-footer #autres-mentions a:hover::before{
-    content: '';
-    animation: "apparition" 1s ease forwards;
-
-    position: relative;
-    left: 150px;
-    z-index: -1;
-
-    padding: 100px;
-
-    background: rgb(157,224,222);
-    background: radial-gradient(circle, rgba(157,224,222,0.85) 0%, rgba(157,224,222,0) 70%);
-}
-footer #autres-mentions a:hover{
-    right: 205px;
-    animation: "changeFont" 0.5s linear;
-    animation-iteration-count: 2;
 }
 
 @keyframes apparition{
