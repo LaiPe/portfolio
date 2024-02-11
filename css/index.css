@@ -26,8 +26,8 @@ main .conteneur{
     padding: 5% 8%;
 }
 main .conteneur .tuille{
-    background-color: rgba(97, 96, 96, 0.85);
-    padding: 5% 7%;
+    background-color: rgba(97, 96, 96, 0.95);
+    padding: 5% 8%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -36,18 +36,19 @@ main .conteneur .tuille{
 }
 
 .tuille h2{
-    font-size: 2rem;
+    font-family: "Jura", sans-serif;
+    font-size: 2.5rem;
     text-align: center;
 }
 .tuille hr{
     background-color: black;
     height: 1px;
     border: 0;
-    margin: 5% 0;
+    margin: 3% 0;
     width: 40%;
 }
 .tuille p{
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     margin-bottom: 3%;
 }
 .tuille a{
