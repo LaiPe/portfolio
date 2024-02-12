@@ -19,6 +19,10 @@
 .petit{
     height: 4vh;
 }
+.selected{
+    border: 1px black solid;
+    padding: 0.2rem 1rem;
+}
 
 a{
     color: black;
@@ -49,6 +53,9 @@ header nav > ul {
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+}
+header nav > ul li{
+    padding: calc(0.2rem + 1px) calc(1rem + 1px);
 }
 header > a{
     position: absolute;
@@ -94,19 +101,3 @@ footer #feuille-contact #contacts ul img{
     position: relative;
     top: 0.7rem;
 }
-
-@keyframes apparition{
-    0%{
-        opacity: 0;
-    }
-    100%{
-        opacity: 1;
-    }
-}
-
-@keyframes changeFont {
-    0%{ font-family: inherit;}
-    25% { font-family: 'Courier New', monospace;}
-    50% { font-family: "Jura", sans-serif; }
-    75% { font-family: 'Nixie One', cursive; }
-  }
