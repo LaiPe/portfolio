@@ -36,7 +36,7 @@ main .conteneur .tuille{
 }
 
 .tuille h2{
-    font-family: "Jura", sans-serif;
+    font-family: 'Nixie One', cursive;
     font-size: 2.5rem;
     text-align: center;
 }
@@ -48,15 +48,17 @@ main .conteneur .tuille{
     width: 40%;
 }
 .tuille p{
-    font-size: 1.6rem;
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
     margin-bottom: 3%;
 }
 .tuille a{
+    text-align: center;
     font-size: 1.7rem;
     font-family: "Jura", sans-serif;
     background-color: rgb(43, 43, 43);
     color: white;
-    padding: 2%;
+    padding: 3%;
     margin: 3px;
     margin-top: calc(4% + 3px);
     
