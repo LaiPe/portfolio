@@ -29,6 +29,8 @@ main{
     margin-bottom: 2%;
     font-family: "Jura", sans-serif;
     font-size: 3rem;
+    min-width: 300px;
+    width: 60%;
 }
 #projets article time{
     position: absolute;
