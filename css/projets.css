@@ -27,7 +27,8 @@ main{
 }
 #projets article h3{
     margin-bottom: 2%;
-    font-size: 1.8rem;
+    font-family: "Jura", sans-serif;
+    font-size: 3rem;
 }
 #projets article time{
     position: absolute;
