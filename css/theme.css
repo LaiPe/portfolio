@@ -57,7 +57,11 @@ header nav > ul {
 header nav > ul li{
     padding: calc(0.2rem + 1px) calc(1rem + 1px);
 }
-header > a{
+/*header nav > ul li input{
+    display: none;
+}*/
+
+header > a.logo{
     position: absolute;
     top: 2vh;
     left: 10%;
