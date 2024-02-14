@@ -47,6 +47,11 @@ header{
     align-items: center;
     justify-content: center;
 }
+header nav{
+    height: 8vh;
+    display: grid;
+}
+
 header nav > ul {
     width: 60vw;
     list-style: none;
@@ -104,4 +109,8 @@ footer #feuille-contact #contacts ul img{
     width: 2.8rem;
     position: relative;
     top: 0.7rem;
+}
+
+@media all and (max-width: 1080px){
+    
 }

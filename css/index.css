@@ -7,10 +7,13 @@ header{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 5vh 0 calc(2vh - 0.4rem - 2px);
+    padding: 5vh 0 0;
 
     background-color: white;
     border-bottom: 1px black solid;
+}
+header nav{
+    height: calc(8vh - 2px);
 }
 header > a{
     position: initial;
