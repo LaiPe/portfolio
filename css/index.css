@@ -96,7 +96,11 @@ main .conteneur .tuille{
     margin: 0;
     margin-top: 4%;
 }
+.tuille a:hover img{
+    filter: grayscale(0);
+}
 .tuille a img{
+    filter: grayscale(1) brightness(2);
     height: 1.5rem;
     position: relative;
     top: 0.15rem;
