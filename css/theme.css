@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
     text-underline-offset: 0.25rem;
+    font-style: normal;
 }
 :root{
     font-size: 14px;
