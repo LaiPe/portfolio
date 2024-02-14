@@ -6,12 +6,14 @@
     font-style: normal;
 }
 :root{
-    font-size: 14px;
+    --res: calc(0.01 * 10vmin);
+
+    font-size: calc(14 * var(--res));
     font-family: "Montserrat", sans-serif;
 }
 
 .logo{
-    height: 90px;
+    height: 9vh;
 }
 .grand{
     
