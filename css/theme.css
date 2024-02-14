@@ -16,8 +16,8 @@
     height: 11vh;
 }
 .grand{
-    
-    height: 15vh;
+    height: auto;
+    width: 50vmin;
 }
 .petit{
     height: 4vh;
@@ -76,35 +76,44 @@ footer{
     border-top: 1px solid black;
     overflow: hidden;
 }
-footer #feuille-contact{
+#feuille-contact{
     height: 30vh;
     width: 100%;
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
 
     font-size: 1.8rem;
     font-family: "Jura", sans-serif;
 }
-footer #feuille-contact > *{
+#feuille-contact > div{
     width: 40%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2% 0;
+    height: 20vh;
 }
-footer #feuille-contact #conteneur-logo{
-    border-right: 1px solid black;
+#feuille-contact > hr{
+    height: 20vh;
+    border: none;
+    background-color: black;
+    width: 1px;
 }
-footer #feuille-contact #contacts ul{
-    list-style: none;
-    position: relative;
-    right: 20px
+#conteneur-contacts address{
+    width: 50vmin;
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+    gap: 1rem;
+    padding-left: 0.5rem;
 }
-footer #feuille-contact #contacts ul li{
-    margin: 15px 0;
+#conteneur-contacts address a{
+    display: inline-flex;
+    justify-content: center;
+    align-items: baseline;
 }
-footer #feuille-contact #contacts ul img{
+#conteneur-contacts address a img{
     margin-right: 10px;
     width: 2.8rem;
     position: relative;
