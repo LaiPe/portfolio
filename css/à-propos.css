@@ -13,7 +13,7 @@ main > section{
 }
 
 .texte{
-    width: 50%;
+    width: 40%;
     padding-right: 3%;
 }
 .texte h3{
@@ -26,7 +26,7 @@ main > section{
 }
 
 .visuel{
-    width: 40%;
+    width: 50%;
     padding: 3% 2% 5%;
 
     display: flex;
@@ -38,9 +38,13 @@ main > section{
 #mon-histoire .visuel > img{
     border: 1px #ccc solid;
     padding: 5px;
-    margin: 5%;
+    margin: 10% 2%;
 }
 #mon-histoire .visuel > img#leo-adulte{
-    width: 70%;
+    width: 45%;
     min-width: 300px;
+}
+#mon-histoire .visuel > img#leo-enfant{
+    width: 33%;
+    min-width: 250px;
 }
