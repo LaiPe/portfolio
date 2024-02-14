@@ -75,6 +75,7 @@ header > a {
 footer{
     border-top: 1px solid black;
     overflow: hidden;
+    position: relative;
 }
 #feuille-contact{
     height: 30vh;
@@ -91,7 +92,6 @@ footer{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 20vh;
 }
 #feuille-contact > hr{
     height: 20vh;
@@ -120,6 +120,32 @@ footer{
     top: 0.7rem;
 }
 
-@media all and (max-width: 1080px){
-    
+@media all and (max-width: 1300px){
+    .grand{
+        height: auto;
+        width: 35vmax;
+    }
+
+    #feuille-contact{
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    #feuille-contact > hr{
+        display: none;
+    }
+
+    #conteneur-logo{
+       position: relative;
+       bottom: 1.5rem;
+    }
+    #conteneur-contacts{
+        position: absolute;
+        margin-bottom: 1.5rem;
+        bottom: 0;
+    }
+    #conteneur-contacts address{
+        flex-direction: row;
+        gap: 7rem;
+        padding: 0 2%;
+    }
 }
