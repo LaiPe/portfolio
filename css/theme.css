@@ -102,7 +102,6 @@ footer{
     width: 1px;
 }
 #conteneur-contacts address{
-    width: 50vmin;
     display: flex;
     justify-content: center;
     align-items: start;
@@ -125,7 +124,9 @@ footer{
 @media all and (max-width: 1250px){
     .grand{
         height: auto;
-        width: 55vmin;
+        width: 55%;
+        min-width: 330px;
+        max-width: 500px;
     }
 
     #feuille-contact{
@@ -136,18 +137,17 @@ footer{
         display: none;
     }
 
-    #conteneur-logo{
-       position: relative;
-       bottom: 1.5rem;
+    #feuille-contact #conteneur-logo{
+        width: 100%;
     }
-    #conteneur-contacts{
-        position: absolute;
-        margin-bottom: 1.5rem;
-        bottom: 0;
+    #feuille-contact #conteneur-contacts{
+        width: 100%;
+        padding: 0 5%;
     }
-    #conteneur-contacts address{
+    #feuille-contact #conteneur-contacts address{
         flex-direction: row;
-        gap: 7rem;
-        padding: 0 2%;
+        column-gap: 5rem;
+        flex-wrap: wrap;
+        padding: 0;
     }
 }
