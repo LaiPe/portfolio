@@ -1,4 +1,4 @@
-header{
+body > header{
     height: 25vh;
     position: sticky;
     top: -17vh;
@@ -12,15 +12,15 @@ header{
     background-color: white;
     border-bottom: 1px black solid;
 }
-header nav{
+body > header nav{
     height: calc(8vh - 2px);
 }
-header > a{
+body > header > a{
     position: initial;
 }
 
 main{
-    height: 75vh;
+    min-height: 75vh;
     font-family: 'Nixie One', cursive;
     display: flex;
 }
