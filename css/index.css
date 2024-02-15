@@ -115,8 +115,10 @@ main .conteneur .tuille{
         height: auto;
     }
     main .conteneur{
-        width: 100%;
-        aspect-ratio: 5 / 4; 
+        width: 100%; 
         padding: 13%;
+    }
+    main .conteneur .tuille{
+        padding: 8% 10% 5% 10%;
     }
 }

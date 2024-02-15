@@ -8,6 +8,7 @@
 :root{
     --res: calc(0.01 * 10vmin);
     --max-width: 1080px;
+    --mobile-width: 750px;
 
     font-size: 13px;
     font-family: "Montserrat", sans-serif;
