@@ -12,7 +12,7 @@ main > section{
 
 .texte{
     width: 40%;
-    padding-right: 3%;
+    padding: 0 3rem;
 }
 .texte h3{
     font-size: 3rem;
@@ -33,16 +33,39 @@ main > section{
     flex-wrap: wrap;
 }
 
-#mon-histoire .visuel > img{
+.visuel > img{
     border: 1px #ccc solid;
     padding: 5px;
     margin: 10% 2%;
 }
-#mon-histoire .visuel > img#leo-adulte{
+.visuel > img#leo-adulte{
     width: 45%;
     min-width: 300px;
 }
-#mon-histoire .visuel > img#leo-enfant{
+.visuel > img#leo-enfant{
     width: 33%;
     min-width: 250px;
+}
+
+@media all and (max-width: 1000px){
+    main > section{
+        flex-direction: column;
+    }
+    .texte{
+        width: 60%;
+        padding-top: 5%;
+    }
+    .visuel{
+        width: 80%;
+        flex-direction: row;
+    }
+    .visuel > img{
+        margin: 2%;
+    }
+    .visuel > img#leo-adulte{
+        min-width: 200px;
+    }
+    .visuel > img#leo-enfant{
+        min-width: 150px;
+    }
 }
