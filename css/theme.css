@@ -80,7 +80,6 @@ footer{
     position: relative;
 }
 #feuille-contact{
-    height: 30vh;
     width: 100%;
     display: flex;
     align-items: center;
@@ -88,6 +87,7 @@ footer{
 
     font-size: 1.8rem;
     font-family: "Jura", sans-serif;
+    padding: 4rem;
 }
 #feuille-contact > div{
     width: 40%;
@@ -96,7 +96,7 @@ footer{
     justify-content: center;
 }
 #feuille-contact > hr{
-    height: 20vh;
+    height: 22vh;
     border: none;
     background-color: black;
     width: 1px;
@@ -132,6 +132,7 @@ footer{
     #feuille-contact{
         flex-direction: column;
         justify-content: space-evenly;
+        padding: 3rem;
     }
     #feuille-contact > hr{
         display: none;
