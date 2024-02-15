@@ -108,3 +108,15 @@ main .conteneur .tuille{
     position: relative;
     top: 0.15rem;
 }
+
+@media all and (max-width: 1000px){
+    main{
+        flex-direction: column;
+        height: auto;
+    }
+    main .conteneur{
+        width: 100%;
+        aspect-ratio: 5 / 4; 
+        padding: 13%;
+    }
+}
