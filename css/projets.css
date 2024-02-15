@@ -5,8 +5,9 @@ main{
 }
 
 #projets{
-    margin-top: 5%;
-    width: 70%;
+    margin: 3rem auto 0;
+    padding: 0 1.5rem;
+    max-width: var(--max-width);
     font-size: 1.3rem;
 }
 #projets p{
@@ -14,19 +15,23 @@ main{
 }
 #projets article{
     position: relative;
-    margin-bottom: 5%;
-    padding-bottom: 5%;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
     border-bottom: 1px solid black;
 }
 #projets article:last-of-type{
     border-bottom: none;
+    margin-bottom: 0;
 }
 #projets article p{
-    margin-bottom: 2.5%;
+    margin-bottom: 1.5rem;
     text-align: justify;
 }
+#projets article header{
+    position: relative;
+    margin-bottom: 2rem;
+}
 #projets article h3{
-    margin-bottom: 2%;
     font-family: "Jura", sans-serif;
     font-size: 3rem;
     min-width: 300px;
@@ -34,26 +39,30 @@ main{
 }
 #projets article time{
     position: absolute;
-    top: 1%;
-    right: 1%;
+    bottom: 0.4rem;
+    right: 1rem;
     font-weight: 100;
     font-style: italic;
     font-family: "Nixie One",monospace;
 }
-#projets article .contenu{
-    display: inline-flex;
+.contenu{
+    display: flex;
 }
 
 .texte-article{
     width: 80%;
-    padding-right: 2.5%;
+    padding-right: 1.5rem;
     border-right: 1px solid black;
 }
 .liens-article{
     width: 20%;
-    padding-left: 2.5%;
-    display: grid;
-    place-items: center;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
 }
 .liens-article a{
     display: grid;
@@ -83,4 +92,27 @@ main{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+
+@media all and (max-width: 750px){
+    .contenu{
+        flex-direction: column;
+    }
+    .texte-article, .article-petit .texte-article{
+        width: 100%;
+        padding-right: 0;
+        border-right: none;
+    }
+    .liens-article, .article-petit .liens-article{
+        flex-direction: row;
+        width: 100%;
+        padding: 3rem inherit 0;
+    }
+}
+@media all and (max-width: 570px){
+    #projets article time{
+        position: relative;
+        bottom: 0;
+        right: 0;
+    }
 }

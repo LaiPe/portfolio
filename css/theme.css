@@ -7,8 +7,9 @@
 }
 :root{
     --res: calc(0.01 * 10vmin);
+    --max-width: 1080px;
 
-    font-size: calc(14 * var(--res));
+    font-size: 13px;
     font-family: "Montserrat", sans-serif;
 }
 
@@ -35,7 +36,7 @@ a:hover{
     text-decoration: underline;
 }
 
-header{
+body > header{
     height: 8vh;
     position: sticky;
     top: 0;
@@ -47,12 +48,12 @@ header{
     align-items: center;
     justify-content: center;
 }
-header nav{
+body > header nav{
     height: 8vh;
     display: grid;
 }
 
-header nav > ul {
+body > header nav > ul {
     width: 60vw;
     list-style: none;
     font-size: 2.5rem;
@@ -62,11 +63,11 @@ header nav > ul {
     align-items: center;
     justify-content: space-evenly;
 }
-header nav > ul li{
+body > header nav > ul li{
     padding: calc(0.2rem + 1px) calc(1rem + 1px);
 }
 
-header > a {
+body > header > a {
     position: absolute;
     top: 2vh;
     left: 10%;
