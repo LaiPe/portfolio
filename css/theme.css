@@ -22,7 +22,7 @@
     width: 50vmin;
 }
 .petit{
-    height: 4vh;
+    height: 2.8rem;
 }
 .selected{
     border: 1px black solid;
@@ -38,20 +38,24 @@ a:hover{
 }
 
 body > header{
-    height: 8vh;
     position: sticky;
     top: 0;
     z-index: 900;
+    padding: 0.8rem;
 
     background-color: white;
     border-bottom: 1px black solid;
+
     display: flex;
     align-items: center;
     justify-content: center;
 }
 body > header nav{
-    height: 8vh;
-    display: grid;
+    display: flex;
+}
+
+body > header nav input, body > header nav label{
+    display: none;
 }
 
 body > header nav > ul {
@@ -70,8 +74,7 @@ body > header nav > ul li{
 
 body > header > a {
     position: absolute;
-    top: 2vh;
-    left: 10%;
+    left: 9%;
 }
 
 footer{
@@ -132,6 +135,7 @@ footer{
     #feuille-contact{
         flex-direction: column;
         justify-content: space-evenly;
+        row-gap: 2rem;
         padding: 3rem;
     }
     #feuille-contact > hr{
@@ -152,3 +156,40 @@ footer{
         padding: 0;
     }
 }
+@media all and (max-width: 750px){
+    body > header{
+        justify-content: space-between;
+    }
+    body > header > *{
+        padding: 0 1.5rem;
+    }
+    body > header > a {
+        position: initial;
+        left: 0;
+    }
+    body > header nav label{
+        display: initial;
+        cursor: pointer;
+        font-size: 2.5rem;
+        padding: 1.1px 0;
+    }
+    body > header nav ul{
+        display: none;
+    }
+    body > header nav input:checked + ul{
+        display: block;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
+
+        width: 100%;
+
+        background-color: white;
+        border-bottom: 1px solid black;
+    }
+    body > header nav input:checked + ul li{
+        text-align: center;
+        margin: 2rem 25%;
+    }
+}
+    
