@@ -172,6 +172,8 @@ footer{
         cursor: pointer;
         font-size: 2.5rem;
         padding: 1.1px 0;
+        position: relative;
+        bottom: 0.15rem;
     }
     body > header nav ul{
         display: none;
