@@ -10,12 +10,14 @@
     --max-width: 1080px;
     --mobile-width: 750px;
 
+    --header-height-logo: 8rem;
+
     font-size: 13px;
     font-family: "Montserrat", sans-serif;
 }
 
 .logo{
-    height: 11vh;
+    height: var(--header-height-logo);
 }
 .grand{
     height: auto;

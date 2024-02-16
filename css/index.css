@@ -1,25 +1,41 @@
+:root{
+    --header-margin-top-logo: 4rem;
+    /*--header-height-logo se trouve dans theme.css*/
+    --header-margin-bottom-logo: 1rem;
+    --header-margin-nav:0.8rem;
+    --header-height-nav: 45.2px;
+
+    --header-height: calc(var(--header-margin-top-logo) + var(--header-height-logo) + var(--header-margin-bottom-logo) + var(--header-margin-nav) * 2 + var(--header-height-nav) + 4px);
+    --main-height: calc(100vh - var(--header-height));
+
+    --header-sticky-top: calc(0px - var(--header-margin-top-logo) - var(--header-height-logo) - var(--header-margin-bottom-logo) - 3px)
+}
+
+
 body > header{
     position: sticky;
-    top: 0;
+    top: var(--header-sticky-top);
 
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    padding: 5vh 0 0;
+
+    padding: 0;
 
     background-color: white;
     border-bottom: 1px black solid;
 }
 body > header nav{
-
+    margin: 0.8rem;
 }
 body > header > a{
     position: initial;
+    margin: var(--header-margin-top-logo) 0 var(--header-margin-bottom-logo);
 }
 
 main{
-    min-height: 75vh;
+    min-height: var(--main-height);
     font-family: 'Nixie One', cursive;
     display: flex;
 }
