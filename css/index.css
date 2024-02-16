@@ -18,21 +18,9 @@
 
 /*HEADER*/
 body > header{
-    position: sticky;
     top: var(--header-sticky-top);
-
-    display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-
     padding: 0;
-
-    background-color: white;
-    border-bottom: 1px black solid;
-}
-body > header #header-small{
-    display: none;
 }
 body > header nav{
     margin: 0.8rem;
@@ -41,13 +29,30 @@ body > header > a{
     position: initial;
     margin: var(--header-margin-top-logo) 0 var(--header-margin-bottom-logo);
 }
+
+#logo-header-mobile{
+    display: none;
+}
+
 @media all and (max-width: 750px){
-    body > header{
-        position: static;
-        top : 0;
+    #logo-header-mobile{
+        display: block;
     }
-    body > header #header-small{
-        display: initial;
+    #logo-header-computer{
+        display: none;
+    }
+
+    /*RESET*/
+    body > header{
+        top: 0;
+        padding: 0.8rem;
+        flex-direction: row;
+    }
+    body > header nav{
+        margin: 0;
+    }
+    body > header > a{
+        margin: 0;
     }
 }
 

@@ -13,6 +13,7 @@
 
         <script src="js/scroll-contact.js"></script>
         <script src="js/selected-contact.js"></script>
+        <!--<script src="js/affich-nav-index.js"></script>-->
 
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,8 +21,11 @@
     </head>
     <body>
         <header>
-            <a href="index.html"><img class="logo" src="./img/logo_lp.png"></a>
+            <a href="index.html" id="logo-header-computer"><img class="logo" src="./img/logo_lp.png"></a>
+            <a href="index.html" id="logo-header-mobile"><img class="logo petit" src="./img/logo_lp_raw.png"></a>
             <nav>
+                <label for="activ-mini">☰</label>
+                <input id="activ-mini" type="checkbox">  
                 <ul>
                     <li id="nav_projets">
                         <a href="projets.html">Projets</a>
