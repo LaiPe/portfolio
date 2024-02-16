@@ -1,3 +1,4 @@
+/*ROOT*/
 *{
     margin: 0;
     padding: 0;
@@ -16,6 +17,12 @@
     font-family: "Montserrat", sans-serif;
 }
 
+
+
+
+
+
+/*CLASSES UNIVERSELLES*/
 .logo{
     height: var(--header-height-logo);
 }
@@ -31,6 +38,12 @@
     padding: 0.2rem 1rem;
 }
 
+
+
+
+
+
+/*AUTRES REGLES UNIVERSELLES*/
 a{
     color: black;
     text-decoration: none;
@@ -39,6 +52,13 @@ a:hover{
     text-decoration: underline;
 }
 
+
+
+
+
+
+
+/*HEADER*/
 body > header{
     position: sticky;
     top: 0;
@@ -54,6 +74,8 @@ body > header{
 }
 body > header nav{
     display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 body > header nav input, body > header nav label{
@@ -78,7 +100,56 @@ body > header > a {
     position: absolute;
     left: 9%;
 }
+@media all and (max-width: 750px){
+    body > header{
+        justify-content: space-between;
+    }
+    body > header > *{
+        padding: 0 1.5rem;
+    }
+    body > header > a {
+        position: initial;
+        left: 0;
+    }
+    body > header nav label{
+        display: initial;
+        cursor: pointer;
+        font-size: 2.5rem;
+        padding: 1.1px 0;
+        position: relative;
+        bottom: 0.15rem;
+    }
+    body > header nav ul{
+        display: none;
+    }
+    body > header nav input:checked + ul{
+        display: block;
+        position: absolute;
+        top: calc(100% + 1px);
+        left: 0;
 
+        width: 100%;
+
+        background-color: white;
+        border-bottom: 1px solid black;
+    }
+    body > header nav input:checked + ul li{
+        text-align: center;
+        margin: 2rem 25%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*FOOTER*/
 footer{
     border-top: 1px solid black;
     overflow: hidden;
@@ -125,7 +196,6 @@ footer{
     position: relative;
     top: 0.7rem;
 }
-
 @media all and (max-width: 1250px){
     .grand{
         height: auto;
@@ -156,44 +226,6 @@ footer{
         column-gap: 5rem;
         flex-wrap: wrap;
         padding: 0;
-    }
-}
-@media all and (max-width: 750px){
-    body > header{
-        justify-content: space-between;
-    }
-    body > header > *{
-        padding: 0 1.5rem;
-    }
-    body > header > a {
-        position: initial;
-        left: 0;
-    }
-    body > header nav label{
-        display: initial;
-        cursor: pointer;
-        font-size: 2.5rem;
-        padding: 1.1px 0;
-        position: relative;
-        bottom: 0.15rem;
-    }
-    body > header nav ul{
-        display: none;
-    }
-    body > header nav input:checked + ul{
-        display: block;
-        position: absolute;
-        top: calc(100% + 1px);
-        left: 0;
-
-        width: 100%;
-
-        background-color: white;
-        border-bottom: 1px solid black;
-    }
-    body > header nav input:checked + ul li{
-        text-align: center;
-        margin: 2rem 25%;
     }
 }
     

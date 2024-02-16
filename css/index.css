@@ -1,3 +1,4 @@
+/*ROOT*/
 :root{
     --header-margin-top-logo: 4rem;
     /*--header-height-logo se trouve dans theme.css*/
@@ -12,6 +13,10 @@
 }
 
 
+
+
+
+/*HEADER*/
 body > header{
     position: sticky;
     top: var(--header-sticky-top);
@@ -26,6 +31,9 @@ body > header{
     background-color: white;
     border-bottom: 1px black solid;
 }
+body > header #header-small{
+    display: none;
+}
 body > header nav{
     margin: 0.8rem;
 }
@@ -33,7 +41,23 @@ body > header > a{
     position: initial;
     margin: var(--header-margin-top-logo) 0 var(--header-margin-bottom-logo);
 }
+@media all and (max-width: 750px){
+    body > header{
+        position: static;
+        top : 0;
+    }
+    body > header #header-small{
+        display: initial;
+    }
+}
 
+
+
+
+
+
+
+/*MAIN*/
 main{
     min-height: var(--main-height);
     font-family: 'Nixie One', cursive;
@@ -123,7 +147,6 @@ main .conteneur .tuille{
     position: relative;
     top: 0.15rem;
 }
-
 @media all and (max-width: 1000px){
     main{
         flex-direction: column;
