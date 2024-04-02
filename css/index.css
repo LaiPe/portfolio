@@ -126,7 +126,7 @@ main .conteneur .tuille{
     font-family: "Jura", sans-serif;
     background-color: rgb(43, 43, 43);
     color: white;
-    padding: 3%;
+    padding: 1.25rem;
     margin: 3px;
     margin-top: calc(4% + 3px);
     position: relative;
@@ -158,5 +158,8 @@ main .conteneur .tuille{
     }
     main .conteneur .tuille{
         padding: 8% 10% 5% 10%;
+    }
+    .tuille a{
+        padding: 1rem;
     }
 }
