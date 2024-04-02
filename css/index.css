@@ -1,15 +1,7 @@
 /*ROOT*/
 :root{
-    --header-margin-top-logo: 4rem;
-    /*--header-height-logo se trouve dans theme.css*/
-    --header-margin-bottom-logo: 1rem;
-    --header-margin-nav:0.8rem;
-    --header-height-nav: 45.2px;
-
-    --header-height: calc(var(--header-margin-top-logo) + var(--header-height-logo) + var(--header-margin-bottom-logo) + var(--header-margin-nav) * 2 + var(--header-height-nav) + 4px);
-    --main-height: calc(100vh - var(--header-height));
-
-    --header-sticky-top: calc(0px - var(--header-margin-top-logo) - var(--header-height-logo) - var(--header-margin-bottom-logo) - 3px)
+    --logo-header: 13rem;
+    --header: calc(var(--logo-header) + var(--nav))
 }
 
 
@@ -18,16 +10,15 @@
 
 /*HEADER*/
 body > header{
-    top: var(--header-sticky-top);
+    top: calc(0px - var(--logo-header));
     flex-direction: column;
-    padding: 0;
+    justify-content: space-between;
 }
-body > header nav{
-    margin: 0.8rem;
-}
-body > header > a{
-    position: initial;
-    margin: var(--header-margin-top-logo) 0 var(--header-margin-bottom-logo);
+#conteneur-logo{
+    height: var(--logo-header);
+    display: grid;
+    place-items: end;
+    padding-bottom: 1rem;
 }
 
 #logo-header-mobile{
@@ -42,10 +33,15 @@ body > header > a{
         display: none;
     }
 
+    #conteneur-logo{
+        height: fit-content;
+        padding-bottom: 0rem;
+    }
+
     /*RESET*/
     body > header{
         top: 0;
-        padding: 0.8rem;
+        height: var(--nav);
         flex-direction: row;
     }
     body > header nav{
@@ -64,7 +60,6 @@ body > header > a{
 
 /*MAIN*/
 main{
-    min-height: var(--main-height);
     font-family: 'Nixie One', cursive;
     display: flex;
 }
