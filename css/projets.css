@@ -31,6 +31,36 @@ main{
     position: relative;
     margin-bottom: 2rem;
 }
+#projets article .type-projet{
+    font-size: 1.2rem;
+    display: inline-block;
+    position: relative;
+    padding: 0.4rem 0.6rem;
+    padding-left: 2.3rem;
+    border-radius: 20px;
+    margin: 0.5rem 0;
+}
+#projets article .type-projet::before{
+    content: "";
+    position: absolute;
+    top: 7px; left: 7px;
+    width: 15px;
+    height: 15px;
+    border-radius: 10px;
+}
+#projets article .type-projet.site-web{
+    background-color: rgba(0, 87, 187, 0.4);
+}
+#projets article .type-projet.site-web:before{
+    background-color: rgb(0, 87, 187);
+}
+#projets article .type-projet.jeu-video{
+    background-color: rgba(31, 187, 0, 0.4);
+}
+#projets article .type-projet.jeu-video:before{
+    background-color: rgb(31, 187, 0);
+}
+
 #projets article h3{
     font-family: "Jura", sans-serif;
     font-size: 3rem;
@@ -39,7 +69,8 @@ main{
 }
 #projets article time{
     position: absolute;
-    bottom: 0.4rem;
+    display: block;
+    bottom: 0.9rem;
     right: 1rem;
     font-weight: 100;
     font-style: italic;
