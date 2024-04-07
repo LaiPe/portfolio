@@ -96,7 +96,7 @@ main .conteneur#dev-web::before{
 main .conteneur .tuille{
     position: relative;
     background-color: rgba(97, 96, 96, 0.90);
-    padding: 5% 8%;
+    padding: 2rem 4rem;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -104,21 +104,23 @@ main .conteneur .tuille{
     justify-content: space-evenly;
 }
 .tuille h2{
-    font-family: 'Nixie One', cursive;
-    font-size: 2.5rem;
+    font-family: 'Jura', cursive;
+    font-weight: bold;
+    font-size: 2.8rem;
     text-align: center;
+    margin: 1rem 0 2rem;
 }
 .tuille hr{
     background-color: black;
     height: 1px;
     border: 0;
-    margin: 3% 0;
+    margin: 0 0 2rem;
     width: 40%;
 }
 .tuille p{
     font-family: "Montserrat", sans-serif;
     font-size: 1.5rem;
-    margin-bottom: 3%;
+    margin-bottom: 1rem;
 }
 .tuille a{
     text-align: center;
@@ -127,16 +129,13 @@ main .conteneur .tuille{
     background-color: rgb(43, 43, 43);
     color: white;
     padding: 1.25rem;
-    margin: 3px;
-    margin-top: calc(4% + 3px);
+    margin: 1.5rem 2rem 0;
     position: relative;
     
 }
 .tuille a:hover{
     text-decoration: none;
-    border: 3px solid white;
-    margin: 0;
-    margin-top: 4%;
+    outline: 3px solid white;
 }
 .tuille a:hover img{
     filter: grayscale(0);
@@ -154,12 +153,32 @@ main .conteneur .tuille{
     }
     main .conteneur{
         width: 100%; 
-        padding: 13%;
+        padding: 5rem 15rem;
     }
-    main .conteneur .tuille{
-        padding: 8% 10% 5% 10%;
-    }
+    
     .tuille a{
         padding: 1rem;
+    }
+}
+
+@media all and (max-width: 800px){
+    main .conteneur{
+        padding: 5rem 7rem;
+    }
+}
+@media all and (max-width: 570px){
+    main .conteneur{
+        padding: 4rem 2rem;
+    }
+}
+@media all and (max-width: 460px){
+    main .conteneur .tuille{
+        padding: 2rem;
+    }
+    .tuille h2{
+        font-size: 2.3rem;
+    }
+    .tuille p{
+        font-size: 1.4rem;
     }
 }
