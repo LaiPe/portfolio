@@ -11,6 +11,9 @@ main > section{
 }
 
 .texte{
+    font-family: "Nothing You Could Do";
+    font-weight: 400;
+    font-size: 1.5rem;
     width: 40%;
     padding: 0 3rem;
     margin: 3rem 0 6rem;
@@ -60,6 +63,7 @@ main > section{
     .visuel{
         width: 80%;
         flex-direction: row;
+        margin-bottom: 3rem;
     }
     .visuel > img{
         margin: 2%;
