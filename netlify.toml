@@ -1,0 +1,5 @@
+[[redirects]]
+from = "https://portfolio-leo-peyronnet.netlify.app/*"
+to = "https://portfolio.leopeyronnet.fr/:splat"
+status = 301
+force = true
