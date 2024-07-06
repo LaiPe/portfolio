@@ -13,6 +13,9 @@ main{
 #projets p{
     line-height: 1.2;
 }
+#projets ul{
+    padding-left: 1.8rem;
+}
 #projets article{
     position: relative;
     margin-bottom: 3rem;
@@ -59,6 +62,12 @@ main{
 }
 #projets article .type-projet.jeu-video:before{
     background-color: rgb(31, 187, 0);
+}
+#projets article .type-projet.simulation{
+    background-color: rgba(187, 106, 0, 0.4);
+}
+#projets article .type-projet.simulation:before{
+    background-color: rgb(187, 106, 0);
 }
 
 #projets article h3{
