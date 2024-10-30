@@ -43,10 +43,10 @@
 }
 
 .slide{
-    min-height: calc(100vh - var(--header));
+    min-height: calc(100dvh - var(--header));
 }
 .slide-f{
-    height: calc(100vh - var(--header));
+    height: calc(100dvh - var(--header));
 }
 
 
