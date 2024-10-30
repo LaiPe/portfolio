@@ -39,6 +39,9 @@ body > header{
     }
 
     /*RESET*/
+    :root{
+        --header : var(--nav);
+    }
     body > header{
         top: 0;
         height: var(--nav);
