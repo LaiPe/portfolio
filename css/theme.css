@@ -48,6 +48,12 @@
 .slide-f{
     height: calc(100dvh - var(--header));
 }
+.italic{
+    font-style: italic;
+}
+span.block{
+    white-space: nowrap;
+}
 
 
 

@@ -26,6 +26,9 @@ main > section{
 .texte p{
     margin-top: 1.5rem;
 }
+.texte a{
+    text-decoration: underline;
+} 
 
 .visuel{
     width: 50%;
