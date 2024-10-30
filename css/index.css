@@ -60,125 +60,138 @@ body > header{
 
 /*MAIN*/
 main{
+    position: relative;
     font-family: 'Nixie One', cursive;
     display: flex;
-}
-main .conteneur{
-    position: relative;
-    width: 50%;
-    padding: 5% 8%;
-    overflow: hidden; /* Cache tout ce qui dépasse du conteneur */
-}
-main .conteneur::before{
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-size: cover;
-    filter: grayscale(1);
-    transform: scale(1);
-    transition: transform 0.5s ease ,filter 0.5s ease;
-}
-main .conteneur:hover::before{
-    transform: scale(1.1);
-    filter: grayscale(0);
-}
-
-main .conteneur#sous-titrage::before{
-    background-image: url(../img/index/sous-titrage.jpg);
-}
-main .conteneur#dev-web::before{
-    background-image: url(../img/index/dev-web.jpg);
-}
-
-main .conteneur .tuille{
-    position: relative;
-    background-color: rgba(97, 96, 96, 0.90);
-    padding: 2rem 4rem;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-}
-.tuille h2{
-    font-family: 'Jura', cursive;
-    font-weight: bold;
-    font-size: 2.8rem;
-    text-align: center;
-    margin: 1rem 0 2rem;
-}
-.tuille hr{
-    background-color: black;
-    height: 1px;
-    border: 0;
-    margin: 0 0 2rem;
-    width: 40%;
-}
-.tuille p{
-    font-family: "Montserrat", sans-serif;
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-.tuille a{
-    text-align: center;
-    font-size: 1.7rem;
-    font-family: "Jura", sans-serif;
-    background-color: rgb(43, 43, 43);
-    color: white;
-    padding: 1.25rem;
-    margin: 1.5rem 2rem 0;
-    position: relative;
     
 }
-.tuille a:hover{
+
+
+.illustration{
+    position: relative;
+    width: 65%;
+    overflow: hidden; /* Cache tout ce qui dépasse du conteneur */
+}
+.illustration::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 30%;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+}
+.illustration img {
+    position: absolute;
+    top: -10%;
+    left: -10%;
+    width: 110%;
+    height: 120%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+    transform: scale(1);
+}
+main:hover .illustration img {
+    transform: scale(1.05);
+}
+
+.contenu{
+    min-width: 530px;
+    width: 35%;
+    padding: 3rem 3rem 3rem 6rem; 
+    text-align: right;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+    gap: 2.5rem;
+}
+
+.contenu h2{
+    font-family: 'Jura', cursive;
+    font-weight: bold;
+    font-size: 3.2rem;
+    
+    margin-bottom: 2rem;
+}
+
+.contenu p{
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+.contenu a{
+    font-family: "Jura", sans-serif;
+    font-size: 1.7rem;
+    text-align: center;
+    color: white;
+    
+    position: relative;
+    width: fit-content;
+    background-color: rgb(43, 43, 43);
+    padding: 0.75em;
+    margin-bottom: 0.5rem; 
+}
+.contenu a:hover{
     text-decoration: none;
     outline: 3px solid white;
 }
-.tuille a:hover img{
+.contenu a:hover img{
     filter: grayscale(0);
 }
-.tuille a img{
+.contenu a img{
     filter: grayscale(1) brightness(2);
-    height: 1.5rem;
+    height: 0.9em;
     position: relative;
-    top: 0.15rem;
+    top: 0.12em;
 }
+
+
+
 @media all and (max-width: 1000px){
-    main{
-        flex-direction: column;
-        height: auto;
+    .illustration {
+        position: absolute;
+        z-index: 3;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
-    main .conteneur{
-        width: 100%; 
-        padding: 5rem 15rem;
+    .illustration img {
+        filter: blur(2px);
     }
-    
-    .tuille a{
-        padding: 1rem;
+    .illustration::after {
+        content: '';
+        position: absolute;
+        right: 0;
+        height: 100%;
+        width: 100%;
+        background: none;
+        background-color: rgba(255, 255, 255, 0.5);
+    }
+
+    .contenu {
+        z-index: 4;
+        width: 100%;
+        align-items: center;
+        text-align: center;
+        padding: 3rem 8rem;
+
+        min-width: 0;
     }
 }
 
-@media all and (max-width: 800px){
-    main .conteneur{
-        padding: 5rem 7rem;
-    }
-}
 @media all and (max-width: 570px){
-    main .conteneur{
-        padding: 4rem 2rem;
+    .contenu {
+        padding: 3rem;
     }
-}
-@media all and (max-width: 460px){
-    main .conteneur .tuille{
-        padding: 2rem;
+    .contenu h2 {
+        font-size: 2.7rem;
     }
-    .tuille h2{
-        font-size: 2.3rem;
+    .contenu p{
+        font-size: 1.3rem;
     }
-    .tuille p{
-        font-size: 1.4rem;
+    .contenu a{
+        font-size: 1.5rem;
     }
 }
