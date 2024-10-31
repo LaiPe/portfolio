@@ -48,10 +48,14 @@
 .slide-f{
     height: calc(100dvh - var(--header));
 }
-.italic{
+
+a.certif {
+    text-decoration: underline;
+}
+a.certif strong {
     font-style: italic;
 }
-span.block{
+.block{
     white-space: nowrap;
 }
 
