@@ -40,7 +40,7 @@ main > section{
 .visuel > img{
     border: 1px #ccc solid;
     padding: 5px;
-    margin: 10% 2%;
+    margin: 6rem 2rem;
 }
 .visuel > img#leo-adulte{
     width: 45%;
