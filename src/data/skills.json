@@ -4,10 +4,10 @@
       "title": "Frontend",
       "icon": "🎨",
       "items": [
-        { "name": "React 18", "icon": "react" },
-        { "name": "TypeScript", "icon": "typescript" },
-        { "name": "CSS Modules", "icon": "css" },
-        { "name": "React Router", "icon": "router" }
+        { "name": "React", "icon": "react" },
+        { "name": "Bootstrap", "icon": "bootstrap" },
+        { "name": "CSS", "icon": "css" },
+        { "name": "TypeScript", "icon": "typescript" }
       ]
     },
     "backend": {
@@ -17,7 +17,7 @@
         { "name": "Spring Boot", "icon": "spring" },
         { "name": "API REST", "icon": "api" },
         { "name": "JPA/Hibernate", "icon": "database" },
-        { "name": "PostgreSQL", "icon": "postgresql" }
+        { "name": "MongoDB", "icon": "mongodb" }
       ]
     },
     "tools": {
@@ -26,7 +26,7 @@
       "items": [
         { "name": "Git / GitHub", "icon": "git" },
         { "name": "Docker", "icon": "docker" },
-        { "name": "CI/CD", "icon": "cicd" },
+        { "name": "Figma", "icon": "figma" },
         { "name": "Vite", "icon": "vite" }
       ]
     }

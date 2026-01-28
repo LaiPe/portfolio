@@ -6,12 +6,12 @@
   "categoryLabel": "Projet Client",
   "shortDescription": "Site vitrine pour un artiste international, mettant en valeur son portfolio musical et ses performances.",
   "description": "Création d'un site vitrine moderne et élégant pour Attilio Terlizzi, artiste et musicien international. Le site présente son parcours, ses albums et ses dates de concert.",
-  "technologies": ["11ty", "Decap CMS", "CSS", "JavaScript"],
+  "technologies": ["HTML", "CSS", "JS"],
   "featured": true,
   "priority": 1,
   "images": {
-    "thumbnail": "/img/projects/attilio-thumbnail.webp",
-    "hero": "/img/projects/attilio-hero.webp"
+    "thumbnail": "/img/projets/attilio-terlizzi/at-thumbnail.jpg",
+    "hero": "/img/projets/attilio-terlizzi/attilio-terlizzi-1.png"
   },
   "links": {
     "live": "https://attilioterlizzi.com",

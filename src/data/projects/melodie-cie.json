@@ -6,12 +6,12 @@
   "categoryLabel": "Maquette",
   "shortDescription": "Site vitrine multi-services pour une école de musique fictive, avec gestion des cours et inscriptions.",
   "description": "Conception d'un site vitrine complet pour une école de musique proposant cours collectifs, individuels et stages. Design moderne axé sur l'expérience utilisateur.",
-  "technologies": ["React", "CSS Modules", "React Router"],
+  "technologies": ["11ty", "Decap CMS", "Nunjucks", "CSS", "JS"],
   "featured": true,
   "priority": 2,
   "images": {
-    "thumbnail": "/img/projects/melodie-thumbnail.webp",
-    "hero": "/img/projects/melodie-hero.webp"
+    "thumbnail": "/img/projets/melodie-cie/melodie-cie-thumbnail.jpg",
+    "hero": "/img/projets/melodie-cie/melodie-cie-hero.jpg"
   },
   "links": {
     "live": null,

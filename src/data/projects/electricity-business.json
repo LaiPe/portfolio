@@ -1,0 +1,103 @@
+{
+  "id": "electricity-business",
+  "title": "Electricity Business",
+  "slug": "electricity-business",
+  "category": "app",
+  "categoryLabel": "Application",
+  "shortDescription": "Plateforme complète de gestion de stations de recharge pour véhicules électriques.",
+  "description": "Plateforme web connectant propriétaires de bornes de recharge et conducteurs de véhicules électriques. Système complet avec authentification JWT, gestion de réservations, recherche géolocalisée avec carte interactive, et tableaux de bord adaptés par rôle. Architecture microservices avec Spring Boot et React, utilisant MySQL pour les données relationnelles et MongoDB pour les données géospatiales.",
+  "technologies": [
+    "React",
+    "Bootstrap",
+    "Spring Boot",
+    "Docker",
+    "Java",
+    "Spring Security",
+    "Vite",
+    "MySQL",
+    "MongoDB",
+    "MapLibre GL",
+    "Nginx",
+    "JWT",
+    "Maven"
+  ],
+  "featured": true,
+  "priority": 2,
+  "images": {
+    "thumbnail": "/img/projects/electricity-business-thumbnail.webp",
+    "hero": "/img/projects/electricity-business-hero.webp"
+  },
+  "links": {
+    "live": null,
+    "github": "https://github.com/LaiPe/electricity-business"
+  },
+  "client": null,
+  "date": "2024-2025",
+  "duration": "6 mois",
+  "features": [
+    "Authentification JWT sécurisée avec cookies HTTP-only",
+    "Gestion des utilisateurs et des rôles (USER, ADMIN)",
+    "Catalogue de véhicules électriques avec caractéristiques techniques",
+    "Gestion CRUD des véhicules personnels",
+    "Création et gestion de stations de recharge",
+    "Recherche géolocalisée avec carte interactive",
+    "Clustering dynamique des stations sur la carte",
+    "Système de réservation complet avec workflow",
+    "Évaluations post-recharge",
+    "Export PDF et Excel des réservations",
+    "Tableaux de bord adaptés selon le rôle",
+    "Géocodage direct et inverse via APIs externes"
+  ],
+  "architecture": {
+    "backend": {
+      "framework": "Spring Boot 3.5.3",
+      "language": "Java 21",
+      "security": "Spring Security 6.x + JWT",
+      "orm": "Spring Data JPA + Hibernate",
+      "databases": [
+        "MySQL 8.3 (données relationnelles)",
+        "MongoDB 7.0 (données géospatiales avec index 2dsphere)"
+      ],
+      "tools": ["MapStruct", "Lombok", "iText 7", "Apache POI"]
+    },
+    "frontend": {
+      "library": "React 19.1.1",
+      "bundler": "Vite 7.2.4",
+      "routing": "React Router DOM 7.9.5",
+      "mapping": "MapLibre GL 5.14.0",
+      "styling": "Bootstrap 5.3.8",
+      "stateManagement": "React Context API"
+    },
+    "infrastructure": {
+      "containerization": "Docker + Docker Compose",
+      "webserver": "Nginx Alpine",
+      "registry": "GitHub Container Registry (GHCR)",
+      "ci": "Multi-stage Docker builds"
+    },
+    "externalAPIs": [
+      "OpenStreetMap Nominatim (géocodage)",
+      "Photon Komoot (géocodage inverse)",
+      "Carto Basemaps (tuiles cartographiques)",
+      "Geolocation API (GPS navigateur)"
+    ]
+  },
+  "highlights": [
+    "Architecture microservices complète avec séparation backend/frontend",
+    "Double base de données adaptée (relationnelle + NoSQL géospatiale)",
+    "Sécurité avancée avec JWT et gestion des rôles",
+    "Interface cartographique interactive avec clustering",
+    "Workflow de réservation complet avec notifications",
+    "Déploiement Docker multi-environnements (dev/preprod/prod)",
+    "Export de données en PDF et Excel",
+    "API REST documentée avec plus de 30 endpoints"
+  ],
+  "challenges": [
+    "Intégration de bases de données hétérogènes (SQL + NoSQL)",
+    "Implémentation d'un système de géolocalisation performant",
+    "Gestion complexe des états de réservation avec workflow",
+    "Sécurisation complète avec authentification JWT",
+    "Optimisation des requêtes géospatiales avec index MongoDB 2dsphere",
+    "Configuration Docker multi-environnements avec variables sensibles",
+    "Gestion du clustering de markers sur la carte interactive"
+  ]
+}

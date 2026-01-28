@@ -39,12 +39,9 @@ export default function HomePage() {
                     style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
                 />
                 <div className={styles.heroContent} style={{ position: 'relative', zIndex: 1 }}>
-                    <h1 className={styles.heroTitle}>Léo Peyronnet</h1>
+                    <h1 className={styles.heroTitle}>Développeur <strong>Full-Stack</strong></h1>
                     <p className={styles.heroSubtitle}>
-                        Développeur Full-Stack <strong>React</strong> & <strong>Spring Boot</strong>
-                    </p>
-                    <p className={styles.heroSpecialization}>
-                        Spécialisé Front-End React
+                        Spécialisé <strong>Front-End React</strong>
                     </p>
                     <div className={styles.heroCtas}>
                         <Button to="/projets" variant="primary" size="lg">

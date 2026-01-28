@@ -5,7 +5,8 @@ import styles from "./ProjectCard.module.css";
 const categoryVariants = {
     client: "client",
     mockup: "mockup",
-    experiment: "experiment"
+    experiment: "experiment",
+    app: "app"
 };
 
 export default function ProjectCard({ project, size = "medium" }) {

@@ -29,6 +29,11 @@
     color: white;
 }
 
+.app {
+    background-color: var(--color-quaternary);
+    color: white;
+}
+
 .tech {
     background-color: var(--color-background-alt);
     color: var(--color-text);
