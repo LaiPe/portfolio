@@ -1,0 +1,23 @@
+{
+  "id": "sim-rhinite",
+  "title": "Sim-rhinite",
+  "slug": "sim-rhinite",
+  "category": "experiment",
+  "categoryLabel": "Expérimentation",
+  "shortDescription": "Simulation épidémiologique modélisant la propagation d'un virus dans une population.",
+  "description": "Simulation de propagation virale avec paramètres configurables : taux de transmission, durée d'incubation, taux de guérison. Visualisation graphique en temps réel.",
+  "technologies": ["Python", "Matplotlib", "NumPy"],
+  "featured": false,
+  "priority": 13,
+  "images": {
+    "thumbnail": "/img/projects/simrhinite-thumbnail.webp",
+    "hero": "/img/projects/simrhinite-hero.webp"
+  },
+  "links": {
+    "live": null,
+    "github": "https://github.com/leopeyronnet/sim-rhinite"
+  },
+  "client": null,
+  "date": "2022",
+  "duration": "2 semaines"
+}

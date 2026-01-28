@@ -1,0 +1,34 @@
+{
+  "skills": {
+    "frontend": {
+      "title": "Frontend",
+      "icon": "🎨",
+      "items": [
+        { "name": "React 18", "icon": "react" },
+        { "name": "TypeScript", "icon": "typescript" },
+        { "name": "CSS Modules", "icon": "css" },
+        { "name": "React Router", "icon": "router" }
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "icon": "⚙️",
+      "items": [
+        { "name": "Spring Boot", "icon": "spring" },
+        { "name": "API REST", "icon": "api" },
+        { "name": "JPA/Hibernate", "icon": "database" },
+        { "name": "PostgreSQL", "icon": "postgresql" }
+      ]
+    },
+    "tools": {
+      "title": "Outils",
+      "icon": "🛠️",
+      "items": [
+        { "name": "Git / GitHub", "icon": "git" },
+        { "name": "Docker", "icon": "docker" },
+        { "name": "CI/CD", "icon": "cicd" },
+        { "name": "Vite", "icon": "vite" }
+      ]
+    }
+  }
+}

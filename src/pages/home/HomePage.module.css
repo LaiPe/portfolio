@@ -1,0 +1,238 @@
+.home {
+    overflow-x: hidden;
+}
+
+/* Loading State */
+.loading {
+    min-height: calc(100dvh - var(--header));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Jura", sans-serif;
+    font-size: 1.25rem;
+    color: var(--color-text-secondary);
+}
+
+/* Container */
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 var(--spacing-lg);
+}
+
+/* Section Titles */
+.sectionTitle {
+    font-family: "Jura", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.sectionSubtitle {
+    text-align: center;
+    color: var(--color-text-secondary);
+    font-size: 1.1rem;
+    margin: 0 0 var(--spacing-xl);
+}
+
+/* ================================
+   HERO SECTION
+   ================================ */
+.hero {
+    min-height: calc(100dvh - var(--header));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-background) 0%, var(--color-background-alt) 100%);
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    text-align: center;
+}
+
+.heroContent {
+    max-width: 800px;
+}
+
+.heroTitle {
+    font-family: "Jura", sans-serif;
+    font-size: clamp(2.5rem, 8vw, 4rem);
+    font-weight: 700;
+    margin: 0 0 var(--spacing-md);
+    color: var(--color-text);
+    letter-spacing: -0.02em;
+}
+
+.heroSubtitle {
+    font-size: clamp(1.1rem, 3vw, 1.5rem);
+    color: var(--color-text-secondary);
+    margin: 0 0 var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.heroSubtitle strong {
+    color: var(--color-primary);
+}
+
+.heroSpecialization {
+    font-family: "Jura", sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 var(--spacing-xl);
+}
+
+.heroCtas {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ================================
+   SKILLS SECTION
+   ================================ */
+.skills {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background);
+}
+
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-xl);
+}
+
+@media (max-width: 1000px) {
+    .skillsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .skillsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ================================
+   PROJECTS SECTION
+   ================================ */
+.projects {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background-alt);
+}
+
+.projectsGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+}
+
+.projectsGrid > *:first-child {
+    grid-column: 1 / -1;
+}
+
+@media (min-width: 751px) {
+    .projectsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .projectsGrid > *:first-child {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (min-width: 1001px) {
+    .projectsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.projectsCta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* ================================
+   SERVICES SECTION
+   ================================ */
+.services {
+    padding: var(--spacing-xxl) 0;
+    background-color: var(--color-background);
+}
+
+.servicesHeader {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+}
+
+.servicesIcon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.servicesGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-lg);
+}
+
+@media (max-width: 1000px) {
+    .servicesGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 750px) {
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.servicesCta {
+    display: flex;
+    justify-content: center;
+    margin-top: var(--spacing-xl);
+}
+
+/* ================================
+   CTA SECTION
+   ================================ */
+.cta {
+    padding: var(--spacing-xxl) 0;
+    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
+    text-align: center;
+}
+
+.ctaTitle {
+    font-family: "Jura", sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 0 var(--spacing-md);
+}
+
+.ctaText {
+    font-size: 1.1rem;
+    color: rgba(255, 255, 255, 0.9);
+    margin: 0 0 var(--spacing-lg);
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta button,
+.cta a {
+    background-color: white;
+    color: var(--color-primary);
+}
+
+.cta button:hover,
+.cta a:hover {
+    background-color: var(--color-background-alt);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}

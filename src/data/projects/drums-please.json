@@ -1,0 +1,23 @@
+{
+  "id": "drums-please",
+  "title": "Drums Please",
+  "slug": "drums-please",
+  "category": "mockup",
+  "categoryLabel": "Maquette",
+  "shortDescription": "Plateforme e-commerce avec espace utilisateur pour la location d'instruments de musique.",
+  "description": "Étude de cas complète d'une plateforme de location d'instruments de musique. Fonctionnalités : catalogue, panier, espace membre, gestion des réservations.",
+  "technologies": ["React", "Spring Boot", "PostgreSQL", "Docker"],
+  "featured": true,
+  "priority": 3,
+  "images": {
+    "thumbnail": "/img/projects/drums-thumbnail.webp",
+    "hero": "/img/projects/drums-hero.webp"
+  },
+  "links": {
+    "live": null,
+    "github": "https://github.com/leopeyronnet/drums-please"
+  },
+  "client": null,
+  "date": "2024",
+  "duration": "6 semaines"
+}

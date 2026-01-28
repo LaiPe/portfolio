@@ -16,8 +16,32 @@
     --header : var(--nav);
     --nav : 5.5rem;
 
+    /* Couleurs */
+    --color-primary: #0057BB;
+    --color-secondary: #1FBB00;
+    --color-tertiary: #BB6A00;
+    --color-text: #1A1A1A;
+    --color-text-secondary: #666666;
+    --color-background: #FFFFFF;
+    --color-background-alt: #F5F5F5;
+    --color-border: #E0E0E0;
+
+    /* Espacements */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+    --spacing-xl: 3rem;
+    --spacing-xxl: 4rem;
+
+    /* Breakpoints */
+    --breakpoint-mobile: 750px;
+    --breakpoint-tablet: 1000px;
+    --breakpoint-desktop: 1250px;
+
     font-size: 13px;
     font-family: "Montserrat", sans-serif;
+    color: var(--color-text);
 }
 
 

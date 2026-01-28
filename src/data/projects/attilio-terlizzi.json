@@ -1,0 +1,23 @@
+{
+  "id": "attilio-terlizzi",
+  "title": "Attilio Terlizzi",
+  "slug": "attilio-terlizzi",
+  "category": "client",
+  "categoryLabel": "Projet Client",
+  "shortDescription": "Site vitrine pour un artiste international, mettant en valeur son portfolio musical et ses performances.",
+  "description": "Création d'un site vitrine moderne et élégant pour Attilio Terlizzi, artiste et musicien international. Le site présente son parcours, ses albums et ses dates de concert.",
+  "technologies": ["11ty", "Decap CMS", "CSS", "JavaScript"],
+  "featured": true,
+  "priority": 1,
+  "images": {
+    "thumbnail": "/img/projects/attilio-thumbnail.webp",
+    "hero": "/img/projects/attilio-hero.webp"
+  },
+  "links": {
+    "live": "https://attilioterlizzi.com",
+    "github": null
+  },
+  "client": "Attilio Terlizzi",
+  "date": "2024",
+  "duration": "4 semaines"
+}

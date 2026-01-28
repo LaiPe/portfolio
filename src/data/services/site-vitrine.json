@@ -1,0 +1,18 @@
+{
+    "id": "site-vitrine",
+    "title": "Site Vitrine Essentiel",
+    "icon": "🌐",
+    "priceRange": "1500-2500€",
+    "priceLabel": "À partir de 1500€",
+    "target": "TPE, artisans, artistes",
+    "features": [
+        "Site responsive",
+        "Design moderne",
+        "Formulaire de contact",
+        "CMS simple (autonomie)",
+        "Hébergement inclus"
+    ],
+    "delay": "3-4 semaines",
+    "featured": true,
+    "order": 1
+}

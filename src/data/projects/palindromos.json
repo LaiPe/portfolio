@@ -1,0 +1,23 @@
+{
+  "id": "palindromos",
+  "title": "pálinDrómos",
+  "slug": "palindromos",
+  "category": "experiment",
+  "categoryLabel": "Expérimentation",
+  "shortDescription": "Vérificateur de palindrome interactif, réalisé dans le cadre de la certification freeCodeCamp.",
+  "description": "Application web permettant de vérifier si une chaîne de caractères est un palindrome. Projet de certification freeCodeCamp.",
+  "technologies": ["JavaScript", "HTML", "CSS"],
+  "featured": false,
+  "priority": 10,
+  "images": {
+    "thumbnail": "/img/projects/palindromos-thumbnail.webp",
+    "hero": "/img/projects/palindromos-hero.webp"
+  },
+  "links": {
+    "live": "https://palindromos.leopeyronnet.fr",
+    "github": "https://github.com/leopeyronnet/palindromos"
+  },
+  "client": null,
+  "date": "2023",
+  "duration": "1 semaine"
+}

@@ -1,0 +1,73 @@
+.serviceCard {
+    padding: var(--spacing-lg);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+}
+
+.icon {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: var(--spacing-sm);
+}
+
+.title {
+    font-family: "Jura", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 var(--spacing-xs);
+    color: var(--color-text);
+}
+
+.price {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0;
+}
+
+.target {
+    font-size: 0.875rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin: 0 0 var(--spacing-md);
+    font-style: italic;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--spacing-md);
+    flex-grow: 1;
+}
+
+.feature {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--spacing-xs);
+    font-size: 0.9rem;
+    color: var(--color-text);
+    padding: var(--spacing-xs) 0;
+}
+
+.checkmark {
+    color: var(--color-secondary);
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+.delay {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: center;
+    margin: 0;
+    padding-top: var(--spacing-md);
+    border-top: 1px solid var(--color-border);
+}

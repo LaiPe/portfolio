@@ -1,0 +1,23 @@
+{
+  "id": "melodie-cie",
+  "title": "Mélodie & Cie",
+  "slug": "melodie-cie",
+  "category": "mockup",
+  "categoryLabel": "Maquette",
+  "shortDescription": "Site vitrine multi-services pour une école de musique fictive, avec gestion des cours et inscriptions.",
+  "description": "Conception d'un site vitrine complet pour une école de musique proposant cours collectifs, individuels et stages. Design moderne axé sur l'expérience utilisateur.",
+  "technologies": ["React", "CSS Modules", "React Router"],
+  "featured": true,
+  "priority": 2,
+  "images": {
+    "thumbnail": "/img/projects/melodie-thumbnail.webp",
+    "hero": "/img/projects/melodie-hero.webp"
+  },
+  "links": {
+    "live": null,
+    "github": "https://github.com/leopeyronnet/melodie-cie"
+  },
+  "client": null,
+  "date": "2024",
+  "duration": "3 semaines"
+}
