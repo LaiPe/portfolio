@@ -1,3 +1,5 @@
+import "../../assets/css/homepage.css";
+
 export default function HomePage() {
     return (
         <main>

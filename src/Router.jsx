@@ -21,7 +21,7 @@ function Root({ children }) {
     const { state } = useNavigation();
     return (
         <>
-            <Header />
+            <Header/>
             {state === "loading" ? <Spinner /> : children}
             <Footer />
         </>

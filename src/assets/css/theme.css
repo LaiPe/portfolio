@@ -1,0 +1,76 @@
+/*ROOT*/
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-underline-offset: 0.25rem;
+    font-style: normal;
+}
+:root{
+    --res: calc(0.01 * 10vmin);
+    --max-width: 1080px;
+    --mobile-width: 750px;
+
+    --header : var(--nav);
+    --nav : 5.5rem;
+
+    font-size: 13px;
+    font-family: "Montserrat", sans-serif;
+}
+
+
+
+
+
+/*CLASSES UNIVERSELLES*/
+.logo{
+    height: 8rem;
+}
+.logo.grand{
+    height: auto;
+    width: 50vmin;
+}
+.logo.petit{
+    height: 2.8rem;
+}
+
+.selected{
+    border: 1px black solid;
+    padding: 0.2rem 1rem;
+}
+.display-none{
+    display: none;
+}
+
+.slide{
+    min-height: calc(100dvh - var(--header));
+}
+.slide-f{
+    height: calc(100dvh - var(--header));
+}
+
+a.certif {
+    text-decoration: underline;
+}
+a.certif strong {
+    font-style: italic;
+}
+.block{
+    white-space: nowrap;
+}
+
+
+
+
+
+/*AUTRES REGLES UNIVERSELLES*/
+a{
+    color: black;
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+em{
+    font-weight: bold;
+}
