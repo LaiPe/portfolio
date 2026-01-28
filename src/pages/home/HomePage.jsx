@@ -2,6 +2,8 @@ import Button from "../../components/common/Button/Button";
 import SkillCard from "../../components/skills/SkillCard/SkillCard";
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
 import ServiceCard from "../../components/services/ServiceCard/ServiceCard";
+import Threads from "../../components/backgrounds/threads/Threads";
+
 import useCollection from "../../hooks/useCollection";
 import skillsData from "../../data/skills.json";
 import styles from "./HomePage.module.css";
@@ -29,8 +31,14 @@ export default function HomePage() {
     return (
         <main className={styles.home}>
             {/* Hero Section */}
-            <section className={styles.hero}>
-                <div className={styles.heroContent}>
+            <section className={styles.hero} style={{ width: '100%', height: '600px', position: 'relative' }}>
+                <Threads
+                    amplitude={3.5}
+                    distance={0.5}
+                    enableMouseInteraction
+                    style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', zIndex: 0 }}
+                />
+                <div className={styles.heroContent} style={{ position: 'relative', zIndex: 1 }}>
                     <h1 className={styles.heroTitle}>Léo Peyronnet</h1>
                     <p className={styles.heroSubtitle}>
                         Développeur Full-Stack <strong>React</strong> & <strong>Spring Boot</strong>
