@@ -6,11 +6,13 @@ import Threads from "../../components/backgrounds/threads/Threads";
 
 import useCollection from "../../hooks/useCollection";
 import skillsData from "../../data/skills.json";
+import testimonialsData from "../../data/testimonials.json";
 import styles from "./HomePage.module.css";
 import "../../assets/css/homepage.css";
 
 export default function HomePage() {
     const { skills } = skillsData;
+    const { testimonials } = testimonialsData;
     const { data: projects, loading: loadingProjects } = useCollection("projects");
     const { data: services, loading: loadingServices } = useCollection("services");
 
@@ -18,6 +20,7 @@ export default function HomePage() {
         .filter(p => p.featured)
         .sort((a, b) => a.priority - b.priority);
     const featuredServices = services.filter(s => s.featured);
+    const featuredTestimonial = testimonials.find(t => t.featured);
 
     const scrollToContact = (e) => {
         e.preventDefault();
@@ -114,19 +117,41 @@ export default function HomePage() {
                     </div>
                 </div>
             </section>
-
-            {/* CTA Section */}
-            <section className={styles.cta}>
-                <div className={styles.container}>
-                    <h2 className={styles.ctaTitle}>Prêt à démarrer votre projet ?</h2>
-                    <p className={styles.ctaText}>
-                        Discutons de vos besoins et trouvons ensemble la meilleure solution.
-                    </p>
-                    <Button onClick={scrollToContact} variant="primary" size="lg">
-                        Contactez-moi
-                    </Button>
-                </div>
-            </section>
+            
+            {featuredTestimonial && (
+                <section className={styles.testimonials}>
+                    <div className={styles.container}>
+                        <h2 className={styles.sectionTitle}>Ce qu'en disent mes clients</h2>
+                        <div className={styles.testimonialsContent}>
+                            <div className={styles.testimonialCard}>
+                                <div className={styles.testimonialQuote}>
+                                    <span className={styles.quoteIcon}>"</span>
+                                    <p className={styles.testimonialText}>
+                                        {featuredTestimonial.text}
+                                    </p>
+                                </div>
+                                <div className={styles.testimonialAuthor}>
+                                    <div className={styles.authorInfo}>
+                                        <p className={styles.authorName}>{featuredTestimonial.author}</p>
+                                        <p className={styles.authorRole}>{featuredTestimonial.role}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className={styles.testimonialCta}>
+                                <div className={styles.testimonialCtaContent}>
+                                    <h3 className={styles.testimonialCtaTitle}>Vous pourriez être le prochain !</h3>
+                                    <p className={styles.testimonialCtaText}>
+                                        Rejoignez les clients satisfaits et donnons vie à votre projet ensemble.
+                                    </p>
+                                    <Button onClick={scrollToContact} variant="primary">
+                                        Démarrons votre projet
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            )}
         </main>
     );
 }

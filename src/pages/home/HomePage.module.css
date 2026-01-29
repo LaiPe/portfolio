@@ -217,39 +217,151 @@
 }
 
 /* ================================
-   CTA SECTION
+   TESTIMONIALS SECTION
    ================================ */
-.cta {
+.testimonials {
     padding: var(--spacing-xxl) 0;
-    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
-    text-align: center;
+    background: var(--color-background-alt);
 }
 
-.ctaTitle {
+.testimonialsContent {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.testimonialCard {
+    background: white;
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.testimonialQuote {
+    position: relative;
+    margin-bottom: var(--spacing-lg);
+}
+
+.quoteIcon {
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-primary);
+    opacity: 0.2;
+    font-family: Georgia, serif;
+    position: absolute;
+    top: -1rem;
+    left: -0.5rem;
+}
+
+.testimonialText {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: var(--color-text);
+    margin: 0;
+    padding-left: 2rem;
+    font-style: italic;
+}
+
+.testimonialAuthor {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding-top: var(--spacing-md);
+    border-top: 2px solid var(--color-background-alt);
+}
+
+.authorInfo {
+    flex: 1;
+}
+
+.authorName {
     font-family: "Jura", sans-serif;
-    font-size: 2rem;
     font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--color-text);
+    margin: 0 0 0.25rem 0;
+}
+
+.authorRole {
+    color: var(--color-text-secondary);
+    font-size: 0.95rem;
+    margin: 0;
+}
+
+/* Testimonial CTA Card */
+.testimonialCta {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
+    border-radius: 16px;
+    padding: var(--spacing-xl);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 4px 16px rgba(0, 87, 187, 0.2);
+}
+
+.testimonialCtaContent {
     color: white;
+}
+
+.testimonialCtaTitle {
+    font-family: "Jura", sans-serif;
+    font-size: 1.75rem;
+    font-weight: 700;
     margin: 0 0 var(--spacing-md);
 }
 
-.ctaText {
-    font-size: 1.1rem;
-    color: rgba(255, 255, 255, 0.9);
+.testimonialCtaText {
+    font-size: 1.05rem;
+    line-height: 1.6;
     margin: 0 0 var(--spacing-lg);
-    max-width: 500px;
-    margin-left: auto;
-    margin-right: auto;
+    opacity: 0.95;
 }
 
-.cta button,
-.cta a {
+.testimonialCta button,
+.testimonialCta a {
     background-color: white;
     color: var(--color-primary);
 }
 
-.cta button:hover,
-.cta a:hover {
+.testimonialCta button:hover,
+.testimonialCta a:hover {
     background-color: var(--color-background-alt);
+    transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .testimonialsContent {
+        grid-template-columns: 1fr;
+    }
+
+    .testimonialCta {
+        padding: var(--spacing-lg);
+    }
+
+    .testimonialCtaTitle {
+        font-size: 1.5rem;
+    }
+}
+
+@media (max-width: 750px) {
+    .testimonialText {
+        font-size: 1rem;
+        padding-left: 1rem;
+    }
+
+    .quoteIcon {
+        font-size: 3rem;
+        top: -0.75rem;
+    }
+
+    .testimonialCard {
+        padding: var(--spacing-lg);
+    }
 }

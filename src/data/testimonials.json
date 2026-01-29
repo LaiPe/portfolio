@@ -1,0 +1,12 @@
+{
+  "testimonials": [
+    {
+      "id": "attilio-terlizzi",
+      "text": "Léo a su comprendre mes besoins et créer un site qui reflète parfaitement mon univers artistique. Son professionnalisme et sa réactivité ont fait toute la différence. Je recommande vivement !",
+      "author": "Attilio Terlizzi",
+      "role": "Artiste International",
+      "projectId": "attilio-terlizzi",
+      "featured": true
+    }
+  ]
+}
