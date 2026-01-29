@@ -2,15 +2,15 @@
     "id": "ecommerce-shopify",
     "title": "E-commerce Shopify",
     "icon": "🛒",
-    "priceRange": "2500-4000€",
-    "priceLabel": "À partir de 2500€",
+    "priceRange": "1500-3000€",
+    "priceLabel": "À partir de 1500€",
     "target": "Commerçants, créateurs",
     "features": [
         "Boutique Shopify personnalisée",
         "Configuration produits",
         "Paiement sécurisé",
         "Formation admin",
-        "Support 30 jours"
+        "50 produits inclus"
     ],
     "delay": "4-6 semaines",
     "featured": true,
