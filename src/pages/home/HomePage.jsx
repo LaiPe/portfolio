@@ -74,6 +74,11 @@ export default function HomePage() {
                         ))}
                     </div>
                 </div>
+                <div className={styles.projectsCta}>
+                    <Button to="/apropos" variant="outline">
+                        Voir toutes mes compétences →
+                    </Button>
+                </div>
             </section>
 
             {/* Featured Projects Section */}
