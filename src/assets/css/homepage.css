@@ -1,5 +1,0 @@
-/*ROOT*/
-:root{
-    --logo-header: 13rem;
-    --header: calc(var(--logo-header) + var(--nav))
-}

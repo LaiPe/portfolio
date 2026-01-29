@@ -1,25 +1,11 @@
 import styles from './Footer.module.css';
+import socialsData from '../../data/socials.json';
+import Button from '../../components/common/Button/Button';
+import { NavLink } from 'react-router-dom';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
-
-    const socialLinks = [
-        {
-            name: 'LinkedIn',
-            url: 'https://www.linkedin.com/in/l%C3%A9o-peyronnet-124a86278/',
-            icon: 'img/icons/linkedIn-icon.png'
-        },
-        {
-            name: 'GitHub',
-            url: 'https://github.com/LaiPe',
-            icon: 'img/icons/github-icon.png'
-        },
-        {
-            name: 'Malt',
-            url: 'https://www.malt.fr/profile/leopeyronnet',
-            icon: 'img/icons/malt-icon.png'
-        }
-    ];
+    const { socialLinks } = socialsData;
 
     const quickLinks = [
         { name: 'Accueil', path: '/' },
@@ -70,12 +56,9 @@ export default function Footer() {
                             Une question ? Un projet ?<br />
                             Discutons-en !
                         </p>
-                        <a 
-                            href="mailto:leo.peyronnet@example.com" 
-                            className={styles.ctaButton}
-                        >
-                            Envoyez-moi un message
-                        </a>
+                        <NavLink to="/contact" className={styles.ctaButton}>
+                            Envoyer moi un message
+                        </NavLink>
                     </div>
 
                     {/* Section Réseaux sociaux */}

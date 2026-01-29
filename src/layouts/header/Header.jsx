@@ -44,7 +44,7 @@ export default function Header() {
                             <NavLink to="/apropos">À propos</NavLink>
                         </li>
                         <li id="nav_contact">
-                            <a href="#" className="ancre-contact">Contact</a>
+                            <NavLink to="/contact">Contact</NavLink>
                         </li>
                     </ul>
                 )}

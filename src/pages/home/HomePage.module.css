@@ -1,4 +1,6 @@
 .home {
+    --logo-header: 13rem;
+    --header: calc(var(--logo-header) + var(--nav));
     overflow-x: hidden;
 }
 

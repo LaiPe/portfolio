@@ -3,6 +3,7 @@ import Spinner from "./components/spinner/Spinner";
 import Header from "./layouts/header/Header";
 import Footer from "./layouts/footer/Footer";
 import HomePage from "./pages/home/HomePage";
+import ContactPage from "./pages/contact/ContactPage";
 
 const router = createBrowserRouter([
     {
@@ -12,6 +13,10 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <HomePage />
+            },
+            {
+                path: "contact",
+                element: <ContactPage />
             },
         ]
     }

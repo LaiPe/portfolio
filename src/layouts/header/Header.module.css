@@ -82,6 +82,8 @@
 
 /*INDEX*/
 .header.index{
+    --logo-header: 13rem;
+    --header: calc(var(--logo-header) + var(--nav));
     top: calc(0px - var(--logo-header));
     flex-direction: column;
     justify-content: space-between;

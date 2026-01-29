@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import Button from "../../components/common/Button/Button";
 import SkillCard from "../../components/skills/SkillCard/SkillCard";
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
@@ -8,9 +10,9 @@ import useCollection from "../../hooks/useCollection";
 import skillsData from "../../data/skills.json";
 import testimonialsData from "../../data/testimonials.json";
 import styles from "./HomePage.module.css";
-import "../../assets/css/homepage.css";
 
 export default function HomePage() {
+    const navigate = useNavigate();
     const { skills } = skillsData;
     const { testimonials } = testimonialsData;
     const { data: projects, loading: loadingProjects } = useCollection("projects");
@@ -50,7 +52,7 @@ export default function HomePage() {
                         <Button to="/projets" variant="primary" size="lg">
                             Voir mes projets
                         </Button>
-                        <Button onClick={scrollToContact} variant="secondary" size="lg">
+                        <Button onClick={() => navigate("/contact")} variant="secondary" size="lg">
                             Me contacter
                         </Button>
                     </div>
@@ -143,7 +145,7 @@ export default function HomePage() {
                                     <p className={styles.testimonialCtaText}>
                                         Rejoignez les clients satisfaits et donnons vie à votre projet ensemble.
                                     </p>
-                                    <Button onClick={scrollToContact} variant="primary">
+                                    <Button onClick={() => navigate("/contact")} variant="primary">
                                         Démarrons votre projet
                                     </Button>
                                 </div>
