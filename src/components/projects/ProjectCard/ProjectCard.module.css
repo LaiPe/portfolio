@@ -39,6 +39,20 @@
     transform: scale(1.05);
 }
 
+.emojiContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, var(--color-primary-light, #f0f4f8) 0%, var(--color-background-alt, #f8f9fa) 100%);
+}
+
+.emoji {
+    font-size: 4rem;
+    line-height: 1;
+}
+
 .badge {
     position: absolute;
     top: var(--spacing-sm);

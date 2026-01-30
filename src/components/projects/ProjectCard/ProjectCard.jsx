@@ -15,12 +15,20 @@ export default function ProjectCard({ project, size = "medium" }) {
     return (
         <Link to={`/projets/${project.slug}`} className={`${styles.projectCard} ${styles[size]}`}>
             <div className={styles.imageContainer}>
-                <img 
-                    src={project.images?.thumbnail || "/img/placeholder-project.webp"} 
-                    alt={project.title}
-                    className={styles.image}
-                    loading="lazy"
-                />
+                {project.images?.thumbnail ? (
+                    <img 
+                        src={project.images.thumbnail} 
+                        alt={project.title}
+                        className={styles.image}
+                        loading="lazy"
+                    />
+                ) : (
+                    <div className={styles.emojiContainer}>
+                        <span className={styles.emoji}>
+                            {project.images.emoji || "🚀"}
+                        </span>
+                    </div>
+                )}
                 <Badge variant={variant} className={styles.badge}>
                     {project.categoryLabel}
                 </Badge>

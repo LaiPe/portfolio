@@ -10,7 +10,7 @@
   "featured": false,
   "priority": 13,
   "images": {
-    "thumbnail": "/img/projects/sim-rhinite/sim-rhinite-thumbnail.webp",
+    "emoji": "🦠",
     "hero": "/img/projects/sim-rhinite/sim-rhinite-hero.webp"
   },
   "links": {
