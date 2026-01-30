@@ -1,4 +1,4 @@
-import { NavLink, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import useViewport from "../../hooks/useViewport";
 import styles from './Header.module.css';
@@ -15,18 +15,21 @@ export default function Header() {
     const toggleNav = () => {
         setOpenedNav(!openedNav);
     }
+    const closeNav = () => {
+        setOpenedNav(false);
+    }
 
     const showNav = !isMobile || openedNav
 
     return (
         <header className={ bigHeader ? `${styles.header} ${styles.index}` : styles.header}>
-            <NavLink to="/">
+            <Link to="/" onClick={closeNav}>
                 { tinyLogo ? (
                     <img className="logo petit" src="./img/logo_lp_raw.png" alt="Logo" />
                 ) : (
                     <img className="logo" src="./img/logo_lp.png" alt="Logo" />
                 )}
-            </NavLink>
+            </Link>
             <nav className={ openedNav ? `${styles.nav} ${styles.opened}` : styles.nav }>
                 { isMobile && (
                     <label htmlFor="activ-mini" onClick={toggleNav}>☰</label>
@@ -35,16 +38,16 @@ export default function Header() {
                 { showNav && (
                     <ul>
                         <li id="nav_projets">
-                            <NavLink to="/projets">Projets</NavLink>
+                            <NavLink to="/projets" onClick={closeNav}>Projets</NavLink>
                         </li>
                         <li id="nav_services">
-                            <NavLink to="/services">Services</NavLink>
+                            <NavLink to="/services" onClick={closeNav}>Services</NavLink>
                         </li>
                         <li id="nav_apropos">
-                            <NavLink to="/apropos">À propos</NavLink>
+                            <NavLink to="/apropos" onClick={closeNav}>À propos</NavLink>
                         </li>
                         <li id="nav_contact">
-                            <NavLink to="/contact">Contact</NavLink>
+                            <NavLink to="/contact" onClick={closeNav}>Contact</NavLink>
                         </li>
                     </ul>
                 )}

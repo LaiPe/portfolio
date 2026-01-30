@@ -1,7 +1,7 @@
 import styles from './Footer.module.css';
 import socialsData from '../../data/socials.json';
 import Button from '../../components/common/Button/Button';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
@@ -38,13 +38,13 @@ export default function Footer() {
                         <h4 className={styles.sectionTitle}>Navigation</h4>
                         <nav className={styles.quickLinks}>
                             {quickLinks.map((link) => (
-                                <a 
+                                <Link
                                     key={link.path}
-                                    href={link.path} 
+                                    to={link.path} 
                                     className={styles.link}
                                 >
                                     {link.name}
-                                </a>
+                                </Link>
                             ))}
                         </nav>
                     </div>
@@ -56,9 +56,9 @@ export default function Footer() {
                             Une question ? Un projet ?<br />
                             Discutons-en !
                         </p>
-                        <NavLink to="/contact" className={styles.ctaButton}>
+                        <Link to="/contact" className={styles.ctaButton}>
                             Envoyer moi un message
-                        </NavLink>
+                        </Link>
                     </div>
 
                     {/* Section Réseaux sociaux */}

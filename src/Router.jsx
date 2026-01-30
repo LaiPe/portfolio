@@ -4,6 +4,7 @@ import Header from "./layouts/header/Header";
 import Footer from "./layouts/footer/Footer";
 import HomePage from "./pages/home/HomePage";
 import ContactPage from "./pages/contact/ContactPage";
+import ProjectsPage from "./pages/projects/ProjectsPage";
 
 const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
             {
                 path: "",
                 element: <HomePage />
+            },
+            {
+                path: "projets",
+                element: <ProjectsPage />
             },
             {
                 path: "contact",

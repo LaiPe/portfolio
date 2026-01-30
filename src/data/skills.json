@@ -7,7 +7,7 @@
         { "name": "React", "icon": "react" },
         { "name": "Bootstrap", "icon": "bootstrap" },
         { "name": "CSS", "icon": "css" },
-        { "name": "TypeScript", "icon": "typescript" }
+        { "name": "Angular", "icon": "angular" }
       ]
     },
     "backend": {
