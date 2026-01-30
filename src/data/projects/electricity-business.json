@@ -24,16 +24,16 @@
   "featured": true,
   "priority": 2,
   "images": {
-    "thumbnail": "/img/projets/electricity-business/eb-thumbnail.jpg",
-    "hero": "/img/projects/electricity-business-hero.webp"
+    "thumbnail": "/img/projects/electricity-business/eb-thumbnail.jpg",
+    "hero": "/img/projects/electricity-business/electricity-business-hero.webp"
   },
   "links": {
     "live": null,
     "github": "https://github.com/LaiPe/electricity-business"
   },
   "client": null,
-  "date": "2024-2025",
-  "duration": "6 mois",
+  "date": "Janvier 2026",
+  "duration": "2 mois",
   "features": [
     "Authentification JWT sécurisée avec cookies HTTP-only",
     "Gestion des utilisateurs et des rôles (USER, ADMIN)",

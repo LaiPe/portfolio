@@ -6,18 +6,19 @@
   "categoryLabel": "Expérimentation",
   "shortDescription": "Simulation épidémiologique modélisant la propagation d'un virus dans une population.",
   "description": "Simulation de propagation virale avec paramètres configurables : taux de transmission, durée d'incubation, taux de guérison. Visualisation graphique en temps réel.",
-  "technologies": ["Python", "Matplotlib", "NumPy"],
+  "technologies": ["C", "Make"],
   "featured": false,
   "priority": 13,
   "images": {
-    "thumbnail": "/img/projects/simrhinite-thumbnail.webp",
-    "hero": "/img/projects/simrhinite-hero.webp"
+    "thumbnail": "/img/projects/sim-rhinite/sim-rhinite-thumbnail.webp",
+    "hero": "/img/projects/sim-rhinite/sim-rhinite-hero.webp"
   },
   "links": {
     "live": null,
-    "github": "https://github.com/leopeyronnet/sim-rhinite"
+    "github": "https://github.com/LaiPe/sim-rhinite",
+    "pdf": "/assets/pdf/sim-rhinite.pdf"
   },
   "client": null,
-  "date": "2022",
+  "date": "Juin 2024",
   "duration": "2 semaines"
 }

@@ -6,18 +6,18 @@
   "categoryLabel": "Expérimentation",
   "shortDescription": "Visualisation interactive de l'algorithme des Tours de Hanoï avec animation pas à pas.",
   "description": "Implémentation visuelle de l'algorithme récursif des Tours de Hanoï. Permet de visualiser chaque étape de la résolution.",
-  "technologies": ["JavaScript", "HTML", "CSS", "Canvas"],
+  "technologies": ["JavaScript", "HTML", "CSS"],
   "featured": false,
   "priority": 11,
   "images": {
-    "thumbnail": "/img/projects/hanoi-thumbnail.webp",
-    "hero": "/img/projects/hanoi-hero.webp"
+    "thumbnail": "/img/projects/tours-hanoi/hanoi-thumbnail.png",
+    "hero": "/img/projects/tours-hanoi/tours-hanoi-hero.webp"
   },
   "links": {
     "live": null,
-    "github": "https://github.com/leopeyronnet/tours-hanoi"
+    "github": "https://github.com/LaiPe/tours-hanoi"
   },
   "client": null,
-  "date": "2023",
-  "duration": "2 semaines"
+  "date": "Avril 2025",
+  "duration": "1 semaine"
 }

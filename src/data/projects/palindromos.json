@@ -10,14 +10,14 @@
   "featured": false,
   "priority": 10,
   "images": {
-    "thumbnail": "/img/projects/palindromos-thumbnail.webp",
-    "hero": "/img/projects/palindromos-hero.webp"
+    "thumbnail": "/img/projects/palindromos/palindromos-thumbnail.jpg",
+    "hero": "/img/projects/palindromos/palindromos-hero.webp"
   },
   "links": {
-    "live": "https://palindromos.leopeyronnet.fr",
-    "github": "https://github.com/leopeyronnet/palindromos"
+    "live": "https://palindromos.sandbox.leopeyronnet.fr/",
+    "github": "https://github.com/LaiPe/palindromos"
   },
   "client": null,
-  "date": "2023",
+  "date": "Octobre 2024",
   "duration": "1 semaine"
 }

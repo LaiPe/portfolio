@@ -5,19 +5,19 @@
   "category": "mockup",
   "categoryLabel": "Maquette",
   "shortDescription": "Site vitrine multi-services pour une école de musique fictive, avec gestion des cours et inscriptions.",
-  "description": "Conception d'un site vitrine complet pour une école de musique proposant cours collectifs, individuels et stages. Design moderne axé sur l'expérience utilisateur.",
+  "description": "Mélodie & Cie est la maquette d'un site vitrine imaginé pour une entreprise fictive spécialisée dans la musique. Le site met en avant les services proposés par l'entreprise, c'est à dire la production musicale, l'évènementiel et la formation. La diversité des activités proposées est un choix assumé pour illustrer ma capacité à répondre à des cahiers des charges complexes et à des attentes très différentes. Le site propose une navigation claire, une expérience responsive et un formulaire de contact pour faciliter les échanges avec les visiteurs. L'ensemble du contenu éditorial, des témoignages aux informations sur les formations et les événements, est entièrement modifiable par l'équipe via une interface d'administration simple et intuitive. Ce projet met l'accent sur l'autonomie des utilisateurs, la valorisation de l'expertise musicale et la facilité d'évolution du site au fil du temps.",
   "technologies": ["11ty", "Decap CMS", "Nunjucks", "CSS", "JS"],
   "featured": true,
   "priority": 2,
   "images": {
-    "thumbnail": "/img/projets/melodie-cie/melodie-cie-thumbnail.jpg",
-    "hero": "/img/projets/melodie-cie/melodie-cie-hero.jpg"
+    "thumbnail": "/img/projects/melodie-cie/melodie-cie-thumbnail.jpg",
+    "hero": "/img/projects/melodie-cie/melodie-cie-hero.jpg"
   },
   "links": {
-    "live": null,
-    "github": "https://github.com/leopeyronnet/melodie-cie"
+    "live": "https://melodie-et-cie.sandbox.leopeyronnet.fr/",
+    "github": "https://github.com/LaiPe/melodie-et-cie"
   },
   "client": null,
-  "date": "2024",
+  "date": "Septembre 2025",
   "duration": "3 semaines"
 }
