@@ -25,9 +25,9 @@ export default function Header() {
         <header className={ bigHeader ? `${styles.header} ${styles.index}` : styles.header}>
             <Link to="/" onClick={closeNav}>
                 { tinyLogo ? (
-                    <img className="logo petit" src="./img/logo_lp_raw.png" alt="Logo" />
+                    <img className="logo petit" src="/img/logo_lp_raw.png" alt="Logo" />
                 ) : (
-                    <img className="logo" src="./img/logo_lp.png" alt="Logo" />
+                    <img className="logo" src="/img/logo_lp.png" alt="Logo" />
                 )}
             </Link>
             <nav className={ openedNav ? `${styles.nav} ${styles.opened}` : styles.nav }>

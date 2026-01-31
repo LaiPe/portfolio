@@ -1,0 +1,114 @@
+.projectDetail {
+    min-height: calc(100vh - var(--header));
+}
+
+.loading,
+.error {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 50vh;
+    gap: var(--spacing-md);
+    text-align: center;
+    padding: var(--spacing-xl);
+}
+
+.error h1 {
+    font-family: "Jura", sans-serif;
+    font-size: 2rem;
+    color: var(--color-text);
+}
+
+.error p {
+    color: var(--color-text-secondary);
+    max-width: 400px;
+}
+
+.backLink {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: var(--spacing-md);
+}
+
+.backLink:hover {
+    text-decoration: underline;
+}
+
+/* Navigation inter-projets */
+.projectNav {
+    background-color: var(--color-background-alt);
+    border-top: 1px solid var(--color-border);
+    padding: var(--spacing-lg) var(--spacing-md);
+}
+
+.navContainer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: stretch;
+    gap: var(--spacing-md);
+}
+
+.navLink {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md);
+    background: var(--color-background);
+    border-radius: 8px;
+    border: 1px solid var(--color-border);
+    text-decoration: none;
+    transition: all 0.2s ease;
+    flex: 1;
+    max-width: 45%;
+}
+
+.navLink:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 4px 12px rgba(0, 87, 187, 0.1);
+    text-decoration: none;
+}
+
+.navRight {
+    text-align: right;
+    align-items: flex-end;
+}
+
+.navDirection {
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    font-weight: 600;
+}
+
+.navTitle {
+    font-size: 1rem;
+    color: var(--color-text);
+    font-family: "Jura", sans-serif;
+    font-weight: 600;
+}
+
+/* Responsive */
+@media (max-width: 750px) {
+    .navContainer {
+        flex-direction: column;
+    }
+
+    .navLink {
+        max-width: 100%;
+    }
+
+    .navRight {
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .navRight .navDirection {
+        order: 2;
+    }
+}

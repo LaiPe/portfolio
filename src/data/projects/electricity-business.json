@@ -5,7 +5,6 @@
   "category": "app",
   "categoryLabel": "Application",
   "shortDescription": "Plateforme complète de gestion de stations de recharge pour véhicules électriques.",
-  "description": "Plateforme web connectant propriétaires de bornes de recharge et conducteurs de véhicules électriques. Système complet avec authentification JWT, gestion de réservations, recherche géolocalisée avec carte interactive, et tableaux de bord adaptés par rôle. Architecture microservices avec Spring Boot et React, utilisant MySQL pour les données relationnelles et MongoDB pour les données géospatiales.",
   "technologies": [
     "React",
     "Bootstrap",

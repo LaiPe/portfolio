@@ -25,7 +25,7 @@ export default function ProjectCard({ project, size = "medium" }) {
                 ) : (
                     <div className={styles.emojiContainer}>
                         <span className={styles.emoji}>
-                            {project.images.emoji || "🚀"}
+                            {project.images?.emoji || "🚀"}
                         </span>
                     </div>
                 )}

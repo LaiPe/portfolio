@@ -8,13 +8,15 @@ export default function Button({
     onClick = null, 
     variant = "primary", 
     size = "md",
-    className = ""
+    className = "",
+    target = "_blank",
+    ...props
 }) {
     const classNames = `${styles.button} ${styles[variant]} ${styles[size]} ${className}`.trim();
 
     if (to) {
         return (
-            <Link to={to} className={classNames}>
+            <Link to={to} className={classNames} {...props}>
                 {children}
             </Link>
         );
@@ -22,14 +24,20 @@ export default function Button({
 
     if (href) {
         return (
-            <a href={href} className={classNames} target="_blank" rel="noopener noreferrer">
+            <a 
+                href={href} 
+                className={classNames} 
+                target={target} 
+                rel={target === "_blank" ? "noopener noreferrer" : undefined}
+                {...props}
+            >
                 {children}
             </a>
         );
     }
 
     return (
-        <button onClick={onClick} className={classNames}>
+        <button onClick={onClick} className={classNames} {...props}>
             {children}
         </button>
     );

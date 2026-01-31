@@ -5,7 +5,6 @@
   "category": "experiment",
   "categoryLabel": "Expérimentation",
   "shortDescription": "Simulation épidémiologique modélisant la propagation d'un virus dans une population.",
-  "description": "Simulation de propagation virale avec paramètres configurables : taux de transmission, durée d'incubation, taux de guérison. Visualisation graphique en temps réel.",
   "technologies": ["C", "Make"],
   "featured": false,
   "priority": 13,
