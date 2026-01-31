@@ -3,6 +3,7 @@ import ReactMarkdown from "react-markdown";
 import GalleryModal from "../GalleryModal/GalleryModal";
 import { useProjectDescription } from "../../../hooks/useProjectDescription";
 import styles from "./ProjectDetail.module.css";
+import Spinner from "../../spinner/Spinner";
 
 /**
  * Composant pour le contenu principal d'une page de détail de projet
@@ -20,6 +21,7 @@ export default function ProjectDetailContent({ project, config }) {
     // État pour la modale de galerie
     const [galleryOpen, setGalleryOpen] = useState(false);
     const [galleryIndex, setGalleryIndex] = useState(0);
+    const [loadedImages, setLoadedImages] = useState({});
 
     const openGallery = (index) => {
         setGalleryIndex(index);
@@ -30,6 +32,10 @@ export default function ProjectDetailContent({ project, config }) {
         setGalleryOpen(false);
     };
 
+    const handleImageLoad = (index) => {
+        setLoadedImages((prev) => ({ ...prev, [index]: true }));
+    };
+
     return (
         <div className={styles.content}>
             {/* Description / Contexte */}
@@ -37,7 +43,7 @@ export default function ProjectDetailContent({ project, config }) {
                 <h2 className={styles.sectionTitle}>{cfg.contextTitle}</h2>
                 <div className={styles.sectionText}>
                     {descriptionLoading ? (
-                        <p>Chargement...</p>
+                        <Spinner />
                     ) : description ? (
                         <ReactMarkdown>{description}</ReactMarkdown>
                     ) : (
@@ -273,11 +279,17 @@ export default function ProjectDetailContent({ project, config }) {
                                 onClick={() => openGallery(index)}
                                 aria-label={`Voir l'image ${index + 1} en grand`}
                             >
+                                {!loadedImages[index] && (
+                                    <div className={styles.gallerySpinner}>
+                                        <Spinner />
+                                    </div>
+                                )}
                                 <img
                                     src={image}
                                     alt={`${project.title} - Screenshot ${index + 1}`}
-                                    className={styles.galleryImage}
+                                    className={`${styles.galleryImage} ${loadedImages[index] ? styles.galleryImageLoaded : ''}`}
                                     loading="lazy"
+                                    onLoad={() => handleImageLoad(index)}
                                 />
                             </button>
                         ))}

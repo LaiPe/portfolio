@@ -1,7 +1,7 @@
-Maquette de site e-commerce pour une entreprise fictive de location de percussions.
+Ce site est une maquette de **site vitrine** ayant pour objet une entreprise fictive de location de percussions.
 
-Le site présente l'entreprise via une page d'accueil intuitive et des pages produits permettant d'accéder aux informations des instruments de manière fluide et dynamique. Il intègre un **espace utilisateur complet** avec formulaires d'inscription et de connexion, ainsi qu'un système de panier et de gestion des réservations.
+Il possède une **page d'accueil** qui présente l'entreprise et permet d'aiguiller l'utilisateur dans sa navigation sur le site. Il a des **pages produits** qui permettent à l'utilisateur d'accéder aux diverses informations des produits de manière fluide et dynamique. De plus, il intègre un **espace utilisateur** permettant de s'inscrire et de se connecter sur le site.
 
-Entièrement **responsive**, le site est consultable sur tous les supports (ordinateurs, tablettes, smartphones).
+Ce site a de plus été conçu pour être **consultable sur tous les supports** : ordinateurs, tablettes, smartphones, etc...
 
-> En tant que démonstration technique hébergée de manière statique, les formulaires ne traitent pas les données envoyées.
+> De par sa nature de maquette et de démonstration technique, ce site est hébergé de manière **statique**, ce qui veut dire qu'il ne traite aucune information qui lui est envoyé. Ainsi, bien qu'il y ait des formulaires de connexion et d'inscription, les informations qu'ils contiendront s'ils sont remplis ne seront pas traitées.

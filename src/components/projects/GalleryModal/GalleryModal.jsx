@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
+import Spinner from "../../spinner/Spinner";
 import styles from "./GalleryModal.module.css";
 
 /**
@@ -7,6 +8,16 @@ import styles from "./GalleryModal.module.css";
  */
 export default function GalleryModal({ images, initialIndex = 0, onClose, projectTitle }) {
     const [currentIndex, setCurrentIndex] = useState(initialIndex);
+    const [loadedImages, setLoadedImages] = useState({});
+    const [loadedThumbnails, setLoadedThumbnails] = useState({});
+
+    const handleImageLoad = (index) => {
+        setLoadedImages((prev) => ({ ...prev, [index]: true }));
+    };
+
+    const handleThumbnailLoad = (index) => {
+        setLoadedThumbnails((prev) => ({ ...prev, [index]: true }));
+    };
 
     // Navigation clavier
     const handleKeyDown = useCallback((e) => {
@@ -78,10 +89,16 @@ export default function GalleryModal({ images, initialIndex = 0, onClose, projec
 
                     {/* Image principale */}
                     <div className={styles.imageContainer}>
+                        {!loadedImages[currentIndex] && (
+                            <div className={styles.imageSpinner}>
+                                <Spinner />
+                            </div>
+                        )}
                         <img
                             src={images[currentIndex]}
                             alt={`${projectTitle} - Image ${currentIndex + 1}`}
-                            className={styles.mainImage}
+                            className={`${styles.mainImage} ${loadedImages[currentIndex] ? styles.imageLoaded : ''}`}
+                            onLoad={() => handleImageLoad(currentIndex)}
                         />
                         <div className={styles.imageCounter}>
                             {currentIndex + 1} / {images.length}
@@ -108,9 +125,16 @@ export default function GalleryModal({ images, initialIndex = 0, onClose, projec
                                 onClick={() => goToIndex(index)}
                                 aria-label={`Aller à l'image ${index + 1}`}
                             >
+                                {!loadedThumbnails[index] && (
+                                    <div className={styles.thumbnailSpinner}>
+                                        <Spinner />
+                                    </div>
+                                )}
                                 <img
                                     src={image}
                                     alt={`${projectTitle} - Miniature ${index + 1}`}
+                                    className={loadedThumbnails[index] ? styles.thumbnailLoaded : ''}
+                                    onLoad={() => handleThumbnailLoad(index)}
                                 />
                             </button>
                         ))}
