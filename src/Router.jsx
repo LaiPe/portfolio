@@ -1,5 +1,5 @@
 import { createBrowserRouter, Outlet, RouterProvider, useNavigation, useLocation } from "react-router-dom";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Spinner from "./components/spinner/Spinner";
 import Header from "./layouts/header/Header";
 import Footer from "./layouts/footer/Footer";
@@ -46,11 +46,27 @@ const router = createBrowserRouter([
 
 function Root({ children }) {
     const { state } = useNavigation();
+    const { pathname } = useLocation();
+    const [isReady, setIsReady] = useState(false);
+
+    useEffect(() => {
+        setIsReady(false);
+        // Permet au contenu de se charger avant d'afficher
+        const timer = requestAnimationFrame(() => {
+            setIsReady(true);
+        });
+        return () => cancelAnimationFrame(timer);
+    }, [pathname]);
+
+    const isLoading = state === "loading" || !isReady;
+    if (isLoading) {
+        return <Spinner fullscreen/>;
+    }
     return (
         <>
             <ScrollToTop />
             <Header/>
-            {state === "loading" ? <Spinner /> : children}
+            {children}
             <Footer />
         </>
     );
