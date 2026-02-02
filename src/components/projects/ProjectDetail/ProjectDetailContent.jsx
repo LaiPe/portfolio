@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import ReactMarkdown from "react-markdown";
 import GalleryModal from "../GalleryModal/GalleryModal";
 import { useProjectDescription } from "../../../hooks/useProjectDescription";
+import testimonialsData from "../../../data/testimonials.json";
 import styles from "./ProjectDetail.module.css";
 import Spinner from "../../spinner/Spinner";
 
@@ -17,6 +18,15 @@ export default function ProjectDetailContent({ project, config }) {
     const { description, loading: descriptionLoading } = useProjectDescription(
         project.slug
     );
+
+    // Chargement des témoignages
+    const { testimonials } = testimonialsData;
+    console.log("Témoignages chargés :", testimonials);
+    
+    // Trouver le témoignage correspondant au projet
+    const projectTestimonial = useMemo(() => {
+        return testimonials.find(t => t.projectId === project.id);
+    }, [testimonials, project.id]);
 
     // État pour la modale de galerie
     const [galleryOpen, setGalleryOpen] = useState(false);
@@ -246,20 +256,21 @@ export default function ProjectDetailContent({ project, config }) {
             )}
 
             {/* Témoignage client (client only) */}
-            {category === "client" && project.testimonial && project.testimonial.text && (
+            {console.log(projectTestimonial)}
+            {category === "client" && projectTestimonial && projectTestimonial.text && (
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Témoignage client</h2>
                     <div className={styles.testimonial}>
                         <p className={styles.testimonialQuote}>
-                            {project.testimonial.text}
+                            {projectTestimonial.text}
                         </p>
                         <div className={styles.testimonialAuthor}>
                             <span className={styles.testimonialAuthorName}>
-                                {project.testimonial.author}
+                                {projectTestimonial.author}
                             </span>
-                            {project.testimonial.role && (
+                            {projectTestimonial.role && (
                                 <span className={styles.testimonialAuthorRole}>
-                                    — {project.testimonial.role}
+                                    — {projectTestimonial.role}
                                 </span>
                             )}
                         </div>

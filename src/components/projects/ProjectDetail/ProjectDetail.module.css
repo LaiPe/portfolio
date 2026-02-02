@@ -269,6 +269,10 @@
     color: var(--color-text);
 }
 
+.sectionText p {
+    margin-bottom: 0.5em;
+}
+
 /* Features / Fonctionnalités */
 .featuresGrid {
     display: grid;
