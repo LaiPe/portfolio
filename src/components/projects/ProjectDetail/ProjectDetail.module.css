@@ -303,12 +303,6 @@
     gap: var(--spacing-xs);
 }
 
-.featureTitle::before {
-    content: "✓";
-    color: var(--color-secondary);
-    font-weight: 700;
-}
-
 .featureDescription {
     font-size: 0.875rem;
     color: var(--color-text-secondary);

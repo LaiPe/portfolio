@@ -204,13 +204,22 @@ export default function ProjectDetailContent({ project, config }) {
                     <div className={styles.featuresGrid}>
                         {project.features.map((feature, index) => (
                             <div key={index} className={styles.featureCard}>
-                                <h3 className={styles.featureTitle}>
-                                    {typeof feature === 'string' ? feature : feature.title}
-                                </h3>
-                                {typeof feature !== 'string' && feature.description && (
-                                    <p className={styles.featureDescription}>
-                                        {feature.description}
-                                    </p>
+                                {typeof feature === 'string' ? (
+                                    <h3 className={styles.featureTitle}>{feature}</h3>
+                                ) : feature.emoji !== undefined ? (
+                                    <h3 className={styles.featureTitle}>
+                                        {feature.emoji && <span className={styles.featureEmoji}>{feature.emoji}</span>}
+                                        {feature.text}
+                                    </h3>
+                                ) : (
+                                    <>
+                                        <h3 className={styles.featureTitle}>{feature.title}</h3>
+                                        {feature.description && (
+                                            <p className={styles.featureDescription}>
+                                                {feature.description}
+                                            </p>
+                                        )}
+                                    </>
                                 )}
                             </div>
                         ))}

@@ -24,28 +24,30 @@
   "priority": 2,
   "images": {
     "thumbnail": "/img/projects/electricity-business/eb-thumbnail.jpg",
-    "hero": "/img/projects/electricity-business/electricity-business-hero.webp"
+    "hero": "/img/projects/electricity-business/eb-thumbnail.jpg",
+    "gallery": [
+      "/img/projects/electricity-business/eb-1.png",
+      "/img/projects/electricity-business/eb-2.png",
+      "/img/projects/electricity-business/eb-3.png",
+      "/img/projects/electricity-business/eb-4.png"
+    ]
   },
   "links": {
-    "live": null,
+    "live": "https://electricity-business.leopeyronnet.fr/",
     "github": "https://github.com/LaiPe/electricity-business"
   },
   "client": null,
   "date": "Janvier 2026",
   "duration": "2 mois",
   "features": [
-    "Authentification JWT sécurisée avec cookies HTTP-only",
-    "Gestion des utilisateurs et des rôles (USER, ADMIN)",
-    "Catalogue de véhicules électriques avec caractéristiques techniques",
-    "Gestion CRUD des véhicules personnels",
-    "Création et gestion de stations de recharge",
-    "Recherche géolocalisée avec carte interactive",
-    "Clustering dynamique des stations sur la carte",
-    "Système de réservation complet avec workflow",
-    "Évaluations post-recharge",
-    "Export PDF et Excel des réservations",
-    "Tableaux de bord adaptés selon le rôle",
-    "Géocodage direct et inverse via APIs externes"
+    {"emoji": "📍", "text": "Recherche géolocalisée avec carte interactive"},
+    {"emoji": "📅", "text": "Système de réservation complet et robuste"},
+    {"emoji": "⭐", "text": "Évaluations post-recharge"},
+    {"emoji": "📊", "text": "Tableaux de bord adaptés selon le rôle"},
+    {"emoji": "🔋", "text": "Catalogue de véhicules électriques avec caractéristiques techniques"},
+    {"emoji": "🚗", "text": "Gestion des véhicules personnels"},
+    {"emoji": "🔌", "text": "Gestion de stations de recharge"},
+    {"emoji": "📄", "text": "Export PDF et Excel des réservations"}
   ],
   "architecture": {
     "backend": {
@@ -55,7 +57,7 @@
       "orm": "Spring Data JPA + Hibernate",
       "databases": [
         "MySQL 8.3 (données relationnelles)",
-        "MongoDB 7.0 (données géospatiales avec index 2dsphere)"
+        "MongoDB 7.0 (modèles de véhicules)"
       ],
       "tools": ["MapStruct", "Lombok", "iText 7", "Apache POI"]
     },
@@ -80,23 +82,10 @@
       "Geolocation API (GPS navigateur)"
     ]
   },
-  "highlights": [
-    "Architecture microservices complète avec séparation backend/frontend",
-    "Double base de données adaptée (relationnelle + NoSQL géospatiale)",
-    "Sécurité avancée avec JWT et gestion des rôles",
-    "Interface cartographique interactive avec clustering",
-    "Workflow de réservation complet avec notifications",
-    "Déploiement Docker multi-environnements (dev/preprod/prod)",
-    "Export de données en PDF et Excel",
-    "API REST documentée avec plus de 30 endpoints"
-  ],
   "challenges": [
     "Intégration de bases de données hétérogènes (SQL + NoSQL)",
-    "Implémentation d'un système de géolocalisation performant",
     "Gestion complexe des états de réservation avec workflow",
     "Sécurisation complète avec authentification JWT",
-    "Optimisation des requêtes géospatiales avec index MongoDB 2dsphere",
-    "Configuration Docker multi-environnements avec variables sensibles",
-    "Gestion du clustering de markers sur la carte interactive"
+    "Configuration Docker multi-environnements avec variables sensibles"
   ]
 }
