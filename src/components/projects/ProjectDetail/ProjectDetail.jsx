@@ -78,6 +78,7 @@ export default function ProjectDetail({ project }) {
                     <img
                         src={project.images.hero}
                         alt={project.title}
+                        loading="lazy"
                         className={styles.heroImage}
                     />
                 ) : (

@@ -10,8 +10,7 @@
   "featured": false,
   "priority": 10,
   "images": {
-    "thumbnail": "/img/projects/tours-hanoi/hanoi-thumbnail.png",
-    "hero": "/img/projects/tours-hanoi/tours-hanoi-hero.webp"
+    "thumbnail": "/img/projects/tours-hanoi/hanoi-thumbnail.png"
   },
   "links": {
     "live": "https://tours-hanoi.sandbox.leopeyronnet.fr/",
