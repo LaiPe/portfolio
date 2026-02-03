@@ -34,8 +34,9 @@
     align-items: center;
     justify-content: space-evenly;
 }
-.header nav > ul li{
-    padding: calc(0.2rem + 1px) calc(1rem + 1px);
+
+.header nav a {
+    padding: 0.2rem 1rem;
 }
 
 .header > a {
@@ -65,7 +66,7 @@
     .nav.opened ul{
         display: block;
         position: absolute;
-        top: calc(100% + 1px);
+        top: 100%;
         left: 0;
 
         width: 100%;

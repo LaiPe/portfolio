@@ -64,15 +64,12 @@ function Root({ children }) {
     }, [pathname]);
 
     const isLoading = state === "loading" || !isReady;
-    if (isLoading) {
-        return <Spinner fullscreen/>;
-    }
     return (
         <>
             <ScrollToTop />
             <Header/>
-            {children}
-            <Footer />
+            {isLoading ? <Spinner fullscreen /> : children}
+            {!isLoading && <Footer />}
         </>
     );
 }
