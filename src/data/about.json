@@ -1,0 +1,144 @@
+{
+  "profile": {
+    "name": "Léo Peyronnet",
+    "title": "Développeur Full-Stack Junior",
+    "age": 24,
+    "photo": "/img/a-propos/profile.jpg",
+    "bio": "Fraîchement diplômé Concepteur/Développeur d'Applications, *je recherche un poste de développeur front-end* et souhaite mettre à profit ma forte appétence pour *React* au sein de projets concrets et ambitieux.",
+    "introduction": "*Né en 2001 dans la région bordelaise*, j'ai passé mon enfance à la campagne, développant très tôt une **curiosité naturelle** pour comprendre le fonctionnement des choses qui m'entouraient.\n\nAprès un **Baccalauréat Général ES avec mention**, j'ai opté pour une **licence Informatique** à l'Université Clermont Auvergne, puis me suis orienté vers une formation professionnalisante de **Concepteur/Développeur d'Applications** chez HumanBooster, que je viens de terminer avec succès.\n\nEn parallèle de ce cursus, j'ai acquis par **autoformation** des compétences approfondies en développement web, notamment une certification *Responsive Web Design* de freeCodeCamp. Cette démarche m'a permis de démarrer une **activité freelance** et de réaliser plusieurs projets pour des clients.\n\nPassionné de **musique depuis l'enfance**, je poursuis actuellement un cursus jazz au **Conservatoire Emmanuel-Chabrier**, ce qui nourrit ma créativité et ma rigueur - des qualités que je transpose naturellement dans mon approche du développement."
+  },
+  "education": [
+    {
+      "id": 1,
+      "title": "Concepteur / Développeur d'Application",
+      "institution": "HumanBooster",
+      "period": "2025 / 2026",
+      "description": "Formation certifiante de niveau 6 (Bac+3/4) en conception et développement d'applications"
+    },
+    {
+      "id": 2,
+      "title": "Deuxième année Licence Informatique",
+      "institution": "Université Clermont Auvergne",
+      "period": "2021 / 2024",
+      "description": "Spécialisation algorithmique et programmation"
+    },
+    {
+      "id": 3,
+      "title": "Préparation aux études scientifiques (PES)",
+      "institution": "Université Clermont Auvergne",
+      "period": "2020 / 2021",
+      "description": "Année préparatoire aux études scientifiques"
+    },
+    {
+      "id": 4,
+      "title": "Baccalauréat Général ES avec mention",
+      "institution": "Lycée Assomption Sainte-Clotilde Bordeaux",
+      "period": "2019",
+      "description": "Baccalauréat économique et social"
+    }
+  ],
+  "certifications": [
+    {
+      "id": 1,
+      "title": "Responsive Web Design",
+      "issuer": "freeCodeCamp",
+      "date": "Mars 2024",
+      "link": "https://www.freecodecamp.org/certification"
+    },
+    {
+      "id": 2,
+      "title": "TOEIC Listening and Reading",
+      "issuer": "ETS",
+      "date": "Août 2025",
+      "link": null
+    }
+  ],
+  "experiences": [
+    {
+      "id": 1,
+      "title": "Intégrateur Web",
+      "type": "Stage",
+      "company": "EI Quentin Cas",
+      "period": "Septembre 2025 / Janvier 2026",
+      "description": "Implémentation d'interfaces graphiques (React) à partir de maquettes (Figma). Formation à React.",
+      "current": false
+    },
+    {
+      "id": 2,
+      "title": "Développeur Web",
+      "type": "Freelance",
+      "company": "Indépendant",
+      "period": "Janvier 2025 / Actuellement",
+      "description": "Conception et réalisation de sites web personnels pour divers clients. Accompagnement vers des solutions d'hébergement.",
+      "current": true
+    },
+    {
+      "id": 3,
+      "title": "Sous-Titreur",
+      "type": "Freelance",
+      "company": "REV",
+      "period": "Août 2023 / Mars 2024",
+      "description": "Traduction Anglais à Français du contenu de vidéos puis synchronisation de la traduction. Travail effectué en tant que freelance, montage et immatriculation d'une micro-entreprise.",
+      "current": false
+    }
+  ],
+  "otherExperiences": [
+    {
+      "id": 1,
+      "title": "Cursus Jazz",
+      "institution": "CRR Emmanuel-Chabrier",
+      "period": "2022 / Actuellement",
+      "description": "Formation musicale en jazz"
+    }
+  ],
+  "passions": [
+    {
+      "id": 1,
+      "icon": "🥁",
+      "title": "Musique",
+      "description": "Pratique de la batterie depuis l'enfance"
+    },
+    {
+      "id": 2,
+      "icon": "🎬",
+      "title": "Audiovisuel & Photographie",
+      "description": "Création de contenu visuel et vidéo"
+    },
+    {
+      "id": 3,
+      "icon": "🏊",
+      "title": "Natation",
+      "description": "Activité sportive régulière"
+    }
+  ],
+  "values": [
+    {
+      "id": 1,
+      "icon": "💡",
+      "title": "Curiosité technique",
+      "description": "Toujours apprendre de nouvelles technologies"
+    },
+    {
+      "id": 2,
+      "icon": "🎯",
+      "title": "Qualité du code",
+      "description": "Bonnes pratiques, lisibilité, maintenabilité"
+    },
+    {
+      "id": 3,
+      "icon": "🤝",
+      "title": "Écoute client",
+      "description": "Comprendre les besoins réels, pas seulement les demandes"
+    },
+    {
+      "id": 4,
+      "icon": "🎨",
+      "title": "Design & UX",
+      "description": "L'esthétique au service de l'expérience"
+    }
+  ],
+  "cv": {
+    "path": "/resources/CV_V1_2026.pdf",
+    "filename": "CV_Leo_Peyronnet_2026.pdf"
+  }
+}

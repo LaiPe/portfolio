@@ -3,31 +3,34 @@
     "frontend": {
       "title": "Frontend",
       "icon": "🎨",
+      "featured": true,
       "items": [
-        { "name": "React", "icon": "react" },
-        { "name": "Bootstrap", "icon": "bootstrap" },
-        { "name": "CSS", "icon": "css" },
-        { "name": "Angular", "icon": "angular" }
+        { "name": "React", "icon": "react", "featured": true },
+        { "name": "Bootstrap", "icon": "bootstrap", "featured": true },
+        { "name": "CSS", "icon": "css", "featured": true },
+        { "name": "Angular", "icon": "angular", "featured": true }
       ]
     },
     "backend": {
       "title": "Backend",
       "icon": "⚙️",
+      "featured": true,
       "items": [
-        { "name": "Spring Boot", "icon": "spring" },
-        { "name": "API REST", "icon": "api" },
-        { "name": "JPA/Hibernate", "icon": "database" },
-        { "name": "MongoDB", "icon": "mongodb" }
+        { "name": "Spring Boot", "icon": "spring", "featured": true },
+        { "name": "Java", "icon": "java", "featured": true },
+        { "name": "MySQL", "icon": "mysql", "featured": true },
+        { "name": "MongoDB", "icon": "mongodb", "featured": true }
       ]
     },
     "tools": {
       "title": "Outils",
       "icon": "🛠️",
+      "featured": true,
       "items": [
-        { "name": "Git / GitHub", "icon": "git" },
-        { "name": "Docker", "icon": "docker" },
-        { "name": "Figma", "icon": "figma" },
-        { "name": "Vite", "icon": "vite" }
+        { "name": "Git / GitHub", "icon": "git", "featured": true },
+        { "name": "Docker", "icon": "docker", "featured": true },
+        { "name": "Figma", "icon": "figma", "featured": true },
+        { "name": "Vite", "icon": "vite", "featured": true }
       ]
     }
   }

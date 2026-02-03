@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
+import { useState } from "react";
 import Badge from "../../common/Badge/Badge";
+import Spinner from "../../spinner/Spinner";
 import styles from "./ProjectCard.module.css";
 
 const categoryVariants = {
@@ -11,17 +13,30 @@ const categoryVariants = {
 
 export default function ProjectCard({ project, size = "medium" }) {
     const variant = categoryVariants[project.category] || "default";
+    const [imageLoaded, setImageLoaded] = useState(false);
+
+    const handleImageLoad = () => {
+        setImageLoaded(true);
+    };
 
     return (
         <Link to={`/projets/${project.slug}`} className={`${styles.projectCard} ${styles[size]}`}>
             <div className={styles.imageContainer}>
                 {project.images?.thumbnail ? (
-                    <img 
-                        src={project.images.thumbnail} 
-                        alt={project.title}
-                        className={styles.image}
-                        loading="lazy"
-                    />
+                    <>
+                        {!imageLoaded && (
+                            <div className={styles.imageSpinner}>
+                                <Spinner />
+                            </div>
+                        )}
+                        <img 
+                            src={project.images.thumbnail} 
+                            alt={project.title}
+                            className={`${styles.image} ${imageLoaded ? styles.imageLoaded : ''}`}
+                            loading="lazy"
+                            onLoad={handleImageLoad}
+                        />
+                    </>
                 ) : (
                     <div className={styles.emojiContainer}>
                         <span className={styles.emoji}>

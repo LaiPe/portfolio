@@ -62,7 +62,7 @@
 }
 
 header a.active{
-    border: 1px black solid;
+    outline: 1px black solid;
     padding: 0.2rem 1rem;
 }
 .display-none{

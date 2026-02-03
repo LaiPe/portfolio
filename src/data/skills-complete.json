@@ -1,0 +1,88 @@
+{
+  "skills": {
+    "frontend": {
+      "title": "Frontend",
+      "icon": "🎨",
+      "featured": true,
+      "items": [
+        { "name": "React", "icon": "react", "mastery": "advanced", "featured": true },
+        { "name": "JavaScript", "icon": "javascript", "mastery": "mastered", "featured": false },
+        { "name": "TypeScript", "icon": "typescript", "mastery": "learning", "featured": false },
+        { "name": "HTML5", "icon": "html", "mastery": "mastered", "featured": false },
+        { "name": "CSS3", "icon": "css", "mastery": "mastered", "featured": true },
+        { "name": "Bootstrap", "icon": "bootstrap", "mastery": "mastered", "featured": true },
+        { "name": "Angular", "icon": "angular", "mastery": "beginner", "featured": true },
+        { "name": "Eleventy", "icon": "eleventy", "mastery": "advanced", "featured": false },
+        { "name": "Nunjucks", "icon": "nunjucks", "mastery": "advanced", "featured": false }
+      ]
+    },
+    "backend": {
+      "title": "Backend",
+      "icon": "⚙️",
+      "featured": true,
+      "items": [
+        { "name": "Spring Boot", "icon": "spring", "mastery": "advanced", "featured": true },
+        { "name": "Java", "icon": "java", "mastery": "mastered", "featured": false }
+      ]
+    },
+    "databases": {
+      "title": "Bases de données",
+      "icon": "🗄️",
+      "featured": false,
+      "items": [
+        { "name": "MySQL", "icon": "mysql", "mastery": "advanced", "featured": false },
+        { "name": "H2 Database", "icon": "h2", "mastery": "advanced", "featured": false },
+        { "name": "MongoDB", "icon": "mongodb", "mastery": "intermediate", "featured": true }
+      ]
+    },
+    "devops": {
+      "title": "DevOps & CI/CD",
+      "icon": "🚀",
+      "featured": false,
+      "items": [
+        { "name": "Git / GitHub", "icon": "git", "mastery": "mastered", "featured": true },
+        { "name": "Docker", "icon": "docker", "mastery": "advanced", "featured": true },
+        { "name": "GitHub Actions", "icon": "github-actions", "mastery": "advanced", "featured": false },
+        { "name": "Netlify", "icon": "netlify", "mastery": "advanced", "featured": false },
+        { "name": "Nginx", "icon": "nginx", "mastery": "beginner", "featured": false },
+        { "name": "Caddy", "icon": "caddy", "mastery": "beginner", "featured": false }
+      ]
+    },
+    "design": {
+      "title": "Design & UX",
+      "icon": "✨",
+      "featured": false,
+      "items": [
+        { "name": "Figma", "icon": "figma", "mastery": "intermediate", "featured": true },
+        { "name": "Illustrator", "icon": "illustrator", "mastery": "learning", "featured": false },
+        { "name": "Canva", "icon": "canva", "mastery": "advanced", "featured": false }
+      ]
+    },
+    "tools": {
+      "title": "Autres outils",
+      "icon": "🛠️",
+      "featured": true,
+      "items": [
+        { "name": "Linux", "icon": "linux", "mastery": "advanced", "featured": false },
+        { "name": "Vite", "icon": "vite", "mastery": "beginner", "featured": true },
+        { "name": "VS Code", "icon": "vscode", "mastery": "mastered", "featured": false },
+        { "name": "IDEA IntelliJ", "icon": "intellij", "mastery": "advanced", "featured": false },
+        { "name": "Postman", "icon": "postman", "mastery": "mastered", "featured": false },
+        { "name": "Selenium", "icon": "selenium", "mastery": "mastered", "featured": false }
+      ]
+    },
+    "softSkills": {
+      "title": "Soft Skills",
+      "icon": "💬",
+      "featured": false,
+      "items": [
+        { "name": "Anglais (B2 TOEIC)", "icon": "english", "featured": false },
+        { "name": "Travail en équipe", "icon": "team", "featured": false },
+        { "name": "Communication", "icon": "communication", "featured": false },
+        { "name": "Résolution de problèmes", "icon": "problem-solving", "featured": false },
+        { "name": "Adaptabilité", "icon": "adaptability", "featured": false },
+        { "name": "Autonomie", "icon": "autonomy", "featured": false }
+      ]
+    }
+  }
+}

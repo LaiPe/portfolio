@@ -15,6 +15,11 @@ export default function HomePage() {
     const navigate = useNavigate();
     const { skills } = skillsData;
     const { testimonials } = testimonialsData;
+
+    // Filtrer les catégories de compétences pour n'afficher que celles marquées "featured"
+    const featuredSkills = Object.fromEntries(
+        Object.entries(skills).filter(([, skill]) => skill.featured)
+    );
     const { data: projects, loading: loadingProjects } = useCollection("projects");
     const { data: services, loading: loadingServices } = useCollection("services");
 
@@ -64,12 +69,12 @@ export default function HomePage() {
                 <div className={styles.container}>
                     <h2 className={styles.sectionTitle}>Compétences Clés</h2>
                     <div className={styles.skillsGrid}>
-                        {Object.values(skills).map((skill) => (
+                        {Object.values(featuredSkills).map((skill) => (
                             <SkillCard
                                 key={skill.title}
                                 title={skill.title}
                                 icon={skill.icon}
-                                items={skill.items}
+                                items={skill.items.filter(item => item.featured)}
                             />
                         ))}
                     </div>

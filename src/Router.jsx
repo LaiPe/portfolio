@@ -4,6 +4,7 @@ import Spinner from "./components/spinner/Spinner";
 import Header from "./layouts/header/Header";
 import Footer from "./layouts/footer/Footer";
 import HomePage from "./pages/home/HomePage";
+import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import ProjectDetailPage from "./pages/project-detail/ProjectDetailPage";
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             {
                 path: "projets/:slug",
                 element: <ProjectDetailPage />
+            },
+            {
+                path: "apropos",
+                element: <AboutPage />
             },
             {
                 path: "contact",
