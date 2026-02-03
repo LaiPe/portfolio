@@ -516,7 +516,7 @@
 }
 
 .useCaseItem::before {
-    content: "💡";
+    content: "👤";
 }
 
 /* Architecture (pour applications) */

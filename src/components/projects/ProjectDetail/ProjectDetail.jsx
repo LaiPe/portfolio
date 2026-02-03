@@ -23,8 +23,8 @@ export default function ProjectDetail({ project }) {
             resultsTitle: "Résultats",
             galleryTitle: "Galerie",
             ctaTitle: "Projet similaire ?",
-            ctaText: "Vous avez un projet similaire en tête ? Discutons-en !",
-            ctaButton: "Me contacter",
+            ctaText: "Découvrez mes offres pour créer un projet similaire.",
+            ctaButton: "Voir mes services",
             showCta: true
         },
         mockup: {
@@ -38,7 +38,7 @@ export default function ProjectDetail({ project }) {
             galleryTitle: "Aperçu",
             ctaTitle: "Disponible en projet clé en main",
             ctaText: "Cette maquette peut être adaptée à votre entreprise.",
-            ctaButton: "Demander un devis",
+            ctaButton: "Découvrir mes offres",
             showCta: true
         },
         experiment: {
@@ -62,8 +62,8 @@ export default function ProjectDetail({ project }) {
             resultsTitle: "Résultats",
             galleryTitle: "Captures d'écran",
             ctaTitle: "Besoin d'une application ?",
-            ctaText: "Je peux développer une application similaire pour votre projet.",
-            ctaButton: "Discutons-en",
+            ctaText: "Découvrez mes offres de développement d'applications.",
+            ctaButton: "Voir mes services",
             showCta: true
         }
     };
@@ -225,7 +225,7 @@ export default function ProjectDetail({ project }) {
                         <div className={styles.sidebarCta}>
                             <h3 className={styles.sidebarCtaTitle}>{cfg.ctaTitle}</h3>
                             <p className={styles.sidebarCtaText}>{cfg.ctaText}</p>
-                            <Link to="/contact" className={styles.sidebarCtaButton}>
+                            <Link to="/services" className={styles.sidebarCtaButton}>
                                 {cfg.ctaButton}
                             </Link>
                         </div>

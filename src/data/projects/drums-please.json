@@ -6,6 +6,8 @@
   "categoryLabel": "Maquette",
   "shortDescription": "Maquette e-commerce pour la location d'instruments de musique.",
   "technologies": ["HTML", "CSS", "JS"],
+  "highlights": ["Adaptée à tous les supports", "Design moderne et épuré"],
+  "useCases": ["Studios d'enregistrement", "Magasins de musique", "Écoles de musique"],
   "featured": true,
   "priority": 3,
   "images": {

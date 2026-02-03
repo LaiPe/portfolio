@@ -3,19 +3,19 @@
     {
       "name": "LinkedIn",
       "url": "https://www.linkedin.com/in/l%C3%A9o-peyronnet-124a86278/",
-      "icon": "img/icons/linkedIn-icon.png",
+      "icon": "/img/icons/linkedIn-icon.png",
       "description": "Connectons-nous sur LinkedIn"
     },
     {
       "name": "GitHub",
       "url": "https://github.com/LaiPe",
-      "icon": "img/icons/github-icon.png",
+      "icon": "/img/icons/github-icon.png",
       "description": "Découvrez mon code"
     },
     {
       "name": "Malt",
       "url": "https://www.malt.fr/profile/leopeyronnet",
-      "icon": "img/icons/malt-icon.png",
+      "icon": "/img/icons/malt-icon.png",
       "description": "Mon profil freelance"
     }
   ]

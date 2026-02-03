@@ -1,6 +1,5 @@
 import styles from './Footer.module.css';
 import socialsData from '../../data/socials.json';
-import Button from '../../components/common/Button/Button';
 import { Link } from 'react-router-dom';
 
 export default function Footer() {
@@ -21,7 +20,7 @@ export default function Footer() {
                     {/* Section À propos */}
                     <div className={styles.section}>
                         <div className={styles.logoTitle}>
-                            <img src="img/logo_lp_raw.png" alt="Logo Léo Peyronnet" className={styles.logo} />
+                            <img src="/img/logo_lp_raw.png" alt="Logo Léo Peyronnet" className={styles.logo} />
                             <h3 className={styles.title}>Léo Peyronnet</h3>
                         </div>
                         <p className={styles.description}>

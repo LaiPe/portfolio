@@ -62,8 +62,8 @@ export default function ProjectDetailContent({ project, config }) {
                 </div>
             </section>
 
-            {/* Points forts (app only) */}
-            {category === "app" && project.highlights && project.highlights.length > 0 && (
+            {/* Points forts */}
+            {(category === "app" || category === "mockup") && project.highlights && project.highlights.length > 0 && (
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Points forts</h2>
                     <div className={styles.highlightsList}>
@@ -256,7 +256,6 @@ export default function ProjectDetailContent({ project, config }) {
             )}
 
             {/* Témoignage client (client only) */}
-            {console.log(projectTestimonial)}
             {category === "client" && projectTestimonial && projectTestimonial.text && (
                 <section className={styles.section}>
                     <h2 className={styles.sectionTitle}>Témoignage client</h2>
