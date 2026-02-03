@@ -30,7 +30,7 @@ export default function ProjectDetail({ project }) {
         mockup: {
             defaultEmoji: "🎨",
             extraBadge: null,
-            buttonText: "Voir la démo",
+            buttonText: "Voir la maquette",
             typeLabel: "Maquette / Étude de cas",
             contextTitle: "À propos du projet",
             featuresTitle: "Fonctionnalités",
@@ -194,7 +194,7 @@ export default function ProjectDetail({ project }) {
                                         rel="noopener noreferrer"
                                         className={styles.sidebarLink}
                                     >
-                                        🔗 {category === "client" ? "Site en ligne" : category === "app" ? "Application en ligne" : "Démo en ligne"}
+                                        🔗 {category === "client" ? "Site en ligne" : category === "app" ? "Application en ligne" : "Maquette en ligne"}
                                     </a>
                                 )}
                                 {project.links?.github && (

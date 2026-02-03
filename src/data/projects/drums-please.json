@@ -12,7 +12,14 @@
   "priority": 3,
   "images": {
     "thumbnail": "/img/projects/drums-please/drums-please-thumbnail.jpg",
-    "hero": "/img/projects/drums-please/drums-please-1.png"
+    "hero": "/img/projects/drums-please/drums-please-thumbnail.jpg",
+    "gallery": [
+      "/img/projects/drums-please/drums-please-1.png",
+      "/img/projects/drums-please/drums-please-2.png",
+      "/img/projects/drums-please/drums-please-3.png",
+      "/img/projects/drums-please/drums-please-4.png",
+      "/img/projects/drums-please/drums-please-5.png"
+    ]
   },
   "links": {
     "live": "https://drums-please.netlify.app/",

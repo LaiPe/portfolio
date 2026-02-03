@@ -12,7 +12,15 @@
   "priority": 2,
   "images": {
     "thumbnail": "/img/projects/melodie-cie/melodie-cie-thumbnail.jpg",
-    "hero": "/img/projects/melodie-cie/melodie-cie-hero.jpg"
+    "hero": "/img/projects/melodie-cie/melodie-cie-hero.jpg",
+    "gallery": [
+      "/img/projects/melodie-cie/melodie-cie-1.png",
+      "/img/projects/melodie-cie/melodie-cie-2.png",
+      "/img/projects/melodie-cie/melodie-cie-3.png",
+      "/img/projects/melodie-cie/melodie-cie-4.png",
+      "/img/projects/melodie-cie/melodie-cie-5.png",
+      "/img/projects/melodie-cie/melodie-cie-6.png"
+    ]
   },
   "links": {
     "live": "https://melodie-et-cie.sandbox.leopeyronnet.fr/",
