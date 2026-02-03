@@ -270,7 +270,12 @@
 }
 
 .sectionText p {
-    margin-bottom: 0.5em;
+    margin-bottom: 0.5rem;
+}
+
+.sectionText ul, .sectionText ol {
+    padding-left: var(--spacing-md);
+    margin-bottom: 0.5rem;
 }
 
 /* Features / Fonctionnalités */

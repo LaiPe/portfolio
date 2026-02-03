@@ -6,6 +6,8 @@
   "categoryLabel": "Maquette",
   "shortDescription": "Site vitrine multi-services pour une école de musique fictive, avec gestion des cours et inscriptions.",
   "technologies": ["11ty", "Decap CMS", "Nunjucks", "CSS", "JS"],
+  "highlights": ["Autonomie éditoriale totale grâce au back-office intégré", "Adapté à tous les supports", "Design généraliste"],
+  "useCases": ["Écoles", "Associations", "Petites entreprises"],
   "featured": true,
   "priority": 2,
   "images": {
