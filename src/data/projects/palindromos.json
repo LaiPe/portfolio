@@ -6,8 +6,9 @@
   "categoryLabel": "Expérimentation",
   "shortDescription": "Vérificateur de palindrome interactif, réalisé dans le cadre de la certification freeCodeCamp.",
   "technologies": ["JavaScript", "HTML", "CSS"],
+  "skills": ["Basiques de JavaScript", "Manipulation du DOM"],
   "featured": false,
-  "priority": 10,
+  "priority": 11,
   "images": {
     "thumbnail": "/img/projects/palindromos/palindromos-thumbnail.jpg",
     "hero": "/img/projects/palindromos/palindromos-hero.webp"

@@ -6,6 +6,7 @@
   "categoryLabel": "Expérimentation",
   "shortDescription": "Simulation épidémiologique modélisant la propagation d'un virus dans une population.",
   "technologies": ["C", "Make"],
+  "skills": ["Programmation avancée en C", "Optimisation des performances", "Build avec Make"],
   "featured": false,
   "priority": 13,
   "images": {
@@ -15,7 +16,7 @@
   "links": {
     "live": null,
     "github": "https://github.com/LaiPe/sim-rhinite",
-    "pdf": "/assets/pdf/sim-rhinite.pdf"
+    "pdf": "/resources/sim-rhinite/sim-rhinite.pdf"
   },
   "client": null,
   "date": "Juin 2024",

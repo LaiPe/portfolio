@@ -6,14 +6,15 @@
   "categoryLabel": "Expérimentation",
   "shortDescription": "Visualisation interactive de l'algorithme des Tours de Hanoï avec animation pas à pas.",
   "technologies": ["JavaScript", "HTML", "CSS"],
+  "skills": ["Algorithmes récursifs", "Manipulation avancée du DOM"],
   "featured": false,
-  "priority": 11,
+  "priority": 10,
   "images": {
     "thumbnail": "/img/projects/tours-hanoi/hanoi-thumbnail.png",
     "hero": "/img/projects/tours-hanoi/tours-hanoi-hero.webp"
   },
   "links": {
-    "live": null,
+    "live": "https://tours-hanoi.sandbox.leopeyronnet.fr/",
     "github": "https://github.com/LaiPe/tours-hanoi"
   },
   "client": null,
