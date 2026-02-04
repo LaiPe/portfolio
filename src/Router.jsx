@@ -8,6 +8,7 @@ import AboutPage from "./pages/about/AboutPage";
 import ContactPage from "./pages/contact/ContactPage";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import ProjectDetailPage from "./pages/project-detail/ProjectDetailPage";
+import ServicesPage from "./pages/services/ServicesPage";
 
 // Composant pour scroller vers le haut à chaque changement de route
 function ScrollToTop() {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: "apropos",
                 element: <AboutPage />
+            },
+            {
+                path: "services",
+                element: <ServicesPage />
             },
             {
                 path: "contact",

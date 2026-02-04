@@ -194,28 +194,18 @@
     margin-bottom: var(--spacing-sm);
 }
 
-.servicesGrid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-lg);
-}
-
-@media (max-width: 1000px) {
-    .servicesGrid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (max-width: 750px) {
-    .servicesGrid {
-        grid-template-columns: 1fr;
-    }
+.servicesSubtitle {
+    font-size: 1.1rem;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-md) 0 0;
+    line-height: 1.6;
 }
 
 .servicesCta {
     display: flex;
     justify-content: center;
-    margin-top: var(--spacing-xl);
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
 }
 
 /* ================================

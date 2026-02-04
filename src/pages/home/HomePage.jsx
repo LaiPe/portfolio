@@ -116,15 +116,16 @@ export default function HomePage() {
                     <div className={styles.servicesHeader}>
                         <span className={styles.servicesIcon}>🎯</span>
                         <h2 className={styles.sectionTitle}>Vous cherchez un développeur web ?</h2>
-                    </div>
-                    <div className={styles.servicesGrid}>
-                        {featuredServices.map((service) => (
-                            <ServiceCard key={service.id} service={service} />
-                        ))}
+                        <p className={styles.servicesSubtitle}>
+                            Sites vitrines, applications React, e-commerce... Discutons de votre projet !
+                        </p>
                     </div>
                     <div className={styles.servicesCta}>
-                        <Button to="/services" variant="outline">
-                            Voir toutes les offres →
+                        <Button to="/contact" variant="primary" size="lg">
+                            Me contacter
+                        </Button>
+                        <Button to="/services" variant="outline" size="lg">
+                            En savoir plus →
                         </Button>
                     </div>
                 </div>
