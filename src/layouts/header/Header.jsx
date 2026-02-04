@@ -4,13 +4,13 @@ import useViewport from "../../hooks/useViewport";
 import styles from './Header.module.css';
 
 export default function Header() {
-    const { isMobile } = useViewport();
+    const { isDesktop } = useViewport();
     const { pathname } = useLocation();
     const [openedNav, setOpenedNav] = useState(false);
 
     const isHomepage = pathname === "/";
-    const tinyLogo = !isHomepage || isMobile;
-    const bigHeader = isHomepage && !isMobile;
+    const tinyLogo = !isHomepage || !isDesktop;
+    const bigHeader = isHomepage && isDesktop;
 
     const toggleNav = () => {
         setOpenedNav(!openedNav);
@@ -19,7 +19,7 @@ export default function Header() {
         setOpenedNav(false);
     }
 
-    const showNav = !isMobile || openedNav
+    const showNav = isDesktop || openedNav
 
     return (
         <header className={ bigHeader ? `${styles.header} ${styles.index}` : styles.header}>
@@ -31,7 +31,7 @@ export default function Header() {
                 )}
             </Link>
             <nav className={ openedNav ? `${styles.nav} ${styles.opened}` : styles.nav }>
-                { isMobile && (
+                { !isDesktop && (
                     <label htmlFor="activ-mini" onClick={toggleNav}>☰</label>
                  )}
                 

@@ -44,7 +44,7 @@
     left: 9%;
 }
 
-@media all and (max-width: 750px){
+@media all and (max-width: 1024px){
     .header{
         justify-content: space-between;
     }
@@ -98,7 +98,7 @@
     padding-bottom: 1rem;
 }
 
-@media all and (max-width: 750px){
+@media all and (max-width: 1024px){
 
     /*RESET*/
     :root{
