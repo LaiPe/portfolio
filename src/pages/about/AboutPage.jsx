@@ -1,4 +1,3 @@
-import { Helmet } from "react-helmet-async";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
 import Button from "../../components/common/Button/Button";
@@ -36,11 +35,6 @@ export default function AboutPage() {
 
     return (
         <>
-            <Helmet>
-                <title>À propos | Léo Peyronnet - Développeur Web</title>
-                <meta name="description" content="Découvrez le parcours de Léo Peyronnet, développeur web full-stack spécialisé React. Formation, expériences et compétences." />
-            </Helmet>
-
             <main className={styles.about}>
                 <div className={styles.layout}>
                     {/* Main Content */}

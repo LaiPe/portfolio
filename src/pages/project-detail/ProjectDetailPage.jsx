@@ -1,5 +1,4 @@
 import { useParams, Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
 import { useMemo } from "react";
 
 import ProjectDetail from "../../components/projects/ProjectDetail/ProjectDetail";
@@ -69,16 +68,6 @@ export default function ProjectDetailPage() {
 
     return (
         <>
-            <Helmet>
-                <title>{project.title} | Léo Peyronnet - Développeur Full-Stack</title>
-                <meta name="description" content={project.shortDescription} />
-                <meta property="og:title" content={`${project.title} | Léo Peyronnet`} />
-                <meta property="og:description" content={project.shortDescription} />
-                {project.images?.hero && (
-                    <meta property="og:image" content={project.images.hero} />
-                )}
-            </Helmet>
-
             <main className={styles.projectDetail}>
                 <ProjectDetail project={project} />
 

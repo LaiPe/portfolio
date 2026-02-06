@@ -1,5 +1,4 @@
 import { useState, useMemo } from "react";
-import { Helmet } from "react-helmet-async";
 
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
 import Spinner from "../../components/spinner/Spinner";
@@ -95,23 +94,6 @@ export default function ProjectsPage() {
 
     return (
         <>
-            <Helmet>
-                <title>Mes Projets | Léo Peyronnet</title>
-                <meta 
-                    name="description" 
-                    content="Découvrez mes réalisations : projets clients, applications web React, sites vitrines et expérimentations techniques." 
-                />
-                <meta 
-                    name="keywords" 
-                    content="portfolio développeur, projets react, sites web, applications web" 
-                />
-                <meta property="og:title" content="Mes Projets | Léo Peyronnet" />
-                <meta 
-                    property="og:description" 
-                    content="Découvrez mes réalisations : projets clients, applications web React, sites vitrines et expérimentations techniques." 
-                />
-            </Helmet>
-
             <main className={styles.projects}>
                 {/* Header Section */}
                 <section className={styles.header}>
