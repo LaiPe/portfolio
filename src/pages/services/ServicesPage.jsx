@@ -40,7 +40,7 @@ export default function ServicesPage() {
                             </Button>
                             {maltLink && (
                                 <Button href={maltLink} variant="outline" size="lg">
-                                    <img src="img/icons/malt-icon.png" alt="Malt Logo" className={styles.maltIcon} />
+                                    <img src="/img/icons/malt-icon.png" alt="Malt Logo" className={styles.maltIcon} />
                                     <span>Voir mon profil Malt</span>
                                 </Button>
                             )}
