@@ -7,6 +7,53 @@ import Spinner from "../../components/spinner/Spinner";
 import useCollection from "../../hooks/useCollection";
 import styles from "./ProjectDetailPage.module.css";
 
+// Import statique de tous les projets pour le loader (SSG)
+const projectModules = import.meta.glob('/src/data/projects/*.json', { eager: true });
+
+/**
+ * Loader pour React Router v7 (SSG)
+ * Charge le projet correspondant au slug
+ */
+export async function loader({ params }) {
+    const { slug } = params;
+    
+    for (const [filePath, mod] of Object.entries(projectModules)) {
+        const project = mod.default || mod;
+        if (project.slug === slug) {
+            return { project };
+        }
+    }
+    
+    return { project: null };
+}
+
+/**
+ * Fonction meta pour React Router v7
+ * Génère les métadonnées dynamiques basées sur les données du loader
+ */
+export function meta({ data }) {
+    const project = data?.project;
+    
+    if (!project) {
+        return [
+            { title: "Projet introuvable | Léo Peyronnet" },
+        ];
+    }
+
+    const meta = [
+        { title: `${project.title} | Léo Peyronnet - Développeur Full-Stack` },
+        { name: "description", content: project.shortDescription },
+        { property: "og:title", content: `${project.title} | Léo Peyronnet` },
+        { property: "og:description", content: project.shortDescription },
+    ];
+
+    if (project.images?.thumbnail) {
+        meta.push({ property: "og:image", content: project.images.thumbnail });
+    }
+
+    return meta;
+}
+
 /**
  * Page de détail d'un projet
  * Route: /projets/:slug
@@ -17,11 +64,7 @@ import styles from "./ProjectDetailPage.module.css";
 export default function ProjectDetailPage() {
     const { slug } = useParams();
     const { data: projects, loading, error } = useCollection("projects");
-
-    // Trouver le projet actuel
-    const project = useMemo(() => {
-        return projects.find(p => p.slug === slug);
-    }, [projects, slug]);
+    const project = projects.find(p => p.slug === slug);
 
     // Navigation inter-projets (même catégorie)
     const navigation = useMemo(() => {
@@ -67,17 +110,8 @@ export default function ProjectDetailPage() {
     }
 
     return (
-        <>
-            <title>{project.title} | Léo Peyronnet - Développeur Full-Stack</title>
-            <meta name="description" content={project.shortDescription} />
-            <meta property="og:title" content={`${project.title} | Léo Peyronnet`} />
-            <meta property="og:description" content={project.shortDescription} />
-            {project.images?.hero && (
-                <meta property="og:image" content={project.images.hero} />
-            )}
-
-            <main className={styles.projectDetail}>
-                <ProjectDetail project={project} />
+        <main className={styles.projectDetail}>
+            <ProjectDetail project={project} />
 
                 {/* Navigation inter-projets */}
                 <nav className={styles.projectNav}>
@@ -117,6 +151,5 @@ export default function ProjectDetailPage() {
                     </div>
                 </nav>
             </main>
-        </>
     );
 }
