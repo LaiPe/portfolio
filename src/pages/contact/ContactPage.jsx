@@ -28,6 +28,9 @@ export default function ContactPage() {
 
     return (
         <main className={styles.contact}>
+            <title>Contact | Léo Peyronnet - Développeur Web</title>
+            <meta name="description" content="Contactez Léo Peyronnet pour vos projets de développement web. Devis gratuit et réponse rapide." />
+
             {/* Hero Section */}
             <section className={styles.hero}>
                 <div className={styles.container}>

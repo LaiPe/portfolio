@@ -35,6 +35,9 @@ export default function AboutPage() {
 
     return (
         <>
+            <title>À propos | Léo Peyronnet - Développeur Web</title>
+            <meta name="description" content="Découvrez le parcours de Léo Peyronnet, développeur web full-stack spécialisé React. Formation, expériences et compétences." />
+
             <main className={styles.about}>
                 <div className={styles.layout}>
                     {/* Main Content */}

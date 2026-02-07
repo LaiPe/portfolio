@@ -94,6 +94,12 @@ export default function ProjectsPage() {
 
     return (
         <>
+            <title>Mes Projets | Léo Peyronnet</title>
+            <meta name="description" content="Découvrez mes réalisations : projets clients, applications web React, sites vitrines et expérimentations techniques." />
+            <meta name="keywords" content="portfolio développeur, projets react, sites web, applications web" />
+            <meta property="og:title" content="Mes Projets | Léo Peyronnet" />
+            <meta property="og:description" content="Découvrez mes réalisations : projets clients, applications web React, sites vitrines et expérimentations techniques." />
+
             <main className={styles.projects}>
                 {/* Header Section */}
                 <section className={styles.header}>

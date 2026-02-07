@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from "react-router";
 import Badge from "../../common/Badge/Badge";
 import Button from "../../common/Button/Button";
 import ProjectDetailContent from "./ProjectDetailContent";

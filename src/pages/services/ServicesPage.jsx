@@ -9,6 +9,9 @@ export default function ServicesPage() {
 
     return (
         <main className={styles.services}>
+            <title>Services | Léo Peyronnet - Développeur Web</title>
+            <meta name="description" content="Découvrez les services de développement web proposés par Léo Peyronnet : sites vitrines, applications React, e-commerce." />
+
             {/* Hero Section avec animation */}
             <section className={styles.hero}>
                 <div className={styles.heroContent}>

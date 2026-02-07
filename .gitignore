@@ -11,6 +11,8 @@ node_modules
 package-lock.json
 dist
 dist-ssr
+build
+.react-router
 *.local
 
 # Editor directories and files

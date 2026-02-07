@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 
 import Button from "../../components/common/Button/Button";
 import SkillCard from "../../components/skills/SkillCard/SkillCard";
@@ -40,6 +40,11 @@ export default function HomePage() {
 
     return (
         <main className={styles.home}>
+            <title>Léo Peyronnet | Développeur Full-Stack React</title>
+            <meta name="description" content="Portfolio de Léo Peyronnet, développeur web full-stack spécialisé React. Découvrez mes projets, compétences et services." />
+            <meta property="og:title" content="Léo Peyronnet | Développeur Full-Stack React" />
+            <meta property="og:description" content="Portfolio de Léo Peyronnet, développeur web full-stack spécialisé React." />
+
             {/* Hero Section */}
             <section className={styles.hero} style={{ width: '100%', height: '600px', position: 'relative' }}>
                 <Threads

@@ -1,4 +1,4 @@
-import { NavLink, Link, useLocation } from "react-router-dom";
+import { NavLink, Link, useLocation } from "react-router";
 import { useState } from "react";
 import useViewport from "../../hooks/useViewport";
 import styles from './Header.module.css';

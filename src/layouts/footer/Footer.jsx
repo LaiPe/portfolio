@@ -1,6 +1,6 @@
 import styles from './Footer.module.css';
 import socialsData from '../../data/socials.json';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 export default function Footer() {
     const currentYear = new Date().getFullYear();
