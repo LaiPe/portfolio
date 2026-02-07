@@ -8,7 +8,6 @@ import {
     useNavigation
 } from "react-router";
 
-import { useState, useEffect } from "react";
 import Header from "../src/layouts/header/Header";
 import Footer from "../src/layouts/footer/Footer";
 import Spinner from "../src/components/spinner/Spinner";
@@ -22,7 +21,7 @@ export function Layout({ children }) {
             <head>
                 <meta charSet="utf-8" />
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+                <Favicon />
                 <Meta />
                 <Links />
             </head>
@@ -45,6 +44,32 @@ export default function App() {
             <Header />
             {isLoading ? <Spinner fullscreen /> : <Outlet />}
             {!isLoading && <Footer />}
+        </>
+    );
+}
+
+function Favicon() {
+    return (
+        <>
+            {/* Favicon fallback (navigateurs sans support media queries) */}
+            <link 
+                rel="icon" 
+                type="image/png" 
+                href="/img/icone-lp-mid.png" 
+            />
+            {/* Favicon dynamique selon le thème du système */}
+            <link 
+                rel="icon" 
+                type="image/png" 
+                href="/img/icone_lp_light.png" 
+                media="(prefers-color-scheme: light)"
+            />
+            <link 
+                rel="icon" 
+                type="image/png" 
+                href="/img/icone_lp_dark.png" 
+                media="(prefers-color-scheme: dark)"
+            />
         </>
     );
 }
