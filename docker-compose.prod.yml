@@ -1,0 +1,11 @@
+services:
+  portfolio:
+    image: ghcr.io/laipe/laipe/portfolio:latest
+    container_name: portfolio
+    networks:
+      - caddy_network
+    restart: unless-stopped
+
+networks:
+  caddy_network:
+    external: true
