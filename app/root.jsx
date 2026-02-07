@@ -5,8 +5,7 @@ import {
     Scripts,
     ScrollRestoration,
     isRouteErrorResponse,
-    useNavigation,
-    useLocation,
+    useNavigation
 } from "react-router";
 
 import { useState, useEffect } from "react";
@@ -38,18 +37,8 @@ export function Layout({ children }) {
 
 export default function App() {
     const { state } = useNavigation();
-    const { pathname } = useLocation();
-    const [isReady, setIsReady] = useState(false);
 
-    useEffect(() => {
-        setIsReady(false);
-        const timer = requestAnimationFrame(() => {
-            setIsReady(true);
-        });
-        return () => cancelAnimationFrame(timer);
-    }, [pathname]);
-
-    const isLoading = state === "loading" || !isReady;
+    const isLoading = state === "loading";
 
     return (
         <>

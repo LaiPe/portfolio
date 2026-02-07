@@ -1,45 +1,32 @@
-import { useState, useEffect } from "react";
-
 /**
- * Hook pour charger une description Markdown d'un projet
+ * Hook pour charger une description Markdown d'un projet.
+ * Chargement synchrone via import.meta.glob (eager), compatible pré-rendu statique.
+ *
  * @param {string} slug - Le slug du projet
- * @returns {{ description: string, loading: boolean, error: Error | null }}
+ * @returns {{ description: string, loading: false, error: Error | null }}
  */
+
+// Charger tous les fichiers .md de descriptions au build-time (synchrone)
+const descriptionModules = import.meta.glob(
+    "/src/data/projects/descriptions/*.md",
+    { eager: true, query: "?raw", import: "default" }
+);
+
 export function useProjectDescription(slug) {
-    const [description, setDescription] = useState("");
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    if (!slug) {
+        return { description: "", loading: false, error: null };
+    }
 
-    useEffect(() => {
-        if (!slug) {
-            setLoading(false);
-            return;
-        }
+    try {
+        const key = `/src/data/projects/descriptions/${slug}.md`;
+        const content = descriptionModules[key];
 
-        const loadDescription = async () => {
-            try {
-                setLoading(true);
-                setError(null);
-
-                // Import dynamique du fichier Markdown
-                const response = await import(
-                    `../data/projects/descriptions/${slug}.md?raw`
-                );
-                setDescription(response.default);
-            } catch (err) {
-                console.error(
-                    `Erreur lors du chargement de la description pour ${slug}:`,
-                    err
-                );
-                setError(err);
-                setDescription("");
-            } finally {
-                setLoading(false);
-            }
-        };
-
-        loadDescription();
-    }, [slug]);
-
-    return { description, loading, error };
+        return { description: content ?? "", loading: false, error: null };
+    } catch (err) {
+        console.error(
+            `Erreur lors du chargement de la description pour ${slug}:`,
+            err
+        );
+        return { description: "", loading: false, error: err };
+    }
 }
