@@ -11,7 +11,7 @@
         { "name": "HTML5", "icon": "html", "mastery": "mastered", "featured": false },
         { "name": "CSS3", "icon": "css", "mastery": "mastered", "featured": true },
         { "name": "Bootstrap", "icon": "bootstrap", "mastery": "mastered", "featured": true },
-        { "name": "Angular", "icon": "angular", "mastery": "beginner", "featured": true },
+        { "name": "Angular", "icon": "angular", "mastery": "intermediate", "featured": true },
         { "name": "Eleventy", "icon": "eleventy", "mastery": "advanced", "featured": false },
         { "name": "Nunjucks", "icon": "nunjucks", "mastery": "advanced", "featured": false }
       ]
