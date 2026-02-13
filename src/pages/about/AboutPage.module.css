@@ -552,6 +552,10 @@
 }
 
 @media (max-width: 480px) {
+    .heroContent {
+        flex-direction: column-reverse;
+    }
+
     .name {
         font-size: 1.75rem;
     }
