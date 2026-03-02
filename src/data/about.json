@@ -4,7 +4,7 @@
     "title": "Développeur Full-Stack Junior",
     "age": 24,
     "photo": "/img/a-propos/profile.jpg",
-    "bio": "Fraîchement diplômé Concepteur/Développeur d'Applications, *je recherche un poste de développeur front-end* et souhaite mettre à profit ma forte appétence pour *React* au sein de projets concrets et ambitieux.",
+    "bio": "Fraîchement diplômé Concepteur/Développeur d’Applications, je recherche un poste de *développeur front-end ou full-stack* et souhaite mettre à profit mes compétences front-end, aussi bien sur *React* que sur *Angular*, au sein de projets concrets et ambitieux.",
     "introduction": "*Né en 2001 dans la région bordelaise*, j'ai passé mon enfance à la campagne, développant très tôt une **curiosité naturelle** pour comprendre le fonctionnement des choses qui m'entouraient.\n\nAprès un **Baccalauréat Général ES avec mention**, j'ai opté pour une **licence Informatique** à l'Université Clermont Auvergne, puis me suis orienté vers une formation professionnalisante de **Concepteur/Développeur d'Applications** chez HumanBooster, que je viens de terminer avec succès.\n\nEn parallèle de ce cursus, j'ai acquis par **autoformation** des compétences approfondies en développement web, notamment une certification *Responsive Web Design* de freeCodeCamp. Cette démarche m'a permis de démarrer une **activité freelance** et de réaliser plusieurs projets pour des clients.\n\nPassionné de **musique depuis l'enfance**, je poursuis actuellement un cursus jazz au **Conservatoire Emmanuel-Chabrier**, ce qui nourrit ma créativité et ma rigueur - des qualités que je transpose naturellement dans mon approche du développement."
   },
   "education": [
@@ -56,7 +56,7 @@
   "experiences": [
     {
       "id": 1,
-      "title": "Intégrateur Web",
+      "title": "Développeur Front-End React",
       "type": "Stage",
       "company": "EI Quentin Cas",
       "period": "Septembre 2025 / Janvier 2026",
