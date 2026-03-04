@@ -395,6 +395,28 @@
     border-bottom: 2px solid var(--color-primary);
 }
 
+/* Skills mobile grid */
+.skillsMobileGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+
+    .skillCategory {
+        background: var(--color-background);
+        border: 1px solid var(--color-border);
+        padding: var(--spacing-md);
+        border-radius: 12px;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .skillCategory:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+}
+
+
+
 /* Skill Categories */
 .skillCategory {
     margin-bottom: var(--spacing-lg);
@@ -485,23 +507,6 @@
     .layout {
         grid-template-columns: 1fr;
     }
-
-    .sidebar {
-        order: -1;
-    }
-
-    .sidebarSticky {
-        position: relative;
-        top: 0;
-        max-height: none;
-    }
-
-    .skillCategory {
-        display: inline-block;
-        width: calc(50% - var(--spacing-sm));
-        vertical-align: top;
-        margin-right: var(--spacing-sm);
-    }
 }
 
 @media (max-width: 768px) {
@@ -534,11 +539,6 @@
     .valuesGrid,
     .passionsGrid {
         grid-template-columns: 1fr;
-    }
-
-    .skillCategory {
-        width: 100%;
-        margin-right: 0;
     }
 
     .ctaSection {

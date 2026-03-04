@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import useViewport from "../../hooks/useViewport";
 import ReactMarkdown from "react-markdown";
 import Button from "../../components/common/Button/Button";
 import Spinner from "../../components/spinner/Spinner";
@@ -8,17 +9,8 @@ import styles from "./AboutPage.module.css";
 
 export default function AboutPage() {
     const { profile, education, certifications, experiences, otherExperiences, passions, values, cv } = aboutData;
-    const { skills } = skillsData;
     const [profileImageLoaded, setProfileImageLoaded] = useState(false);
-
-    // Mapping des labels de maîtrise vers les classes CSS et labels français
-    const masteryConfig = {
-        "mastered": { label: "Maîtrisé", className: "mastered" },
-        "advanced": { label: "Avancé", className: "advanced" },
-        "intermediate": { label: "Intermédiaire", className: "intermediate" },
-        "beginner": { label: "Débutant", className: "beginner" },
-        "learning": { label: "Apprentissage", className: "learning" }
-    };
+    const { isDesktop } = useViewport({ mobile: 768, tablet: 1100 });
 
     const handleProfileImageLoad = () => {
         setProfileImageLoaded(true);
@@ -82,6 +74,11 @@ export default function AboutPage() {
                             </h2>
                             <div className={styles.introduction}><ReactMarkdown>{profile.introduction}</ReactMarkdown></div>
                         </section>
+
+                        {/* Skills Sidebar */}
+                        {!isDesktop && (
+                            <SkillsSidebar displayMode="mobile" />
+                        )}
 
                         {/* Values */}
                         <section className={styles.section}>
@@ -220,35 +217,68 @@ export default function AboutPage() {
                     </div>
 
                     {/* Skills Sidebar */}
-                    <aside className={styles.sidebar}>
-                        <div className={styles.sidebarSticky}>
-                            <h2 className={styles.sidebarTitle}>Compétences</h2>
-                            
-                            {Object.values(skills).map((category) => (
-                                <div key={category.title} className={styles.skillCategory}>
-                                    <h3 className={styles.skillCategoryTitle}>
-                                        <span className={styles.skillCategoryIcon}>{category.icon}</span>
-                                        {category.title}
-                                    </h3>
-                                    <ul className={styles.skillList}>
-                                        {category.items.map((skill, index) => {
-                                            const masteryInfo = masteryConfig[skill?.mastery];
-                                            return (
-                                                <li key={index} className={styles.skillItem}>
-                                                    <span className={styles.skillName}>{skill.name}</span>
-                                                    <span className={`${styles.skillBadge} ${masteryInfo ? styles[masteryInfo.className] : ''}`}>
-                                                        {masteryInfo?.label}
-                                                    </span>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                </div>
-                            ))}
-                        </div>
-                    </aside>
+                    {isDesktop && (
+                        <SkillsSidebar />
+                    )}
                 </div>
             </main>
         </>
+    );
+}
+
+function SkillsSidebar({ displayMode = "desktop" }) {
+    const { skills } = skillsData;
+    // Mapping des labels de maîtrise vers les classes CSS et labels français
+    const masteryConfig = {
+        "mastered": { label: "Maîtrisé", className: "mastered" },
+        "advanced": { label: "Avancé", className: "advanced" },
+        "intermediate": { label: "Intermédiaire", className: "intermediate" },
+        "beginner": { label: "Débutant", className: "beginner" },
+        "learning": { label: "Apprentissage", className: "learning" }
+    };
+
+    const skillsContent = Object.values(skills).map((category) => (
+        <div key={category.title} className={styles.skillCategory}>
+            <h3 className={styles.skillCategoryTitle}>
+                <span className={styles.skillCategoryIcon}>{category.icon}</span>
+                {category.title}
+            </h3>
+            <ul className={styles.skillList}>
+                {category.items.map((skill, index) => {
+                    const masteryInfo = masteryConfig[skill?.mastery];
+                    return (
+                        <li key={index} className={styles.skillItem}>
+                            <span className={styles.skillName}>{skill.name}</span>
+                            <span className={`${styles.skillBadge} ${masteryInfo ? styles[masteryInfo.className] : ''}`}>
+                                {masteryInfo?.label}
+                            </span>
+                        </li>
+                    );
+                })}
+            </ul>
+        </div>
+    ));
+
+    if (displayMode === "mobile") {
+        return (
+            <section className={styles.section}>
+                <h2 className={styles.sectionTitle}>
+                    <span className={styles.sectionIcon}>🛠️</span>
+                    Compétences
+                </h2>
+                <div className={styles.skillsMobileGrid}>
+                    {skillsContent}
+                </div>
+            </section>
+        );
+    }
+
+    return (
+        <aside className={styles.sidebar}>
+            <div className={styles.sidebarSticky}>
+                <h2 className={styles.sidebarTitle}>Compétences</h2>
+                {skillsContent}
+            </div>
+        </aside>
     );
 }
