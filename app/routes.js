@@ -7,4 +7,5 @@ export default [
     route("apropos", "../src/pages/about/AboutPage.jsx"),
     route("services", "../src/pages/services/ServicesPage.jsx"),
     route("contact", "../src/pages/contact/ContactPage.jsx"),
+    route("redirect", "../src/pages/redirect/RedirectPage.jsx"),
 ];
