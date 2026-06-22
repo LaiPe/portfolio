@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "allowJs": false,
+    "baseUrl": "."
+  },
+  "include": ["./src/**/*", "./gatsby-config.ts", "./gatsby-node.ts", "./gatsby-ssr.tsx", "./gatsby-browser.tsx", "./plugins/**/*"],
+  "exclude": ["node_modules", "public", ".cache"]
+}

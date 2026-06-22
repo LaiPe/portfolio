@@ -1,0 +1,110 @@
+import React from "react";
+import { Link } from "gatsby";
+import * as styles from "./Footer.module.css";
+import socialsData from "../../data/socials.json";
+import type { SocialLink } from "../../types";
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+  const socialLinks = socialsData.socialLinks as SocialLink[];
+
+  const quickLinks = [
+    { name: "Accueil", path: "/" },
+    { name: "Projets", path: "/projets" },
+    { name: "Services", path: "/services" },
+    { name: "À propos", path: "/apropos" },
+  ];
+
+  return (
+    <footer className={styles.footer}>
+      <div className={styles.container}>
+        <div className={styles.content}>
+          {/* Section À propos */}
+          <div className={styles.section}>
+            <div className={styles.logoTitle}>
+              <img
+                src="/img/logo_lp_raw.png"
+                alt="Logo Léo Peyronnet"
+                className={styles.logo}
+              />
+              <h3 className={styles.title}>Léo Peyronnet</h3>
+            </div>
+            <p className={styles.description}>
+              Développeur Full-Stack React
+              <br />
+              Spécialisé Front-End React
+            </p>
+            <p className={styles.tagline}>
+              Transformons vos idées en solutions digitales modernes et
+              performantes.
+            </p>
+          </div>
+
+          {/* Section Navigation rapide */}
+          <div className={styles.section}>
+            <h4 className={styles.sectionTitle}>Navigation</h4>
+            <nav className={styles.quickLinks}>
+              {quickLinks.map((link) => (
+                <Link key={link.path} to={link.path} className={styles.link}>
+                  {link.name}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Section Contact */}
+          <div className={styles.section}>
+            <h4 className={styles.sectionTitle}>Me contacter</h4>
+            <p className={styles.contactText}>
+              Une question ? Un projet ?
+              <br />
+              Discutons-en !
+            </p>
+            <Link to="/contact" className={styles.ctaButton}>
+              Envoyer moi un message
+            </Link>
+          </div>
+
+          {/* Section Réseaux sociaux */}
+          <div className={styles.section}>
+            <h4 className={styles.sectionTitle}>Suivez-moi</h4>
+            <div className={styles.socialLinks}>
+              {socialLinks.map((social) => (
+                <a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.socialLink}
+                  aria-label={social.name}
+                  title={social.name}
+                >
+                  <img
+                    src={social.icon}
+                    alt={`${social.name} icon`}
+                    className={styles.socialIcon}
+                  />
+                  <span className={styles.socialName}>{social.name}</span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* Copyright */}
+        <div className={styles.copyright}>
+          <p>© {currentYear} Léo Peyronnet. Tous droits réservés.</p>
+          <div className={styles.legalLinks}>
+            <a href="/mentions-legales" className={styles.legalLink}>
+              Mentions légales
+            </a>
+            <span className={styles.separator}>•</span>
+            <a href="/confidentialite" className={styles.legalLink}>
+              Confidentialité
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+}

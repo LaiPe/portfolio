@@ -9,7 +9,9 @@
 }
 
 /* Variants */
-.default {
+/* NB: la classe "default" est renommée car `default` est un mot réservé JS
+   qui casse les exports nommés des CSS Modules (voir Badge.tsx). */
+.defaultVariant {
     background-color: var(--color-background-alt);
     color: var(--color-text-secondary);
 }

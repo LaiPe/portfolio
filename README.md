@@ -1,16 +1,51 @@
-# React + Vite
+# Portfolio — Léo Peyronnet
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portfolio personnel, site statique construit avec **Gatsby 5 + TypeScript**.
 
-Currently, two official plugins are available:
+> Migré depuis React Router v7. Documentation interne : [CLAUDE.md](CLAUDE.md) (guide projet) et
+> [PATTERN.md](PATTERN.md) (patterns Gatsby).
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prérequis
 
-## React Compiler
+- Node ≥ 18
+- npm
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Installation
 
-## Expanding the ESLint configuration
+```bash
+npm install
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Scripts
+
+| Commande | Description |
+|---|---|
+| `npm run develop` | Serveur de dev — http://localhost:8000 (GraphiQL : http://localhost:8000/___graphql) |
+| `npm run build` | Build statique de production dans `public/` |
+| `npm run serve` | Sert le build localement — http://localhost:9000 |
+| `npm run clean` | Vide `.cache/` et `public/` |
+| `npm run typecheck` | Vérification TypeScript (`tsc --noEmit`) |
+| `npm run lint` | ESLint |
+
+## Stack
+
+Gatsby 5 · React 19 · TypeScript · GraphQL (typegen intégré) · gatsby-plugin-image + Sharp ·
+gatsby-transformer-json / -remark · CSS Modules · react-hook-form · ogl (WebGL).
+
+## Structure (résumé)
+
+```
+gatsby-config.ts / gatsby-node.ts / gatsby-ssr.tsx / gatsby-browser.tsx
+src/pages/        routing par fichier (dont projets/{ProjectsJson.slug}.tsx)
+src/components/   composants (Layout, Seo, GatsbyImage, etc.)
+src/data/         contenu JSON + descriptions Markdown
+src/images/       images optimisées par Sharp
+static/           assets servis tels quels : /img (logos, favicons), /resources (PDF)
+```
+
+Voir [CLAUDE.md](CLAUDE.md) pour le détail (modèle de données, conventions, pièges SSR).
+
+## Déploiement
+
+`npm run build` génère un dossier `public/` 100 % statique, déployable sur n'importe quel
+hébergeur de fichiers statiques (Netlify, Cloudflare Pages, GitHub Pages, Nginx…).
