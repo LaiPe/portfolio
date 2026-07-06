@@ -38,19 +38,21 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
         className={styles.hero}
         style={{ width: "100%", height: "600px", position: "relative" }}
       >
-        <Threads
-          amplitude={3.5}
-          distance={0.5}
-          enableMouseInteraction
-          style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            width: "100%",
-            height: "100%",
-            zIndex: 0,
-          }}
-        />
+        {process.env.NODE_ENV !== "development" && (
+          <Threads
+            amplitude={3.5}
+            distance={0.5}
+            enableMouseInteraction
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              width: "100%",
+              height: "100%",
+              zIndex: 0,
+            }}
+          />
+        )}
         <div
           className={styles.heroContent}
           style={{ position: "relative", zIndex: 1 }}
