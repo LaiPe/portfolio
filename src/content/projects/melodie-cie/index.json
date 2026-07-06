@@ -11,15 +11,15 @@
   "featured": true,
   "priority": 2,
   "images": {
-    "thumbnail": "/img/projects/melodie-cie/melodie-cie-thumbnail.jpg",
-    "hero": "/img/projects/melodie-cie/melodie-cie-hero.jpg",
+    "thumbnail": "melodie-cie-thumbnail.jpg",
+    "hero": "melodie-cie-hero.jpg",
     "gallery": [
-      "/img/projects/melodie-cie/melodie-cie-1.png",
-      "/img/projects/melodie-cie/melodie-cie-2.png",
-      "/img/projects/melodie-cie/melodie-cie-3.png",
-      "/img/projects/melodie-cie/melodie-cie-4.png",
-      "/img/projects/melodie-cie/melodie-cie-5.png",
-      "/img/projects/melodie-cie/melodie-cie-6.png"
+      "melodie-cie-1.png",
+      "melodie-cie-2.png",
+      "melodie-cie-3.png",
+      "melodie-cie-4.png",
+      "melodie-cie-5.png",
+      "melodie-cie-6.png"
     ]
   },
   "links": {

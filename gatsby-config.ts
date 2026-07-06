@@ -27,24 +27,26 @@ const config: GatsbyConfig = {
     "gatsby-plugin-sharp",
     "gatsby-transformer-sharp",
     {
-      // Source des données JSON + descriptions Markdown.
+      // Données de configuration (skills, socials, testimonials, about, services…).
       resolve: "gatsby-source-filesystem",
       options: { name: "data", path: path.resolve(__dirname, "src/data") },
     },
     {
-      // Source des images optimisées par Sharp (projets, profil…).
+      // Images non-projet (profil…).
       resolve: "gatsby-source-filesystem",
       options: { name: "images", path: path.resolve(__dirname, "src/images") },
     },
     {
+      // Projets co-localisés : index.json + description.md + images/ par slug.
+      resolve: "gatsby-source-filesystem",
+      options: { name: "projects-content", path: path.resolve(__dirname, "src/content/projects") },
+    },
+    {
       resolve: "gatsby-transformer-json",
       options: {
-        // Regroupe les fichiers d'un même dossier sous un seul type de node.
         typeName: ({ node }: { node: { sourceInstanceName: string; relativeDirectory: string; name: string } }) => {
-          if (node.sourceInstanceName === "data") {
-            if (node.relativeDirectory === "projects") return "ProjectsJson";
-            if (node.relativeDirectory === "services") return "ServicesJson";
-          }
+          if (node.sourceInstanceName === "projects-content" && node.name === "index") return "ProjectsJson";
+          if (node.sourceInstanceName === "data" && node.relativeDirectory === "services") return "ServicesJson";
           return toTypeName(node.name);
         },
       },

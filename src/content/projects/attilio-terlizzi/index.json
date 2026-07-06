@@ -9,12 +9,12 @@
   "featured": true,
   "priority": 1,
   "images": {
-    "thumbnail": "/img/projects/attilio-terlizzi/at-thumbnail.jpg",
-    "hero": "/img/projects/attilio-terlizzi/at-hero.webp",
+    "thumbnail": "at-thumbnail.jpg",
+    "hero": "at-hero.webp",
     "gallery": [
-      "/img/projects/attilio-terlizzi/attilio-terlizzi-1.png",
-      "/img/projects/attilio-terlizzi/attilio-terlizzi-2.png",
-      "/img/projects/attilio-terlizzi/attilio-terlizzi-3.png"
+      "attilio-terlizzi-1.png",
+      "attilio-terlizzi-2.png",
+      "attilio-terlizzi-3.png"
     ]
   },
   "links": {

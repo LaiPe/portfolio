@@ -10,8 +10,8 @@
   "featured": false,
   "priority": 11,
   "images": {
-    "thumbnail": "/img/projects/palindromos/palindromos-thumbnail.jpg",
-    "hero": "/img/projects/palindromos/palindromos-thumbnail.jpg"
+    "thumbnail": "palindromos-thumbnail.jpg",
+    "hero": "palindromos-thumbnail.jpg"
   },
   "links": {
     "live": "https://palindromos.sandbox.leopeyronnet.fr/",

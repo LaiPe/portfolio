@@ -25,14 +25,14 @@ export const onRenderBody: GatsbySSR["onRenderBody"] = ({
       key="favicon-light"
       rel="icon"
       type="image/png"
-      href="/img/icone_lp_light.png"
+      href="/img/icone-lp-light.png"
       media="(prefers-color-scheme: light)"
     />,
     <link
       key="favicon-dark"
       rel="icon"
       type="image/png"
-      href="/img/icone_lp_dark.png"
+      href="/img/icone-lp-dark.png"
       media="(prefers-color-scheme: dark)"
     />,
   ]);

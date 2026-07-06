@@ -7,7 +7,7 @@ import Seo from "../components/Seo";
 import MarkdownText from "../components/MarkdownText";
 import useViewport from "../hooks/useViewport";
 import aboutData from "../data/about.json";
-import skillsData from "../data/skills-complete.json";
+import skillsData from "../data/skills.json";
 import * as styles from "../assets/css/pages/AboutPage.module.css";
 
 interface TimelineEntry {

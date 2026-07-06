@@ -23,7 +23,7 @@ export default function Footer() {
           <div className={styles.section}>
             <div className={styles.logoTitle}>
               <img
-                src="/img/logo_lp_raw.png"
+                src="/img/logo-lp-raw.png"
                 alt="Logo Léo Peyronnet"
                 className={styles.logo}
               />

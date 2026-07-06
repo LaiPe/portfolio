@@ -23,13 +23,13 @@
   "featured": true,
   "priority": 2,
   "images": {
-    "thumbnail": "/img/projects/electricity-business/eb-thumbnail.jpg",
-    "hero": "/img/projects/electricity-business/eb-thumbnail.jpg",
+    "thumbnail": "eb-thumbnail.jpg",
+    "hero": "eb-thumbnail.jpg",
     "gallery": [
-      "/img/projects/electricity-business/eb-1.png",
-      "/img/projects/electricity-business/eb-2.png",
-      "/img/projects/electricity-business/eb-3.png",
-      "/img/projects/electricity-business/eb-4.png"
+      "eb-1.png",
+      "eb-2.png",
+      "eb-3.png",
+      "eb-4.png"
     ]
   },
   "links": {

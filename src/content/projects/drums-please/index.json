@@ -11,14 +11,14 @@
   "featured": true,
   "priority": 3,
   "images": {
-    "thumbnail": "/img/projects/drums-please/drums-please-thumbnail.jpg",
-    "hero": "/img/projects/drums-please/drums-please-thumbnail.jpg",
+    "thumbnail": "drums-please-thumbnail.jpg",
+    "hero": "drums-please-thumbnail.jpg",
     "gallery": [
-      "/img/projects/drums-please/drums-please-1.png",
-      "/img/projects/drums-please/drums-please-2.png",
-      "/img/projects/drums-please/drums-please-3.png",
-      "/img/projects/drums-please/drums-please-4.png",
-      "/img/projects/drums-please/drums-please-5.png"
+      "drums-please-1.png",
+      "drums-please-2.png",
+      "drums-please-3.png",
+      "drums-please-4.png",
+      "drums-please-5.png"
     ]
   },
   "links": {
