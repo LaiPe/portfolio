@@ -473,12 +473,6 @@
     display: block;
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-}
-
-.galleryImageLoaded {
-    opacity: 1;
 }
 
 /* Skills (pour expérimentations) */

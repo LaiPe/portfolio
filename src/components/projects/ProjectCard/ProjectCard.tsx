@@ -82,7 +82,7 @@ export const query = graphql`
       emoji
       thumbnail {
         childImageSharp {
-          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 600)
+          gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1200)
         }
       }
     }
