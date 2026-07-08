@@ -14,6 +14,8 @@ export interface ProjectImages {
 
 export interface ProjectLinks {
   live?: string | null;
+  /** Lien secondaire vers une démo technique (distincte du site principal `live`). */
+  demo?: string | null;
   github?: string | null;
   pdf?: string | null;
 }
@@ -50,7 +52,7 @@ export interface ProjectArchitecture {
   externalAPIs?: string[];
 }
 
-export type ProjectCategory = "client" | "mockup" | "experiment" | "app";
+export type ProjectCategory = "client" | "product" | "caseStudy" | "experiment";
 
 export interface Project {
   id: string;

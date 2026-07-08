@@ -7,9 +7,9 @@ import type { Project } from "../../../types";
 
 const categoryVariants: Record<string, string> = {
   client: "client",
-  mockup: "mockup",
+  product: "product",
+  caseStudy: "caseStudy",
   experiment: "experiment",
-  app: "app",
 };
 
 interface ProjectCardProps {

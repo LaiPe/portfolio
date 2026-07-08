@@ -4,7 +4,6 @@ import * as styles from "./SkillCard.module.css";
 interface SkillItem {
   name: string;
   featured?: boolean;
-  mastery?: string;
 }
 
 interface SkillCardProps {

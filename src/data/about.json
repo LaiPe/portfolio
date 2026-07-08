@@ -1,38 +1,38 @@
 {
   "profile": {
     "name": "Léo Peyronnet",
-    "title": "Développeur Full-Stack Junior",
+    "title": "Développeur Full-Stack",
     "age": 24,
     "photo": "/img/a-propos/profile.jpg",
-    "bio": "Fraîchement diplômé Concepteur/Développeur d’Applications, je recherche un poste de *développeur front-end ou full-stack* et souhaite mettre à profit mes compétences front-end, aussi bien sur *React* que sur *Angular*, au sein de projets concrets et ambitieux.",
-    "introduction": "*Né en 2001 dans la région bordelaise*, j'ai passé mon enfance à la campagne, développant très tôt une **curiosité naturelle** pour comprendre le fonctionnement des choses qui m'entouraient.\n\nAprès un **Baccalauréat Général ES avec mention**, j'ai opté pour une **licence Informatique** à l'Université Clermont Auvergne, puis me suis orienté vers une formation professionnalisante de **Concepteur/Développeur d'Applications** chez HumanBooster, que je viens de terminer avec succès.\n\nEn parallèle de ce cursus, j'ai acquis par **autoformation** des compétences approfondies en développement web, notamment une certification *Responsive Web Design* de freeCodeCamp. Cette démarche m'a permis de démarrer une **activité freelance** et de réaliser plusieurs projets pour des clients.\n\nPassionné de **musique depuis l'enfance**, je poursuis actuellement un cursus jazz au **Conservatoire Emmanuel-Chabrier**, ce qui nourrit ma créativité et ma rigueur - des qualités que je transpose naturellement dans mon approche du développement."
+    "bio": "Développeur Full-Stack orienté *React / Next.js* et *Java / Spring Boot*, j'interviens du front au back sur des sites, applications web et mobiles. **Praticien indépendant** depuis 2025, je conçois et livre des produits **de bout en bout**, et cherche une structure où m'investir durablement sur des projets à forte exigence technique.",
+    "introduction": "**Développeur Full-Stack**, je conçois et développe des applications web et mobiles en autonomie, du cadrage à la mise en production. Formé au développement chez **HumanBooster** (titre Concepteur / Développeur d'Applications, Bac+3/4), après un parcours en licence Informatique à l'Université Clermont Auvergne.\n\nJe mène depuis **2025** une activité freelance de conception et développement web : cadrage, design, développement, déploiement, accompagnement hébergement et maintenance, en autonomie complète du début à la fin d'un projet. Cette activité m'a amené à étendre ma pratique de React vers **Next.js, Gatsby, Express.js et Supabase**, et à livrer un produit sous licence, *Stonecast* (voir Projets).\n\nPassionné de **musique depuis l'enfance**, je poursuis un cursus jazz au Conservatoire de Clermont-Ferrand, une pratique de longue durée qui nourrit la même rigueur que j'applique au développement."
   },
   "education": [
     {
       "id": 1,
-      "title": "Concepteur / Développeur d'Application",
-      "institution": "HumanBooster",
-      "period": "2025 / 2026",
-      "description": "Formation certifiante de niveau 6 (Bac+3/4) en conception et développement d'applications"
+      "title": "Concepteur / Développeur d'Applications (Bac+3/4, RNCP niveau 6)",
+      "institution": "HumanBooster, Clermont-Ferrand",
+      "period": "Février 2025 – Janvier 2026",
+      "description": "Titre professionnel de niveau 6 en conception et développement d'applications"
     },
     {
       "id": 2,
       "title": "Deuxième année Licence Informatique",
       "institution": "Université Clermont Auvergne",
-      "period": "2021 / 2024",
-      "description": "Spécialisation algorithmique et programmation"
+      "period": "2021 – 2024",
+      "description": "Algorithmique et programmation"
     },
     {
       "id": 3,
       "title": "Préparation aux études scientifiques (PES)",
       "institution": "Université Clermont Auvergne",
-      "period": "2020 / 2021",
+      "period": "2020 – 2021",
       "description": "Année préparatoire aux études scientifiques"
     },
     {
       "id": 4,
       "title": "Baccalauréat Général ES avec mention",
-      "institution": "Lycée Assomption Sainte-Clotilde Bordeaux",
+      "institution": "Lycée Assomption Sainte-Clotilde, Bordeaux",
       "period": "2019",
       "description": "Baccalauréat économique et social"
     }
@@ -40,45 +40,54 @@
   "certifications": [
     {
       "id": 1,
+      "title": "TOEIC Listening & Reading — Niveau B2",
+      "issuer": "ETS",
+      "date": "Août 2025",
+      "link": null
+    },
+    {
+      "id": 2,
       "title": "Responsive Web Design",
       "issuer": "freeCodeCamp",
       "date": "Mars 2024",
       "link": "https://www.freecodecamp.org/certification"
-    },
-    {
-      "id": 2,
-      "title": "TOEIC Listening and Reading",
-      "issuer": "ETS",
-      "date": "Août 2025",
-      "link": null
     }
   ],
   "experiences": [
     {
       "id": 1,
-      "title": "Développeur Front-End React",
-      "type": "Stage",
-      "company": "EI Quentin Cas",
-      "period": "Septembre 2025 / Janvier 2026",
-      "description": "Implémentation d'interfaces graphiques (React) à partir de maquettes (Figma). Formation à React.",
+      "title": "Lead technique freelance",
+      "type": "Freelance",
+      "company": "ĀIUS LŎQUENS · À distance",
+      "period": "Avril – Juillet 2026",
+      "description": "Mission de lead technique sur une plateforme SaaS : audit d'infrastructure, consolidation des services, conception et développement d'un module central de l'application, accompagnement du porteur de projet sur les priorités techniques.",
       "current": false
     },
     {
       "id": 2,
-      "title": "Développeur Web",
+      "title": "Développeur Full-Stack",
       "type": "Freelance",
-      "company": "Indépendant",
-      "period": "Janvier 2025 / Actuellement",
-      "description": "Conception et réalisation de sites web personnels pour divers clients. Accompagnement vers des solutions d'hébergement.",
+      "company": "EI Léo Peyronnet · Hybride",
+      "period": "Depuis janvier 2025",
+      "description": "Conception, développement et déploiement de sites pour des clients professionnels, en autonomie de bout en bout. Développement du produit Stonecast.",
       "current": true
     },
     {
       "id": 3,
-      "title": "Sous-Titreur",
+      "title": "Développeur Front-End React",
+      "type": "Stage",
+      "company": "EI Quentin Cas · Clermont-Ferrand",
+      "period": "Septembre 2025 – Janvier 2026",
+      "description": "Développement d'un produit unifié cross-platform (web React + mobile React Native/Expo) en TypeScript, intégration d'API REST, gestion d'état avec Zustand, tests avec Jest et React Testing Library, conception d'interfaces sur Figma, méthodologie Agile (Kanban).",
+      "current": false
+    },
+    {
+      "id": 4,
+      "title": "Sous-titreur",
       "type": "Freelance",
-      "company": "REV",
-      "period": "Août 2023 / Mars 2024",
-      "description": "Traduction Anglais à Français du contenu de vidéos puis synchronisation de la traduction. Travail effectué en tant que freelance, montage et immatriculation d'une micro-entreprise.",
+      "company": "REV · À distance",
+      "period": "Août 2023 – Mars 2024",
+      "description": "Traduction anglais-français et synchronisation de contenus vidéo. Création et gestion d'une micro-entreprise — première expérience d'activité indépendante.",
       "current": false
     }
   ],
@@ -86,8 +95,8 @@
     {
       "id": 1,
       "title": "Cursus Jazz",
-      "institution": "CRR Emmanuel-Chabrier",
-      "period": "2022 / Actuellement",
+      "institution": "Conservatoire de Clermont-Ferrand",
+      "period": "Depuis 2022",
       "description": "Formation musicale en jazz"
     }
   ],
@@ -96,19 +105,19 @@
       "id": 1,
       "icon": "🥁",
       "title": "Musique",
-      "description": "Pratique de la batterie depuis l'enfance"
+      "description": "Pratique de la batterie depuis l'enfance."
     },
     {
       "id": 2,
       "icon": "🎬",
       "title": "Audiovisuel & Photographie",
-      "description": "Création de contenu visuel et vidéo"
+      "description": "Pratique amateur, sensibilité éditoriale et narrative."
     },
     {
       "id": 3,
       "icon": "🏊",
       "title": "Natation",
-      "description": "Activité sportive régulière"
+      "description": "Activité sportive régulière."
     }
   ],
   "values": [
@@ -138,7 +147,7 @@
     }
   ],
   "cv": {
-    "path": "/resources/CV_V1_2026.pdf",
-    "filename": "CV_Leo_Peyronnet_2026.pdf"
+    "path": "/resources/CV_FULLSTACK_LEO_PEYRONNET.pdf",
+    "filename": "CV_Leo_Peyronnet_Developpeur_Fullstack.pdf"
   }
 }

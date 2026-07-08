@@ -1,19 +1,33 @@
 {
   "skills": {
+    "languages": {
+      "title": "Langages",
+      "icon": "💻",
+      "featured": false,
+      "items": [
+        { "name": "JavaScript" },
+        { "name": "TypeScript", "featured": true, "in": "frontend" },
+        { "name": "HTML5" },
+        { "name": "CSS3" },
+        { "name": "Java", "featured": true, "in": "backend" },
+        { "name": "SQL" },
+        { "name": "Python" },
+        { "name": "C" }
+      ]
+    },
     "frontend": {
       "title": "Frontend",
       "icon": "🎨",
       "featured": true,
       "items": [
-        { "name": "React", "icon": "react", "mastery": "advanced", "featured": true },
-        { "name": "JavaScript", "icon": "javascript", "mastery": "mastered", "featured": false },
-        { "name": "TypeScript", "icon": "typescript", "mastery": "learning", "featured": false },
-        { "name": "HTML5", "icon": "html", "mastery": "mastered", "featured": false },
-        { "name": "CSS3", "icon": "css", "mastery": "mastered", "featured": true },
-        { "name": "Bootstrap", "icon": "bootstrap", "mastery": "mastered", "featured": true },
-        { "name": "Angular", "icon": "angular", "mastery": "intermediate", "featured": true },
-        { "name": "Eleventy", "icon": "eleventy", "mastery": "advanced", "featured": false },
-        { "name": "Nunjucks", "icon": "nunjucks", "mastery": "advanced", "featured": false }
+        { "name": "React", "featured": true },
+        { "name": "Next.js", "featured": true },
+        { "name": "React Native" },
+        { "name": "Expo" },
+        { "name": "Gatsby" },
+        { "name": "Angular" , "featured": true},
+        { "name": "Bootstrap" },
+        { "name": "Zustand" }
       ]
     },
     "backend": {
@@ -21,51 +35,68 @@
       "icon": "⚙️",
       "featured": true,
       "items": [
-        { "name": "Spring Boot", "icon": "spring", "mastery": "advanced", "featured": true },
-        { "name": "Java", "icon": "java", "mastery": "mastered", "featured": true },
-        { "name": "MySQL", "icon": "mysql", "mastery": "advanced", "featured": true },
-        { "name": "MongoDB", "icon": "mongodb", "mastery": "intermediate", "featured": true },
-        { "name": "H2 Database", "icon": "h2", "mastery": "advanced", "featured": false }
+        { "name": "Spring Boot", "featured": true },
+        { "name": "Express.js", "featured": true },
+        { "name": "Next.js (Server actions)", "featured": true },
+        { "name": "Medusa.js" },
+        { "name": "API REST" }
       ]
     },
-    "tools": {
-      "title": "Outils",
-      "icon": "🛠️",
+    "databases": {
+      "title": "Bases de données",
+      "icon": "🗄️",
       "featured": true,
       "items": [
-        { "name": "Git / GitHub", "icon": "git", "mastery": "mastered", "featured": true },
-        { "name": "Docker", "icon": "docker", "mastery": "advanced", "featured": true },
-        { "name": "Figma", "icon": "figma", "mastery": "intermediate", "featured": true },
-        { "name": "Vite", "icon": "vite", "mastery": "beginner", "featured": true },
-        { "name": "Linux", "icon": "linux", "mastery": "advanced", "featured": false },
-        { "name": "VS Code", "icon": "vscode", "mastery": "mastered", "featured": false },
-        { "name": "IDEA IntelliJ", "icon": "intellij", "mastery": "advanced", "featured": false },
-        { "name": "Postman", "icon": "postman", "mastery": "mastered", "featured": false },
-        { "name": "Selenium", "icon": "selenium", "mastery": "mastered", "featured": false }
+        { "name": "MySQL", "featured": true },
+        { "name": "PostgreSQL", "featured": true },
+        { "name": "MongoDB", "featured": true },
+        { "name": "H2" }
       ]
     },
     "devops": {
-      "title": "DevOps & CI/CD",
+      "title": "DevOps & Cloud",
       "icon": "🚀",
-      "featured": false,
+      "featured": true,
       "items": [
-        { "name": "GitHub Actions", "icon": "github-actions", "mastery": "advanced", "featured": false },
-        { "name": "Netlify", "icon": "netlify", "mastery": "advanced", "featured": false },
-        { "name": "Nginx", "icon": "nginx", "mastery": "beginner", "featured": false },
-        { "name": "Caddy", "icon": "caddy", "mastery": "beginner", "featured": false }
+        { "name": "Git / GitHub" },
+        { "name": "Docker", "featured": true },
+        { "name": "GitHub Actions", "featured": true },
+        { "name": "Netlify" },
+        { "name": "Vercel" },
+        { "name": "AWS", "featured": true },
+        { "name": "Supabase", "featured": true }
       ]
     },
-    "softSkills": {
-      "title": "Soft Skills",
-      "icon": "💬",
+    "testing": {
+      "title": "Tests & Qualité",
+      "icon": "🧪",
       "featured": false,
       "items": [
-        { "name": "Anglais (B2 TOEIC)", "icon": "english", "featured": false },
-        { "name": "Travail en équipe", "icon": "team", "featured": false },
-        { "name": "Communication", "icon": "communication", "featured": false },
-        { "name": "Résolution de problèmes", "icon": "problem-solving", "featured": false },
-        { "name": "Adaptabilité", "icon": "adaptability", "featured": false },
-        { "name": "Autonomie", "icon": "autonomy", "featured": false }
+        { "name": "Jest" },
+        { "name": "React Testing Library" },
+        { "name": "JUnit" },
+        { "name": "Selenium" },
+        { "name": "Postman" }
+      ]
+    },
+    "methodologies": {
+      "title": "Méthodologies",
+      "icon": "🔄",
+      "featured": false,
+      "items": [
+        { "name": "Agile (Scrum)" },
+        { "name": "Agile (Kanban)" }
+      ]
+    },
+    "design": {
+      "title": "Design & Autres outils",
+      "icon": "🎯",
+      "featured": false,
+      "items": [
+        { "name": "Figma" },
+        { "name": "Adobe Illustrator" },
+        { "name": "Canva" },
+        { "name": "Notion" }
       ]
     }
   }

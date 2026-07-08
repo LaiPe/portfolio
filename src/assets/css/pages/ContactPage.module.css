@@ -154,6 +154,30 @@
     content: "⚠";
 }
 
+.formStatus {
+    padding: 0.875rem 1rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.formStatusSuccess {
+    background: rgba(46, 204, 113, 0.12);
+    border: 1px solid rgba(46, 204, 113, 0.4);
+    color: #1e8449;
+}
+
+.formStatusError {
+    background: rgba(231, 76, 60, 0.1);
+    border: 1px solid rgba(231, 76, 60, 0.4);
+    color: #c0392b;
+}
+
+.formStatusError a {
+    color: inherit;
+    text-decoration: underline;
+}
+
 .submitButton {
     margin-top: var(--spacing-sm);
     width: 100%;

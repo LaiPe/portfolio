@@ -107,6 +107,7 @@ export const query = graphql`
       priority
       links {
         live
+        demo
         github
         pdf
       }

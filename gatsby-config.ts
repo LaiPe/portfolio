@@ -1,6 +1,13 @@
 import type { GatsbyConfig } from "gatsby";
 import path from "path";
 
+// Charge .env.development / .env.production (RESEND_API_KEY pour src/api/contact.ts).
+// Sur l'hébergeur (prod), ces variables sont configurées directement — le fichier
+// .env.production n'existe pas et dotenv échoue silencieusement, ce qui est attendu.
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 /**
  * Transforme un nom de fichier (ex. "skills-complete") en nom de type GraphQL
  * (ex. "SkillsCompleteJson"), reproduisant le comportement par défaut de

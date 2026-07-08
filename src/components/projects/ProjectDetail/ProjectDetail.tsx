@@ -24,7 +24,7 @@ export interface CategoryConfig {
 
 /**
  * Composant unifié de détail de projet.
- * Adapte son affichage selon la catégorie (client, mockup, experiment, app).
+ * Adapte son affichage selon la catégorie (client, product, caseStudy, experiment).
  */
 export default function ProjectDetail({ project }: { project: Project }) {
   const category = project.category;
@@ -44,19 +44,16 @@ export default function ProjectDetail({ project }: { project: Project }) {
       ctaButton: "Voir mes services",
       showCta: true,
     },
-    mockup: {
-      defaultEmoji: "🎨",
+    product: {
+      defaultEmoji: "📦",
       extraBadge: null,
-      buttonText: "Voir la maquette",
-      typeLabel: "Maquette / Étude de cas",
-      contextTitle: "À propos du projet",
+      buttonText: "Découvrir Stonecast",
+      typeLabel: "Produit",
+      contextTitle: "À propos du produit",
       featuresTitle: "Fonctionnalités",
-      resultsTitle: "Livrables",
+      resultsTitle: "Résultats",
       galleryTitle: "Aperçu",
-      ctaTitle: "Disponible en projet clé en main",
-      ctaText: "Cette maquette peut être adaptée à votre entreprise.",
-      ctaButton: "Découvrir mes offres",
-      showCta: true,
+      showCta: false,
     },
     experiment: {
       defaultEmoji: "🧪",
@@ -69,24 +66,26 @@ export default function ProjectDetail({ project }: { project: Project }) {
       galleryTitle: "Aperçu",
       showCta: false,
     },
-    app: {
-      defaultEmoji: "💻",
+    caseStudy: {
+      defaultEmoji: "📐",
       extraBadge: null,
-      buttonText: "Voir l'application",
-      typeLabel: "Application Web",
+      buttonText: "Voir le projet",
+      typeLabel: "Étude de cas",
       contextTitle: "Présentation",
       featuresTitle: "Fonctionnalités",
       resultsTitle: "Résultats",
       galleryTitle: "Captures d'écran",
-      ctaTitle: "Besoin d'une application ?",
-      ctaText: "Découvrez mes offres de développement d'applications.",
+      ctaTitle: "Un projet similaire ?",
+      ctaText: "Découvrez mes offres de conception et développement.",
       ctaButton: "Voir mes services",
       showCta: true,
     },
   };
 
-  const cfg = config[category] || config.mockup;
+  const cfg = config[category] || config.caseStudy;
   const hero = project.images?.hero?.childImageSharp?.gatsbyImageData;
+  // Projet à stack riche : tronque les badges du hero et titre la sidebar « Stack technique ».
+  const hasFullStack = Boolean(project.architecture);
 
   return (
     <article>
@@ -112,7 +111,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
           <h1 className={styles.heroTitle}>{project.title}</h1>
           <p className={styles.heroDescription}>{project.shortDescription}</p>
           <div className={styles.heroTechnologies}>
-            {(category === "app"
+            {(hasFullStack
               ? project.technologies.slice(0, 6)
               : project.technologies
             ).map((tech, index) => (
@@ -120,7 +119,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
                 {tech}
               </Badge>
             ))}
-            {category === "app" && project.technologies.length > 6 && (
+            {hasFullStack && project.technologies.length > 6 && (
               <Badge variant="tech">+{project.technologies.length - 6}</Badge>
             )}
           </div>
@@ -128,6 +127,15 @@ export default function ProjectDetail({ project }: { project: Project }) {
             {project.links?.live && (
               <Button href={project.links.live} target="_blank" variant="primary">
                 🔗 {cfg.buttonText}
+              </Button>
+            )}
+            {project.links?.demo && (
+              <Button
+                href={project.links.demo}
+                target="_blank"
+                variant="primary"
+              >
+                ▶️ Voir la démo
               </Button>
             )}
             {project.links?.github && (
@@ -201,7 +209,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
 
           <div className={styles.sidebarSection}>
             <h3 className={styles.sidebarTitle}>
-              {category === "app" ? "Stack technique" : "Technologies"}
+              {hasFullStack ? "Stack technique" : "Technologies"}
             </h3>
             <div className={styles.sidebarTechnologies}>
               {project.technologies.map((tech, index) => (
@@ -213,6 +221,7 @@ export default function ProjectDetail({ project }: { project: Project }) {
           </div>
 
           {(project.links?.live ||
+            project.links?.demo ||
             project.links?.github ||
             project.links?.pdf) && (
             <div className={styles.sidebarSection}>
@@ -228,9 +237,21 @@ export default function ProjectDetail({ project }: { project: Project }) {
                     🔗{" "}
                     {category === "client"
                       ? "Site en ligne"
-                      : category === "app"
-                        ? "Application en ligne"
-                        : "Maquette en ligne"}
+                      : category === "product"
+                        ? "Site officiel"
+                        : category === "caseStudy"
+                          ? "Projet en ligne"
+                          : "Voir en ligne"}
+                  </a>
+                )}
+                {project.links?.demo && (
+                  <a
+                    href={project.links.demo}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={styles.sidebarLink}
+                  >
+                    ▶️ Démo technique
                   </a>
                 )}
                 {project.links?.github && (

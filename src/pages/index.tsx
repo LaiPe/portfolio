@@ -12,11 +12,18 @@ import testimonialsData from "../data/testimonials.json";
 import * as styles from "../assets/css/pages/HomePage.module.css";
 import type { Project, Testimonial } from "../types";
 
+interface SkillItem {
+  name: string;
+  featured?: boolean;
+  /** Rattache l'item à une AUTRE catégorie pour l'affichage (ex. un langage
+   *  affiché dans la carte « Frontend »). Voir la section Compétences Clés. */
+  in?: string;
+}
 interface SkillCategory {
   title: string;
   icon: string;
   featured?: boolean;
-  items: { name: string; featured?: boolean }[];
+  items: SkillItem[];
 }
 
 interface HomePageData {
@@ -27,7 +34,26 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
   const skills = skillsData.skills as Record<string, SkillCategory>;
   const { testimonials } = testimonialsData as { testimonials: Testimonial[] };
 
-  const featuredSkills = Object.values(skills).filter((s) => s.featured);
+  // Items featured « rattachés » à une autre catégorie via `in` (ex. langages
+  // affichés dans les cartes Frontend/Backend sur l'accueil).
+  const injectedItems: Record<string, SkillItem[]> = {};
+  Object.values(skills).forEach((category) => {
+    category.items.forEach((item) => {
+      if (item.featured && item.in) {
+        (injectedItems[item.in] ??= []).push(item);
+      }
+    });
+  });
+
+  const featuredSkills = Object.entries(skills)
+    .filter(([, category]) => category.featured)
+    .map(([id, category]) => ({
+      ...category,
+      items: [
+        ...category.items.filter((item) => item.featured && !item.in),
+        ...(injectedItems[id] ?? []),
+      ],
+    }));
   const featuredProjects = data.allProjectsJson.nodes;
   const featuredTestimonial = testimonials.find((t) => t.featured);
 
@@ -61,7 +87,8 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
             Développeur <strong>Full-Stack</strong>
           </h1>
           <p className={styles.heroSubtitle}>
-            Spécialisé <strong>Front-End React</strong>
+            <strong>React</strong> · <strong>Next.js</strong> ·{" "}
+            <strong>Spring Boot</strong>
           </p>
           <div className={styles.heroCtas}>
             <Button to="/projets" variant="primary" size="lg">
@@ -84,7 +111,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
                 key={skill.title}
                 title={skill.title}
                 icon={skill.icon}
-                items={skill.items.filter((item) => item.featured)}
+                items={skill.items}
               />
             ))}
           </div>
@@ -204,7 +231,7 @@ export const query = graphql`
 
 export const Head: HeadFC = () => (
   <Seo
-    title="Léo Peyronnet | Développeur Full-Stack React"
-    description="Portfolio de Léo Peyronnet, développeur web full-stack spécialisé React. Découvrez mes projets, compétences et services."
+    title="Léo Peyronnet | Développeur Full-Stack React & Next.js"
+    description="Portfolio de Léo Peyronnet, développeur full-stack React / Next.js et Java / Spring Boot. Applications web et mobiles de bout en bout. Projets, compétences et services."
   />
 );

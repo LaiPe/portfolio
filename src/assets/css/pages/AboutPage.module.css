@@ -133,6 +133,15 @@
     gap: var(--spacing-md);
 }
 
+/* Desktop (sidebar visible) : les 4 cartes tiennent sur une seule ligne,
+   même quand la largeur restreinte par la sidebar empêcherait auto-fit
+   de les caser à 240px chacune. */
+@media (min-width: 1101px) {
+    .valuesGrid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 .valueCard {
     padding: var(--spacing-lg);
     background: var(--color-background);

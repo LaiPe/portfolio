@@ -13,6 +13,9 @@ dist-ssr
 build
 .react-router
 *.local
+.env
+.env.development
+.env.production
 
 # Gatsby
 .cache/

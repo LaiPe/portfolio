@@ -248,8 +248,8 @@ export default function AboutPage() {
           <section className={styles.ctaSection}>
             <h2 className={styles.ctaTitle}>Envie de collaborer ?</h2>
             <p className={styles.ctaText}>
-              Je suis actuellement à la recherche d'opportunités en
-              développement front-end React.
+              Ouvert aux opportunités en CDI/CDD comme aux missions freelance,
+              en développement full-stack.
             </p>
             <div className={styles.ctaButtons}>
               <Button onClick={handleDownloadCV} variant="primary" size="lg">
@@ -271,7 +271,6 @@ export default function AboutPage() {
 
 interface SkillEntry {
   name: string;
-  mastery?: string;
 }
 interface SkillCategoryFull {
   title: string;
@@ -286,14 +285,6 @@ function SkillsSidebar({
 }) {
   const skills = skillsData.skills as Record<string, SkillCategoryFull>;
 
-  const masteryConfig: Record<string, { label: string; className: string }> = {
-    mastered: { label: "Maîtrisé", className: "mastered" },
-    advanced: { label: "Avancé", className: "advanced" },
-    intermediate: { label: "Intermédiaire", className: "intermediate" },
-    beginner: { label: "Débutant", className: "beginner" },
-    learning: { label: "Apprentissage", className: "learning" },
-  };
-
   const skillsContent = Object.values(skills).map((category) => (
     <div key={category.title} className={styles.skillCategory}>
       <h3 className={styles.skillCategoryTitle}>
@@ -301,21 +292,11 @@ function SkillsSidebar({
         {category.title}
       </h3>
       <ul className={styles.skillList}>
-        {category.items.map((skill, index) => {
-          const masteryInfo = skill.mastery
-            ? masteryConfig[skill.mastery]
-            : undefined;
-          return (
-            <li key={index} className={styles.skillItem}>
-              <span className={styles.skillName}>{skill.name}</span>
-              <span
-                className={`${styles.skillBadge} ${masteryInfo ? styles[masteryInfo.className] : ""}`}
-              >
-                {masteryInfo?.label}
-              </span>
-            </li>
-          );
-        })}
+        {category.items.map((skill, index) => (
+          <li key={index} className={styles.skillItem}>
+            <span className={styles.skillName}>{skill.name}</span>
+          </li>
+        ))}
       </ul>
     </div>
   ));
@@ -344,7 +325,7 @@ function SkillsSidebar({
 
 export const Head: HeadFC = () => (
   <Seo
-    title="À propos | Léo Peyronnet - Développeur Web"
-    description="Découvrez le parcours de Léo Peyronnet, développeur web full-stack spécialisé React. Formation, expériences et compétences."
+    title="À propos | Léo Peyronnet - Développeur Full-Stack"
+    description="Le parcours de Léo Peyronnet, développeur full-stack React / Next.js et Java / Spring Boot. Formation, expériences et compétences."
   />
 );

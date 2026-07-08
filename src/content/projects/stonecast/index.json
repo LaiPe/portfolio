@@ -1,0 +1,38 @@
+{
+  "id": "stonecast",
+  "title": "Stonecast",
+  "slug": "stonecast",
+  "category": "product",
+  "categoryLabel": "Produit",
+  "shortDescription": "Template Next.js complet pour créer un site de location : acheté une fois, piloté en autonomie, sans abonnement. « Payez une fois. Possédez tout. »",
+  "technologies": ["Next.js 16", "React 19", "TypeScript", "PostgreSQL", "Supabase", "Resend", "Zod", "Netlify"],
+  "highlights": [
+    "Payez une fois, possédez pour toujours — aucun abonnement, 0 €/mois pour fonctionner",
+    "Un produit fini à personnaliser, pas un starter à terminer",
+    "Aucun lock-in : base PostgreSQL exportable, hébergement libre",
+    "Conçu, développé et publié en solo, de bout en bout"
+  ],
+  "featured": true,
+  "priority": 1,
+  "images": {
+    "thumbnail": "stonecast-thumbnail.jpg",
+    "hero": "stonecast-hero.jpg"
+  },
+  "links": {
+    "live": "https://stonecast.app/fr/",
+    "demo": null,
+    "github": null
+  },
+  "client": null,
+  "date": "2025",
+  "duration": "Produit continu",
+  "features": [
+    {"emoji": "🛍️", "text": "Catalogue de produits : catégories, produits et tarifs"},
+    {"emoji": "🗂️", "text": "Back-office admin intuitif — piloter le site sans développeur après l'installation"},
+    {"emoji": "🖼️", "text": "Médiathèque : upload, réorganisation et insertion directe dans les sections"},
+    {"emoji": "📬", "text": "Boîte de réception centralisée pour les demandes de contact"},
+    {"emoji": "🌍", "text": "Bilingue EN/FR, structure prête pour d'autres langues"},
+    {"emoji": "🔍", "text": "SEO ready : métadonnées configurables, URLs propres"},
+    {"emoji": "🎨", "text": "Design personnalisable : polices, logo, images et 4 thèmes de couleurs"}
+  ]
+}

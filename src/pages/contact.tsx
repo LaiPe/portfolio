@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { type HeadFC } from "gatsby";
 
@@ -22,24 +22,24 @@ export default function ContactPage() {
     formState: { errors, isSubmitting },
     reset,
   } = useForm<ContactForm>();
+  const [status, setStatus] = useState<"idle" | "success" | "error">("idle");
 
   const socialLinks = socialsData.socialLinks as SocialLink[];
 
-  const onSubmit = (data: ContactForm) => {
-    const subject = encodeURIComponent(
-      `Contact Portfolio - ${data.subject || "Nouveau message"}`,
-    );
-    const body = encodeURIComponent(
-      `Nom: ${data.name}\n` +
-        `Email: ${data.email}\n` +
-        `Sujet: ${data.subject || "Non spécifié"}\n\n` +
-        `Message:\n${data.message}`,
-    );
-
-    // Navigation impérative volontaire (ouvre le client mail) — hors modèle React.
-    // eslint-disable-next-line react-hooks/immutability
-    window.location.href = `mailto:peyronnet.leo@gmail.com?subject=${subject}&body=${body}`;
-    reset();
+  const onSubmit = async (data: ContactForm) => {
+    setStatus("idle");
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(data),
+      });
+      if (!response.ok) throw new Error("Request failed");
+      setStatus("success");
+      reset();
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -62,6 +62,22 @@ export default function ContactPage() {
             {/* Contact Form */}
             <div className={styles.formSection}>
               <h2 className={styles.sectionTitle}>Envoyez-moi un message</h2>
+
+              {status === "success" && (
+                <p className={`${styles.formStatus} ${styles.formStatusSuccess}`}>
+                  Message envoyé, merci ! Je vous réponds sous 24-48h.
+                </p>
+              )}
+              {status === "error" && (
+                <p className={`${styles.formStatus} ${styles.formStatusError}`}>
+                  L'envoi a échoué. Réessayez ou écrivez-moi directement à{" "}
+                  <a href="mailto:peyronnet.leo@gmail.com">
+                    peyronnet.leo@gmail.com
+                  </a>
+                  .
+                </p>
+              )}
+
               <form
                 onSubmit={handleSubmit(onSubmit)}
                 className={styles.form}

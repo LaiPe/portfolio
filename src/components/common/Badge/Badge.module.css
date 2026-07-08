@@ -21,7 +21,7 @@
     color: white;
 }
 
-.mockup {
+.product {
     background-color: var(--color-secondary);
     color: white;
 }
@@ -31,7 +31,7 @@
     color: white;
 }
 
-.app {
+.caseStudy {
     background-color: var(--color-quaternary);
     color: white;
 }

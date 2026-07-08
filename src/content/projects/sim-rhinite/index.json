@@ -8,7 +8,7 @@
   "technologies": ["C", "Make"],
   "skills": ["Programmation avancée en C", "Optimisation des performances", "Build avec Make"],
   "featured": false,
-  "priority": 13,
+  "priority": 12,
   "images": {
     "emoji": "🦠"
   },

@@ -39,6 +39,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
     actions.createTypes(`
       type ProjectsJson implements Node {
         images: ProjectsJsonImages
+        links: ProjectsJsonLinks
         description: MarkdownRemark @link(by: "fields.slug", from: "slug")
         problem: String
         results: [String]
@@ -48,6 +49,12 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
         thumbnail: File
         hero: File
         gallery: [File]
+      }
+      type ProjectsJsonLinks {
+        live: String
+        demo: String
+        github: String
+        pdf: String
       }
     `);
   };

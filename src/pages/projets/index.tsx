@@ -6,20 +6,73 @@ import Seo from "../../components/Seo";
 import * as styles from "../../assets/css/pages/ProjectsPage.module.css";
 import type { Project } from "../../types";
 
-const CATEGORIES = [
-  { id: "all", label: "Tous", icon: "📁" },
-  { id: "client", label: "Clients", icon: "🎵" },
-  { id: "mockup", label: "Maquettes", icon: "🎨" },
-  { id: "app", label: "Applications", icon: "💻" },
-  { id: "experiment", label: "Expérimentations", icon: "🧪" },
+/**
+ * Configuration unique des catégories : pilote à la fois les boutons de filtre,
+ * l'ordre du gradient de crédibilité et le rendu des sections (vue « Tous ».)
+ * L'ordre du tableau = ordre d'affichage / CATEGORY_ORDER (1..n).
+ */
+type CardSize = "small" | "medium" | "large";
+
+interface CategoryConfig {
+  id: string;
+  filterLabel: string;
+  filterIcon: string;
+  sectionTitle: string;
+  sectionIcon: string;
+  sectionDescription: string;
+  cardSize: CardSize;
+}
+
+/** La disposition de grille (1/2/3 cartes par ligne) est dérivée de cardSize
+ *  — voir .gridLarge/.gridMedium/.gridSmall dans ProjectsPage.module.css. */
+const GRID_CLASS_BY_SIZE: Record<CardSize, string> = {
+  large: "gridLarge",
+  medium: "gridMedium",
+  small: "gridSmall",
+};
+
+const CATEGORIES: CategoryConfig[] = [
+  {
+    id: "client",
+    filterLabel: "Clients",
+    filterIcon: "🤝",
+    sectionTitle: "Missions & clients",
+    sectionIcon: "🤝",
+    sectionDescription: "Missions et réalisations livrées pour des clients réels",
+    cardSize: "medium",
+  },
+  {
+    id: "product",
+    filterLabel: "Produit",
+    filterIcon: "📦",
+    sectionTitle: "Produit",
+    sectionIcon: "📦",
+    sectionDescription: "Produit conçu, développé et publié en propre",
+    cardSize: "large",
+  },
+  {
+    id: "caseStudy",
+    filterLabel: "Études de cas",
+    filterIcon: "📐",
+    sectionTitle: "Études de cas",
+    sectionIcon: "📐",
+    sectionDescription: "Projets aboutis illustrant une démarche technique complète",
+    cardSize: "medium",
+  },
+  {
+    id: "experiment",
+    filterLabel: "Expérimentation",
+    filterIcon: "🧪",
+    sectionTitle: "Expérimentation technique",
+    sectionIcon: "🧪",
+    sectionDescription: "Explorations, projets académiques et certifications",
+    cardSize: "small",
+  },
 ];
 
-const CATEGORY_ORDER: Record<string, number> = {
-  client: 1,
-  mockup: 2,
-  app: 3,
-  experiment: 4,
-};
+const CATEGORY_ORDER: Record<string, number> = Object.fromEntries(
+  CATEGORIES.map((c, i) => [c.id, i + 1]),
+);
 
 interface ProjectsPageData {
   allProjectsJson: { nodes: Project[] };
@@ -28,6 +81,7 @@ interface ProjectsPageData {
 export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
   const [activeCategory, setActiveCategory] = useState("all");
   const projects = data.allProjectsJson.nodes;
+  const activeCategoryConfig = CATEGORIES.find((c) => c.id === activeCategory);
 
   const filteredProjects = useMemo(() => {
     let filtered = [...projects];
@@ -80,15 +134,18 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
       <section className={styles.filters}>
         <div className={styles.container}>
           <div className={styles.filterButtons}>
-            {CATEGORIES.map((category) => (
+            {[
+              { id: "all", filterLabel: "Tous", filterIcon: "📁" },
+              ...CATEGORIES,
+            ].map((category) => (
               <button
                 key={category.id}
                 className={`${styles.filterButton} ${activeCategory === category.id ? styles.active : ""}`}
                 onClick={() => setActiveCategory(category.id)}
                 aria-pressed={activeCategory === category.id}
               >
-                <span className={styles.filterIcon}>{category.icon}</span>
-                <span className={styles.filterLabel}>{category.label}</span>
+                <span className={styles.filterIcon}>{category.filterIcon}</span>
+                <span className={styles.filterLabel}>{category.filterLabel}</span>
                 <span className={styles.filterCount}>
                   {categoryCounts[category.id] || 0}
                 </span>
@@ -102,107 +159,43 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
       <section className={styles.content}>
         <div className={styles.container}>
           {activeCategory === "all" ? (
-            <>
-              {groupedProjects.client?.length > 0 && (
-                <div className={styles.categorySection}>
+            CATEGORIES.map((category) => {
+              const projectsInCategory = groupedProjects[category.id];
+              if (!projectsInCategory?.length) return null;
+              return (
+                <div key={category.id} className={styles.categorySection}>
                   <h2 className={styles.categoryTitle}>
-                    <span className={styles.categoryIcon}>🎵</span>
-                    Projets Clients
+                    <span className={styles.categoryIcon}>
+                      {category.sectionIcon}
+                    </span>
+                    {category.sectionTitle}
                   </h2>
                   <p className={styles.categoryDescription}>
-                    Réalisations concrètes pour des clients réels
+                    {category.sectionDescription}
                   </p>
-                  <div className={`${styles.grid} ${styles.gridClient}`}>
-                    {groupedProjects.client.map((project, index) => (
+                  <div
+                    className={`${styles.grid} ${styles[GRID_CLASS_BY_SIZE[category.cardSize]]}`}
+                  >
+                    {projectsInCategory.map((project) => (
                       <ProjectCard
                         key={project.id}
                         project={project}
-                        size={index === 0 ? "large" : "medium"}
+                        size={category.cardSize}
                       />
                     ))}
                   </div>
                 </div>
-              )}
-
-              {groupedProjects.mockup?.length > 0 && (
-                <div className={styles.categorySection}>
-                  <h2 className={styles.categoryTitle}>
-                    <span className={styles.categoryIcon}>🎨</span>
-                    Maquettes & Études de Cas
-                  </h2>
-                  <p className={styles.categoryDescription}>
-                    Démonstrations de compétences métier et cas d'usage
-                  </p>
-                  <div className={`${styles.grid} ${styles.gridMockup}`}>
-                    {groupedProjects.mockup.map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        size="medium"
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {groupedProjects.app?.length > 0 && (
-                <div className={styles.categorySection}>
-                  <h2 className={styles.categoryTitle}>
-                    <span className={styles.categoryIcon}>💻</span>
-                    Applications Web
-                  </h2>
-                  <p className={styles.categoryDescription}>
-                    Applications interactives et dynamiques développées avec
-                    React
-                  </p>
-                  <div className={`${styles.grid} ${styles.gridMockup}`}>
-                    {groupedProjects.app.map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        size="medium"
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {groupedProjects.experiment?.length > 0 && (
-                <div className={styles.categorySection}>
-                  <h2 className={styles.categoryTitle}>
-                    <span className={styles.categoryIcon}>🧪</span>
-                    Expérimentations Techniques
-                  </h2>
-                  <p className={styles.categoryDescription}>
-                    Explorations, projets académiques et certifications
-                  </p>
-                  <div className={`${styles.grid} ${styles.gridExperiment}`}>
-                    {groupedProjects.experiment.map((project) => (
-                      <ProjectCard
-                        key={project.id}
-                        project={project}
-                        size="small"
-                      />
-                    ))}
-                  </div>
-                </div>
-              )}
-            </>
+              );
+            })
           ) : (
             <div
-              className={`${styles.grid} ${styles[`grid${activeCategory.charAt(0).toUpperCase() + activeCategory.slice(1)}`]}`}
+              className={`${styles.grid} ${styles[GRID_CLASS_BY_SIZE[activeCategoryConfig?.cardSize ?? "medium"]]}`}
             >
-              {filteredProjects.map((project, index) => (
+              {filteredProjects.map((project) => (
                 <ProjectCard
                   key={project.id}
                   project={project}
-                  size={
-                    activeCategory === "client" && index === 0
-                      ? "large"
-                      : activeCategory === "experiment"
-                        ? "small"
-                        : "medium"
-                  }
+                  size={activeCategoryConfig?.cardSize ?? "medium"}
                 />
               ))}
             </div>
@@ -232,7 +225,7 @@ export const query = graphql`
 export const Head: HeadFC = () => (
   <Seo
     title="Mes Projets | Léo Peyronnet"
-    description="Découvrez mes réalisations : projets clients, applications web React, sites vitrines et expérimentations techniques."
+    description="Mes réalisations : missions & clients, produit, études de cas et expérimentations techniques."
   >
     <meta
       name="keywords"

@@ -20,7 +20,7 @@ export default function ProjectDetailContent({
   config,
 }: ProjectDetailContentProps) {
   const category = project.category;
-  const cfg = config[category] || config.mockup;
+  const cfg = config[category] || config.caseStudy;
 
   const { testimonials } = testimonialsData as { testimonials: Testimonial[] };
 
@@ -63,70 +63,60 @@ export default function ProjectDetailContent({
         </div>
       </section>
 
-      {/* Points forts */}
-      {(category === "app" || category === "mockup") &&
-        project.highlights &&
-        project.highlights.length > 0 && (
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Points forts</h2>
-            <div className={styles.highlightsList}>
-              {project.highlights.map((highlight, index) => (
-                <div key={index} className={styles.highlightItem}>
-                  {highlight}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+      {/* Points forts (affichés si présents) */}
+      {project.highlights && project.highlights.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Points forts</h2>
+          <div className={styles.highlightsList}>
+            {project.highlights.map((highlight, index) => (
+              <div key={index} className={styles.highlightItem}>
+                {highlight}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Cas d'usage (mockup only) */}
-      {category === "mockup" &&
-        project.useCases &&
-        project.useCases.length > 0 && (
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Idéal pour</h2>
-            <div className={styles.useCasesList}>
-              {project.useCases.map((useCase, index) => (
-                <div key={index} className={styles.useCaseItem}>
-                  {useCase}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+      {/* Cas d'usage (affichés si présents) */}
+      {project.useCases && project.useCases.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Idéal pour</h2>
+          <div className={styles.useCasesList}>
+            {project.useCases.map((useCase, index) => (
+              <div key={index} className={styles.useCaseItem}>
+                {useCase}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Problématique / Objectif */}
       {project.problem && (
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>
-            {category === "client"
-              ? "Problématique"
-              : category === "mockup"
-                ? "Objectif de la maquette"
-                : "Objectif"}
+            {category === "client" ? "Problématique" : "Objectif"}
           </h2>
           <p className={styles.sectionText}>{project.problem}</p>
         </section>
       )}
 
-      {/* Compétences développées (experiment only) */}
-      {category === "experiment" &&
-        project.skills &&
-        project.skills.length > 0 && (
-          <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>Compétences développées</h2>
-            <div className={styles.skillsList}>
-              {project.skills.map((skill, index) => (
-                <div key={index} className={styles.skillItem}>
-                  {skill}
-                </div>
-              ))}
-            </div>
-          </section>
-        )}
+      {/* Compétences développées (affichées si présentes) */}
+      {project.skills && project.skills.length > 0 && (
+        <section className={styles.section}>
+          <h2 className={styles.sectionTitle}>Compétences développées</h2>
+          <div className={styles.skillsList}>
+            {project.skills.map((skill, index) => (
+              <div key={index} className={styles.skillItem}>
+                {skill}
+              </div>
+            ))}
+          </div>
+        </section>
+      )}
 
-      {/* Architecture technique (app only) */}
-      {category === "app" && project.architecture && (
+      {/* Architecture technique (affichée si présente) */}
+      {project.architecture && (
         <section className={styles.section}>
           <h2 className={styles.sectionTitle}>Architecture technique</h2>
           <div className={styles.architectureGrid}>

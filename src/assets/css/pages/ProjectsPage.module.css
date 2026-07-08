@@ -175,18 +175,17 @@
     gap: var(--spacing-lg);
 }
 
-/* Client Grid - Large cards */
-.gridClient {
+/* La disposition de grille suit la taille de carte annoncée (cardSize) :
+   large -> 1 colonne, medium -> 2 colonnes, small -> 3 colonnes. */
+.gridLarge {
     grid-template-columns: 1fr;
 }
 
-/* Mockup Grid - 2 columns */
-.gridMockup, .gridApp {
+.gridMedium {
     grid-template-columns: repeat(2, 1fr);
 }
 
-/* Experiment Grid - 3 columns, compact */
-.gridExperiment {
+.gridSmall {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--spacing-md);
 }
@@ -197,7 +196,7 @@
 
 /* Tablet */
 @media (max-width: 1000px) {
-    .gridExperiment {
+    .gridSmall {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -260,10 +259,9 @@
         gap: var(--spacing-md);
     }
     
-    .gridClient,
-    .gridApp,
-    .gridMockup,
-    .gridExperiment {
+    .gridLarge,
+    .gridMedium,
+    .gridSmall {
         grid-template-columns: 1fr;
     }
 }

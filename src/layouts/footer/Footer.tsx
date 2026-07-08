@@ -30,9 +30,9 @@ export default function Footer() {
               <h3 className={styles.title}>Léo Peyronnet</h3>
             </div>
             <p className={styles.description}>
-              Développeur Full-Stack React
+              Développeur Full-Stack
               <br />
-              Spécialisé Front-End React
+              React · Next.js · Spring Boot
             </p>
             <p className={styles.tagline}>
               Transformons vos idées en solutions digitales modernes et

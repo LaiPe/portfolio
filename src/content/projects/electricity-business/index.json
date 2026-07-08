@@ -2,8 +2,8 @@
   "id": "electricity-business",
   "title": "Electricity Business",
   "slug": "electricity-business",
-  "category": "app",
-  "categoryLabel": "Application",
+  "category": "caseStudy",
+  "categoryLabel": "Étude de cas",
   "shortDescription": "Plateforme complète de gestion de stations de recharge pour véhicules électriques.",
   "technologies": [
     "React",
@@ -21,7 +21,7 @@
     "Maven"
   ],
   "featured": true,
-  "priority": 2,
+  "priority": 4,
   "images": {
     "thumbnail": "eb-thumbnail.jpg",
     "hero": "eb-thumbnail.jpg",
