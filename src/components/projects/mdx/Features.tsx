@@ -1,5 +1,5 @@
 import React from "react";
-import * as styles from "../ProjectDetail/ProjectDetail.module.css";
+import * as styles from "./blocks.module.css";
 
 /**
  * Grille de cartes fonctionnalités à emoji. Données inline dans le corps MDX.

@@ -10,15 +10,14 @@ import {
   type MdxProject,
 } from "../../components/projects/mdx";
 import * as styles from "../../assets/css/pages/ProjectDetailPage.module.css";
-import * as detail from "../../components/projects/ProjectDetail/ProjectDetail.module.css";
+import * as detail from "../../components/projects/mdx/blocks.module.css";
 import * as mdxStyles from "../../components/projects/mdx/mdx.module.css";
 import type { ProjectCategory } from "../../types";
 
 /**
- * Template de page projet MDX (aperçu de migration).
+ * Template de page de détail d'un projet (pipeline MDX).
  * Route générée par la File System Route API : `{Mdx.frontmatter__slug}.tsx`
- * → /projets-preview/:slug. Coexiste avec l'ancien pipeline ProjectsJson
- * (/projets/:slug) le temps de valider le rendu.
+ * → /projets/:slug (une page statique par node Mdx).
  *
  * Le template porte le CHROME (hero + sidebar + nav) depuis le frontmatter ;
  * le CONTENU (prose + composants de la banque) arrive via `children` (corps MDX).
@@ -30,7 +29,14 @@ interface CategoryChrome {
 }
 
 const CHROME: Record<ProjectCategory, CategoryChrome> = {
-  client: { typeLabel: "Projet Client", cta: null },
+  client: {
+    typeLabel: "Projet Client",
+    cta: {
+      title: "Projet similaire ?",
+      text: "Découvrez mes offres pour créer un projet similaire.",
+      button: "Voir mes services",
+    },
+  },
   product: { typeLabel: "Produit", cta: null },
   experiment: { typeLabel: "Expérimentation", cta: null },
   caseStudy: {
@@ -206,7 +212,7 @@ export default function ProjectMdxPreview({
         <div className={styles.navContainer}>
           {navigation.prev ? (
             <Link
-              to={`/projets-preview/${navigation.prev.slug}`}
+              to={`/projets/${navigation.prev.slug}`}
               className={styles.navLink}
             >
               <span className={styles.navDirection}>← Précédent</span>
@@ -220,7 +226,7 @@ export default function ProjectMdxPreview({
           )}
           {navigation.next ? (
             <Link
-              to={`/projets-preview/${navigation.next.slug}`}
+              to={`/projets/${navigation.next.slug}`}
               className={`${styles.navLink} ${styles.navRight}`}
             >
               <span className={styles.navDirection}>Suivant →</span>

@@ -22,7 +22,6 @@
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-json": "^5.16.0",
-    "gatsby-transformer-remark": "^6.16.0",
     "gatsby-transformer-sharp": "^5.16.0",
     "ogl": "^1.0.11",
     "react": "^19.2.0",

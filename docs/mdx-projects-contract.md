@@ -1,9 +1,9 @@
 # Contrat — Pages projet en MDX
 
-> **Statut : validé (4 décisions §7 tranchées).** Ce document définit la frontière
-> frontmatter / corps et la banque de composants **fermée**. Il sera intégré à
-> [PATTERN.md](../PATTERN.md) et sert de référence de migration. Pilote retenu :
-> `electricity-business` (le cas le plus riche : architecture + features + challenges).
+> **Statut : en production.** Les 8 projets sont migrés ; `Mdx` est le seul pipeline
+> (ancien `ProjectsJson` supprimé). Ce document reste la référence détaillée de la frontière
+> frontmatter / corps et de la banque **fermée** ; la synthèse opérationnelle est dans
+> [PATTERN.md](../PATTERN.md) §11.
 
 ## 1. Le principe directeur (la règle qui tranche tout)
 

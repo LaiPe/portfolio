@@ -15,7 +15,7 @@ statique par route, avec images optimisées (Sharp) et données issues d'une cou
 |---|---|
 | Framework | Gatsby `^5.16` (SSG), React `19` |
 | Langage | TypeScript (`strict`), GraphQL Typegen intégré (`graphqlTypegen: true`) |
-| Données | `gatsby-source-filesystem` + `gatsby-transformer-json` + `gatsby-transformer-remark` |
+| Données | `gatsby-source-filesystem` + `gatsby-transformer-json` + `gatsby-plugin-mdx` (pages projet) |
 | Images | `gatsby-plugin-image` + `gatsby-plugin-sharp` + `gatsby-transformer-sharp` |
 | Styles | CSS Modules (`*.module.css`) + CSS globaux (`src/assets/css`) |
 | Divers | `react-hook-form` (contact), `ogl` (fond WebGL `Threads`) |
@@ -37,7 +37,7 @@ Node ≥ 18 requis.
 
 ```
 gatsby-config.ts          # plugins, siteMetadata, graphqlTypegen
-gatsby-node.ts            # schéma GraphQL custom, field extension images, slug link
+gatsby-node.ts            # schéma GraphQL custom (MdxFrontmatter) + resolvers images projet
 gatsby-ssr.tsx            # onRenderBody (lang fr + favicons) + wrapPageElement
 gatsby-browser.tsx        # wrapPageElement
 src/
@@ -62,7 +62,7 @@ Chaque fichier de `src/pages/` devient une route :
 |---|---|
 | `index.tsx` | `/` |
 | `projets/index.tsx` | `/projets` |
-| `projets/{ProjectsJson.slug}.tsx` | `/projets/:slug` (une page par projet) |
+| `projets/{Mdx.frontmatter__slug}.tsx` | `/projets/:slug` (une page par projet, node MDX) |
 | `apropos.tsx` | `/apropos` |
 | `services.tsx` | `/services` |
 | `contact.tsx` | `/contact` |
@@ -75,18 +75,21 @@ Chaque fichier de `src/pages/` devient une route :
 
 ## Modèle de données
 
-### Couche GraphQL (projets)
-Les projets passent par la data layer car ils nécessitent images optimisées + génération de pages :
+### Couche GraphQL (projets) — MDX
+Chaque projet est **un seul fichier** `src/content/projects/<slug>/index.mdx` : frontmatter
+(données structurées) + corps (prose + composants de la banque). Voir le pattern complet dans
+[PATTERN.md](PATTERN.md) §11 et le contrat [docs/mdx-projects-contract.md](docs/mdx-projects-contract.md).
 
-- **`ProjectsJson`** : un node par fichier `src/data/projects/*.json` (le regroupement par
-  type est forcé dans `gatsby-config.ts` via l'option `typeName`).
-- **Images** : les chemins string des JSON (`/img/projects/...`) sont résolus en `File` nodes
-  de `src/images` par la field extension custom **`@imageByPath`** (voir `gatsby-node.ts`),
-  exposant `childImageSharp.gatsbyImageData`.
-- **Description Markdown** : `ProjectsJson.description` est lié au `MarkdownRemark`
-  correspondant (`src/data/projects/descriptions/<slug>.md`) via `@link(by: "fields.slug")` ;
-  on consomme le champ `html`.
-- Le fragment réutilisable **`ProjectCardData`** (défini dans `ProjectCard.tsx`) sert aux listes.
+- **`Mdx` / `MdxFrontmatter`** : un node par `index.mdx`. Le frontmatter est **typé
+  explicitement** dans `gatsby-node.ts` (sinon un champ `null` partout casse l'inférence).
+- **Images** : `images.{thumbnail,hero,gallery}` (noms de fichiers) sont résolus en `File` nodes
+  de `<slug>/images/` par des resolvers custom (`gatsby-node.ts`), exposant
+  `childImageSharp.gatsbyImageData`.
+- **Corps MDX** : rendu via `children` dans le template `{Mdx.frontmatter__slug}.tsx`. Les
+  composants de la banque s'**importent directement** (`src/components/projects/mdx/`) ; ceux
+  pilotés par la donnée de page lisent le contexte `useProject()`.
+- Le fragment réutilisable **`ProjectCardData`** (sur `MdxFrontmatter`, défini dans
+  `ProjectCard.tsx`) sert aux listes : `allMdx { nodes { frontmatter { ...ProjectCardData } } }`.
 
 ### Imports JSON directs (config / singletons)
 `socials.json`, `skills.json`, `skills-complete.json`, `testimonials.json`, `about.json` et

@@ -1,6 +1,6 @@
 import React from "react";
 import { useProject } from "./ProjectContext";
-import * as styles from "../ProjectDetail/ProjectDetail.module.css";
+import * as styles from "./blocks.module.css";
 
 /**
  * Grille d'architecture technique (backend / frontend / infra / APIs externes).

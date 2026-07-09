@@ -27,7 +27,7 @@ interface SkillCategory {
 }
 
 interface HomePageData {
-  allProjectsJson: { nodes: Project[] };
+  allMdx: { nodes: { frontmatter: Project }[] };
 }
 
 export default function HomePage({ data }: PageProps<HomePageData>) {
@@ -54,7 +54,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
         ...(injectedItems[id] ?? []),
       ],
     }));
-  const featuredProjects = data.allProjectsJson.nodes;
+  const featuredProjects = data.allMdx.nodes.map((n) => n.frontmatter);
   const featuredTestimonial = testimonials.find((t) => t.featured);
 
   return (
@@ -218,12 +218,14 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
 
 export const query = graphql`
   query HomePage {
-    allProjectsJson(
-      filter: { featured: { eq: true } }
-      sort: { priority: ASC }
+    allMdx(
+      filter: { frontmatter: { featured: { eq: true } } }
+      sort: { frontmatter: { priority: ASC } }
     ) {
       nodes {
-        ...ProjectCardData
+        frontmatter {
+          ...ProjectCardData
+        }
       }
     }
   }

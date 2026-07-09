@@ -1,6 +1,6 @@
 import type { IGatsbyImageData } from "gatsby-plugin-image";
 
-/** Node File résolu par Sharp (issu de `@imageByPath`). */
+/** Node File résolu par Sharp (issu des resolvers d'images projet, cf. gatsby-node.ts). */
 export interface ImageNode {
   childImageSharp: { gatsbyImageData: IGatsbyImageData } | null;
 }

@@ -2,7 +2,7 @@ import React from "react";
 import testimonialsData from "../../../data/testimonials.json";
 import { useProject } from "./ProjectContext";
 import type { Testimonial as TestimonialType } from "../../../types";
-import * as styles from "../ProjectDetail/ProjectDetail.module.css";
+import * as styles from "./blocks.module.css";
 
 /**
  * Témoignage lié au projet courant (jointure par `id` sur testimonials.json).

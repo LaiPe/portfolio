@@ -4,7 +4,7 @@ import React from "react";
  * Rend un sous-ensemble minimal de Markdown inline (**gras**, *italique*) et
  * les paragraphes (séparés par `\n\n`). Suffisant pour les textes stockés dans
  * les JSON de configuration (ex. about.json) sans dépendance externe.
- * Pour du Markdown riche issu de fichiers, on passe par gatsby-transformer-remark.
+ * Pour du Markdown riche issu de fichiers, on passe par MDX (pages projet, cf. PATTERN.md §11).
  */
 function renderInline(text: string): React.ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\*[^*]+\*)/g);

@@ -3,14 +3,31 @@
    réutilisent ProjectDetail.module.css pour rester visuellement cohérents avec
    l'ancien pipeline pendant la coexistence. */
 
-/* Corps MDX : espace les blocs (sections composants + prose) de façon homogène. */
+/* Corps MDX : flux vertical basé sur les marges (et non un gap flex uniforme) pour
+   moduler l'espacement selon le type de bloc. */
 .body {
-    display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xl);
     font-size: 1rem;
     line-height: 1.8;
     color: var(--color-text);
+}
+
+/* Reset des marges de flux, puis séparation ample par défaut entre blocs… */
+.body > * {
+    margin: 0;
+}
+
+.body > * + * {
+    margin-top: var(--spacing-xl);
+}
+
+/* …resserrée entre deux paragraphes consécutifs… */
+.body p + p {
+    margin-top: var(--spacing-sm);
+}
+
+/* …et un titre colle à son contenu suivant. */
+.body h2 + * {
+    margin-top: var(--spacing-sm);
 }
 
 /* Titres de section issus du markdown (`## …`) : même accent que .sectionTitle. */
@@ -22,7 +39,6 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-    margin-bottom: calc(-1 * var(--spacing-md));
 }
 
 .body h2::before {
@@ -40,10 +56,6 @@
     font-size: 1.15rem;
     font-weight: 600;
     color: var(--color-text);
-}
-
-.body p {
-    margin: 0;
 }
 
 .body ul,

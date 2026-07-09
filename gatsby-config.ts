@@ -44,7 +44,7 @@ const config: GatsbyConfig = {
       options: { name: "images", path: path.resolve(__dirname, "src/images") },
     },
     {
-      // Projets co-localisés : index.json + description.md + images/ par slug.
+      // Projets co-localisés : index.mdx + images/ par slug.
       resolve: "gatsby-source-filesystem",
       options: { name: "projects-content", path: path.resolve(__dirname, "src/content/projects") },
     },
@@ -52,15 +52,12 @@ const config: GatsbyConfig = {
       resolve: "gatsby-transformer-json",
       options: {
         typeName: ({ node }: { node: { sourceInstanceName: string; relativeDirectory: string; name: string } }) => {
-          if (node.sourceInstanceName === "projects-content" && node.name === "index") return "ProjectsJson";
           if (node.sourceInstanceName === "data" && node.relativeDirectory === "services") return "ServicesJson";
           return toTypeName(node.name);
         },
       },
     },
-    "gatsby-transformer-remark",
-    // Pages projet en MDX (index.mdx). Extensions par défaut = [".mdx"] :
-    // les description.md restent traités par gatsby-transformer-remark.
+    // Pages projet en MDX (content/projects/<slug>/index.mdx).
     "gatsby-plugin-mdx",
   ],
 };

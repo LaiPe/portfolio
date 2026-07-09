@@ -65,10 +65,11 @@ export default function ProjectCard({
 
 /**
  * Fragment réutilisable : champs nécessaires à l'affichage d'une carte projet.
- * Utilisable dans toute requête via `...ProjectCardData`.
+ * Défini sur `MdxFrontmatter` — les listes l'utilisent via
+ * `allMdx { nodes { frontmatter { ...ProjectCardData } } }`.
  */
 export const query = graphql`
-  fragment ProjectCardData on ProjectsJson {
+  fragment ProjectCardData on MdxFrontmatter {
     id
     slug
     title

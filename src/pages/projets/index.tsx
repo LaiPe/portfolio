@@ -75,12 +75,15 @@ const CATEGORY_ORDER: Record<string, number> = Object.fromEntries(
 );
 
 interface ProjectsPageData {
-  allProjectsJson: { nodes: Project[] };
+  allMdx: { nodes: { frontmatter: Project }[] };
 }
 
 export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
   const [activeCategory, setActiveCategory] = useState("all");
-  const projects = data.allProjectsJson.nodes;
+  const projects = useMemo(
+    () => data.allMdx.nodes.map((n) => n.frontmatter),
+    [data.allMdx.nodes],
+  );
   const activeCategoryConfig = CATEGORIES.find((c) => c.id === activeCategory);
 
   const filteredProjects = useMemo(() => {
@@ -214,9 +217,11 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
 
 export const query = graphql`
   query ProjectsPage {
-    allProjectsJson(sort: { priority: ASC }) {
+    allMdx(sort: { frontmatter: { priority: ASC } }) {
       nodes {
-        ...ProjectCardData
+        frontmatter {
+          ...ProjectCardData
+        }
       }
     }
   }

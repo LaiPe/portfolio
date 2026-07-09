@@ -11,16 +11,19 @@ Chaque fichier de `src/pages/` est une route. Pour générer une page par node, 
 fichier `{TypeGraphQL.champ}.tsx` : Gatsby crée une page par node et injecte `$id` dans la requête.
 
 ```
-src/pages/projets/{ProjectsJson.slug}.tsx   ->  /projets/:slug
+src/pages/projets/{Mdx.frontmatter__slug}.tsx   ->  /projets/:slug
 ```
 
 ```tsx
 export const query = graphql`
   query ProjectDetail($id: String!) {
-    projectsJson(id: { eq: $id }) { title slug ... }
+    mdx(id: { eq: $id }) { frontmatter { title slug ... } }
   }
 `;
 ```
+
+Une collection route sur un champ **imbriqué** se nomme avec `__` (double underscore) :
+`{Mdx.frontmatter__slug}` cible `frontmatter.slug`.
 
 Doc : <https://www.gatsbyjs.com/docs/reference/routing/file-system-route-api/>
 
@@ -86,44 +89,38 @@ Doc : <https://www.gatsbyjs.com/docs/reference/config-files/gatsby-ssr/>
 
 ---
 
-## 5. ⭐ Field extension : chemin string JSON → image optimisable
+## 5. ⭐ Images co-localisées : nom de fichier frontmatter → image optimisable
 
-Le pattern le plus délicat de la migration. Les JSON stockent des chemins string
-(`"/img/projects/x/y.png"`). Pour passer par Sharp, il faut un `File` node. On crée une field
-extension custom qui résout le string vers le `File` de `src/images` (`gatsby-node.ts`) :
+Les images d'un projet vivent dans `src/content/projects/<slug>/images/` ; le frontmatter ne
+stocke que des **noms de fichiers** (`hero: eb-thumbnail.jpg`). Pour passer par Sharp il faut un
+`File` node. On résout via `createResolvers` (`gatsby-node.ts`) : `MdxFrontmatter.images` injecte
+`_slug`, et les sous-resolvers construisent le `relativePath` `<slug>/images/<file>` :
 
 ```ts
-createFieldExtension({
-  name: "imageByPath",
-  extend: () => ({
-    resolve(source, _args, context, info) {
-      const value = source[info.fieldName];          // string ou string[]
-      if (!value) return null;
-      const findFile = (p: string) => context.nodeModel.findOne({
-        type: "File",
-        query: { filter: {
-          sourceInstanceName: { eq: "images" },
-          relativePath: { eq: p.replace(/^\/img\//, "") },  // "/img/x" -> "x"
-        }},
-      });
-      return Array.isArray(value) ? Promise.all(value.map(findFile)) : findFile(value);
-    },
-  }),
+const findImage = (context, slug, filename) => context.nodeModel.findOne({
+  type: "File",
+  query: { filter: {
+    sourceInstanceName: { eq: "projects-content" },
+    relativePath: { eq: `${slug}/images/${filename}` },
+  }},
 });
 
-createTypes(`
-  type ProjectsJsonImages {
-    thumbnail: File @imageByPath
-    hero: File @imageByPath
-    gallery: [File] @imageByPath
-  }
-`);
+createResolvers({
+  MdxFrontmatter: {                       // injecte _slug dans le conteneur images
+    images: { type: "MdxFrontmatterImages",
+      resolve: (s) => s.images ? { ...s.images, _slug: s.slug } : null },
+  },
+  MdxFrontmatterImages: {                 // hero/thumbnail/gallery -> File via findImage
+    hero:    { type: "File",   resolve: (s, _, ctx) => s.hero  && findImage(ctx, s._slug, s.hero) },
+    gallery: { type: "[File]", resolve: (s, _, ctx) =>
+      Array.isArray(s.gallery) ? Promise.all(s.gallery.map(f => findImage(ctx, s._slug, f))) : null },
+  },
+});
 ```
 
-Alternative native si on peut rendre les chemins relatifs au fichier JSON : extension
-intégrée `@fileByRelativePath`. Ici on garde les chemins `/img/...` intacts via l'extension custom.
-Doc : <https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createSchemaCustomization>
-et <https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#creating-custom-extensions>
+On passe par `createResolvers` (et non une field extension `@…`) car le resolver a besoin du
+`slug` du projet (frère de `images` dans le frontmatter) pour bâtir le chemin.
+Doc : <https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#createResolvers>
 
 ---
 
@@ -151,38 +148,23 @@ Doc : <https://www.gatsbyjs.com/docs/how-to/images-and-media/using-gatsby-plugin
 
 ---
 
-## 7. Markdown : `gatsby-transformer-remark` (vs react-markdown)
+## 7. Prose : MDX (pages projet) et `MarkdownText` (inline JSON)
 
-Les descriptions de projet sont des fichiers `.md` transformés en HTML par remark, reliés au projet
-par slug (`@link`, voir §8), et rendus via `dangerouslySetInnerHTML` :
+La prose des projets est le **corps MDX** (`index.mdx`), rendue par React via `children` — plus
+de `dangerouslySetInnerHTML` ni de `gatsby-transformer-remark` (retiré). Voir §11.
 
-```tsx
-{project.description?.html && (
-  <div dangerouslySetInnerHTML={{ __html: project.description.html }} />
-)}
-```
-
-Pour du Markdown inline trivial stocké en JSON (gras/italique d'`about.json`), on utilise le petit
-composant maison `MarkdownText` plutôt qu'une dépendance (`react-markdown` a été retiré).
-Doc : <https://www.gatsbyjs.com/plugins/gatsby-transformer-remark/>
+Pour du Markdown **inline** trivial stocké en JSON (gras/italique d'`about.json`), on utilise le
+petit composant maison `MarkdownText` plutôt qu'une dépendance (`react-markdown` a été retiré).
 
 ---
 
-## 8. Relier deux types de nodes par `@link`
+## 8. Relier deux types de nodes par `@link` *(retiré)*
 
-On donne un `fields.slug` aux `MarkdownRemark` (depuis le nom de fichier) dans `onCreateNode`, puis
-on relie `ProjectsJson.description` au markdown partageant ce slug :
-
-```ts
-// onCreateNode : MarkdownRemark.fields.slug = nom du fichier .md
-actions.createNodeField({ node, name: "slug", value: fileNode.name });
-```
-```graphql
-type ProjectsJson implements Node {
-  description: MarkdownRemark @link(by: "fields.slug", from: "slug")
-}
-```
-
+Pattern utilisé à l'époque où la description vivait dans un `.md` séparé : `onCreateNode` posait
+un `fields.slug` sur le `MarkdownRemark`, relié via `ProjectsJson.description @link(by: "fields.slug")`.
+**Supprimé avec la migration MDX** (§11) : prose et données vivent désormais dans un seul `index.mdx`,
+donc plus aucune jointure inter-nodes à maintenir. `@link` reste la technique Gatsby de référence
+pour une clé étrangère si le besoin réapparaît.
 Doc : <https://www.gatsbyjs.com/docs/reference/graphql-data-layer/schema-customization/#foreign-key-fields>
 
 ---
@@ -214,6 +196,65 @@ l'import direct est plus simple et tout aussi valide en Gatsby.
 
 ---
 
+## 11. ⭐ Pages projet en MDX (frontmatter typé + banque de composants)
+
+Les pages projet migrent de `ProjectsJson` (`index.json` + `description.md`) vers **un seul
+`index.mdx` par projet** : frontmatter (données structurées) + corps (prose + composants).
+Motivation : supprimer la dette de deux sources de vérité désynchronisées. Contrat complet
+(frontière frontmatter/corps, banque fermée) : [docs/mdx-projects-contract.md](docs/mdx-projects-contract.md).
+
+**Route collection** — `src/pages/projets/{Mdx.frontmatter__slug}.tsx`. Comme §1 mais
+sur le node `Mdx` ; le corps compilé arrive en **`children`** (plus de `<MDXRenderer>`) :
+
+```tsx
+export default function Page({ data, children }: PageProps<Data> & { children: React.ReactNode }) {
+  return (<>{/* hero + sidebar depuis data.mdx.frontmatter */}
+    <ProjectProvider project={data.mdx.frontmatter}>{children}</ProjectProvider>
+  </>);
+}
+```
+
+**Frontmatter typé explicitement** (`gatsby-node.ts`) — obligatoire : sur un unique node,
+un champ `null` (ex. `client: null`) casse l'inférence. On déclare `MdxFrontmatter` (scalaires
+inclus) et on **factorise le resolver d'images** avec `ProjectsJson` (même convention
+`slug/images/<file>`, cf. §5) :
+
+```ts
+type MdxFrontmatter { client: String  images: MdxFrontmatterImages  architecture: … }
+// createResolvers : MdxFrontmatter.images et ProjectsJson.images partagent findImage()
+```
+
+**Composants → import direct** (PAS `MDXProvider`). Chaque `.mdx` importe depuis le barrel,
+après le frontmatter :
+
+```mdx
+import { Features, Feature, Architecture, Gallery, Callout } from "../../../components/projects/mdx";
+```
+
+L'import direct est explicite, n'importe que le nécessaire, et se rend de façon fiable dans tous
+les contextes (les composants via `MDXProvider`/shortcodes échouent dans certains, ex. RSS). La
+banque reste fermée *par convention* (un répertoire `src/components/projects/mdx/`, un barrel).
+
+**Donnée de page → contexte React.** Les composants pilotés par la donnée résolue par GraphQL
+(`Architecture`, `Gallery`, `Testimonial`) lisent `useProject()` — un contexte posé par le template.
+Raison : dans le corps MDX seule la frontmatter *brute* est joignable (`props.pageContext.frontmatter`),
+**pas** les données résolues, or `<Gallery>` a besoin des images **Sharp** (`IGatsbyImageData`).
+Le contexte fournit cette donnée ambiante sans faire fuiter `props.pageContext…` dans le contenu.
+
+**Ce qui devient de la prose / du markdown natif** : les listes de phrases (`highlights`, `useCases`,
+`skills`, `challenges` textuels) ne sont PAS des composants — `## Titre` + puces, stylées par
+`.body` (`mdx.module.css`). Seuls `features` (grille à emoji) et `architecture` (grille imbriquée)
+restent des composants. `problem`/`results` : supprimés (0 usage).
+
+Doc : <https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/> et
+<https://www.gatsbyjs.com/docs/how-to/routing/mdx/>
+
+> **Migration terminée** : `Mdx` est le seul pipeline projet. L'ancien (`ProjectsJson` +
+> `description.md` + `gatsby-transformer-remark` + template `{ProjectsJson.slug}.tsx` +
+> `ProjectDetail*`) a été entièrement retiré. Les listes/accueil interrogent `allMdx`.
+
+---
+
 ## Gotchas rencontrés
 
 - **CSS Modules = exports nommés** : css-loader (config Gatsby) expose chaque classe en export
@@ -222,6 +263,7 @@ l'import direct est plus simple et tout aussi valide en Gatsby.
   La déclaration TS dans `src/css-modules.d.ts` utilise `export =` pour rester indexable.
 - **Classes CSS = mots réservés JS** : une classe `.default` génère `export var default` (illégal).
   Renommer (ici `.defaultVariant`).
-- **Champs absents de tout JSON** : un champ jamais présent (ex. `problem`, `results`) n'existe pas
-  dans le schéma inféré → requête en échec. On les déclare explicitement dans `createTypes`.
+- **Champs absents / toujours `null`** : un champ jamais présent (ex. `problem`, `results`) ou
+  `null` sur tous les nodes (ex. `client: null` sur l'unique node MDX pilote) n'existe pas dans le
+  schéma inféré → requête en échec. On le déclare explicitement dans `createTypes` (cf. §11).
 - **Hydratation** : ne pas lire `window` dans un initialiseur `useState` (mismatch SSR/CSR).

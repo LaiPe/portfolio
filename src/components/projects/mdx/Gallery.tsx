@@ -2,7 +2,7 @@ import React, { useMemo, useState } from "react";
 import { GatsbyImage, type IGatsbyImageData } from "gatsby-plugin-image";
 import GalleryModal from "../GalleryModal/GalleryModal";
 import { useProject } from "./ProjectContext";
-import * as styles from "../ProjectDetail/ProjectDetail.module.css";
+import * as styles from "./blocks.module.css";
 
 /**
  * Galerie d'images (grille + modale). Lit `images.gallery` du projet courant
