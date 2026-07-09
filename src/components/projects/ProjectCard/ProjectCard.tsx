@@ -2,6 +2,7 @@ import React from "react";
 import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Badge from "../../common/Badge/Badge";
+import Icon from "../../common/Icon/Icon";
 import * as styles from "./ProjectCard.module.css";
 import type { Project } from "../../../types";
 
@@ -38,9 +39,11 @@ export default function ProjectCard({
           />
         ) : (
           <div className={styles.emojiContainer}>
-            <span className={styles.emoji}>
-              {project.images?.emoji || "🚀"}
-            </span>
+            <Icon
+              name={project.images?.icon || "rocket"}
+              size={64}
+              className={styles.emoji}
+            />
           </div>
         )}
         <Badge variant={variant} className={styles.badge}>
@@ -80,7 +83,7 @@ export const query = graphql`
     priority
     featured
     images {
-      emoji
+      icon
       thumbnail {
         childImageSharp {
           gatsbyImageData(layout: CONSTRAINED, placeholder: BLURRED, width: 1200)

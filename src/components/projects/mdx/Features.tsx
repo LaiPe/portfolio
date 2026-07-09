@@ -1,13 +1,14 @@
 import React from "react";
+import Icon from "../../common/Icon/Icon";
 import * as styles from "./blocks.module.css";
 
 /**
- * Grille de cartes fonctionnalités à emoji. Données inline dans le corps MDX.
+ * Grille de cartes fonctionnalités à icône. Données inline dans le corps MDX.
  * Contrat unique — abandonne les anciennes variantes `string` / `{title, description}`.
  *
  * ```mdx
  * <Features title="Fonctionnalités">
- *   <Feature emoji="📍">Recherche géolocalisée avec carte interactive</Feature>
+ *   <Feature icon="map-pin">Recherche géolocalisée avec carte interactive</Feature>
  * </Features>
  * ```
  */
@@ -27,16 +28,16 @@ export function Features({
 }
 
 export function Feature({
-  emoji,
+  icon,
   children,
 }: {
-  emoji: string;
+  icon: string;
   children: React.ReactNode;
 }) {
   return (
     <div className={styles.featureCard}>
       <h3 className={styles.featureTitle}>
-        <span className={styles.featureEmoji}>{emoji}</span>
+        <Icon name={icon} size={20} className={styles.featureIcon} />
         {children}
       </h3>
     </div>

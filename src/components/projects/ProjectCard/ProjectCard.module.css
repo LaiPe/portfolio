@@ -49,8 +49,7 @@
 }
 
 .emoji {
-    font-size: 4rem;
-    line-height: 1;
+    color: var(--color-primary);
 }
 
 .badge {

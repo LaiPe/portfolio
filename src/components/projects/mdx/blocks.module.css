@@ -38,8 +38,8 @@
     z-index: 0;
 }
 
-.heroEmoji span {
-    font-size: 8rem;
+.heroEmoji svg {
+    color: var(--color-primary);
 }
 
 .heroOverlay {
@@ -146,8 +146,9 @@
 }
 
 .infoIcon {
-    font-size: 1.125rem;
-    line-height: 1.5;
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-primary);
 }
 
 .infoContent {
@@ -304,13 +305,14 @@
     font-weight: 600;
     color: var(--color-text);
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: var(--spacing-xs);
 }
 
-.featureEmoji {
-    font-size: 1.25rem;
-    line-height: 1;
+.featureIcon {
+    flex-shrink: 0;
+    margin-top: 2px;
+    color: var(--color-primary);
 }
 
 .featureDescription {

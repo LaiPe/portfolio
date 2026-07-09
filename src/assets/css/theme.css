@@ -62,7 +62,7 @@
 }
 
 header a.active{
-    outline: 1px black solid;
+    color: var(--color-primary);
 }
 
 .display-none{

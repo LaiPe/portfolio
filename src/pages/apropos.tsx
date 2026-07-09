@@ -1,8 +1,20 @@
 import React from "react";
 import { StaticImage } from "gatsby-plugin-image";
 import { type HeadFC } from "gatsby";
+import {
+  Download,
+  UserRound,
+  Compass,
+  Briefcase,
+  GraduationCap,
+  Award,
+  Drama,
+  Wrench,
+  Heart,
+} from "lucide-react";
 
 import Button from "../components/common/Button/Button";
+import Icon from "../components/common/Icon/Icon";
 import Seo from "../components/Seo";
 import MarkdownText from "../components/MarkdownText";
 import useViewport from "../hooks/useViewport";
@@ -76,7 +88,7 @@ export default function AboutPage() {
                 </div>
                 <div className={styles.heroCta}>
                   <Button onClick={handleDownloadCV} variant="primary">
-                    📄 Télécharger mon CV
+                    <Download size={18} /> Télécharger mon CV
                   </Button>
                   <Button to="/contact" variant="outline">
                     Me contacter
@@ -99,7 +111,7 @@ export default function AboutPage() {
           {/* Introduction */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>👋</span>
+              <UserRound className={styles.sectionIcon} size={24} />
               Qui suis-je ?
             </h2>
             <div className={styles.introduction}>
@@ -113,13 +125,13 @@ export default function AboutPage() {
           {/* Values */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>💫</span>
+              <Compass className={styles.sectionIcon} size={24} />
               Ce qui me guide
             </h2>
             <div className={styles.valuesGrid}>
               {values.map((value) => (
                 <div key={value.id} className={styles.valueCard}>
-                  <span className={styles.valueIcon}>{value.icon}</span>
+                  <Icon name={value.icon} className={styles.valueIcon} size={32} />
                   <h3 className={styles.valueTitle}>{value.title}</h3>
                   <p className={styles.valueDescription}>{value.description}</p>
                 </div>
@@ -130,7 +142,7 @@ export default function AboutPage() {
           {/* Experiences */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>💼</span>
+              <Briefcase className={styles.sectionIcon} size={24} />
               Expériences
             </h2>
             <div className={styles.timeline}>
@@ -159,7 +171,7 @@ export default function AboutPage() {
           {/* Education */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>🎓</span>
+              <GraduationCap className={styles.sectionIcon} size={24} />
               Formation
             </h2>
             <div className={styles.timeline}>
@@ -182,7 +194,7 @@ export default function AboutPage() {
           {/* Certifications */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>🏆</span>
+              <Award className={styles.sectionIcon} size={24} />
               Certifications
             </h2>
             <div className={styles.certificationsGrid}>
@@ -200,7 +212,7 @@ export default function AboutPage() {
           {otherExperiences.length > 0 && (
             <section className={styles.section}>
               <h2 className={styles.sectionTitle}>
-                <span className={styles.sectionIcon}>🎭</span>
+                <Drama className={styles.sectionIcon} size={24} />
                 Autres expériences
               </h2>
               <div className={styles.timeline}>
@@ -228,13 +240,13 @@ export default function AboutPage() {
           {/* Passions */}
           <section className={styles.section}>
             <h2 className={styles.sectionTitle}>
-              <span className={styles.sectionIcon}>❤️</span>
+              <Heart className={styles.sectionIcon} size={24} />
               En dehors du code
             </h2>
             <div className={styles.passionsGrid}>
               {passions.map((passion) => (
                 <div key={passion.id} className={styles.passionCard}>
-                  <span className={styles.passionIcon}>{passion.icon}</span>
+                  <Icon name={passion.icon} className={styles.passionIcon} size={40} />
                   <h3 className={styles.passionTitle}>{passion.title}</h3>
                   <p className={styles.passionDescription}>
                     {passion.description}
@@ -253,7 +265,7 @@ export default function AboutPage() {
             </p>
             <div className={styles.ctaButtons}>
               <Button onClick={handleDownloadCV} variant="primary" size="lg">
-                📄 Télécharger mon CV
+                <Download size={20} /> Télécharger mon CV
               </Button>
               <Button to="/contact" variant="primary" size="lg">
                 Me contacter
@@ -288,7 +300,7 @@ function SkillsSidebar({
   const skillsContent = Object.values(skills).map((category) => (
     <div key={category.title} className={styles.skillCategory}>
       <h3 className={styles.skillCategoryTitle}>
-        <span className={styles.skillCategoryIcon}>{category.icon}</span>
+        <Icon name={category.icon} className={styles.skillCategoryIcon} size={16} />
         {category.title}
       </h3>
       <ul className={styles.skillList}>
@@ -305,7 +317,7 @@ function SkillsSidebar({
     return (
       <section className={styles.section}>
         <h2 className={styles.sectionTitle}>
-          <span className={styles.sectionIcon}>🛠️</span>
+          <Wrench className={styles.sectionIcon} size={24} />
           Compétences
         </h2>
         <div className={styles.skillsMobileGrid}>{skillsContent}</div>

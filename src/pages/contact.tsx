@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { type HeadFC } from "gatsby";
+import { Mail, MapPin, Clock } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import Seo from "../components/Seo";
@@ -199,7 +200,7 @@ export default function ContactPage() {
                 </h2>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon}>📧</span>
+                  <Mail className={styles.infoIcon} size={24} />
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Email</h3>
                     <a
@@ -212,7 +213,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon}>📍</span>
+                  <MapPin className={styles.infoIcon} size={24} />
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Localisation</h3>
                     <p className={styles.infoText}>Clermont-Ferrand, France</p>
@@ -221,7 +222,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <span className={styles.infoIcon}>⏰</span>
+                  <Clock className={styles.infoIcon} size={24} />
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Disponibilité</h3>
                     <p className={styles.infoText}>Réponse sous 24-48h</p>

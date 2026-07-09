@@ -34,7 +34,9 @@
 }
 
 .badge {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
     background: var(--color-primary);
     color: var(--color-background);
     font-size: 0.875rem;
@@ -80,8 +82,9 @@
 }
 
 .ctaIcon {
-    font-size: 3rem;
-    margin-bottom: var(--spacing-md);
+    display: block;
+    margin: 0 auto var(--spacing-md);
+    color: var(--color-primary);
 }
 
 .ctaTitle {
@@ -151,9 +154,9 @@
 }
 
 .teaserIcon {
-    font-size: 2.5rem;
     display: block;
     margin-bottom: var(--spacing-md);
+    color: var(--color-primary);
 }
 
 .teaserItem h3 {

@@ -1,5 +1,6 @@
 import React from "react";
 import { type HeadFC } from "gatsby";
+import { Rocket, MessageCircle, Globe, Atom, ShoppingCart } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import Seo from "../components/Seo";
@@ -16,7 +17,9 @@ export default function ServicesPage() {
       {/* Hero Section */}
       <section className={styles.hero}>
         <div className={styles.heroContent}>
-          <span className={styles.badge}>🚀 Bientôt disponible</span>
+          <span className={styles.badge}>
+            <Rocket size={16} /> Bientôt disponible
+          </span>
           <h1 className={styles.title}>Mes Services</h1>
           <p className={styles.subtitle}>
             Je travaille actuellement sur une offre de services adaptée à vos
@@ -32,7 +35,7 @@ export default function ServicesPage() {
       <section className={styles.ctaSection}>
         <div className={styles.container}>
           <div className={styles.ctaCard}>
-            <div className={styles.ctaIcon}>💬</div>
+            <MessageCircle className={styles.ctaIcon} size={48} />
             <h2 className={styles.ctaTitle}>Discutons de votre projet</h2>
             <p className={styles.ctaDescription}>
               Vous avez un projet en tête ? Une idée à concrétiser ?
@@ -64,17 +67,17 @@ export default function ServicesPage() {
           <h2 className={styles.teaserTitle}>Ce que je peux vous proposer</h2>
           <div className={styles.teaserGrid}>
             <div className={styles.teaserItem}>
-              <span className={styles.teaserIcon}>🌐</span>
+              <Globe className={styles.teaserIcon} size={40} />
               <h3>Sites Web</h3>
               <p>Sites vitrines, landing pages, sites personnalisés</p>
             </div>
             <div className={styles.teaserItem}>
-              <span className={styles.teaserIcon}>⚛️</span>
+              <Atom className={styles.teaserIcon} size={40} />
               <h3>Applications React</h3>
               <p>Interfaces utilisateur dynamiques et performantes</p>
             </div>
             <div className={styles.teaserItem}>
-              <span className={styles.teaserIcon}>🛒</span>
+              <ShoppingCart className={styles.teaserIcon} size={40} />
               <h3>E-commerce</h3>
               <p>Boutiques en ligne avec Shopify ou solutions sur mesure</p>
             </div>

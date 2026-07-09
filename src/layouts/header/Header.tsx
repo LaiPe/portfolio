@@ -41,22 +41,22 @@ export default function Header({ pathname = "/" }: HeaderProps) {
         {showNav && (
           <ul>
             <li id="nav_projets">
-              <Link to="/projets" onClick={closeNav}>
+              <Link to="/projets" activeClassName="active" onClick={closeNav}>
                 Projets
               </Link>
             </li>
             <li id="nav_services">
-              <Link to="/services" onClick={closeNav}>
+              <Link to="/services" activeClassName="active" onClick={closeNav}>
                 Services
               </Link>
             </li>
             <li id="nav_apropos">
-              <Link to="/apropos" onClick={closeNav}>
+              <Link to="/apropos" activeClassName="active" onClick={closeNav}>
                 À propos
               </Link>
             </li>
             <li id="nav_contact">
-              <Link to="/contact" onClick={closeNav}>
+              <Link to="/contact" activeClassName="active" onClick={closeNav}>
                 Contact
               </Link>
             </li>

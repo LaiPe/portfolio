@@ -1,7 +1,7 @@
 {
     "id": "ecommerce-shopify",
     "title": "E-commerce Shopify",
-    "icon": "🛒",
+    "icon": "shopping-cart",
     "priceRange": "1500-3000€",
     "priceLabel": "À partir de 1500€",
     "target": "Commerçants, créateurs",

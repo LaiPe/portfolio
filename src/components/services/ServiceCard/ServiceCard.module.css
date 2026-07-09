@@ -13,9 +13,9 @@
 }
 
 .icon {
-    font-size: 2.5rem;
     display: block;
-    margin-bottom: var(--spacing-sm);
+    margin: 0 auto var(--spacing-sm);
+    color: var(--color-primary);
 }
 
 .title {

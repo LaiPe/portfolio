@@ -1,9 +1,20 @@
 import React, { useMemo } from "react";
 import { graphql, Link, type PageProps, type HeadProps } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
+import {
+  ExternalLink,
+  FolderGit2,
+  FileText,
+  User,
+  Tag,
+  Calendar,
+  Timer,
+  type LucideIcon,
+} from "lucide-react";
 
 import Badge from "../../components/common/Badge/Badge";
 import Button from "../../components/common/Button/Button";
+import Icon from "../../components/common/Icon/Icon";
 import Seo from "../../components/Seo";
 import {
   ProjectProvider,
@@ -98,7 +109,7 @@ export default function ProjectMdxPreview({
             </div>
           ) : (
             <div className={detail.heroEmoji}>
-              <span>{project.images?.emoji || "📐"}</span>
+              <Icon name={project.images?.icon || "rocket"} size={120} />
             </div>
           )}
           <div className={detail.heroOverlay} />
@@ -121,17 +132,17 @@ export default function ProjectMdxPreview({
             <div className={detail.heroLinks}>
               {links?.live && (
                 <Button href={links.live} target="_blank" variant="primary">
-                  🔗 Voir le projet
+                  <ExternalLink size={18} /> Voir le projet
                 </Button>
               )}
               {links?.github && (
                 <Button href={links.github} target="_blank" variant="primary">
-                  💻 Code source
+                  <FolderGit2 size={18} /> Code source
                 </Button>
               )}
               {links?.pdf && (
                 <Button href={links.pdf} target="_blank" variant="primary">
-                  📄 Documentation
+                  <FileText size={18} /> Documentation
                 </Button>
               )}
             </div>
@@ -145,15 +156,15 @@ export default function ProjectMdxPreview({
               <h3 className={detail.sidebarTitle}>Informations</h3>
               <div className={detail.sidebarInfo}>
                 {project.category === "client" && project.client ? (
-                  <InfoItem icon="👤" label="Client" value={project.client} />
+                  <InfoItem icon={User} label="Client" value={project.client} />
                 ) : (
-                  <InfoItem icon="🏷️" label="Type" value={chrome.typeLabel} />
+                  <InfoItem icon={Tag} label="Type" value={chrome.typeLabel} />
                 )}
                 {project.date && (
-                  <InfoItem icon="📅" label="Date" value={project.date} />
+                  <InfoItem icon={Calendar} label="Date" value={project.date} />
                 )}
                 {project.duration && (
-                  <InfoItem icon="⏱️" label="Durée" value={project.duration} />
+                  <InfoItem icon={Timer} label="Durée" value={project.duration} />
                 )}
               </div>
             </div>
@@ -176,14 +187,18 @@ export default function ProjectMdxPreview({
                 <h3 className={detail.sidebarTitle}>Liens</h3>
                 <div className={detail.sidebarLinks}>
                   {links?.live && (
-                    <SidebarLink href={links.live}>🔗 Projet en ligne</SidebarLink>
+                    <SidebarLink href={links.live}>
+                      <ExternalLink size={16} /> Projet en ligne
+                    </SidebarLink>
                   )}
                   {links?.github && (
-                    <SidebarLink href={links.github}>💻 Code GitHub</SidebarLink>
+                    <SidebarLink href={links.github}>
+                      <FolderGit2 size={16} /> Code GitHub
+                    </SidebarLink>
                   )}
                   {links?.pdf && (
                     <SidebarLink href={links.pdf}>
-                      📄 Documentation PDF
+                      <FileText size={16} /> Documentation PDF
                     </SidebarLink>
                   )}
                 </div>
@@ -245,17 +260,17 @@ export default function ProjectMdxPreview({
 }
 
 function InfoItem({
-  icon,
+  icon: IconComponent,
   label,
   value,
 }: {
-  icon: string;
+  icon: LucideIcon;
   label: string;
   value: string;
 }) {
   return (
     <div className={detail.infoItem}>
-      <span className={detail.infoIcon}>{icon}</span>
+      <IconComponent className={detail.infoIcon} size={18} />
       <div className={detail.infoContent}>
         <span className={detail.infoLabel}>{label}</span>
         <span className={detail.infoValue}>{value}</span>
@@ -305,7 +320,7 @@ export const query = graphql`
           pdf
         }
         images {
-          emoji
+          icon
           hero {
             childImageSharp {
               gatsbyImageData(layout: FULL_WIDTH, placeholder: BLURRED)

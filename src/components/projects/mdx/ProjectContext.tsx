@@ -25,7 +25,7 @@ export interface MdxProject {
   client?: string | null;
   links?: ProjectLinks | null;
   images?: {
-    emoji?: string | null;
+    icon?: string | null;
     hero?: ImageNode | null;
     gallery?: (ImageNode | null)[] | null;
   } | null;

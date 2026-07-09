@@ -109,7 +109,8 @@
 }
 
 .sectionIcon {
-    font-size: 1.5rem;
+    flex-shrink: 0;
+    color: var(--color-primary);
 }
 
 .introduction {
@@ -156,9 +157,9 @@
 }
 
 .valueIcon {
-    font-size: 2rem;
     display: block;
     margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
 }
 
 .valueTitle {
@@ -323,9 +324,9 @@
 }
 
 .passionIcon {
-    font-size: 2.5rem;
     display: block;
     margin-bottom: var(--spacing-sm);
+    color: var(--color-primary);
 }
 
 .passionTitle {
@@ -442,7 +443,8 @@
 }
 
 .skillCategoryIcon {
-    font-size: 1rem;
+    flex-shrink: 0;
+    color: var(--color-primary);
 }
 
 .skillList {

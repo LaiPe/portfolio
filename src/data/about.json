@@ -103,19 +103,19 @@
   "passions": [
     {
       "id": 1,
-      "icon": "🥁",
+      "icon": "drum",
       "title": "Musique",
       "description": "Pratique de la batterie depuis l'enfance."
     },
     {
       "id": 2,
-      "icon": "🎬",
+      "icon": "clapperboard",
       "title": "Audiovisuel & Photographie",
       "description": "Pratique amateur, sensibilité éditoriale et narrative."
     },
     {
       "id": 3,
-      "icon": "🏊",
+      "icon": "waves",
       "title": "Natation",
       "description": "Activité sportive régulière."
     }
@@ -123,25 +123,25 @@
   "values": [
     {
       "id": 1,
-      "icon": "💡",
+      "icon": "lightbulb",
       "title": "Curiosité technique",
       "description": "Toujours apprendre de nouvelles technologies"
     },
     {
       "id": 2,
-      "icon": "🎯",
+      "icon": "target",
       "title": "Qualité du code",
       "description": "Bonnes pratiques, lisibilité, maintenabilité"
     },
     {
       "id": 3,
-      "icon": "🤝",
+      "icon": "handshake",
       "title": "Écoute client",
       "description": "Comprendre les besoins réels, pas seulement les demandes"
     },
     {
       "id": 4,
-      "icon": "🎨",
+      "icon": "palette",
       "title": "Design & UX",
       "description": "L'esthétique au service de l'expérience"
     }

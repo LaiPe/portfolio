@@ -32,7 +32,7 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
         architecture: MdxFrontmatterArchitecture
       }
       type MdxFrontmatterImages {
-        emoji: String
+        icon: String
         thumbnail: File
         hero: File
         gallery: [File]

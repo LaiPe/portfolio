@@ -2,7 +2,7 @@
   "skills": {
     "languages": {
       "title": "Langages",
-      "icon": "💻",
+      "icon": "code",
       "featured": false,
       "items": [
         { "name": "JavaScript" },
@@ -17,7 +17,7 @@
     },
     "frontend": {
       "title": "Frontend",
-      "icon": "🎨",
+      "icon": "palette",
       "featured": true,
       "items": [
         { "name": "React", "featured": true },
@@ -32,7 +32,7 @@
     },
     "backend": {
       "title": "Backend",
-      "icon": "⚙️",
+      "icon": "server",
       "featured": true,
       "items": [
         { "name": "Spring Boot", "featured": true },
@@ -44,7 +44,7 @@
     },
     "databases": {
       "title": "Bases de données",
-      "icon": "🗄️",
+      "icon": "database",
       "featured": true,
       "items": [
         { "name": "MySQL", "featured": true },
@@ -55,7 +55,7 @@
     },
     "devops": {
       "title": "DevOps & Cloud",
-      "icon": "🚀",
+      "icon": "rocket",
       "featured": true,
       "items": [
         { "name": "Git / GitHub" },
@@ -69,7 +69,7 @@
     },
     "testing": {
       "title": "Tests & Qualité",
-      "icon": "🧪",
+      "icon": "flask-conical",
       "featured": false,
       "items": [
         { "name": "Jest" },
@@ -81,7 +81,7 @@
     },
     "methodologies": {
       "title": "Méthodologies",
-      "icon": "🔄",
+      "icon": "repeat",
       "featured": false,
       "items": [
         { "name": "Agile (Scrum)" },
@@ -90,7 +90,7 @@
     },
     "design": {
       "title": "Design & Autres outils",
-      "icon": "🎯",
+      "icon": "target",
       "featured": false,
       "items": [
         { "name": "Figma" },

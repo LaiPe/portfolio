@@ -45,7 +45,7 @@ images:
   thumbnail: eb-thumbnail.jpg       # noms de fichiers (résolus Sharp via resolver, cf. §5)
   hero: eb-thumbnail.jpg
   gallery: [eb-1.png, eb-2.png, eb-3.png, eb-4.png]
-  emoji: null                       # fallback si pas de hero
+  icon: null                        # clé lucide-react en fallback si pas de hero (cf. src/components/common/Icon)
 links:
   live: https://…
   demo: null
@@ -110,15 +110,18 @@ documentée ici. Les composants vivent dans `src/components/projects/mdx/`.
   `props.pageContext…` dans le contenu éditorial. L'auteur écrit juste `<Gallery />`.
 
 ### `<Features>` + `<Feature>`
-Grille de cartes à emoji. Remplace `features[]`. Données **inline dans le corps**.
+Grille de cartes à icône (`lucide-react`, via `src/components/common/Icon`). Remplace
+`features[]`. Données **inline dans le corps**.
 ```mdx
 <Features title="Fonctionnalités">
-  <Feature emoji="📍">Recherche géolocalisée avec carte interactive</Feature>
-  <Feature emoji="📅">Système de réservation complet et robuste</Feature>
+  <Feature icon="map-pin">Recherche géolocalisée avec carte interactive</Feature>
+  <Feature icon="calendar-check">Système de réservation complet et robuste</Feature>
 </Features>
 ```
-Contrat : `Features { title?: string }`, `Feature { emoji: string; children: ReactNode }`.
-**Une seule forme** — on abandonne les variantes mortes `{title, description}` / string.
+Contrat : `Features { title?: string }`, `Feature { icon: string; children: ReactNode }`.
+`icon` est une clé résolue par `iconMap` (`src/components/common/Icon/Icon.tsx`) — y ajouter
+toute nouvelle clé nécessaire. **Une seule forme** — on abandonne les variantes mortes
+`{title, description}` / string.
 
 ### `<Architecture />`  *(l'exception §1)*
 Lit `frontmatter.architecture`. Rend la grille backend/frontend/infra/APIs.

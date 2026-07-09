@@ -1,5 +1,6 @@
 import React from "react";
 import Card from "../../common/Card/Card";
+import Icon from "../../common/Icon/Icon";
 import * as styles from "./ServiceCard.module.css";
 
 interface Service {
@@ -15,7 +16,7 @@ export default function ServiceCard({ service }: { service: Service }) {
   return (
     <Card className={styles.serviceCard}>
       <div className={styles.header}>
-        <span className={styles.icon}>{service.icon}</span>
+        <Icon name={service.icon} size={40} className={styles.icon} />
         <h3 className={styles.title}>{service.title}</h3>
         <p className={styles.price}>{service.priceLabel}</p>
       </div>

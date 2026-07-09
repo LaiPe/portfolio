@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql, type PageProps, type HeadFC } from "gatsby";
+import { Rocket } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import SkillCard from "../components/skills/SkillCard/SkillCard";
@@ -87,7 +88,9 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
             Développeur <strong>Full-Stack</strong>
           </h1>
           <p className={styles.heroSubtitle}>
-            <strong>React</strong> · <strong>Next.js</strong> ·{" "}
+            <strong>React</strong>{" "}
+            <span className={styles.heroSeparator}>-</span> <strong>Next.js</strong>{" "}
+            <span className={styles.heroSeparator}>-</span>{" "}
             <strong>Spring Boot</strong>
           </p>
           <div className={styles.heroCtas}>
@@ -151,7 +154,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
       <section className={styles.services}>
         <div className={styles.container}>
           <div className={styles.servicesHeader}>
-            <span className={styles.servicesIcon}>🎯</span>
+            <Rocket className={styles.servicesIcon} size={48} />
             <h2 className={styles.sectionTitle}>
               Vous cherchez un développeur web ?
             </h2>

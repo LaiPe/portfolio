@@ -1,5 +1,13 @@
 import React, { useState, useMemo } from "react";
 import { graphql, type PageProps, type HeadFC } from "gatsby";
+import {
+  Handshake,
+  Package,
+  Ruler,
+  FlaskConical,
+  Folder,
+  type LucideIcon,
+} from "lucide-react";
 
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
 import Seo from "../../components/Seo";
@@ -16,9 +24,8 @@ type CardSize = "small" | "medium" | "large";
 interface CategoryConfig {
   id: string;
   filterLabel: string;
-  filterIcon: string;
+  Icon: LucideIcon;
   sectionTitle: string;
-  sectionIcon: string;
   sectionDescription: string;
   cardSize: CardSize;
 }
@@ -35,36 +42,32 @@ const CATEGORIES: CategoryConfig[] = [
   {
     id: "client",
     filterLabel: "Clients",
-    filterIcon: "🤝",
+    Icon: Handshake,
     sectionTitle: "Missions & clients",
-    sectionIcon: "🤝",
     sectionDescription: "Missions et réalisations livrées pour des clients réels",
     cardSize: "medium",
   },
   {
     id: "product",
-    filterLabel: "Produit",
-    filterIcon: "📦",
-    sectionTitle: "Produit",
-    sectionIcon: "📦",
-    sectionDescription: "Produit conçu, développé et publié en propre",
+    filterLabel: "Produits",
+    Icon: Package,
+    sectionTitle: "Produits",
+    sectionDescription: "Produits conçus, développés et publiés en propre",
     cardSize: "large",
   },
   {
     id: "caseStudy",
     filterLabel: "Études de cas",
-    filterIcon: "📐",
+    Icon: Ruler,
     sectionTitle: "Études de cas",
-    sectionIcon: "📐",
     sectionDescription: "Projets aboutis illustrant une démarche technique complète",
     cardSize: "medium",
   },
   {
     id: "experiment",
-    filterLabel: "Expérimentation",
-    filterIcon: "🧪",
-    sectionTitle: "Expérimentation technique",
-    sectionIcon: "🧪",
+    filterLabel: "Expérimentations",
+    Icon: FlaskConical,
+    sectionTitle: "Expérimentations techniques",
     sectionDescription: "Explorations, projets académiques et certifications",
     cardSize: "small",
   },
@@ -138,7 +141,7 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
         <div className={styles.container}>
           <div className={styles.filterButtons}>
             {[
-              { id: "all", filterLabel: "Tous", filterIcon: "📁" },
+              { id: "all", filterLabel: "Tous", Icon: Folder },
               ...CATEGORIES,
             ].map((category) => (
               <button
@@ -147,7 +150,7 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
                 onClick={() => setActiveCategory(category.id)}
                 aria-pressed={activeCategory === category.id}
               >
-                <span className={styles.filterIcon}>{category.filterIcon}</span>
+                <category.Icon className={styles.filterIcon} size={16} />
                 <span className={styles.filterLabel}>{category.filterLabel}</span>
                 <span className={styles.filterCount}>
                   {categoryCounts[category.id] || 0}
@@ -168,9 +171,7 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
               return (
                 <div key={category.id} className={styles.categorySection}>
                   <h2 className={styles.categoryTitle}>
-                    <span className={styles.categoryIcon}>
-                      {category.sectionIcon}
-                    </span>
+                    <category.Icon className={styles.categoryIcon} size={20} />
                     {category.sectionTitle}
                   </h2>
                   <p className={styles.categoryDescription}>

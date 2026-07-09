@@ -1,4 +1,5 @@
 import React from "react";
+import Icon from "../../common/Icon/Icon";
 import * as styles from "./SkillCard.module.css";
 
 interface SkillItem {
@@ -16,7 +17,7 @@ export default function SkillCard({ title, icon, items }: SkillCardProps) {
   return (
     <div className={styles.skillCard}>
       <div className={styles.header}>
-        <span className={styles.icon}>{icon}</span>
+        <Icon name={icon} className={styles.icon} size={20} />
         <h3 className={styles.title}>{title}</h3>
       </div>
       <ul className={styles.list}>

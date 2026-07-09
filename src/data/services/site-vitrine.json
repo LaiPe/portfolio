@@ -1,7 +1,7 @@
 {
     "id": "site-vitrine",
     "title": "Site Vitrine",
-    "icon": "🌐",
+    "icon": "globe",
     "priceRange": "900€ - 1500€",
     "priceLabel": "À partir de 900€",
     "target": "TPE, artisans, artistes",

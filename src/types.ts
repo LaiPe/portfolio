@@ -9,7 +9,7 @@ export interface ProjectImages {
   thumbnail?: ImageNode | null;
   hero?: ImageNode | null;
   gallery?: (ImageNode | null)[] | null;
-  emoji?: string | null;
+  icon?: string | null;
 }
 
 export interface ProjectLinks {
