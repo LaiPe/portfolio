@@ -255,6 +255,65 @@ Doc : <https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/> et
 
 ---
 
+## 12. ⭐ Composant responsive **sans hydratation** : mode par `pathname`, breakpoints en CSS
+
+Règle : **rien de mesuré côté client n'entre dans le rendu**. Un composant présent sur toutes les
+pages (ici le `Header`) doit s'afficher correctement dès le HTML statique, JS désactivé. On sépare
+donc deux axes :
+
+- **Mode métier (ex. homepage vs. défaut)** → dérivé de `pathname`, **connu au SSR** (fourni par
+  `wrapPageElement` → `Layout location={props.location}`, cf. §4). Pilote une classe.
+- **Breakpoint desktop/mobile** → **pure media query CSS**. Le serveur n'a pas à connaître le
+  viewport : le navigateur tranche au parse, sans JS.
+
+```tsx
+// Header.tsx — le mode vient de pathname (SSR), pas d'une mesure de viewport.
+const isHomepage = pathname === "/";
+return <header className={isHomepage ? `${styles.header} ${styles.index}` : styles.header}> … </header>;
+```
+
+**Anti-pattern corrigé** : piloter le layout via un hook `useViewport` (qui initialise à `0` pour
+rester SSR-safe, cf. gotcha hydratation) fait rendre **toujours la version mobile** au build, puis
+JS « corrige » après hydratation → flash visible. On sort donc le viewport du chemin de rendu ;
+l'API React ne sert plus qu'à l'**interaction** (ouverture du menu), en amélioration progressive.
+
+**Image responsive sans JS ni double-fetch** — `<picture>` + `<source media>` : le navigateur ne
+télécharge que la source retenue.
+
+```tsx
+<picture>
+  <source media="(min-width: 1025px)" srcSet="/img/logo-lp.png" />   {/* grand logo desktop */}
+  <img className={styles.homeLogo} src="/img/logo-lp-raw.png" alt="Logo" /> {/* compact mobile */}
+</picture>
+```
+
+**Éléments d'interaction toujours dans le DOM, masqués en CSS** (pas de `{!isDesktop && …}`) : le
+burger est rendu au build et caché par media query (`.toggle { display: none }` par défaut, révélé
+en `@media (max-width: 1024px)`). L'ouverture reste du `useState`.
+
+**Edge-case resize (A2)** : comme `openedNav` peut rester vrai si on élargit la fenêtre menu ouvert,
+un `matchMedia` ferme le menu (et relâche le verrou de scroll) en repassant desktop — hors chemin
+de rendu, donc sans impact SSR :
+
+```tsx
+useEffect(() => {
+  const mq = window.matchMedia("(min-width: 1025px)");
+  const handle = () => { if (mq.matches) setOpenedNav(false); };
+  handle(); mq.addEventListener("change", handle);
+  return () => mq.removeEventListener("change", handle);
+}, []);
+```
+
+⚠️ **Piège de spécificité** : une classe conditionnelle désormais posée à *tous* les breakpoints
+(`.index` depuis `isHomepage`, alors qu'avant elle n'existait qu'en desktop) doit être **neutralisée
+en mobile avec des sélecteurs de spécificité ≥**. `.header.index > a { … }` (desktop) l'emporte sur
+`.header > a { … }` d'une media query mobile → il faut réécrire le reset en `.header.index > a`.
+
+Doc : <https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture> ·
+<https://developer.mozilla.org/fr/docs/Web/API/Window/matchMedia>
+
+---
+
 ## Gotchas rencontrés
 
 - **CSS Modules = exports nommés** : css-loader (config Gatsby) expose chaque classe en export
@@ -267,3 +326,5 @@ Doc : <https://www.gatsbyjs.com/plugins/gatsby-plugin-mdx/> et
   `null` sur tous les nodes (ex. `client: null` sur l'unique node MDX pilote) n'existe pas dans le
   schéma inféré → requête en échec. On le déclare explicitement dans `createTypes` (cf. §11).
 - **Hydratation** : ne pas lire `window` dans un initialiseur `useState` (mismatch SSR/CSR).
+  Corollaire : ne pas faire dépendre le *rendu* d'une mesure de viewport — préférer `pathname` (SSR)
+  + media queries CSS, et réserver l'API React à l'interaction (cf. §12).

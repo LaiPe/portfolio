@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
 import { Menu, X, ChevronRight } from "lucide-react";
-import useViewport from "../../hooks/useViewport";
 import * as styles from "./Header.module.css";
 
 interface HeaderProps {
@@ -15,25 +14,39 @@ const NAV_ITEMS = [
   { id: "nav_contact", to: "/contact", label: "Contact" },
 ];
 
+/**
+ * Header entièrement rendu au build : le mode (homepage vs. défaut) est dérivé
+ * de `pathname` (connu au SSR), et la bascule desktop/mobile est purement CSS
+ * (media queries). Aucune mesure de viewport n'entre dans le rendu — l'API React
+ * ne sert qu'à l'INTERACTION du menu mobile (ouverture/fermeture), en amélioration
+ * progressive : le header s'affiche correctement même sans JS.
+ */
 export default function Header({ pathname = "/" }: HeaderProps) {
-  const { isDesktop } = useViewport();
   const [openedNav, setOpenedNav] = useState(false);
-
   const isHomepage = pathname === "/";
-  const tinyLogo = !isHomepage || !isDesktop;
-  const bigHeader = isHomepage && isDesktop;
 
-  const toggleNav = () => setOpenedNav((v) => !v);
   const closeNav = () => setOpenedNav(false);
+  const toggleNav = () => setOpenedNav((v) => !v);
+
+  // A2 — dès qu'on repasse en desktop, on ferme le menu (et donc on relâche le
+  // verrou de scroll), pour ne pas rester bloqué si on redimensionne menu ouvert.
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 1025px)");
+    const handle = () => {
+      if (mq.matches) setOpenedNav(false);
+    };
+    handle();
+    mq.addEventListener("change", handle);
+    return () => mq.removeEventListener("change", handle);
+  }, []);
 
   // Verrouille le scroll du fond quand l'overlay mobile est ouvert.
   useEffect(() => {
-    const lock = openedNav && !isDesktop;
-    document.body.style.overflow = lock ? "hidden" : "";
+    document.body.style.overflow = openedNav ? "hidden" : "";
     return () => {
       document.body.style.overflow = "";
     };
-  }, [openedNav, isDesktop]);
+  }, [openedNav]);
 
   // Fermeture au clavier (Échap).
   useEffect(() => {
@@ -47,32 +60,41 @@ export default function Header({ pathname = "/" }: HeaderProps) {
 
   return (
     <header
-      className={bigHeader ? `${styles.header} ${styles.index}` : styles.header}
+      className={isHomepage ? `${styles.header} ${styles.index}` : styles.header}
     >
       <Link to="/" onClick={closeNav}>
-        {tinyLogo ? (
-          <img className="logo petit" src="/img/logo-lp-raw.png" alt="Logo" />
+        {isHomepage ? (
+          <picture>
+            <source media="(min-width: 1025px)" srcSet="/img/logo-lp.png" />
+            <img
+              className={styles.homeLogo}
+              src="/img/logo-lp-raw.png"
+              alt="Logo Léo Peyronnet"
+            />
+          </picture>
         ) : (
-          <img className="logo" src="/img/logo-lp.png" alt="Logo" />
+          <img
+            className="logo petit"
+            src="/img/logo-lp-raw.png"
+            alt="Logo Léo Peyronnet"
+          />
         )}
       </Link>
       <nav
         id="primary-nav"
         className={openedNav ? `${styles.nav} ${styles.opened}` : styles.nav}
       >
-        {!isDesktop && (
-          <button
-            type="button"
-            className={styles.toggle}
-            onClick={toggleNav}
-            aria-label={openedNav ? "Fermer le menu" : "Ouvrir le menu"}
-            aria-expanded={openedNav}
-            aria-controls="primary-nav"
-          >
-            <Menu className={styles.iconMenu} size={30} aria-hidden />
-            <X className={styles.iconClose} size={30} aria-hidden />
-          </button>
-        )}
+        <button
+          type="button"
+          className={styles.toggle}
+          onClick={toggleNav}
+          aria-label={openedNav ? "Fermer le menu" : "Ouvrir le menu"}
+          aria-expanded={openedNav}
+          aria-controls="primary-nav"
+        >
+          <Menu className={styles.iconMenu} size={30} aria-hidden />
+          <X className={styles.iconClose} size={30} aria-hidden />
+        </button>
 
         <ul onClick={closeNav}>
           {NAV_ITEMS.map((item) => (

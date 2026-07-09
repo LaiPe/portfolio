@@ -46,6 +46,19 @@
     display: none;
 }
 
+/* Toggle burger : rendu dans le DOM mais masqué sur desktop (révélé en mobile). */
+.toggle {
+    display: none;
+}
+
+/* Logo homepage : grand sur desktop, compact sur mobile (taille pilotée en CSS,
+   la bonne source d'image étant servie par <picture> — cf. Header.tsx). */
+.homeLogo {
+    height: 8rem;
+    width: auto;
+    display: block;
+}
+
 .header > a {
     position: absolute;
     left: 9%;
@@ -196,20 +209,31 @@
 
 @media all and (max-width: 1024px){
 
-    /*RESET*/
+    /*RESET — la homepage porte désormais `.index` à tous les breakpoints ; en
+      mobile on aplatit le header colonne en barre compacte (mêmes sélecteurs
+      `.header.index` pour l'emporter sur les règles desktop).*/
     :root{
         --header : var(--nav);
     }
-    .header{
+    .header.index{
+        --logo-header: 0rem;
+        --header: var(--nav);
         top: 0;
         height: var(--nav);
         flex-direction: row;
     }
+    .header.index > a{
+        height: auto;
+        display: block;
+        place-items: initial;
+        padding-bottom: 0;
+        margin: 0;
+    }
     .header nav{
         margin: 0;
     }
-    .header > a{
-        margin: 0;
+    .homeLogo{
+        height: 2.8rem;
     }
 }
 
