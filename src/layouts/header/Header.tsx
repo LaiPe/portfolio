@@ -80,10 +80,7 @@ export default function Header({ pathname = "/" }: HeaderProps) {
           />
         )}
       </Link>
-      <nav
-        id="primary-nav"
-        className={openedNav ? `${styles.nav} ${styles.opened}` : styles.nav}
-      >
+      <nav id="primary-nav" className={openedNav ? styles.opened : undefined}>
         <button
           type="button"
           className={styles.toggle}

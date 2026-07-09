@@ -10,7 +10,7 @@
 }
 
 .code {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(5rem, 20vw, 10rem);
     font-weight: 700;
     line-height: 1;
@@ -22,7 +22,7 @@
 }
 
 .title {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-text);

@@ -47,7 +47,7 @@
 }
 
 .title {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 700;
     margin: 0 0 var(--spacing-md);
@@ -88,7 +88,7 @@
 }
 
 .ctaTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-text);
@@ -126,7 +126,7 @@
 }
 
 .teaserTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     color: var(--color-text);
@@ -160,7 +160,7 @@
 }
 
 .teaserItem h3 {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 700;
     color: var(--color-text);

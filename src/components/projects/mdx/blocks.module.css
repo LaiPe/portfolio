@@ -70,7 +70,7 @@
 }
 
 .heroTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 2.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
@@ -124,7 +124,7 @@
 }
 
 .sidebarTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 0.875rem;
     font-weight: 700;
     text-transform: uppercase;
@@ -208,7 +208,7 @@
 }
 
 .sidebarCtaTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1rem;
     font-weight: 700;
     margin-bottom: var(--spacing-sm);
@@ -251,7 +251,7 @@
 }
 
 .sectionTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-text);
@@ -301,7 +301,7 @@
 }
 
 .featureTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
     color: var(--color-text);
     display: flex;
@@ -336,7 +336,7 @@
 }
 
 .challengeTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
     color: var(--color-text);
     margin-bottom: var(--spacing-xs);
@@ -538,7 +538,7 @@
 }
 
 .architectureTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1rem;
     color: var(--color-primary);

@@ -7,5 +7,11 @@ declare module "*.module.css" {
   export = classes;
 }
 
-// Imports CSS globaux (effets de bord, ex. theme.css, fonts.css, Threads.css).
+// Imports CSS globaux (effets de bord, ex. theme.css, Threads.css, @fontsource).
 declare module "*.css";
+
+// Imports d'assets fonts en URL (pour le preload dans gatsby-ssr).
+declare module "*.woff2" {
+  const url: string;
+  export default url;
+}

@@ -2,8 +2,12 @@ import React from "react";
 import Header from "../layouts/header/Header";
 import Footer from "../layouts/footer/Footer";
 
+// Polices self-hostées (woff2 variables, font-display: swap). Preload des
+// sous-ensembles latins critiques dans gatsby-ssr.tsx.
+import "@fontsource-variable/jura/wght.css";
+import "@fontsource-variable/montserrat/wght.css";
+import "@fontsource-variable/montserrat/wght-italic.css";
 import "../assets/css/theme.css";
-import "../assets/css/fonts.css";
 
 interface LayoutProps {
   children: React.ReactNode;

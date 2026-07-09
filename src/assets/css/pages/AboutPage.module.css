@@ -38,7 +38,7 @@
 }
 
 .name {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 5vw, 3rem);
     font-weight: 700;
     margin: 0 0 var(--spacing-xs);
@@ -98,7 +98,7 @@
 }
 
 .sectionTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0 0 var(--spacing-lg);
@@ -163,7 +163,7 @@
 }
 
 .valueTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-xs);
@@ -234,7 +234,7 @@
 }
 
 .timelineTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-xs);
@@ -284,7 +284,7 @@
 }
 
 .certificationTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-xs);
@@ -330,7 +330,7 @@
 }
 
 .passionTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-xs);
@@ -353,7 +353,7 @@
 }
 
 .ctaTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     margin: 0 0 var(--spacing-sm);
@@ -389,7 +389,7 @@
 }
 
 .sidebarTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     font-weight: 700;
     margin: 0 0 var(--spacing-lg);
@@ -432,7 +432,7 @@
 }
 
 .skillCategoryTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-sm);

@@ -10,7 +10,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.25rem;
     color: var(--color-text-secondary);
 }
@@ -24,7 +24,7 @@
 
 /* Section Titles */
 .sectionTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     font-weight: 700;
     text-align: center;
@@ -73,7 +73,7 @@
 }
 
 .heroTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 700;
     margin: 0 0 var(--spacing-md);
@@ -93,14 +93,14 @@
 }
 
 .heroSeparator {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     color: #000000;
     font-weight: 700;
     font-size: 1.2em;
 }
 
 .heroSpecialization {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(1rem, 2.5vw, 1.25rem);
     font-weight: 600;
     color: var(--color-primary);
@@ -277,7 +277,7 @@
 }
 
 .authorName {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-text);
@@ -307,7 +307,7 @@
 }
 
 .testimonialCtaTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.75rem;
     font-weight: 700;
     margin: 0 0 var(--spacing-md);

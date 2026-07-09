@@ -15,7 +15,7 @@
 }
 
 .error h1 {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 2rem;
     color: var(--color-text);
 }
@@ -89,7 +89,7 @@
 .navTitle {
     font-size: 1rem;
     color: var(--color-text);
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 600;
 }
 

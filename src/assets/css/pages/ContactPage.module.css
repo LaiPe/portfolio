@@ -24,7 +24,7 @@
 }
 
 .title {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: clamp(2rem, 6vw, 3rem);
     font-weight: 700;
     margin: 0 0 var(--spacing-md);
@@ -65,7 +65,7 @@
 }
 
 .sectionTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--color-text);
@@ -240,7 +240,7 @@
 }
 
 .infoLabel {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1rem;
     color: var(--color-text);
@@ -281,7 +281,7 @@
 }
 
 .socialTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-text);
@@ -344,7 +344,7 @@
 }
 
 .quickInfoTitle {
-    font-family: "Jura", sans-serif;
+    font-family: var(--font-heading);
     font-weight: 700;
     font-size: 1.1rem;
     color: var(--color-text);

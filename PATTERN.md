@@ -314,6 +314,62 @@ Doc : <https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture> ·
 
 ---
 
+## 13. ⭐ Polices self-hostées : Fontsource variable + preload + stacks centralisés
+
+Objectif : réduire le flash au chargement (FOUT) sans retirer les fallbacks, sans solution JS.
+
+**Self-hosting via `@fontsource-variable`** — un paquet npm par famille, livrant les **woff2
+variables** (un seul fichier couvre tout l'axe de graisse). On importe le CSS d'axe dans
+`Layout.tsx` (bundlé pour SSR + browser) :
+
+```tsx
+import "@fontsource-variable/jura/wght.css";
+import "@fontsource-variable/montserrat/wght.css";
+import "@fontsource-variable/montserrat/wght-italic.css";
+```
+
+⚠️ Les paquets variables nomment la famille **`"… Variable"`** (`"Jura Variable"`,
+`"Montserrat Variable"`) et posent `font-display: swap`. Le CSS contient un `@font-face` par
+sous-ensemble Unicode (`unicode-range`) → le navigateur ne télécharge que le latin pour du FR.
+
+**Stacks centralisés en variables CSS** (`theme.css`) — une seule source de vérité, référencée
+partout via `font-family: var(--font-heading)` (finies les ~15 déclarations `"Jura", sans-serif`) :
+
+```css
+:root {
+  --font-body: "Montserrat Variable", sans-serif;
+  --font-heading: "Jura Variable", sans-serif;
+}
+```
+
+**Preload des latins critiques** (`gatsby-ssr.tsx`) — on importe l'**URL** du woff2 (webpack la
+hashe) et on émet un `<link rel="preload">`. Le fichier importé a le **même contenu → même hash**
+que l'`url()` des `@font-face` Fontsource, donc **pas de double téléchargement** :
+
+```tsx
+import montserratLatin from "@fontsource-variable/montserrat/files/montserrat-latin-wght-normal.woff2";
+// onRenderBody → setHeadComponents([...])
+<link rel="preload" as="font" type="font/woff2" href={montserratLatin} crossOrigin="anonymous" />
+```
+
+Importer un `.woff2` en TS exige une déclaration ambiante (`src/css-modules.d.ts`) :
+`declare module "*.woff2" { const url: string; export default url; }`.
+
+**Vérification au build** (indispensable — un module CSS invalide passe `tsc` mais casse au build) :
+`grep` sur `public/index.html` doit montrer les `rel="preload"` **et** un href identique à l'`url()`
+du `@font-face` dans `public/*.css` (même hash = fichier unique).
+
+> **Fallback à métriques ajustées : écarté.** On avait généré (capsize) des `@font-face` de
+> fallback avec `size-adjust`/`ascent-override`/… pour annuler le décalage de layout au swap.
+> Retiré : trop de machinerie (script + devDeps) pour un gain marginal une fois les woff2 petits
+> préchargés. Réintroductible via `@capsizecss/core` + `@capsizecss/metrics` si le CLS au swap
+> redevient gênant.
+
+Doc : <https://fontsource.org/docs/getting-started/introduction> ·
+<https://www.gatsbyjs.com/docs/how-to/styling/using-local-fonts/>
+
+---
+
 ## Gotchas rencontrés
 
 - **CSS Modules = exports nommés** : css-loader (config Gatsby) expose chaque classe en export
@@ -328,3 +384,8 @@ Doc : <https://developer.mozilla.org/fr/docs/Web/HTML/Element/picture> ·
 - **Hydratation** : ne pas lire `window` dans un initialiseur `useState` (mismatch SSR/CSR).
   Corollaire : ne pas faire dépendre le *rendu* d'une mesure de viewport — préférer `pathname` (SSR)
   + media queries CSS, et réserver l'API React à l'interaction (cf. §12).
+- **Classe CSS Module inexistante = erreur au build, invisible à `tsc`** : `styles.foo` où `.foo`
+  n'est pas défini dans le `.module.css` compile sans broncher (le type est `{ [k]: string }`) mais
+  casse le build webpack (`'foo' is not exported from './x.module.css'`). Piège classique après un
+  refacto qui passe une classe (`.nav`) en sélecteur d'élément (`.header nav`). **Vérifier par un
+  vrai `npm run build`, pas seulement `typecheck`.**
