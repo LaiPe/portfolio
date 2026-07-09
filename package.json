@@ -14,8 +14,11 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "@mdx-js/mdx": "^2.3.0",
+    "@mdx-js/react": "^2.3.0",
     "gatsby": "^5.16.1",
     "gatsby-plugin-image": "^3.16.0",
+    "gatsby-plugin-mdx": "^5.16.0",
     "gatsby-plugin-sharp": "^5.16.0",
     "gatsby-source-filesystem": "^5.16.0",
     "gatsby-transformer-json": "^5.16.0",

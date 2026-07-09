@@ -59,6 +59,9 @@ const config: GatsbyConfig = {
       },
     },
     "gatsby-transformer-remark",
+    // Pages projet en MDX (index.mdx). Extensions par défaut = [".mdx"] :
+    // les description.md restent traités par gatsby-transformer-remark.
+    "gatsby-plugin-mdx",
   ],
 };
 

@@ -1,0 +1,102 @@
+---
+id: electricity-business
+title: Electricity Business
+slug: electricity-business
+category: caseStudy
+categoryLabel: Étude de cas
+shortDescription: Plateforme complète de gestion de stations de recharge pour véhicules électriques.
+technologies:
+  - React
+  - Bootstrap
+  - Spring Boot
+  - Docker
+  - Java
+  - Spring Security
+  - Vite
+  - MySQL
+  - MongoDB
+  - MapLibre GL
+  - Nginx
+  - JWT
+  - Maven
+featured: true
+priority: 4
+date: Janvier 2026
+duration: 2 mois
+client: null
+images:
+  thumbnail: eb-thumbnail.jpg
+  hero: eb-thumbnail.jpg
+  gallery:
+    - eb-1.png
+    - eb-2.png
+    - eb-3.png
+    - eb-4.png
+links:
+  live: https://electricity-business.leopeyronnet.fr/
+  github: https://github.com/LaiPe/electricity-business
+architecture:
+  backend:
+    framework: Spring Boot 3.5.3
+    language: Java 21
+    security: Spring Security 6.x + JWT
+    orm: Spring Data JPA + Hibernate
+    databases:
+      - MySQL 8.3 (données relationnelles)
+      - MongoDB 7.0 (modèles de véhicules)
+  frontend:
+    library: React 19.1.1
+    bundler: Vite 7.2.4
+    routing: React Router DOM 7.9.5
+    mapping: MapLibre GL 5.14.0
+    styling: Bootstrap 5.3.8
+  infrastructure:
+    containerization: Docker + Docker Compose
+    webserver: Nginx Alpine
+    registry: GitHub Container Registry (GHCR)
+    ci: Multi-stage Docker builds
+  externalAPIs:
+    - OpenStreetMap Nominatim (géocodage)
+    - Photon Komoot (géocodage inverse)
+    - Carto Basemaps (tuiles cartographiques)
+    - Geolocation API (GPS navigateur)
+---
+
+import { Features, Feature, Architecture, Gallery, Callout } from "../../../components/projects/mdx";
+
+**Electricity Business** est une plateforme web de gestion de **bornes de recharge
+pour véhicules électriques**, développée dans le cadre du titre professionnel
+**Concepteur Développeur d'Applications**.
+
+L'application s'adresse à deux profils. Les **propriétaires de bornes** gèrent leurs
+équipements et suivent les réservations ; les **conducteurs de véhicules électriques**
+recherchent des bornes compatibles à proximité, estiment leur temps de recharge et
+réservent un créneau.
+
+<Callout tone="insight">
+Une architecture full-stack complète — géolocalisation, réservations en temps réel et
+authentification sécurisée — au service d'un enjeu concret de la **transition
+énergétique** : faciliter l'accès aux infrastructures de recharge.
+</Callout>
+
+<Features title="Réalisations clés">
+  <Feature emoji="📍">Recherche géolocalisée avec carte interactive</Feature>
+  <Feature emoji="📅">Système de réservation complet et robuste</Feature>
+  <Feature emoji="⭐">Évaluations post-recharge</Feature>
+  <Feature emoji="📊">Tableaux de bord adaptés selon le rôle</Feature>
+  <Feature emoji="🔋">Catalogue de véhicules avec caractéristiques techniques</Feature>
+  <Feature emoji="🚗">Gestion des véhicules personnels</Feature>
+  <Feature emoji="🔌">Gestion de stations de recharge</Feature>
+  <Feature emoji="📄">Export PDF et Excel des réservations</Feature>
+</Features>
+
+<Architecture title="Architecture technique" />
+
+## Défis techniques
+
+- Intégration de bases de données hétérogènes (SQL + NoSQL)
+- Gestion complexe des états de réservation avec workflow
+- Sécurisation complète avec authentification JWT
+- Configuration Docker multi-environnements avec variables sensibles
+
+<Gallery title="Galerie" />

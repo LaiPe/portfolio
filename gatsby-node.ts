@@ -33,6 +33,11 @@ export const onCreateNode: GatsbyNode["onCreateNode"] = ({
 /**
  * Schéma GraphQL : déclare les types sans field extension (les resolvers
  * d'images sont définis dans createResolvers pour accéder au slug parent).
+ *
+ * Deux sources de projet coexistent pendant la migration MDX :
+ * - `ProjectsJson` (ancien pipeline, encore actif pour /projets/:slug) ;
+ * - `Mdx` / `MdxFrontmatter` (nouveau pipeline, aperçu sur /projets-preview/:slug).
+ * Les deux résolvent leurs images via la même convention `slug/images/<file>`.
  */
 export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] =
   ({ actions }) => {
@@ -56,14 +61,75 @@ export const createSchemaCustomization: GatsbyNode["createSchemaCustomization"] 
         github: String
         pdf: String
       }
+
+      type Mdx implements Node {
+        frontmatter: MdxFrontmatter
+      }
+      type MdxFrontmatter {
+        id: String
+        title: String
+        slug: String
+        category: String
+        categoryLabel: String
+        shortDescription: String
+        technologies: [String]
+        featured: Boolean
+        priority: Int
+        date: String
+        duration: String
+        client: String
+        images: MdxFrontmatterImages
+        links: MdxFrontmatterLinks
+        architecture: MdxFrontmatterArchitecture
+      }
+      type MdxFrontmatterImages {
+        emoji: String
+        thumbnail: File
+        hero: File
+        gallery: [File]
+      }
+      type MdxFrontmatterLinks {
+        live: String
+        demo: String
+        github: String
+        pdf: String
+      }
+      type MdxFrontmatterArchitecture {
+        backend: MdxArchBackend
+        frontend: MdxArchFrontend
+        infrastructure: MdxArchInfra
+        externalAPIs: [String]
+      }
+      type MdxArchBackend {
+        framework: String
+        language: String
+        security: String
+        orm: String
+        databases: [String]
+        tools: [String]
+      }
+      type MdxArchFrontend {
+        library: String
+        bundler: String
+        routing: String
+        mapping: String
+        styling: String
+        stateManagement: String
+      }
+      type MdxArchInfra {
+        containerization: String
+        webserver: String
+        registry: String
+        ci: String
+      }
     `);
   };
 
 /**
  * Resolvers pour les images co-localisées.
- * ProjectsJson.images injecte `_slug` dans l'objet retourné pour que les
- * sous-resolvers (thumbnail/hero/gallery) puissent construire le relativePath
- * sans accès direct au nœud parent.
+ * Le conteneur d'images (`ProjectsJson.images` / `MdxFrontmatter.images`) injecte
+ * `_slug` dans l'objet retourné pour que les sous-resolvers (thumbnail/hero/gallery)
+ * construisent le relativePath sans accès direct au nœud parent.
  */
 export const createResolvers: GatsbyNode["createResolvers"] = ({
   createResolvers: cr,
@@ -79,40 +145,47 @@ export const createResolvers: GatsbyNode["createResolvers"] = ({
       },
     });
 
+  // Resolvers d'un conteneur d'images (thumbnail/hero/gallery), factorisés pour
+  // ProjectsJsonImages et MdxFrontmatterImages qui partagent la même convention.
+  const imageContainerResolvers = {
+    thumbnail: {
+      type: "File",
+      resolve(source: any, _: any, context: any) {
+        if (!source.thumbnail || !source._slug) return null;
+        return findImage(context, source._slug, source.thumbnail);
+      },
+    },
+    hero: {
+      type: "File",
+      resolve(source: any, _: any, context: any) {
+        if (!source.hero || !source._slug) return null;
+        return findImage(context, source._slug, source.hero);
+      },
+    },
+    gallery: {
+      type: "[File]",
+      resolve(source: any, _: any, context: any) {
+        if (!Array.isArray(source.gallery) || !source._slug) return null;
+        return Promise.all(
+          source.gallery.map((f: string) => findImage(context, source._slug, f))
+        );
+      },
+    },
+  };
+
+  // Injecte `_slug` dans le conteneur d'images depuis le node/frontmatter parent.
+  const withSlug = (type: string) => ({
+    type,
+    resolve(source: any) {
+      if (!source.images) return null;
+      return { ...source.images, _slug: source.slug };
+    },
+  });
+
   cr({
-    ProjectsJson: {
-      images: {
-        type: "ProjectsJsonImages",
-        resolve(source: any) {
-          if (!source.images) return null;
-          return { ...source.images, _slug: source.slug };
-        },
-      },
-    },
-    ProjectsJsonImages: {
-      thumbnail: {
-        type: "File",
-        resolve(source: any, _: any, context: any) {
-          if (!source.thumbnail || !source._slug) return null;
-          return findImage(context, source._slug, source.thumbnail);
-        },
-      },
-      hero: {
-        type: "File",
-        resolve(source: any, _: any, context: any) {
-          if (!source.hero || !source._slug) return null;
-          return findImage(context, source._slug, source.hero);
-        },
-      },
-      gallery: {
-        type: "[File]",
-        resolve(source: any, _: any, context: any) {
-          if (!Array.isArray(source.gallery) || !source._slug) return null;
-          return Promise.all(
-            source.gallery.map((f: string) => findImage(context, source._slug, f))
-          );
-        },
-      },
-    },
+    ProjectsJson: { images: withSlug("ProjectsJsonImages") },
+    ProjectsJsonImages: imageContainerResolvers,
+    MdxFrontmatter: { images: withSlug("MdxFrontmatterImages") },
+    MdxFrontmatterImages: imageContainerResolvers,
   });
 };
