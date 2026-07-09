@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "gatsby";
+import { Menu, X, ChevronRight } from "lucide-react";
 import useViewport from "../../hooks/useViewport";
 import * as styles from "./Header.module.css";
 
 interface HeaderProps {
   pathname?: string;
 }
+
+const NAV_ITEMS = [
+  { id: "nav_projets", to: "/projets", label: "Projets" },
+  { id: "nav_services", to: "/services", label: "Services" },
+  { id: "nav_apropos", to: "/apropos", label: "À propos" },
+  { id: "nav_contact", to: "/contact", label: "Contact" },
+];
 
 export default function Header({ pathname = "/" }: HeaderProps) {
   const { isDesktop } = useViewport();
@@ -18,7 +26,24 @@ export default function Header({ pathname = "/" }: HeaderProps) {
   const toggleNav = () => setOpenedNav((v) => !v);
   const closeNav = () => setOpenedNav(false);
 
-  const showNav = isDesktop || openedNav;
+  // Verrouille le scroll du fond quand l'overlay mobile est ouvert.
+  useEffect(() => {
+    const lock = openedNav && !isDesktop;
+    document.body.style.overflow = lock ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [openedNav, isDesktop]);
+
+  // Fermeture au clavier (Échap).
+  useEffect(() => {
+    if (!openedNav) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpenedNav(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [openedNav]);
 
   return (
     <header
@@ -31,37 +56,34 @@ export default function Header({ pathname = "/" }: HeaderProps) {
           <img className="logo" src="/img/logo-lp.png" alt="Logo" />
         )}
       </Link>
-      <nav className={openedNav ? `${styles.nav} ${styles.opened}` : styles.nav}>
+      <nav
+        id="primary-nav"
+        className={openedNav ? `${styles.nav} ${styles.opened}` : styles.nav}
+      >
         {!isDesktop && (
-          <label htmlFor="activ-mini" onClick={toggleNav}>
-            ☰
-          </label>
+          <button
+            type="button"
+            className={styles.toggle}
+            onClick={toggleNav}
+            aria-label={openedNav ? "Fermer le menu" : "Ouvrir le menu"}
+            aria-expanded={openedNav}
+            aria-controls="primary-nav"
+          >
+            <Menu className={styles.iconMenu} size={30} aria-hidden />
+            <X className={styles.iconClose} size={30} aria-hidden />
+          </button>
         )}
 
-        {showNav && (
-          <ul>
-            <li id="nav_projets">
-              <Link to="/projets" activeClassName="active" onClick={closeNav}>
-                Projets
+        <ul onClick={closeNav}>
+          {NAV_ITEMS.map((item) => (
+            <li key={item.id} id={item.id}>
+              <Link to={item.to} activeClassName="active" onClick={closeNav}>
+                <span>{item.label}</span>
+                <ChevronRight className={styles.navArrow} size={22} aria-hidden />
               </Link>
             </li>
-            <li id="nav_services">
-              <Link to="/services" activeClassName="active" onClick={closeNav}>
-                Services
-              </Link>
-            </li>
-            <li id="nav_apropos">
-              <Link to="/apropos" activeClassName="active" onClick={closeNav}>
-                À propos
-              </Link>
-            </li>
-            <li id="nav_contact">
-              <Link to="/contact" activeClassName="active" onClick={closeNav}>
-                Contact
-              </Link>
-            </li>
-          </ul>
-        )}
+          ))}
+        </ul>
       </nav>
     </header>
   );

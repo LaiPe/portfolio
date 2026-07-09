@@ -6,7 +6,7 @@
     z-index: 900;
 
     background-color: white;
-    border-bottom: 1px solid var(--color-border);
+    border-bottom: 2px solid #C4C4C4;
 
     display: flex;
     align-items: center;
@@ -18,10 +18,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.header nav input, .header nav label{
-    display: none;
 }
 
 .header nav > ul {
@@ -45,11 +41,17 @@
     color: var(--color-primary);
 }
 
+/* Chevron des liens : masqué sur desktop, révélé dans l'overlay mobile. */
+.navArrow {
+    display: none;
+}
+
 .header > a {
     position: absolute;
     left: 9%;
 }
 
+/*MOBILE — overlay plein écran glassmorphique*/
 @media all and (max-width: 1024px){
     .header{
         justify-content: space-between;
@@ -61,28 +63,116 @@
         position: initial;
         left: 0;
     }
-    .header nav label{
-        display: initial;
-        cursor: pointer;
-        font-size: 2.5rem;
-        padding: 1.1px 0;
+
+    /* Bouton burger ⇄ croix (morph par crossfade + rotation) */
+    .toggle{
         position: relative;
-        bottom: 0.15rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.75rem;
+        height: 2.75rem;
+        padding: 0;
+        border: none;
+        background: none;
+        color: var(--color-text);
+        cursor: pointer;
+        z-index: 2;
+        transition: color 0.2s ease;
     }
-    .nav.opened ul{
-        display: block;
+    .toggle:hover{
+        color: var(--color-primary);
+    }
+    .toggle svg{
         position: absolute;
-        top: 100%;
-        left: 0;
-
-        width: 100%;
-
-        background-color: white;
-        border-bottom: 1px solid var(--color-border);
+        transition: opacity 0.25s ease, transform 0.25s ease;
     }
-    .nav.opened ul li{
-        text-align: center;
-        margin: 2rem 25%;
+    .iconMenu{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+    .iconClose{
+        opacity: 0;
+        transform: rotate(-90deg);
+    }
+    .header nav.opened .iconMenu{
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+    .header nav.opened .iconClose{
+        opacity: 1;
+        transform: rotate(0deg);
+    }
+
+    /* Overlay : la liste devient un calque flouté sous la barre du header */
+    .header nav > ul{
+        position: fixed;
+        top: var(--header);
+        left: 0;
+        right: 0;
+        bottom: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        justify-content: flex-start;
+        gap: 0;
+        padding: var(--spacing-lg) var(--spacing-md) var(--spacing-xxl);
+        font-size: 2rem;
+
+        background: rgba(255, 255, 255, 0.72);
+        -webkit-backdrop-filter: blur(0);
+        backdrop-filter: blur(0);
+
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transition: opacity 0.25s ease, backdrop-filter 0.25s ease,
+            -webkit-backdrop-filter 0.25s ease, visibility 0s linear 0.25s;
+        z-index: 1;
+    }
+    .header nav.opened > ul{
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(12px);
+        transition: opacity 0.25s ease, backdrop-filter 0.25s ease,
+            -webkit-backdrop-filter 0.25s ease, visibility 0s;
+    }
+
+    /* Liens : révélation en fade-in-up décalé (stagger) */
+    .header nav > ul li{
+        margin: 0;
+        opacity: 0;
+        transform: translateY(12px);
+        transition: opacity 0.35s ease, transform 0.35s ease;
+    }
+    .header nav.opened > ul li{
+        opacity: 1;
+        transform: none;
+    }
+    .header nav.opened > ul li:nth-child(1){ transition-delay: 0.05s; }
+    .header nav.opened > ul li:nth-child(2){ transition-delay: 0.11s; }
+    .header nav.opened > ul li:nth-child(3){ transition-delay: 0.17s; }
+    .header nav.opened > ul li:nth-child(4){ transition-delay: 0.23s; }
+
+    .header nav > ul a{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: var(--spacing-md);
+        border-bottom: 1px solid var(--color-border);
+        border-left: 3px solid transparent;
+    }
+    .header nav > ul a.active{
+        border-left-color: var(--color-primary);
+        background: rgba(0, 87, 187, 0.06);
+    }
+
+    .navArrow{
+        display: block;
+        flex-shrink: 0;
+        color: var(--color-primary);
     }
 }
 
@@ -120,5 +210,15 @@
     }
     .header > a{
         margin: 0;
+    }
+}
+
+/*ACCESSIBILITÉ — respect des préférences de mouvement réduit*/
+@media (prefers-reduced-motion: reduce){
+    .header nav > ul,
+    .header nav > ul li,
+    .toggle svg{
+        transition-duration: 0.01ms;
+        transition-delay: 0s;
     }
 }
