@@ -155,7 +155,7 @@
 
 .teaserIcon {
     display: block;
-    margin-bottom: var(--spacing-md);
+    margin: 0 auto var(--spacing-md);
     color: var(--color-primary);
 }
 
