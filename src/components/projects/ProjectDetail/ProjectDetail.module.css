@@ -10,14 +10,19 @@
     overflow: hidden;
 }
 
-.heroImage {
+.heroImageWrapper {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
     z-index: 0;
+}
+
+.heroImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .heroEmoji {

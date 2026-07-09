@@ -92,11 +92,13 @@ export default function ProjectDetail({ project }: { project: Project }) {
       {/* Hero Section */}
       <header className={styles.hero}>
         {hero ? (
-          <GatsbyImage
-            image={hero}
-            alt={project.title}
-            className={styles.heroImage}
-          />
+          <div className={styles.heroImageWrapper}>
+            <GatsbyImage
+              image={hero}
+              alt={project.title}
+              className={styles.heroImage}
+            />
+          </div>
         ) : (
           <div className={styles.heroEmoji}>
             <span>{project.images?.emoji || cfg.defaultEmoji}</span>
