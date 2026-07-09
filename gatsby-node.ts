@@ -3,6 +3,26 @@ import type { GatsbyNode } from "gatsby";
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 /**
+ * Supprime les warnings « Conflicting order » de mini-css-extract-plugin.
+ * Nos styles sont des CSS Modules (classes scopées) : l'ordre d'inclusion entre
+ * modules est sans effet visuel, donc l'avertissement est un faux positif. On pose
+ * `ignoreOrder` sur l'instance du plugin (dev + build). Voir PATTERN.md §14.
+ */
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({
+  actions,
+  getConfig,
+}) => {
+  const config = getConfig();
+  const miniCssExtractPlugin = config.plugins?.find(
+    (plugin: any) => plugin?.constructor?.name === "MiniCssExtractPlugin"
+  );
+  if (miniCssExtractPlugin) {
+    miniCssExtractPlugin.options.ignoreOrder = true;
+    actions.replaceWebpackConfig(config);
+  }
+};
+
+/**
  * Schéma GraphQL des pages projet (pipeline MDX).
  * On type explicitement `MdxFrontmatter` — sur un frontmatter, un champ `null`
  * partout (ex. `client`) ou absent casserait l'inférence. Les resolvers d'images

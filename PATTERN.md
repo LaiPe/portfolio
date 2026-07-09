@@ -370,6 +370,48 @@ Doc : <https://fontsource.org/docs/getting-started/introduction> ·
 
 ---
 
+## 14. Warnings « Conflicting order » de mini-css-extract-plugin
+
+Au `develop`/`build`, webpack émet des `warn chunk commons [mini-css-extract-plugin]
+Conflicting order` : deux CSS Modules (ex. `mdx.module.css` vs `GalleryModal.module.css`,
+`Button.module.css` vs `Badge.module.css`) sont importés dans un **ordre différent** selon les
+pages, et le plugin ne peut pas choisir un ordre déterministe pour le fichier CSS concaténé.
+
+**Pourquoi c'est un faux positif ici** : nos styles sont des **CSS Modules** (classes scopées
+localement, cf. gotcha « exports nommés »). Deux modules ne partagent donc pas de sélecteur global
+dont le gagnant dépendrait de l'ordre source → l'ordre d'inclusion est sans effet visuel. Le warning
+n'a de sens que si deux modules redéfinissent le **même** sélecteur global (pas notre cas).
+
+**Correctif** — poser `ignoreOrder: true` sur l'instance du plugin via `onCreateWebpackConfig`
+(`gatsby-node.ts`). On récupère la config webpack, on trouve le plugin par nom de constructeur, on
+mute l'option, puis `replaceWebpackConfig` :
+
+```ts
+export const onCreateWebpackConfig: GatsbyNode["onCreateWebpackConfig"] = ({ actions, getConfig }) => {
+  const config = getConfig();
+  const miniCssExtractPlugin = config.plugins?.find(
+    (p: any) => p?.constructor?.name === "MiniCssExtractPlugin"
+  );
+  if (miniCssExtractPlugin) {
+    miniCssExtractPlugin.options.ignoreOrder = true;
+    actions.replaceWebpackConfig(config);
+  }
+};
+```
+
+⚠️ Ne pas confondre avec un vrai bug de cascade : si un jour un style *global* (non-module) dépend
+de l'ordre, `ignoreOrder` masquerait le symptôme. Tant que la règle « un style = un CSS Module scopé »
+tient, c'est sûr. L'alternative (normaliser l'ordre des imports partout) est fragile et sans bénéfice.
+
+> **À part** : le message `'WMIC' n'est pas reconnu` au démarrage vient de gatsby-telemetry qui
+> lit le nombre de CPU via `WMIC` (retiré des Windows 11 récents). Sans effet sur le build ;
+> `npx gatsby telemetry --disable` le fait disparaître.
+
+Doc : <https://webpack.js.org/plugins/mini-css-extract-plugin/#remove-order-warnings> ·
+<https://www.gatsbyjs.com/docs/reference/config-files/gatsby-node/#onCreateWebpackConfig>
+
+---
+
 ## Gotchas rencontrés
 
 - **CSS Modules = exports nommés** : css-loader (config Gatsby) expose chaque classe en export
