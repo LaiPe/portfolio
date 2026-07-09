@@ -85,6 +85,7 @@ export default function GalleryModal({
               image={images[currentIndex]}
               alt={`${projectTitle} - Image ${currentIndex + 1}`}
               className={styles.mainImage}
+              imgStyle={{ objectFit: "contain" }}
             />
             <div className={styles.imageCounter}>
               {currentIndex + 1} / {images.length}
