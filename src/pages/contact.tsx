@@ -200,7 +200,9 @@ export default function ContactPage() {
                 </h2>
 
                 <div className={styles.infoItem}>
-                  <Mail className={styles.infoIcon} size={24} />
+                  <span className={styles.infoIcon}>
+                    <Mail size={20} />
+                  </span>
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Email</h3>
                     <a
@@ -213,7 +215,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <MapPin className={styles.infoIcon} size={24} />
+                  <span className={styles.infoIcon}>
+                    <MapPin size={20} />
+                  </span>
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Localisation</h3>
                     <p className={styles.infoText}>Clermont-Ferrand, France</p>
@@ -222,7 +226,9 @@ export default function ContactPage() {
                 </div>
 
                 <div className={styles.infoItem}>
-                  <Clock className={styles.infoIcon} size={24} />
+                  <span className={styles.infoIcon}>
+                    <Clock size={20} />
+                  </span>
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Disponibilité</h3>
                     <p className={styles.infoText}>Réponse sous 24-48h</p>
