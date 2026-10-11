@@ -1,0 +1,269 @@
+/* Frise : [ date | fil + point | carte ]. La date vit dans la carte (ordre de
+   lecture, mobile) et est sortie dans la marge en absolu sur desktop. */
+.timeline {
+    --date-col: 10rem;
+    --gutter: var(--spacing-xl);
+
+    list-style: none;
+    margin: 0;
+    padding: 0 0 0 calc(var(--date-col) + var(--gutter));
+    position: relative;
+}
+
+/* Le fil */
+.timeline::before {
+    content: "";
+    position: absolute;
+    left: calc(var(--date-col) + var(--gutter) / 2 - 1px);
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.item {
+    position: relative;
+    padding-bottom: var(--spacing-lg);
+}
+
+.item:last-child {
+    padding-bottom: 0;
+}
+
+.dot {
+    position: absolute;
+    left: calc(var(--gutter) / -2 - 6px);
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    background: var(--color-text-secondary);
+    border-radius: 50%;
+    border: 2px solid var(--color-background);
+}
+
+.current .dot {
+    background: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(0, 87, 187, 0.2);
+}
+
+.card {
+    position: relative;
+    padding: var(--spacing-md);
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+}
+
+/* Date dans la marge, à gauche du fil */
+.date {
+    position: absolute;
+    top: 0;
+    right: calc(100% + var(--gutter));
+    width: var(--date-col);
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    text-align: right;
+    line-height: 1.35;
+}
+
+.period {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.duration {
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+}
+
+.title {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 0.35rem;
+    color: var(--color-text);
+}
+
+/* Ligne 2 : employeur */
+.organization {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin: 0 0 0.2rem;
+}
+
+/* Ligne 3 : modalité · type de contrat */
+.status {
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.organization + .summary,
+.status + .summary {
+    margin-top: var(--spacing-sm);
+}
+
+.summary {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-secondary);
+    margin: 0;
+}
+
+.skills {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-sm) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+/* Détail dépliable : animation de hauteur via grid 0fr -> 1fr */
+.details {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.3s ease;
+}
+
+.detailsOpen {
+    grid-template-rows: 1fr;
+}
+
+.detailsInner {
+    min-height: 0;
+    overflow: hidden;
+    /* Replié : hors tabulation et lecteurs d'écran, après la fin de l'animation */
+    visibility: hidden;
+    transition: visibility 0s 0.3s;
+}
+
+.detailsOpen .detailsInner {
+    visibility: visible;
+    transition-delay: 0s;
+}
+
+.group {
+    padding-top: var(--spacing-sm);
+}
+
+.groupHeading {
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-text);
+    margin: 0 0 var(--spacing-xs);
+}
+
+.groupItems {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+}
+
+.groupItems li {
+    position: relative;
+    padding-left: 1.1rem;
+}
+
+.groupItems li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.6em;
+    width: 5px;
+    height: 5px;
+    background: var(--color-primary);
+}
+
+.note {
+    font-size: 1rem;
+    line-height: 1.55;
+    color: var(--color-text-secondary);
+    margin: var(--spacing-sm) 0 0;
+}
+
+.links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs) var(--spacing-md);
+    margin: var(--spacing-sm) 0 0;
+}
+
+.link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+
+.toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    margin-top: var(--spacing-sm);
+    padding: 0;
+    border: 0;
+    background: none;
+    font: inherit;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+}
+
+.toggle:hover {
+    text-decoration: underline;
+}
+
+.toggleIcon {
+    transition: transform 0.3s ease;
+}
+
+.toggle[aria-expanded="true"] .toggleIcon {
+    transform: rotate(180deg);
+}
+
+/* Tablette / mobile : plus de marge pour la date, elle revient en tête de carte */
+@media (max-width: 768px) {
+    .timeline {
+        --date-col: 0px;
+        --gutter: var(--spacing-lg);
+    }
+
+    .date {
+        position: static;
+        width: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 0 var(--spacing-xs);
+        text-align: left;
+        margin-bottom: var(--spacing-xs);
+    }
+
+    .duration::before {
+        content: "· ";
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .details,
+    .detailsInner,
+    .toggleIcon {
+        transition: none;
+    }
+}

@@ -21,23 +21,15 @@ import Button from "../components/common/Button/Button";
 import Icon from "../components/common/Icon/Icon";
 import TechIcon from "../components/common/TechIcon/TechIcon";
 import FranceMap from "../components/about/FranceMap";
+import Timeline, { type TimelineEntry } from "../components/about/Timeline";
+import SkillChip from "../components/skills/SkillChip/SkillChip";
 import Seo from "../components/Seo";
 import MarkdownText from "../components/MarkdownText";
 import aboutData from "../data/about.json";
 import skillsData from "../data/skills.json";
 import * as styles from "../assets/css/pages/AboutPage.module.css";
-import type { SkillCategory, SkillLevel } from "../types";
+import type { SkillCategory } from "../types";
 
-interface TimelineEntry {
-  id: string | number;
-  period: string;
-  title: string;
-  description: string;
-  type?: string;
-  company?: string;
-  institution?: string;
-  current?: boolean;
-}
 interface CardEntry {
   id: string | number;
   icon: string;
@@ -221,27 +213,7 @@ export default function AboutPage() {
             <Briefcase className={styles.sectionIcon} size={24} />
             Expériences
           </h2>
-          <div className={styles.timeline}>
-            {experiences.map((exp) => (
-              <div
-                key={exp.id}
-                className={`${styles.timelineItem} ${exp.current ? styles.current : ""}`}
-              >
-                <div className={styles.timelineDot}></div>
-                <div className={styles.timelineContent}>
-                  <span className={styles.timelinePeriod}>{exp.period}</span>
-                  <h3 className={styles.timelineTitle}>
-                    {exp.title}
-                    <span className={styles.timelineType}>{exp.type}</span>
-                  </h3>
-                  <p className={styles.timelineCompany}>{exp.company}</p>
-                  <p className={styles.timelineDescription}>
-                    {exp.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Timeline entries={experiences} />
         </section>
 
         {/* Education */}
@@ -250,21 +222,7 @@ export default function AboutPage() {
             <GraduationCap className={styles.sectionIcon} size={24} />
             Formation
           </h2>
-          <div className={styles.timeline}>
-            {education.map((edu) => (
-              <div key={edu.id} className={styles.timelineItem}>
-                <div className={styles.timelineDot}></div>
-                <div className={styles.timelineContent}>
-                  <span className={styles.timelinePeriod}>{edu.period}</span>
-                  <h3 className={styles.timelineTitle}>{edu.title}</h3>
-                  <p className={styles.timelineCompany}>{edu.institution}</p>
-                  <p className={styles.timelineDescription}>
-                    {edu.description}
-                  </p>
-                </div>
-              </div>
-            ))}
-          </div>
+          <Timeline entries={education} />
         </section>
 
         {/* Certifications */}
@@ -291,25 +249,7 @@ export default function AboutPage() {
               <Drama className={styles.sectionIcon} size={24} />
               Autres expériences
             </h2>
-            <div className={styles.timeline}>
-              {otherExperiences.map((exp) => (
-                <div key={exp.id} className={styles.timelineItem}>
-                  <div className={styles.timelineDot}></div>
-                  <div className={styles.timelineContent}>
-                    <span className={styles.timelinePeriod}>
-                      {exp.period}
-                    </span>
-                    <h3 className={styles.timelineTitle}>{exp.title}</h3>
-                    <p className={styles.timelineCompany}>
-                      {exp.institution}
-                    </p>
-                    <p className={styles.timelineDescription}>
-                      {exp.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+            <Timeline entries={otherExperiences} />
           </section>
         )}
 
@@ -353,12 +293,6 @@ export default function AboutPage() {
   );
 }
 
-/** Puce selon l'importance (`level`) : signature > key > aucune. */
-const chipLevelClass: Record<SkillLevel, string> = {
-  signature: styles.skillChipSignature,
-  key: styles.skillChipKey,
-};
-
 /** Toutes les compétences, en cartes par catégorie, puces graduées par `level`. */
 function SkillsSection() {
   const skills = skillsData.skills as Record<string, SkillCategory>;
@@ -378,13 +312,7 @@ function SkillsSection() {
             </h3>
             <ul className={styles.skillList}>
               {category.items.map((skill) => (
-                <li
-                  key={skill.name}
-                  className={`${styles.skillChip} ${skill.level ? chipLevelClass[skill.level] : ""}`}
-                >
-                  {skill.icon && <TechIcon name={skill.icon} size={14} />}
-                  {skill.name}
-                </li>
+                <SkillChip key={skill.name} skill={skill} />
               ))}
             </ul>
           </div>

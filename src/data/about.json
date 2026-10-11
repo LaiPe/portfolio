@@ -45,30 +45,44 @@
     {
       "id": 1,
       "title": "Concepteur / Développeur d'Applications (Bac+3/4, RNCP niveau 6)",
-      "institution": "HumanBooster, Clermont-Ferrand",
+      "organization": "HumanBooster, Clermont-Ferrand",
       "period": "Février 2025 – Janvier 2026",
-      "description": "Conceptualisation et analyse du besoin · Java, Spring, Hibernate et Maven · TypeScript et Angular"
+      "skills": [
+        "Java",
+        "Spring Boot",
+        "Hibernate",
+        "Maven",
+        "TypeScript",
+        "Angular",
+        "Analyse du besoin",
+        "Conceptualisation"
+      ]
     },
     {
       "id": 2,
       "title": "Deuxième année Licence Informatique",
-      "institution": "Université Clermont Auvergne",
+      "organization": "Université Clermont Auvergne",
       "period": "2021 – 2024",
-      "description": "Programmation orientée objet en Java (étude approfondie) · programmation avancée en C · algorithmique et structures de données"
+      "skills": [
+        "Java",
+        "C",
+        "Programmation orientée objet",
+        "Algorithmique",
+        "Structures de données"
+      ]
     },
     {
       "id": 3,
       "title": "Préparation aux études scientifiques (PES)",
-      "institution": "Université Clermont Auvergne",
+      "organization": "Université Clermont Auvergne",
       "period": "2020 – 2021",
-      "description": "Année préparatoire aux études scientifiques"
+      "summary": "Année préparatoire aux études scientifiques"
     },
     {
       "id": 4,
       "title": "Baccalauréat Général ES avec mention",
-      "institution": "Lycée Assomption Sainte-Clotilde, Bordeaux",
-      "period": "2019",
-      "description": "Baccalauréat économique et social"
+      "organization": "Lycée Assomption Sainte-Clotilde, Bordeaux",
+      "period": "2019"
     }
   ],
   "certifications": [
@@ -89,58 +103,178 @@
   ],
   "experiences": [
     {
-      "id": 1,
+      "id": "dsv",
       "title": "Formateur TMS STAR",
       "type": "CDD",
-      "company": "DSV Road · Itinérant, France",
-      "period": "Depuis septembre 2026",
-      "description": "Formation des équipes d'agences au TMS STAR, progiciel de gestion du transport du groupe DSV, dans le cadre de son déploiement national. Remontée des anomalies et des besoins utilisateurs aux équipes de développement du progiciel.",
-      "current": true
+      "organization": "DSV Road",
+      "location": "Itinérant, France",
+      "period": "Depuis sept. 2026",
+      "start": "2026-09",
+      "current": true,
+      "summary": "Déploiement national de STAR, TMS (Transport Management System) interne du groupe DSV, progiciel spécialisé dans la gestion du transport, de l'affrétage et de la logistique.",
+      "details": [
+        {
+          "items": [
+            "Formation des équipes d'agences à l'outil dans le cadre de son déploiement",
+            "Remontée des anomalies et des besoins utilisateurs aux équipes de développement de l'outil",
+            "Mission itinérante : intervention d'agence en agence, partout en France"
+          ]
+        }
+      ]
     },
     {
-      "id": 2,
+      "id": "independant",
       "title": "Développeur Full-Stack",
       "type": "Freelance",
-      "company": "EI Léo Peyronnet · Hybride",
-      "period": "Depuis janvier 2025",
-      "description": "Conception, développement et livraison d'une dizaine de sites vitrines et e-commerce pour des clients professionnels, du cadrage au suivi, en autonomie de bout en bout. Stack adaptée à chaque besoin, du JavaScript vanilla à Next.js, Gatsby, Express.js, Medusa.js et Supabase. Conception et publication en solo du produit Stonecast.",
-      "current": true
+      "organization": "Indépendant",
+      "location": "Hybride",
+      "period": "Depuis janv. 2025",
+      "start": "2025-01",
+      "current": true,
+      "summary": "Activité de développeur Full-Stack indépendant, menée de bout en bout : cadrage du besoin, design, développement, déploiement, accompagnement vers l'hébergement et suivi.",
+      "details": [
+        {
+          "items": [
+            "Une dizaine de sites vitrines et e-commerce livrés pour des clients professionnels, avec une stack adaptée à chaque besoin : du JavaScript sans framework à Next.js, Gatsby, Express.js, Medusa.js et Supabase",
+            "Mission de lead technique freelance sur un SaaS (avril à juillet 2026), voir l'expérience dédiée",
+            "Conception, développement et publication en solo de Stonecast, template Next.js distribué sous licence (voir Projets)"
+          ]
+        }
+      ],
+      "skills": [
+        "Next.js",
+        "React",
+        "Gatsby",
+        "TypeScript",
+        "Supabase",
+        "Netlify",
+        "Vercel"
+      ],
+      "links": [
+        {
+          "label": "Projet Stonecast",
+          "to": "/projets/stonecast"
+        },
+        {
+          "label": "Site Attilio Terlizzi",
+          "to": "/projets/attilio-terlizzi"
+        }
+      ]
     },
     {
-      "id": 3,
-      "title": "Lead technique freelance",
+      "id": "aius-loquens",
+      "title": "Lead technique",
       "type": "Freelance",
-      "company": "ĀIUS LŎQUENS · À distance",
-      "period": "Avril – Juillet 2026",
-      "description": "Mission de lead technique sur une plateforme SaaS, menée à son terme : audit d'infrastructure, consolidation des services, conception et développement d'un module central de l'application, accompagnement du porteur de projet sur les priorités techniques.",
-      "current": false
+      "organization": "ĀIUS LŎQUENS",
+      "location": "À distance",
+      "period": "Avr. – juil. 2026",
+      "start": "2026-04",
+      "end": "2026-07",
+      "current": false,
+      "summary": "Mission de lead technique freelance menée d'avril à juillet 2026 pour un SaaS, en interlocution directe avec le porteur de projet, articulée autour de trois axes.",
+      "details": [
+        {
+          "heading": "Audit & documentation",
+          "items": [
+            "Audit technique de l'infrastructure, de la code base et des services tiers",
+            "Schématisation UML et rédaction de la documentation technique",
+            "Recommandations d'évolution et cadrage des priorités"
+          ]
+        },
+        {
+          "heading": "Optimisation infrastructure",
+          "items": [
+            "Optimisation des services tiers et de la configuration mail professionnelle, pour un meilleur contrôle des coûts d'exploitation technique"
+          ]
+        },
+        {
+          "heading": "Développement & conceptualisation",
+          "items": [
+            "Conception produit du dashboard, composant majeur de l'application, en autonomie : vision, wireframing, cahier des charges",
+            "Développement en Next.js, React et TypeScript, avec démarche CI/CD, livré en préproduction"
+          ]
+        }
+      ],
+      "skills": [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "CI/CD"
+      ],
+      "links": [
+        {
+          "label": "Projet ĀIUS LŎQUENS",
+          "to": "/projets/aius-loquens"
+        }
+      ]
     },
     {
-      "id": 4,
+      "id": "stage-react",
       "title": "Développeur Front-End React",
       "type": "Stage",
-      "company": "EI Quentin Cas · Clermont-Ferrand",
-      "period": "Septembre 2025 – Janvier 2026",
-      "description": "Développement d'un produit unifié cross-platform (web React + mobile React Native/Expo) en TypeScript, intégration d'API REST, gestion d'état avec Zustand, tests avec Jest et React Testing Library, conception d'interfaces sur Figma, méthodologie Agile (Kanban).",
-      "current": false
+      "organization": "EI Quentin Cas",
+      "location": "Clermont-Ferrand · Hybride",
+      "period": "Sept. 2025 – janv. 2026",
+      "start": "2025-09",
+      "end": "2026-01",
+      "current": false,
+      "summary": "Équipe produit réduite, application unifiée cross-platform (web et mobile).",
+      "details": [
+        {
+          "items": [
+            "Implémentation des interfaces en React (web) et React Native / Expo (mobile), en TypeScript",
+            "Intégration des API REST côté front et gestion de l'état applicatif avec Zustand",
+            "Tests unitaires avec Jest et React Testing Library",
+            "Conception des interfaces sur Figma à partir de l'expression de besoin",
+            "Création de features, évolutions et refontes de modules existants, en méthodologie Agile (Kanban) et workflow Git collaboratif"
+          ]
+        }
+      ],
+      "skills": [
+        "React",
+        "React Native",
+        "Expo",
+        "TypeScript",
+        "Zustand",
+        "Jest",
+        "React Testing Library",
+        "Figma"
+      ]
     },
     {
-      "id": 5,
+      "id": "rev",
       "title": "Sous-titreur",
       "type": "Freelance",
-      "company": "REV · À distance",
-      "period": "Août 2023 – Mars 2024",
-      "description": "Traduction anglais-français et synchronisation de contenus vidéo. Création et gestion d'une micro-entreprise — première expérience d'activité indépendante.",
-      "current": false
+      "organization": "REV",
+      "location": "À distance",
+      "period": "Août 2023 – mars 2024",
+      "start": "2023-08",
+      "end": "2024-03",
+      "current": false,
+      "summary": "Sous-titrage et traduction audiovisuelle sur la plateforme américaine REV.",
+      "details": [
+        {
+          "items": [
+            "Traduction de contenus vidéo de l'anglais vers le français",
+            "Synchronisation des sous-titres avec la vidéo",
+            "Création et gestion d'une micro-entreprise : statut, devis et facturation, relation avec la plateforme"
+          ]
+        }
+      ],
+      "skills": [
+        "Anglais (B2, TOEIC)",
+        "Français (natif)"
+      ],
+      "note": "Activité qui a posé les bases de mon cadre d'indépendant et de mon usage professionnel de l'anglais."
     }
   ],
   "otherExperiences": [
     {
       "id": 1,
       "title": "Cursus Jazz",
-      "institution": "Conservatoire de Clermont-Ferrand",
+      "organization": "Conservatoire de Clermont-Ferrand",
       "period": "2022 – 2026",
-      "description": "Formation musicale en jazz"
+      "summary": "Formation musicale en jazz"
     }
   ],
   "passions": [
