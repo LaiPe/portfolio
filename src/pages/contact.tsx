@@ -5,6 +5,7 @@ import { Mail, MapPin, Clock } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import Container from "../components/common/Container/Container";
+import PageHeader from "../components/common/PageHeader/PageHeader";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ContactPage.module.css";
@@ -46,16 +47,10 @@ export default function ContactPage() {
 
   return (
     <main className={styles.contact}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <Container>
-          <h1 className={styles.title}>Travaillons ensemble</h1>
-          <p className={styles.subtitle}>
-            Une question, un projet ou simplement envie d'échanger ?<br />
-            N'hésitez pas à me contacter, je vous répondrai rapidement.
-          </p>
-        </Container>
-      </section>
+      <PageHeader title="Travaillons ensemble">
+        Une question, un projet ou simplement envie d'échanger ?<br />
+        N'hésitez pas à me contacter, je vous répondrai rapidement.
+      </PageHeader>
 
       {/* Contact Content */}
       <section className={styles.content}>

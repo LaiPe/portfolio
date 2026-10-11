@@ -4,6 +4,7 @@ import { Rocket, MessageCircle, Globe, Atom, ShoppingCart } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import Container from "../components/common/Container/Container";
+import PageHeader from "../components/common/PageHeader/PageHeader";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ServicesPage.module.css";
@@ -15,22 +16,20 @@ export default function ServicesPage() {
 
   return (
     <main className={styles.services}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <div className={styles.heroContent}>
-          <span className={styles.badge}>
+      <PageHeader
+        title="Mes Services"
+        badge={
+          <>
             <Rocket size={16} /> Bientôt disponible
-          </span>
-          <h1 className={styles.title}>Mes Services</h1>
-          <p className={styles.subtitle}>
-            Je travaille actuellement sur une offre de services adaptée à vos
-            besoins.
-            <br />
-            En attendant, n'hésitez pas à me contacter pour discuter de votre
-            projet !
-          </p>
-        </div>
-      </section>
+          </>
+        }
+      >
+        Je travaille actuellement sur une offre de services adaptée à vos
+        besoins.
+        <br />
+        En attendant, n'hésitez pas à me contacter pour discuter de votre
+        projet !
+      </PageHeader>
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>

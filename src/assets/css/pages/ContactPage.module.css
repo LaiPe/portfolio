@@ -7,32 +7,6 @@
 }
 
 /* ================================
-   HERO SECTION
-   ================================ */
-.hero {
-    background: var(--color-background-alt);
-    padding: var(--spacing-xxl) 0;
-    text-align: center;
-    color: var(--color-text);
-}
-
-.title {
-    font-family: var(--font-heading);
-    font-size: clamp(2rem, 6vw, 3rem);
-    font-weight: 700;
-    margin: 0 0 var(--spacing-md);
-    color: var(--color-text);
-}
-
-.subtitle {
-    font-size: 1.1rem;
-    color: var(--color-text-secondary);
-    line-height: 1.6;
-    max-width: 600px;
-    margin: 0 auto;
-}
-
-/* ================================
    CONTENT SECTION
    ================================ */
 .content {
@@ -341,18 +315,6 @@
 }
 
 @media (max-width: 750px) {
-    .hero {
-        padding: var(--spacing-xl) 0;
-    }
-
-    .title {
-        font-size: 2rem;
-    }
-
-    .subtitle {
-        font-size: 1rem;
-    }
-
     .content {
         padding: var(--spacing-xl) 0;
     }

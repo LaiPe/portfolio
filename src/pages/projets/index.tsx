@@ -11,6 +11,7 @@ import {
 
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
 import Container from "../../components/common/Container/Container";
+import PageHeader from "../../components/common/PageHeader/PageHeader";
 import SectionTitle from "../../components/common/SectionTitle/SectionTitle";
 import Seo from "../../components/Seo";
 import * as styles from "../../assets/css/pages/ProjectsPage.module.css";
@@ -127,16 +128,10 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
 
   return (
     <main className={styles.projects}>
-      {/* Header Section */}
-      <section className={styles.header}>
-        <Container>
-          <h1 className={styles.title}>Mes Réalisations</h1>
-          <p className={styles.subtitle}>
-            Des projets clients aux expérimentations techniques, découvrez mon
-            parcours de développeur.
-          </p>
-        </Container>
-      </section>
+      <PageHeader title="Mes Réalisations">
+        Des projets clients aux expérimentations techniques, découvrez mon
+        parcours de développeur.
+      </PageHeader>
 
       {/* Filters Section */}
       <section className={styles.filters}>
