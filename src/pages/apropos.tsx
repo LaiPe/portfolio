@@ -219,10 +219,10 @@ export default function AboutPage() {
             missions freelance, en développement full-stack.
           </p>
           <div className={styles.ctaButtons}>
-            <Button href={cv.path} download={cv.filename} target="_self" variant="primary" size="lg">
+            <Button href={cv.path} download={cv.filename} target="_self" variant="inverse" size="lg">
               <Download size={20} /> Télécharger mon CV
             </Button>
-            <Button to="/contact" variant="primary" size="lg">
+            <Button to="/contact" variant="inverse" size="lg">
               Me contacter
             </Button>
           </div>
