@@ -1,7 +1,6 @@
-/* Styles propres au pipeline MDX : typographie du corps + Callout.
+/* Corps MDX des pages projet : typographie du flux + Callout.
    Les composants de la banque (Features, Architecture, Gallery, Testimonial)
-   réutilisent ProjectDetail.module.css pour rester visuellement cohérents avec
-   l'ancien pipeline pendant la coexistence. */
+   sont stylés dans blocks.module.css. */
 
 /* Corps MDX : flux vertical basé sur les marges (et non un gap flex uniforme) pour
    moduler l'espacement selon le type de bloc. */

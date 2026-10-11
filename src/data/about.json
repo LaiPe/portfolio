@@ -3,7 +3,6 @@
     "name": "Léo Peyronnet",
     "title": "Développeur Full-Stack",
     "age": 25,
-    "photo": "/img/a-propos/profile.jpg",
     "bio": "Je conçois et livre des applications web et mobiles, du front-end **React / Next.js** au back-end **Java / Spring Boot**. **Indépendant depuis 2025** : une dizaine de sites livrés pour des clients professionnels, une mission de lead technique sur un SaaS et un produit conçu en solo, *Stonecast*.",
     "mobilityHint": "Mobile en France et à l'international",
     "facets": [

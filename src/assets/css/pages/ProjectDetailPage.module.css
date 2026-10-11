@@ -2,43 +2,6 @@
     min-height: calc(100vh - var(--header));
 }
 
-.loading,
-.error {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 50vh;
-    gap: var(--spacing-md);
-    text-align: center;
-    padding: var(--spacing-xl);
-}
-
-.error h1 {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--color-text);
-}
-
-.error p {
-    color: var(--color-text-secondary);
-    max-width: 400px;
-}
-
-.backLink {
-    display: inline-flex;
-    align-items: center;
-    gap: var(--spacing-xs);
-    color: var(--color-primary);
-    font-weight: 600;
-    text-decoration: none;
-    margin-top: var(--spacing-md);
-}
-
-.backLink:hover {
-    text-decoration: underline;
-}
-
 /* Navigation inter-projets */
 .projectNav {
     background-color: var(--color-background-alt);

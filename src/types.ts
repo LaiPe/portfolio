@@ -20,14 +20,6 @@ export interface ProjectLinks {
   pdf?: string | null;
 }
 
-/** Une « feature » peut être une string ou un objet titre/description. */
-export type ProjectFeature =
-  | string
-  | { title?: string; description?: string; text?: string; emoji?: string };
-
-/** Un « challenge » peut être une string ou un objet titre/solution. */
-export type ProjectChallenge = string | { title?: string; solution?: string };
-
 export interface ProjectArchitecture {
   backend?: {
     framework?: string;
@@ -62,9 +54,6 @@ export interface Project {
   categoryLabel: string;
   shortDescription: string;
   technologies: string[];
-  highlights?: string[];
-  useCases?: string[];
-  skills?: string[];
   featured?: boolean;
   priority?: number;
   images: ProjectImages | null;
@@ -72,13 +61,6 @@ export interface Project {
   client?: string | null;
   date?: string;
   duration?: string;
-  problem?: string;
-  architecture?: ProjectArchitecture;
-  features?: ProjectFeature[];
-  challenges?: ProjectChallenge[];
-  results?: string[];
-  /** HTML rendu de la description Markdown (relié par slug). */
-  description?: { html: string } | null;
 }
 
 export interface Testimonial {

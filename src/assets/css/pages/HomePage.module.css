@@ -4,17 +4,6 @@
     overflow-x: hidden;
 }
 
-/* Loading State */
-.loading {
-    min-height: calc(100dvh - var(--header));
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    color: var(--color-text-secondary);
-}
-
 /* Container */
 .container {
     max-width: var(--max-width);
@@ -99,14 +88,6 @@
     font-size: 1.2em;
 }
 
-.heroSpecialization {
-    font-family: var(--font-heading);
-    font-size: clamp(1rem, 2.5vw, 1.25rem);
-    font-weight: 600;
-    color: var(--color-primary);
-    margin: 0 0 var(--spacing-xl);
-}
-
 .heroCtas {
     display: flex;
     gap: var(--spacing-md);
@@ -171,7 +152,7 @@
     .projectsGrid {
         grid-template-columns: repeat(2, 1fr);
     }
-    
+
     .projectsGrid > *:first-child {
         grid-column: 1 / -1;
     }
