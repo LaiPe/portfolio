@@ -59,7 +59,7 @@
    ================================ */
 .formSection {
     background: var(--color-background);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -91,7 +91,7 @@
 }
 
 .required {
-    color: #e74c3c;
+    color: var(--color-error);
 }
 
 .input,
@@ -99,7 +99,7 @@
 .textarea {
     padding: 0.875rem 1rem;
     border: 2px solid var(--color-border);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-size: 1rem;
     font-family: inherit;
     transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -111,21 +111,22 @@
 .textarea:focus {
     outline: none;
     border-color: var(--color-primary);
-    box-shadow: 0 0 0 3px rgba(0, 87, 187, 0.1);
+    box-shadow: 0 0 0 3px var(--color-primary-soft);
 }
 
 .input::placeholder,
 .textarea::placeholder {
-    color: #999;
+    color: var(--color-text-secondary);
+    opacity: 0.7;
 }
 
 .inputError {
-    border-color: #e74c3c;
+    border-color: var(--color-error);
 }
 
 .inputError:focus {
-    border-color: #e74c3c;
-    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.1);
+    border-color: var(--color-error);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--color-error) 10%, transparent);
 }
 
 .select {
@@ -143,7 +144,7 @@
 }
 
 .errorMessage {
-    color: #e74c3c;
+    color: var(--color-error);
     font-size: 0.875rem;
     display: flex;
     align-items: center;
@@ -156,21 +157,21 @@
 
 .formStatus {
     padding: 0.875rem 1rem;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-size: 0.95rem;
     margin-bottom: var(--spacing-md);
 }
 
 .formStatusSuccess {
-    background: rgba(46, 204, 113, 0.12);
-    border: 1px solid rgba(46, 204, 113, 0.4);
-    color: #1e8449;
+    background: color-mix(in srgb, var(--color-success) 12%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-success) 40%, transparent);
+    color: var(--color-success);
 }
 
 .formStatusError {
-    background: rgba(231, 76, 60, 0.1);
-    border: 1px solid rgba(231, 76, 60, 0.4);
-    color: #c0392b;
+    background: color-mix(in srgb, var(--color-error) 10%, transparent);
+    border: 1px solid color-mix(in srgb, var(--color-error) 40%, transparent);
+    color: var(--color-error);
 }
 
 .formStatusError a {
@@ -201,7 +202,7 @@
 
 .infoCard {
     background: var(--color-background);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -231,7 +232,7 @@
     align-items: center;
     justify-content: center;
     background: var(--color-background-alt);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     color: var(--color-primary);
 }
 
@@ -275,7 +276,7 @@
    ================================ */
 .socialCard {
     background: var(--color-background);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
 }
@@ -300,7 +301,7 @@
     gap: var(--spacing-md);
     padding: 0.75rem 1rem;
     background: var(--color-background-alt);
-    border-radius: 10px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }

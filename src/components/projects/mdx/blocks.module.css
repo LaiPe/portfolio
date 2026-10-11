@@ -60,7 +60,7 @@
     max-width: var(--max-width);
     margin: 0 auto;
     padding: var(--spacing-xl) var(--spacing-md);
-    color: white;
+    color: var(--color-on-primary);
 }
 
 .heroHeader {
@@ -120,7 +120,7 @@
 
 .sidebarSection {
     background: var(--color-background-alt);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
 }
 
@@ -187,7 +187,7 @@
     gap: var(--spacing-sm);
     padding: var(--spacing-sm);
     background: var(--color-background);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     color: var(--color-primary);
     font-weight: 600;
     text-decoration: none;
@@ -196,15 +196,15 @@
 
 .sidebarLink:hover {
     background: var(--color-primary);
-    color: white;
+    color: var(--color-on-primary);
     text-decoration: none;
 }
 
 .sidebarCta {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
-    border-radius: 12px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
-    color: white;
+    color: var(--color-on-primary);
     text-align: center;
 }
 
@@ -224,9 +224,9 @@
 .sidebarCtaButton {
     display: inline-block;
     padding: var(--spacing-sm) var(--spacing-md);
-    background: white;
+    background: var(--color-background);
     color: var(--color-primary);
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     font-weight: 700;
     text-decoration: none;
     transition: all 0.2s ease;
@@ -274,7 +274,7 @@
 
 .featureCard {
     background: var(--color-background-alt);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
     display: flex;
     flex-direction: column;
@@ -299,7 +299,7 @@
 /* Témoignage */
 .testimonial {
     background: linear-gradient(135deg, var(--color-background-alt) 0%, var(--color-background) 100%);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-lg);
     border: 1px solid var(--color-border);
     position: relative;
@@ -358,7 +358,7 @@
     border: none;
     background: var(--color-background-alt);
     cursor: pointer;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     overflow: hidden;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     min-height: 200px;
@@ -377,7 +377,7 @@
 .galleryImage {
     width: 100%;
     display: block;
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
@@ -390,7 +390,7 @@
 
 .architectureCard {
     background: var(--color-background-alt);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
     padding: var(--spacing-md);
 }
 
@@ -427,7 +427,7 @@
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 1000px) {
     .layout {
         grid-template-columns: 1fr;
     }
@@ -449,7 +449,7 @@
     }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 750px) {
     .heroTitle {
         font-size: 1.75rem;
     }

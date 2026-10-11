@@ -83,7 +83,7 @@
 
 .heroSeparator {
     font-family: var(--font-heading);
-    color: #000000;
+    color: var(--color-text);
     font-weight: 700;
     font-size: 1.2em;
 }
@@ -220,7 +220,7 @@
 
 .testimonialCard {
     background: var(--color-background);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     display: flex;
@@ -281,8 +281,8 @@
 
 /* Testimonial CTA Card */
 .testimonialCta {
-    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
-    border-radius: 16px;
+    background: var(--gradient-accent);
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     display: flex;
     align-items: center;

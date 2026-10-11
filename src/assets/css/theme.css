@@ -7,7 +7,8 @@
     font-style: normal;
 }
 :root{
-    --max-width: 1080px;
+    /* Largeur de page (toutes les pages, pied de page compris) */
+    --max-width: 1100px;
 
     --header : var(--nav);
     --nav : 5.5rem;
@@ -26,6 +27,28 @@
     --color-background: #FFFFFF;
     --color-background-alt: #F5F5F5;
     --color-border: #E0E0E0;
+    /* Bleu foncé : fin du dégradé d'accent */
+    --color-primary-dark: #003d82;
+    /* Teintes de bleu : survol (tint) et fond des éléments mis en avant (soft) */
+    --color-primary-tint: rgba(0, 87, 187, 0.06);
+    --color-primary-soft: rgba(0, 87, 187, 0.12);
+    /* Texte posé sur le bleu ou sur une image sombre */
+    --color-on-primary: #FFFFFF;
+    --color-error: #c0392b;
+    --color-success: #1e8449;
+
+    /* Accent : cartes et blocs d'appel à l'action */
+    --gradient-accent: linear-gradient(135deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
+
+    /* Rayons : sm = champs, boutons, petits éléments ; md = cartes ;
+       lg = grands blocs (en-tête de page, bloc CTA) ; pill = puces */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 16px;
+    --radius-pill: 999px;
+
+    /* Ombre : réservée aux éléments flottants (barre sticky, modale). Les cartes n'en ont pas. */
+    --shadow-overlay: 0 2px 8px rgba(0, 0, 0, 0.05);
 
     /* Espacements */
     --spacing-xs: 0.5rem;
@@ -35,11 +58,16 @@
     --spacing-xl: 3rem;
     --spacing-xxl: 4rem;
 
-    font-size: 13px;
+    /* 81.25 % = 13px avec le réglage par défaut du navigateur, mais suit la taille
+       de texte choisie par le visiteur (contrairement à une valeur en px). */
+    font-size: 81.25%;
     font-family: var(--font-body);
     color: var(--color-text);
 }
 
+
+/* Points de rupture du site : 1000px (tablette) et 750px (mobile) ;
+   480px toléré pour les très petits écrans. */
 
 /*CLASSES UNIVERSELLES*/
 .logo{
@@ -56,7 +84,7 @@ header a.active{
 
 /*AUTRES REGLES UNIVERSELLES*/
 a{
-    color: black;
+    color: var(--color-text);
     text-decoration: none;
 }
 a:hover{

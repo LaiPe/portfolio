@@ -1,7 +1,7 @@
 .projectCard {
     display: block;
-    background: white;
-    border-radius: 8px;
+    background: var(--color-background);
+    border-radius: var(--radius-sm);
     overflow: hidden;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -45,7 +45,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background: linear-gradient(135deg, #f0f4f8 0%, var(--color-background-alt) 100%);
+    background: linear-gradient(135deg, var(--color-primary-tint) 0%, var(--color-background-alt) 100%);
 }
 
 .emoji {

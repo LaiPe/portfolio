@@ -3,7 +3,7 @@
     padding: 0.25rem 0.75rem;
     font-size: 0.75rem;
     font-weight: 600;
-    border-radius: 20px;
+    border-radius: var(--radius-pill);
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
@@ -18,22 +18,22 @@
 
 .client {
     background-color: var(--color-primary);
-    color: white;
+    color: var(--color-on-primary);
 }
 
 .product {
     background-color: var(--color-secondary);
-    color: white;
+    color: var(--color-on-primary);
 }
 
 .experiment {
     background-color: var(--color-tertiary);
-    color: white;
+    color: var(--color-on-primary);
 }
 
 .caseStudy {
     background-color: var(--color-quaternary);
-    color: white;
+    color: var(--color-on-primary);
 }
 
 .tech {

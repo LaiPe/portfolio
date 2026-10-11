@@ -42,7 +42,7 @@
     font-size: 0.875rem;
     font-weight: 600;
     padding: 0.5rem 1rem;
-    border-radius: 50px;
+    border-radius: var(--radius-pill);
     margin-bottom: var(--spacing-md);
 }
 
@@ -72,7 +72,7 @@
 
 .ctaCard {
     background: var(--color-background);
-    border-radius: 24px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xxl);
     text-align: center;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
@@ -142,7 +142,7 @@
 
 .teaserItem {
     background: var(--color-background);
-    border-radius: 16px;
+    border-radius: var(--radius-lg);
     padding: var(--spacing-xl);
     border: 1px solid var(--color-border);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -184,7 +184,7 @@
 /* ================================
    RESPONSIVE
    ================================ */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .hero {
         min-height: 350px;
     }

@@ -51,7 +51,7 @@
     padding: var(--spacing-md);
     background: var(--color-background);
     border: 1px solid var(--color-border);
-    border-radius: 12px;
+    border-radius: var(--radius-md);
 }
 
 /* Date dans la marge, à gauche du fil */
@@ -246,7 +246,7 @@
 }
 
 /* Tablette / mobile : plus de marge pour la date, elle revient en tête de carte */
-@media (max-width: 768px) {
+@media (max-width: 750px) {
     .timeline {
         --date-col: 0px;
         --gutter: var(--spacing-lg);
