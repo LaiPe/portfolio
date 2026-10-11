@@ -135,7 +135,15 @@
     }
 }
 
+/* Mobile : on garde 2 colonnes, cartes compactes (cf. SkillCard.module.css) */
 @media (max-width: 750px) {
+    .skillsGrid {
+        gap: var(--spacing-xl) var(--spacing-sm);
+        margin-top: var(--spacing-xl);
+    }
+}
+
+@media (max-width: 340px) {
     .skillsGrid {
         grid-template-columns: 1fr;
     }

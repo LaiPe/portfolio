@@ -1,26 +1,18 @@
 .skillCard {
-    background: white;
-    border: 1px solid var(--color-border);
-    border-radius: 8px;
-    padding: var(--spacing-lg);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.skillCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-xs);
 }
 
 .header {
     display: flex;
-    align-items: flex-start;
-    gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-md);
+    align-items: center;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-xs);
 }
 
 .icon {
     flex-shrink: 0;
-    margin-top: 2px;
     color: var(--color-primary);
 }
 
@@ -32,22 +24,111 @@
     margin: 0;
 }
 
+/* Compétence `signature` : grande tuile teintée, toute la largeur de la colonne */
+.signature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-xs);
+    color: var(--color-primary);
+    background: rgba(0, 87, 187, 0.06);
+    border: 1px solid var(--color-primary);
+    border-radius: 12px;
+    transition: background-color 0.2s ease;
+}
+
+.signature:hover {
+    background: rgba(0, 87, 187, 0.12);
+}
+
+.signatureName {
+    font-size: 1.15rem;
+    font-weight: 600;
+    text-align: center;
+    line-height: 1.2;
+}
+
+/* Compétences `key` : liste compacte, une par ligne, séparées par un filet */
 .list {
     list-style: none;
     padding: 0;
     margin: 0;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.row {
     display: flex;
-    flex-direction: column;
-    gap: var(--spacing-xs);
-}
-
-.item {
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: 0.6rem var(--spacing-sm);
     font-size: 1rem;
+    font-weight: 600;
     color: var(--color-text-secondary);
-    padding: var(--spacing-xs) 0;
-    border-bottom: 1px solid var(--color-background-alt);
+    transition: color 0.2s ease, background-color 0.2s ease;
 }
 
-.item:last-child {
-    border-bottom: none;
+.row + .row {
+    border-top: 1px solid var(--color-border);
+}
+
+/* Survol sans soulèvement : la ligne se teinte en bleu. */
+.row:hover {
+    color: var(--color-primary);
+    background: rgba(0, 87, 187, 0.06);
+}
+
+.rowIcon {
+    flex-shrink: 0;
+    /* Gris foncé, entre --color-text et --color-text-secondary */
+    color: color-mix(in srgb, var(--color-text) 80%, white);
+    transition: color 0.2s ease;
+}
+
+.row:hover .rowIcon {
+    color: var(--color-primary);
+}
+
+/* Mobile (2 colonnes étroites) : tuile signature horizontale, lignes resserrées.
+   Les tailles d'icônes passées en props sont écrasées ici en CSS. */
+@media (max-width: 750px) {
+    .skillCard {
+        gap: var(--spacing-sm);
+    }
+
+    .title {
+        font-size: 1.1rem;
+    }
+
+    .signature {
+        flex-direction: row;
+        gap: var(--spacing-xs);
+        padding: var(--spacing-xs) 0.6rem;
+    }
+
+    .signature svg {
+        width: 28px;
+        height: 28px;
+        flex-shrink: 0;
+    }
+
+    .signatureName {
+        font-size: 1rem;
+        text-align: left;
+        min-width: 0;
+    }
+
+    .row {
+        gap: var(--spacing-xs);
+        padding: 0.45rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    .rowIcon {
+        width: 16px;
+        height: 16px;
+    }
 }

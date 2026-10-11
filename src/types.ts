@@ -90,6 +90,33 @@ export interface Testimonial {
   featured?: boolean;
 }
 
+/**
+ * Importance d'une compétence (`skills.json`) :
+ * - `signature` : une par catégorie de l'accueil — tuile large (accueil), puce bleu plein (À propos) ;
+ * - `key` : tuile (accueil, si la catégorie a `home: true`), puce bleu clair (À propos) ;
+ * - absent : puce grise sur À propos uniquement.
+ */
+export type SkillLevel = "signature" | "key";
+
+export interface SkillItem {
+  name: string;
+  /** Libellé court pour la tuile de l'accueil. */
+  short?: string;
+  /** Clé résolue par `TechIcon`. */
+  icon?: string;
+  level?: SkillLevel;
+  /** Affiche l'item dans la carte d'une AUTRE catégorie, sur l'accueil uniquement. */
+  in?: string;
+}
+
+export interface SkillCategory {
+  title: string;
+  icon: string;
+  /** Carte affichée dans « Compétences clés » sur l'accueil. */
+  home: boolean;
+  items: SkillItem[];
+}
+
 export interface SocialLink {
   name: string;
   url: string;

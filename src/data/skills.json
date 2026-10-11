@@ -3,100 +3,123 @@
     "languages": {
       "title": "Langages",
       "icon": "code",
-      "featured": false,
+      "home": false,
       "items": [
-        { "name": "JavaScript" },
-        { "name": "TypeScript", "featured": true, "in": "frontend" },
-        { "name": "HTML5" },
-        { "name": "CSS3" },
-        { "name": "Java", "featured": true, "in": "backend" },
-        { "name": "SQL" },
-        { "name": "Python" },
-        { "name": "C" }
+        { "name": "Java", "icon": "java", "level": "key", "in": "backend" },
+        { "name": "TypeScript", "icon": "typescript", "level": "key", "in": "frontend" },
+        { "name": "JavaScript", "icon": "javascript" },
+        { "name": "SQL", "icon": "sql" },
+        { "name": "HTML5", "icon": "html5" },
+        { "name": "CSS3", "icon": "css" },
+        { "name": "Python", "icon": "python" },
+        { "name": "C", "icon": "c" }
       ]
     },
     "frontend": {
       "title": "Frontend",
       "icon": "palette",
-      "featured": true,
+      "home": true,
       "items": [
-        { "name": "React", "featured": true },
-        { "name": "Next.js", "featured": true },
-        { "name": "React Native" },
-        { "name": "Expo" },
-        { "name": "Gatsby" },
-        { "name": "Angular" , "featured": true},
-        { "name": "Bootstrap" },
+        { "name": "React", "icon": "react", "level": "signature" },
+        { "name": "Next.js", "icon": "nextdotjs", "level": "key" },
+        { "name": "Angular", "icon": "angular", "level": "key" },
+        { "name": "React Native", "icon": "react" },
+        { "name": "Expo", "icon": "expo" },
+        { "name": "Gatsby", "icon": "gatsby" },
+        { "name": "Bootstrap", "icon": "bootstrap" },
         { "name": "Zustand" }
       ]
     },
     "backend": {
       "title": "Backend",
       "icon": "server",
-      "featured": true,
+      "home": true,
       "items": [
-        { "name": "Spring Boot", "featured": true },
-        { "name": "Express.js", "featured": true },
-        { "name": "Next.js (Server actions)", "featured": true },
-        { "name": "Medusa.js" },
-        { "name": "API REST" }
+        { "name": "Spring Boot", "icon": "springboot", "level": "signature" },
+        { "name": "Node.js", "icon": "nodedotjs", "level": "key" },
+        { "name": "Next.js (Server Actions, API routes)", "short": "Next.js API", "icon": "nextdotjs", "level": "key" },
+        { "name": "Express.js", "icon": "express" },
+        { "name": "Spring Security", "icon": "springsecurity" },
+        { "name": "Spring MVC", "icon": "spring" },
+        { "name": "Spring Data JPA", "icon": "spring" },
+        { "name": "Maven", "icon": "apachemaven" },
+        { "name": "Lombok" },
+        { "name": "Medusa.js", "icon": "medusa" },
+        { "name": "API REST", "icon": "api" },
+        { "name": "Zod", "icon": "zod" }
       ]
     },
     "databases": {
       "title": "Bases de données",
       "icon": "database",
-      "featured": true,
+      "home": true,
       "items": [
-        { "name": "MySQL", "featured": true },
-        { "name": "PostgreSQL", "featured": true },
-        { "name": "MongoDB", "featured": true },
-        { "name": "H2" }
+        { "name": "PostgreSQL", "icon": "postgresql", "level": "signature" },
+        { "name": "MySQL", "icon": "mysql", "level": "key" },
+        { "name": "MongoDB", "icon": "mongodb", "level": "key" },
+        { "name": "Hibernate", "icon": "hibernate" },
+        { "name": "Drizzle ORM", "icon": "drizzle" },
+        { "name": "H2", "icon": "h2database" }
       ]
     },
     "devops": {
       "title": "DevOps & Cloud",
       "icon": "rocket",
-      "featured": true,
+      "home": true,
       "items": [
-        { "name": "Git / GitHub" },
-        { "name": "Docker", "featured": true },
-        { "name": "GitHub Actions", "featured": true },
-        { "name": "Netlify" },
-        { "name": "Vercel" },
-        { "name": "AWS", "featured": true },
-        { "name": "Supabase", "featured": true }
+        { "name": "Docker", "icon": "docker", "level": "signature" },
+        { "name": "GitHub Actions", "icon": "github", "level": "key" },
+        { "name": "AWS", "icon": "aws", "level": "key" },
+        { "name": "Supabase", "icon": "supabase", "level": "key" },
+        { "name": "Git", "icon": "git" },
+        { "name": "Netlify", "icon": "netlify" },
+        { "name": "Vercel", "icon": "vercel" }
       ]
     },
     "testing": {
       "title": "Tests & Qualité",
       "icon": "flask-conical",
-      "featured": false,
+      "home": false,
       "items": [
-        { "name": "Jest" },
-        { "name": "React Testing Library" },
-        { "name": "JUnit" },
-        { "name": "Selenium" },
-        { "name": "Postman" }
+        { "name": "JUnit", "icon": "junit5" },
+        { "name": "Mockito" },
+        { "name": "Jest", "icon": "jest" },
+        { "name": "Selenium", "icon": "selenium" },
+        { "name": "Postman", "icon": "postman" }
       ]
     },
     "methodologies": {
       "title": "Méthodologies",
       "icon": "repeat",
-      "featured": false,
+      "home": false,
       "items": [
-        { "name": "Agile (Scrum)" },
-        { "name": "Agile (Kanban)" }
+        { "name": "Agile (Scrum, Kanban)", "icon": "agile" },
+        { "name": "Architecture en couches", "icon": "layers" },
+        { "name": "Modélisation UML", "icon": "uml" }
       ]
     },
     "design": {
-      "title": "Design & Autres outils",
-      "icon": "target",
-      "featured": false,
+      "title": "Design & Outils",
+      "icon": "pen-tool",
+      "home": false,
       "items": [
-        { "name": "Figma" },
+        { "name": "Figma", "icon": "figma", "level": "key" },
+        { "name": "Claude Code", "icon": "claude", "level": "key" },
         { "name": "Adobe Illustrator" },
         { "name": "Canva" },
-        { "name": "Notion" }
+        { "name": "Notion", "icon": "notion" },
+        { "name": "GitHub Projects", "icon": "github" },
+        { "name": "GitHub Copilot", "icon": "githubcopilot" }
+      ]
+    },
+    "spokenLanguages": {
+      "title": "Langues",
+      "icon": "languages",
+      "home": false,
+      "items": [
+        { "name": "Français (natif)", "icon": "flag-fr" },
+        { "name": "Anglais (B2, TOEIC)", "icon": "flag-gb", "level": "key" },
+        { "name": "Espagnol (scolaire)", "icon": "flag-es" }
       ]
     }
   }

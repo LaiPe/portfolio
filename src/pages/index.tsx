@@ -11,21 +11,7 @@ import Seo from "../components/Seo";
 import skillsData from "../data/skills.json";
 import testimonialsData from "../data/testimonials.json";
 import * as styles from "../assets/css/pages/HomePage.module.css";
-import type { Project, Testimonial } from "../types";
-
-interface SkillItem {
-  name: string;
-  featured?: boolean;
-  /** Rattache l'item à une AUTRE catégorie pour l'affichage (ex. un langage
-   *  affiché dans la carte « Frontend »). Voir la section Compétences Clés. */
-  in?: string;
-}
-interface SkillCategory {
-  title: string;
-  icon: string;
-  featured?: boolean;
-  items: SkillItem[];
-}
+import type { Project, SkillCategory, SkillItem, Testimonial } from "../types";
 
 interface HomePageData {
   allMdx: { nodes: { frontmatter: Project }[] };
@@ -35,23 +21,23 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
   const skills = skillsData.skills as Record<string, SkillCategory>;
   const { testimonials } = testimonialsData as { testimonials: Testimonial[] };
 
-  // Items featured « rattachés » à une autre catégorie via `in` (ex. langages
-  // affichés dans les cartes Frontend/Backend sur l'accueil).
+  // Items importants (`level`) « rattachés » à une autre catégorie via `in`
+  // (ex. langages affichés dans les cartes Frontend/Backend sur l'accueil).
   const injectedItems: Record<string, SkillItem[]> = {};
   Object.values(skills).forEach((category) => {
     category.items.forEach((item) => {
-      if (item.featured && item.in) {
+      if (item.level && item.in) {
         (injectedItems[item.in] ??= []).push(item);
       }
     });
   });
 
   const featuredSkills = Object.entries(skills)
-    .filter(([, category]) => category.featured)
+    .filter(([, category]) => category.home)
     .map(([id, category]) => ({
       ...category,
       items: [
-        ...category.items.filter((item) => item.featured && !item.in),
+        ...category.items.filter((item) => item.level && !item.in),
         ...(injectedItems[id] ?? []),
       ],
     }));
