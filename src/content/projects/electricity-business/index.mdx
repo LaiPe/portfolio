@@ -12,6 +12,10 @@ technologies:
   - Docker
   - Java
   - Spring Security
+  - Spring Data JPA / Hibernate
+  - Lombok
+  - JUnit
+  - Mockito
   - Vite
   - MySQL
   - MongoDB
@@ -94,9 +98,12 @@ authentification sécurisée — au service d'un enjeu concret de la **transitio
 
 ## Défis techniques
 
+- Architecture en couches (contrôleurs, services, repositories) et modélisation du domaine en
+  entités JPA avec relations
 - Intégration de bases de données hétérogènes (SQL + NoSQL)
-- Gestion complexe des états de réservation avec workflow
-- Sécurisation complète avec authentification JWT
+- Gestion transactionnelle des réservations et de leur workflow d'états
+- Sécurisation complète de l'API avec Spring Security et authentification JWT
+- Tests unitaires avec JUnit et Mockito
 - Configuration Docker multi-environnements avec variables sensibles
 
 <Gallery title="Galerie" />
