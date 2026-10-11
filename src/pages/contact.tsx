@@ -279,7 +279,7 @@ export default function ContactPage() {
 
 export const Head: HeadFC = () => (
   <Seo
-    title="Contact | Léo Peyronnet - Développeur Web"
+    title="Contact | Léo Peyronnet - Développeur Full-Stack"
     description="Contactez Léo Peyronnet pour vos projets de développement web. Devis gratuit et réponse rapide."
   />
 );

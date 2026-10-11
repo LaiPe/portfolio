@@ -176,7 +176,7 @@
 
 .teaserNote {
     font-size: 0.9rem;
-    color: var(--color-text-muted);
+    color: var(--color-text-secondary);
     font-style: italic;
     margin: 0;
 }

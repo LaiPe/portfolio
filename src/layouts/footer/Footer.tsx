@@ -95,12 +95,9 @@ export default function Footer() {
         <div className={styles.copyright}>
           <p>© {currentYear} Léo Peyronnet. Tous droits réservés.</p>
           <div className={styles.legalLinks}>
+            {/* Page à créer : les mentions légales sont obligatoires pour un site professionnel. */}
             <a href="/mentions-legales" className={styles.legalLink}>
               Mentions légales
-            </a>
-            <span className={styles.separator}>•</span>
-            <a href="/confidentialite" className={styles.legalLink}>
-              Confidentialité
             </a>
           </div>
         </div>

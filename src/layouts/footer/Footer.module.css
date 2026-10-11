@@ -186,10 +186,6 @@
     text-decoration: underline;
 }
 
-.separator {
-    opacity: 0.5;
-}
-
 /* Responsive */
 @media (max-width: 750px) {
     .footer {

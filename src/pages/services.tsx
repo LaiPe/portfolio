@@ -93,7 +93,7 @@ export default function ServicesPage() {
 
 export const Head: HeadFC = () => (
   <Seo
-    title="Services | Léo Peyronnet - Développeur Web"
+    title="Services | Léo Peyronnet - Développeur Full-Stack"
     description="Découvrez les services de développement web proposés par Léo Peyronnet : sites vitrines, applications React, e-commerce."
   />
 );
