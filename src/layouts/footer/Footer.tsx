@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import Button from "../../components/common/Button/Button";
 import Container from "../../components/common/Container/Container";
+import TechIcon from "../../components/common/TechIcon/TechIcon";
 import * as styles from "./Footer.module.css";
 import socialsData from "../../data/socials.json";
 import type { SocialLink } from "../../types";
@@ -81,11 +82,7 @@ export default function Footer() {
                   aria-label={social.name}
                   title={social.name}
                 >
-                  <img
-                    src={social.icon}
-                    alt={`${social.name} icon`}
-                    className={styles.socialIcon}
-                  />
+                  <TechIcon name={social.icon} size={24} className={styles.socialIcon} />
                   <span className={styles.socialName}>{social.name}</span>
                 </a>
               ))}

@@ -6,6 +6,7 @@ import { Mail, MapPin, Clock } from "lucide-react";
 import Button from "../components/common/Button/Button";
 import Container from "../components/common/Container/Container";
 import PageHeader from "../components/common/PageHeader/PageHeader";
+import TechIcon from "../components/common/TechIcon/TechIcon";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ContactPage.module.css";
@@ -250,11 +251,7 @@ export default function ContactPage() {
                       className={styles.socialLink}
                       aria-label={social.name}
                     >
-                      <img
-                        src={social.icon}
-                        alt={`${social.name} icon`}
-                        className={styles.socialIcon}
-                      />
+                      <TechIcon name={social.icon} size={28} className={styles.socialIcon} />
                       <div className={styles.socialInfo}>
                         <span className={styles.socialName}>{social.name}</span>
                         <span className={styles.socialDesc}>

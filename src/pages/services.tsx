@@ -5,6 +5,7 @@ import { Rocket, MessageCircle, Globe, Atom, ShoppingCart } from "lucide-react";
 import Button from "../components/common/Button/Button";
 import Container from "../components/common/Container/Container";
 import PageHeader from "../components/common/PageHeader/PageHeader";
+import TechIcon from "../components/common/TechIcon/TechIcon";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ServicesPage.module.css";
@@ -48,11 +49,7 @@ export default function ServicesPage() {
               </Button>
               {maltLink && (
                 <Button href={maltLink} variant="outline" size="lg">
-                  <img
-                    src="/img/icons/malt-icon.png"
-                    alt="Malt Logo"
-                    className={styles.maltIcon}
-                  />
+                  <TechIcon name="malt" size={20} />
                   <span>Voir mon profil Malt</span>
                 </Button>
               )}

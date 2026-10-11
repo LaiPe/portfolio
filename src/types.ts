@@ -102,6 +102,7 @@ export interface SkillCategory {
 export interface SocialLink {
   name: string;
   url: string;
+  /** Clé résolue par `TechIcon` (ex. `github`). */
   icon: string;
   description: string;
 }
