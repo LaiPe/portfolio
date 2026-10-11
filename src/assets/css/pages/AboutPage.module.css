@@ -3,12 +3,6 @@
     padding: var(--spacing-xl) 0;
 }
 
-.layout {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
 /* Hero Section */
 .hero {
     margin-bottom: var(--spacing-xxl);
@@ -101,22 +95,6 @@
 /* Sections */
 .section {
     margin-bottom: var(--spacing-xxl);
-}
-
-.sectionTitle {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0 0 var(--spacing-lg);
-    color: var(--color-text);
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-}
-
-.sectionIcon {
-    flex-shrink: 0;
-    color: var(--color-primary);
 }
 
 /* Qui suis-je ? : trois facettes + la carte Mobilité en accent */
@@ -425,10 +403,6 @@
         padding: var(--spacing-lg) 0;
     }
 
-    .layout {
-        padding: 0 var(--spacing-md);
-    }
-
     .hero {
         padding: var(--spacing-lg);
     }
@@ -492,9 +466,5 @@
 
     .name {
         font-size: 1.75rem;
-    }
-
-    .sectionTitle {
-        font-size: 1.25rem;
     }
 }

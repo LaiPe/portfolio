@@ -3,43 +3,8 @@ import { Link } from "gatsby";
 import { ArrowRight, ChevronDown } from "lucide-react";
 
 import SkillChip, { findSkill } from "../skills/SkillChip/SkillChip";
+import type { TimelineEntry } from "../../types";
 import * as styles from "./Timeline.module.css";
-
-export interface TimelineDetailGroup {
-  /** Intertitre du groupe (ex. un axe de mission) ; absent = simple liste. */
-  heading?: string;
-  items: string[];
-}
-
-export interface TimelineEntry {
-  id: string | number;
-  period: string;
-  /** Mois de début, `AAAA-MM` : active le calcul de la durée (cf. `Duration`). */
-  start?: string;
-  /** Mois de fin, `AAAA-MM` ; absent = en cours, durée calculée jusqu'à aujourd'hui. */
-  end?: string;
-  title: string;
-  /** Employeur ou établissement. */
-  organization?: string;
-  /** Modalité du poste : lieu, hybride, à distance, itinérant… */
-  location?: string;
-  /** Type de contrat, affiché à la suite de la modalité. */
-  type?: string;
-  /** Phrase de présentation ; facultative (ex. formation décrite par ses seules puces). */
-  summary?: string;
-  /** Détail dépliable ; absent = entrée simple, sans bouton. */
-  details?: TimelineDetailGroup[];
-  /** Phrase de conclusion, affichée à la fin du détail. */
-  note?: string;
-  /** Noms de compétences de `skills.json` (un nom inconnu donne une puce neutre). */
-  skills?: string[];
-  /** Compétences transverses (savoir-être, analyse du besoin…) : tout ce qui n'est ni une
-   *  technologie ni un concept informatique. Affichées sur leur propre ligne, en puces à bordure. */
-  softSkills?: string[];
-  /** Liens internes, affichés à la fin du détail. */
-  links?: { label: string; to: string }[];
-  current?: boolean;
-}
 
 /** Frise chronologique : date dans la marge (desktop), carte à droite du fil. */
 export default function Timeline({ entries }: { entries: TimelineEntry[] }) {

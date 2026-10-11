@@ -105,3 +105,69 @@ export interface SocialLink {
   icon: string;
   description: string;
 }
+
+/* ---------- Page À propos (about.json) ---------- */
+
+export interface TimelineDetailGroup {
+  /** Intertitre du groupe (ex. un axe de mission) ; absent = simple liste. */
+  heading?: string;
+  items: string[];
+}
+
+export interface TimelineEntry {
+  id: string | number;
+  period: string;
+  /** Mois de début, `AAAA-MM` : active le calcul de la durée (cf. `Duration`). */
+  start?: string;
+  /** Mois de fin, `AAAA-MM` ; absent = en cours, durée calculée jusqu'à aujourd'hui. */
+  end?: string;
+  title: string;
+  /** Employeur ou établissement. */
+  organization?: string;
+  /** Modalité du poste : lieu, hybride, à distance, itinérant… */
+  location?: string;
+  /** Type de contrat, affiché à la suite de la modalité. */
+  type?: string;
+  /** Phrase de présentation ; facultative (ex. formation décrite par ses seules puces). */
+  summary?: string;
+  /** Détail dépliable ; absent = entrée simple, sans bouton. */
+  details?: TimelineDetailGroup[];
+  /** Phrase de conclusion, affichée à la fin du détail. */
+  note?: string;
+  /** Noms de compétences de `skills.json` (un nom inconnu donne une puce neutre). */
+  skills?: string[];
+  /** Compétences transverses (savoir-être, analyse du besoin…) : tout ce qui n'est ni une
+   *  technologie ni un concept informatique. Affichées sur leur propre ligne, en puces à bordure. */
+  softSkills?: string[];
+  /** Liens internes, affichés à la fin du détail. */
+  links?: { label: string; to: string }[];
+  current?: boolean;
+}
+
+/** Carte icône + titre + texte (valeurs, centres d'intérêt). */
+export interface AboutCard {
+  id: string | number;
+  icon: string;
+  title: string;
+  description: string;
+}
+
+export interface AboutData {
+  profile: {
+    name: string;
+    title: string;
+    age: number;
+    bio: string;
+    mobilityHint: string;
+    facets: { id: string; icon: string; title: string; text: string }[];
+    mobility: { title: string; text: string; places: string[]; language: string };
+    music: string;
+  };
+  education: TimelineEntry[];
+  certifications: { id: string | number; title: string; issuer: string; date: string }[];
+  experiences: TimelineEntry[];
+  otherExperiences: TimelineEntry[];
+  passions: AboutCard[];
+  values: AboutCard[];
+  cv: { path: string; filename: string };
+}

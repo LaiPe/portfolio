@@ -18,64 +18,24 @@ import {
 } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
+import Container from "../components/common/Container/Container";
 import Icon from "../components/common/Icon/Icon";
+import SectionTitle from "../components/common/SectionTitle/SectionTitle";
 import TechIcon from "../components/common/TechIcon/TechIcon";
 import FranceMap from "../components/about/FranceMap";
-import Timeline, { type TimelineEntry } from "../components/about/Timeline";
+import Timeline from "../components/about/Timeline";
 import SkillChip from "../components/skills/SkillChip/SkillChip";
 import Seo from "../components/Seo";
 import MarkdownText from "../components/MarkdownText";
 import aboutData from "../data/about.json";
 import skillsData from "../data/skills.json";
 import * as styles from "../assets/css/pages/AboutPage.module.css";
-import type { SkillCategory } from "../types";
+import type { AboutData, SkillCategory } from "../types";
 
-interface CardEntry {
-  id: string | number;
-  icon: string;
-  title: string;
-  description: string;
-}
-
-const {
-  profile,
-  education,
-  certifications,
-  experiences,
-  otherExperiences,
-  passions,
-  values,
-  cv,
-} = aboutData as unknown as {
-  profile: {
-    name: string;
-    title: string;
-    age: number;
-    bio: string;
-    mobilityHint: string;
-    facets: { id: string; icon: string; title: string; text: string }[];
-    mobility: { title: string; text: string; places: string[]; language: string };
-    music: string;
-  };
-  education: TimelineEntry[];
-  certifications: { id: string | number; title: string; issuer: string; date: string }[];
-  experiences: TimelineEntry[];
-  otherExperiences: TimelineEntry[];
-  passions: CardEntry[];
-  values: CardEntry[];
-  cv: { path: string; filename: string };
-};
+const { profile, education, certifications, experiences, otherExperiences, passions, values, cv } =
+  aboutData as AboutData;
 
 export default function AboutPage() {
-  const handleDownloadCV = () => {
-    const link = document.createElement("a");
-    link.href = cv.path;
-    link.download = cv.filename;
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-  };
-
   // Défile en douceur vers la carte Mobilité et la centre dans la zone visible
   // sous la navbar sticky (sans jamais passer sous celle-ci).
   const scrollToMobility = (event: React.MouseEvent<HTMLAnchorElement>) => {
@@ -96,7 +56,7 @@ export default function AboutPage() {
 
   return (
     <main className={styles.about}>
-      <div className={styles.layout}>
+      <Container>
         {/* Hero Section */}
         <section className={styles.hero}>
           <div className={styles.heroContent}>
@@ -115,7 +75,7 @@ export default function AboutPage() {
               <div className={styles.heroCta}>
                 <div className={styles.ctaGroup}>
                   <span className={styles.ctaLabel}>Vous recrutez ?</span>
-                  <Button onClick={handleDownloadCV} variant="primary">
+                  <Button href={cv.path} download={cv.filename} target="_self" variant="primary">
                     <Download size={18} /> Télécharger mon CV
                   </Button>
                 </div>
@@ -142,10 +102,7 @@ export default function AboutPage() {
 
         {/* Introduction */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <UserRound className={styles.sectionIcon} size={24} />
-            Qui suis-je ?
-          </h2>
+          <SectionTitle icon={UserRound}>Qui suis-je ?</SectionTitle>
           <div className={styles.facetsGrid}>
             {profile.facets.map((facet) => (
               <div key={facet.id} className={styles.facetCard}>
@@ -192,10 +149,7 @@ export default function AboutPage() {
 
         {/* Values */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <Compass className={styles.sectionIcon} size={24} />
-            Ce qui me guide
-          </h2>
+          <SectionTitle icon={Compass}>Ce qui me guide</SectionTitle>
           <div className={styles.valuesGrid}>
             {values.map((value) => (
               <div key={value.id} className={styles.valueCard}>
@@ -209,28 +163,19 @@ export default function AboutPage() {
 
         {/* Experiences */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <Briefcase className={styles.sectionIcon} size={24} />
-            Expériences
-          </h2>
+          <SectionTitle icon={Briefcase}>Expériences</SectionTitle>
           <Timeline entries={experiences} />
         </section>
 
         {/* Education */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <GraduationCap className={styles.sectionIcon} size={24} />
-            Formation
-          </h2>
+          <SectionTitle icon={GraduationCap}>Formation</SectionTitle>
           <Timeline entries={education} />
         </section>
 
         {/* Certifications */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <Award className={styles.sectionIcon} size={24} />
-            Certifications
-          </h2>
+          <SectionTitle icon={Award}>Certifications</SectionTitle>
           <div className={styles.certificationsGrid}>
             {certifications.map((cert) => (
               <div key={cert.id} className={styles.certificationCard}>
@@ -245,20 +190,14 @@ export default function AboutPage() {
         {/* Other Experiences */}
         {otherExperiences.length > 0 && (
           <section className={styles.section}>
-            <h2 className={styles.sectionTitle}>
-              <Drama className={styles.sectionIcon} size={24} />
-              Autres expériences
-            </h2>
+            <SectionTitle icon={Drama}>Autres expériences</SectionTitle>
             <Timeline entries={otherExperiences} />
           </section>
         )}
 
         {/* Passions */}
         <section className={styles.section}>
-          <h2 className={styles.sectionTitle}>
-            <Heart className={styles.sectionIcon} size={24} />
-            En dehors du code
-          </h2>
+          <SectionTitle icon={Heart}>En dehors du code</SectionTitle>
           <div className={styles.passionsGrid}>
             {passions.map((passion) => (
               <div key={passion.id} className={styles.passionCard}>
@@ -280,7 +219,7 @@ export default function AboutPage() {
             missions freelance, en développement full-stack.
           </p>
           <div className={styles.ctaButtons}>
-            <Button onClick={handleDownloadCV} variant="primary" size="lg">
+            <Button href={cv.path} download={cv.filename} target="_self" variant="primary" size="lg">
               <Download size={20} /> Télécharger mon CV
             </Button>
             <Button to="/contact" variant="primary" size="lg">
@@ -288,7 +227,7 @@ export default function AboutPage() {
             </Button>
           </div>
         </section>
-      </div>
+      </Container>
     </main>
   );
 }
@@ -299,10 +238,7 @@ function SkillsSection() {
 
   return (
     <section className={styles.section}>
-      <h2 className={styles.sectionTitle}>
-        <Wrench className={styles.sectionIcon} size={24} />
-        Compétences
-      </h2>
+      <SectionTitle icon={Wrench}>Compétences</SectionTitle>
       <div className={styles.skillsGrid}>
         {Object.values(skills).map((category) => (
           <div key={category.title} className={styles.skillCategory}>

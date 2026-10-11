@@ -4,13 +4,6 @@
     overflow-x: hidden;
 }
 
-/* Container */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
 /* Section Titles */
 .sectionTitle {
     font-family: var(--font-heading);
@@ -307,19 +300,6 @@
     line-height: 1.6;
     margin: 0 0 var(--spacing-lg);
     opacity: 0.95;
-}
-
-.testimonialCta button,
-.testimonialCta a {
-    background-color: var(--color-background);
-    color: var(--color-primary);
-}
-
-.testimonialCta button:hover,
-.testimonialCta a:hover {
-    background-color: var(--color-background-alt);
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
 }
 
 /* Responsive */

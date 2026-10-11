@@ -3,6 +3,7 @@ import { graphql, type PageProps, type HeadFC } from "gatsby";
 import { Rocket } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
+import Container from "../components/common/Container/Container";
 import SkillCard from "../components/skills/SkillCard/SkillCard";
 import ProjectCard from "../components/projects/ProjectCard/ProjectCard";
 import Threads from "../components/backgrounds/threads/Threads";
@@ -92,7 +93,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
 
       {/* Skills Section */}
       <section className={styles.skills}>
-        <div className={styles.container}>
+        <Container>
           <h2 className={styles.sectionTitle}>Compétences Clés</h2>
           <div className={styles.skillsGrid}>
             {featuredSkills.map((skill) => (
@@ -104,7 +105,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
               />
             ))}
           </div>
-        </div>
+        </Container>
         <div className={styles.projectsCta}>
           <Button to="/apropos" variant="outline">
             Voir toutes mes compétences →
@@ -114,7 +115,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
 
       {/* Featured Projects Section */}
       <section className={styles.projects}>
-        <div className={styles.container}>
+        <Container>
           <h2 className={styles.sectionTitle}>Projets Phares</h2>
           <p className={styles.sectionSubtitle}>
             Une sélection de mes réalisations les plus significatives
@@ -133,12 +134,12 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
               Voir tous les projets →
             </Button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Services Section */}
       <section className={styles.services}>
-        <div className={styles.container}>
+        <Container>
           <div className={styles.servicesHeader}>
             <Rocket className={styles.servicesIcon} size={48} />
             <h2 className={styles.sectionTitle}>
@@ -157,12 +158,12 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
               En savoir plus →
             </Button>
           </div>
-        </div>
+        </Container>
       </section>
 
       {featuredTestimonial && (
         <section className={styles.testimonials}>
-          <div className={styles.container}>
+          <Container>
             <h2 className={styles.sectionTitle}>Ce qu'en disent mes clients</h2>
             <div className={styles.testimonialsContent}>
               <div className={styles.testimonialCard}>
@@ -192,13 +193,13 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
                     Rejoignez les clients satisfaits et donnons vie à votre
                     projet ensemble.
                   </p>
-                  <Button to="/contact" variant="primary">
+                  <Button to="/contact" variant="inverse">
                     Démarrons votre projet
                   </Button>
                 </div>
               </div>
             </div>
-          </div>
+          </Container>
         </section>
       )}
     </main>

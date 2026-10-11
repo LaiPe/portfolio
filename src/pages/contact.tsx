@@ -4,6 +4,7 @@ import { type HeadFC } from "gatsby";
 import { Mail, MapPin, Clock } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
+import Container from "../components/common/Container/Container";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ContactPage.module.css";
@@ -47,18 +48,18 @@ export default function ContactPage() {
     <main className={styles.contact}>
       {/* Hero Section */}
       <section className={styles.hero}>
-        <div className={styles.container}>
+        <Container>
           <h1 className={styles.title}>Travaillons ensemble</h1>
           <p className={styles.subtitle}>
             Une question, un projet ou simplement envie d'échanger ?<br />
             N'hésitez pas à me contacter, je vous répondrai rapidement.
           </p>
-        </div>
+        </Container>
       </section>
 
       {/* Contact Content */}
       <section className={styles.content}>
-        <div className={styles.container}>
+        <Container>
           <div className={styles.grid}>
             {/* Contact Form */}
             <div className={styles.formSection}>
@@ -271,7 +272,7 @@ export default function ContactPage() {
               </div>
             </div>
           </div>
-        </div>
+        </Container>
       </section>
     </main>
   );

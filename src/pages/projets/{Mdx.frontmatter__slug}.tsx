@@ -209,9 +209,9 @@ export default function ProjectMdxPreview({
               <div className={detail.sidebarCta}>
                 <h3 className={detail.sidebarCtaTitle}>{chrome.cta.title}</h3>
                 <p className={detail.sidebarCtaText}>{chrome.cta.text}</p>
-                <Link to="/services" className={detail.sidebarCtaButton}>
+                <Button to="/services" variant="inverse" size="sm">
                   {chrome.cta.button}
-                </Link>
+                </Button>
               </div>
             )}
           </aside>

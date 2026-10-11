@@ -3,6 +3,7 @@ import { type HeadFC } from "gatsby";
 import { Rocket, MessageCircle, Globe, Atom, ShoppingCart } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
+import Container from "../components/common/Container/Container";
 import Seo from "../components/Seo";
 import socialsData from "../data/socials.json";
 import * as styles from "../assets/css/pages/ServicesPage.module.css";
@@ -33,7 +34,7 @@ export default function ServicesPage() {
 
       {/* CTA Section */}
       <section className={styles.ctaSection}>
-        <div className={styles.container}>
+        <Container>
           <div className={styles.ctaCard}>
             <MessageCircle className={styles.ctaIcon} size={48} />
             <h2 className={styles.ctaTitle}>Discutons de votre projet</h2>
@@ -58,12 +59,12 @@ export default function ServicesPage() {
               )}
             </div>
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Teaser Section */}
       <section className={styles.teaserSection}>
-        <div className={styles.container}>
+        <Container>
           <h2 className={styles.teaserTitle}>Ce que je peux vous proposer</h2>
           <div className={styles.teaserGrid}>
             <div className={styles.teaserItem}>
@@ -85,7 +86,7 @@ export default function ServicesPage() {
           <p className={styles.teaserNote}>
             Tarifications et détails des prestations à venir prochainement.
           </p>
-        </div>
+        </Container>
       </section>
     </main>
   );

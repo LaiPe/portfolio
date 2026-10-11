@@ -5,12 +5,6 @@
     margin-top: 6rem;
 }
 
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
 .content {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -98,23 +92,10 @@
     opacity: 0.9;
 }
 
+/* Le bouton lui-même vient de <Button variant="inverse"> ; ici, seulement sa place. */
 .ctaButton {
-    display: inline-block;
-    background: var(--color-background);
-    color: var(--color-primary);
-    padding: 0.75rem var(--spacing-md);
-    border-radius: var(--radius-sm);
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.95rem;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    width: fit-content;
+    align-self: flex-start;
     margin-top: var(--spacing-xs);
-}
-
-.ctaButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(255, 255, 255, 0.3);
 }
 
 /* Réseaux sociaux */

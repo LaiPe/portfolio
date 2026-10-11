@@ -10,6 +10,8 @@ import {
 } from "lucide-react";
 
 import ProjectCard from "../../components/projects/ProjectCard/ProjectCard";
+import Container from "../../components/common/Container/Container";
+import SectionTitle from "../../components/common/SectionTitle/SectionTitle";
 import Seo from "../../components/Seo";
 import * as styles from "../../assets/css/pages/ProjectsPage.module.css";
 import type { Project } from "../../types";
@@ -127,18 +129,18 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
     <main className={styles.projects}>
       {/* Header Section */}
       <section className={styles.header}>
-        <div className={styles.container}>
+        <Container>
           <h1 className={styles.title}>Mes Réalisations</h1>
           <p className={styles.subtitle}>
             Des projets clients aux expérimentations techniques, découvrez mon
             parcours de développeur.
           </p>
-        </div>
+        </Container>
       </section>
 
       {/* Filters Section */}
       <section className={styles.filters}>
-        <div className={styles.container}>
+        <Container>
           <div className={styles.filterButtons}>
             {[
               { id: "all", filterLabel: "Tous", Icon: Folder },
@@ -158,25 +160,21 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
               </button>
             ))}
           </div>
-        </div>
+        </Container>
       </section>
 
       {/* Projects Grid Section */}
       <section className={styles.content}>
-        <div className={styles.container}>
+        <Container>
           {activeCategory === "all" ? (
             CATEGORIES.map((category) => {
               const projectsInCategory = groupedProjects[category.id];
               if (!projectsInCategory?.length) return null;
               return (
                 <div key={category.id} className={styles.categorySection}>
-                  <h2 className={styles.categoryTitle}>
-                    <category.Icon className={styles.categoryIcon} size={20} />
+                  <SectionTitle icon={category.Icon} description={category.sectionDescription}>
                     {category.sectionTitle}
-                  </h2>
-                  <p className={styles.categoryDescription}>
-                    {category.sectionDescription}
-                  </p>
+                  </SectionTitle>
                   <div
                     className={`${styles.grid} ${styles[GRID_CLASS_BY_SIZE[category.cardSize]]}`}
                   >
@@ -210,7 +208,7 @@ export default function ProjectsPage({ data }: PageProps<ProjectsPageData>) {
               <p>Aucun projet trouvé dans cette catégorie.</p>
             </div>
           )}
-        </div>
+        </Container>
       </section>
     </main>
   );

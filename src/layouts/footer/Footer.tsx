@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "gatsby";
+import Button from "../../components/common/Button/Button";
+import Container from "../../components/common/Container/Container";
 import * as styles from "./Footer.module.css";
 import socialsData from "../../data/socials.json";
 import type { SocialLink } from "../../types";
@@ -17,7 +19,7 @@ export default function Footer() {
 
   return (
     <footer className={styles.footer}>
-      <div className={styles.container}>
+      <Container>
         <div className={styles.content}>
           {/* Section À propos */}
           <div className={styles.section}>
@@ -60,9 +62,9 @@ export default function Footer() {
               <br />
               Discutons-en !
             </p>
-            <Link to="/contact" className={styles.ctaButton}>
+            <Button to="/contact" variant="inverse" className={styles.ctaButton}>
               Envoyer moi un message
-            </Link>
+            </Button>
           </div>
 
           {/* Section Réseaux sociaux */}
@@ -101,7 +103,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-      </div>
+      </Container>
     </footer>
   );
 }

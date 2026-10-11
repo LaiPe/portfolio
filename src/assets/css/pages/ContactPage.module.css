@@ -6,13 +6,6 @@
     min-height: calc(100dvh - var(--header));
 }
 
-/* Container */
-.container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 var(--spacing-lg);
-}
-
 /* ================================
    HERO SECTION
    ================================ */
