@@ -23,6 +23,8 @@
     --color-tertiary: #BB6A00;
     --color-quaternary: #8000bb;
     --color-text: #1A1A1A;
+    /* Noir pur du monogramme : le nom écrit à côté doit avoir exactement la même teinte */
+    --color-logo: #000000;
     --color-text-secondary: #666666;
     --color-background: #FFFFFF;
     --color-background-alt: #F5F5F5;
@@ -81,13 +83,6 @@
    480px toléré pour les très petits écrans. */
 
 /*CLASSES UNIVERSELLES*/
-.logo{
-    height: 8rem;
-}
-.logo.petit{
-    height: 2.8rem;
-}
-
 header a.active{
     color: var(--color-primary);
 }

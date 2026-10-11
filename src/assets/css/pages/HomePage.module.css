@@ -63,22 +63,12 @@
     letter-spacing: -0.02em;
 }
 
-.heroSubtitle {
+/* Ce que je fais, en une phrase */
+.heroLead {
     font-size: clamp(1.1rem, 3vw, 1.5rem);
     color: var(--color-text-secondary);
     line-height: 1.4;
     margin: 0 0 var(--spacing-xl);
-}
-
-.heroSubtitle strong {
-    color: var(--color-primary);
-}
-
-.heroSeparator {
-    font-family: var(--font-heading);
-    color: var(--color-text);
-    font-weight: 700;
-    font-size: 1.2em;
 }
 
 .heroCtas {

@@ -51,17 +51,50 @@
     display: none;
 }
 
-/* Logo homepage : grand sur desktop, compact sur mobile (taille pilotée en CSS,
-   la bonne source d'image étant servie par <picture> — cf. Header.tsx). */
-.homeLogo {
-    height: 8rem;
+/* Marque : monogramme + nom en texte. Trois formes, pilotées en CSS :
+   - barre desktop (pages intérieures) : monogramme seul à gauche, le nom reste dans le
+     HTML mais masqué visuellement (la navigation centrée ne lui laisse pas la place) ;
+   - barre mobile (toutes les pages) : monogramme suivi du nom ;
+   - accueil desktop (.index) : grand monogramme, nom dessous. */
+.brand {
+    position: absolute;
+    left: 9%;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    color: var(--color-text);
+}
+
+.brand:hover {
+    text-decoration: none;
+}
+
+.brandLogo {
+    height: 2.8rem;
     width: auto;
     display: block;
 }
 
-.header > a {
-    position: absolute;
-    left: 9%;
+/* Le nom, tel qu'il était dessiné dans l'image : capitales basses, lettres très espacées */
+.brandName {
+    font-family: var(--font-heading);
+    font-size: 1.3rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+    color: var(--color-logo);
+}
+
+/* Barre desktop des pages intérieures : nom masqué visuellement, toujours lu par les
+   lecteurs d'écran et les moteurs (c'est le nom accessible du lien). */
+@media (min-width: 1001px) {
+    .header:not(.index) .brandName {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+    }
 }
 
 /*MOBILE — overlay plein écran glassmorphique*/
@@ -72,7 +105,7 @@
     .header > *{
         padding: 0 1.5rem;
     }
-    .header > a {
+    .brand {
         position: initial;
         left: 0;
     }
@@ -198,13 +231,23 @@
     flex-direction: column;
     justify-content: space-between;
 }
-.header.index > a {
+/* Accueil desktop : la marque occupe le bloc du haut, monogramme puis nom, centrés */
+.header.index .brand {
     position: initial;
     left: 0;
     height: var(--logo-header);
-    display: grid;
-    place-items: end;
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: var(--spacing-xs);
     padding-bottom: 1rem;
+}
+.header.index .brandLogo {
+    height: 6.75rem;
+}
+.header.index .brandName {
+    font-size: 1.5rem;
+    /* l'espacement ajoute un blanc après la dernière lettre : on le compense pour centrer */
+    margin-right: -0.2em;
 }
 
 @media (max-width: 1000px) {
@@ -222,18 +265,23 @@
         height: var(--nav);
         flex-direction: row;
     }
-    .header.index > a{
+    .header.index .brand{
         height: auto;
-        display: block;
-        place-items: initial;
+        flex-direction: row;
+        justify-content: flex-start;
+        gap: var(--spacing-sm);
         padding-bottom: 0;
         margin: 0;
     }
+    .header.index .brandLogo{
+        height: 2.8rem;
+    }
+    .header.index .brandName{
+        font-size: 1.3rem;
+        margin-right: 0;
+    }
     .header nav{
         margin: 0;
-    }
-    .homeLogo{
-        height: 2.8rem;
     }
 }
 

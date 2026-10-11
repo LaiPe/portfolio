@@ -71,14 +71,13 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
           className={styles.heroContent}
           style={{ position: "relative", zIndex: 1 }}
         >
-          <h1 className={styles.heroTitle}>
+          {/* Le nom (h1) est dans le header, juste au-dessus : ici, le métier. */}
+          <h2 className={styles.heroTitle}>
             Développeur <strong>Full-Stack</strong>
-          </h1>
-          <p className={styles.heroSubtitle}>
-            <strong>React</strong>{" "}
-            <span className={styles.heroSeparator}>-</span> <strong>Next.js</strong>{" "}
-            <span className={styles.heroSeparator}>-</span>{" "}
-            <strong>Spring Boot</strong>
+          </h2>
+          <p className={styles.heroLead}>
+            Je conçois et livre des applications web et mobiles, du cadrage à
+            la mise en production.
           </p>
           <div className={styles.heroCtas}>
             <Button to="/projets" variant="primary" size="lg">

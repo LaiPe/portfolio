@@ -25,13 +25,15 @@ export default function Header({ pathname = "/" }: HeaderProps) {
   const [openedNav, setOpenedNav] = useState(false);
   const isHomepage = pathname === "/";
 
+  const BrandName = isHomepage ? "h1" : "span";
+
   const closeNav = () => setOpenedNav(false);
   const toggleNav = () => setOpenedNav((v) => !v);
 
   // A2 — dès qu'on repasse en desktop, on ferme le menu (et donc on relâche le
   // verrou de scroll), pour ne pas rester bloqué si on redimensionne menu ouvert.
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 1025px)");
+    const mq = window.matchMedia("(min-width: 1001px)");
     const handle = () => {
       if (mq.matches) setOpenedNav(false);
     };
@@ -62,23 +64,11 @@ export default function Header({ pathname = "/" }: HeaderProps) {
     <header
       className={isHomepage ? `${styles.header} ${styles.index}` : styles.header}
     >
-      <Link to="/" onClick={closeNav}>
-        {isHomepage ? (
-          <picture>
-            <source media="(min-width: 1001px)" srcSet="/img/logo-lp.png" />
-            <img
-              className={styles.homeLogo}
-              src="/img/logo-lp-raw.png"
-              alt="Logo Léo Peyronnet"
-            />
-          </picture>
-        ) : (
-          <img
-            className="logo petit"
-            src="/img/logo-lp-raw.png"
-            alt="Logo Léo Peyronnet"
-          />
-        )}
+      {/* Marque : monogramme (image décorative) + nom en vrai texte. Sur l'accueil, ce
+          nom est le titre principal de la page (h1) ; le hero juste dessous dit le métier. */}
+      <Link to="/" onClick={closeNav} className={styles.brand}>
+        <img className={styles.brandLogo} src="/img/logo-lp-raw.png" alt="" />
+        <BrandName className={styles.brandName}>Léo Peyronnet</BrandName>
       </Link>
       <nav id="primary-nav" className={openedNav ? styles.opened : undefined}>
         <button
