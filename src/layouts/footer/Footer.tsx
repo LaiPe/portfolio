@@ -37,10 +37,6 @@ export default function Footer() {
               <br />
               React · Next.js · Spring Boot
             </p>
-            <p className={styles.tagline}>
-              Transformons vos idées en solutions digitales modernes et
-              performantes.
-            </p>
           </div>
 
           {/* Section Navigation rapide */}
@@ -63,8 +59,8 @@ export default function Footer() {
               <br />
               Discutons-en !
             </p>
-            <Button to="/contact" variant="inverse" className={styles.ctaButton}>
-              Envoyer moi un message
+            <Button to="/contact" variant="inverse" size="sm" className={styles.ctaButton}>
+              Envoyez-moi un message
             </Button>
           </div>
 

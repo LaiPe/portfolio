@@ -5,11 +5,21 @@
     margin-top: 6rem;
 }
 
+/* Le pied de page a deux blocs : les rubriques (.content), puis la barre de copyright
+   (.copyright). Le bloc des rubriques est plus étroit que la barre : il est en retrait
+   de --footer-inset de chaque côté, pour que la dernière rubrique ne touche pas le bord.
+
+   Quatre rubriques sur une ligne. Chaque colonne a la largeur de son contenu et l'espace
+   restant est réparti en parts égales entre elles ET après la dernière (la 5e piste, vide
+   et de largeur nulle, sert à ça) : même écart partout, et de l'air à droite. */
 .content {
+    --footer-inset: var(--spacing-xl);
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(4, auto) 0;
+    justify-content: space-between;
     gap: var(--spacing-xl);
-    margin-bottom: var(--spacing-xl);
+    padding: 0 var(--footer-inset);
+    margin-bottom: calc(var(--spacing-xl) * 2);
 }
 
 /* Section générale */
@@ -19,11 +29,17 @@
     gap: var(--spacing-sm);
 }
 
-.logoTitle {
+/* Hauteur d'en-tête commune aux quatre rubriques (celle du logo) */
+.logoTitle,
+.sectionTitle {
     display: flex;
     align-items: center;
+    min-height: 40px;
+    margin: 0 0 var(--spacing-xs);
+}
+
+.logoTitle {
     gap: var(--spacing-sm);
-    margin-bottom: var(--spacing-xs);
 }
 
 .logo {
@@ -46,19 +62,10 @@
     opacity: 0.9;
 }
 
-.tagline {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    margin: 0;
-    opacity: 0.8;
-    font-style: italic;
-}
-
 .sectionTitle {
     font-family: var(--font-heading);
     font-size: 1.1rem;
     font-weight: 600;
-    margin: 0 0 var(--spacing-sm) 0;
     color: var(--color-on-primary);
 }
 
@@ -164,7 +171,14 @@
     text-decoration: underline;
 }
 
-/* Responsive */
+/* Responsive : 2 × 2 sur tablette, une colonne sur mobile */
+@media (max-width: 1000px) {
+    .content {
+        grid-template-columns: repeat(2, 1fr);
+        justify-content: normal;
+    }
+}
+
 @media (max-width: 750px) {
     .footer {
         padding: var(--spacing-xl) 0 var(--spacing-md);
@@ -172,6 +186,7 @@
     }
 
     .content {
+        --footer-inset: 0px;
         grid-template-columns: 1fr;
         gap: 2.5rem;
     }
@@ -184,11 +199,5 @@
 
     .legalLinks {
         justify-content: center;
-    }
-}
-
-@media (min-width: 751px) and (max-width: 1000px) {
-    .content {
-        grid-template-columns: repeat(2, 1fr);
     }
 }
