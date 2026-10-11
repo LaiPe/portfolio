@@ -136,7 +136,7 @@
         {
           "items": [
             "Une dizaine de sites vitrines et e-commerce livrés pour des clients professionnels, avec une stack adaptée à chaque besoin : du JavaScript sans framework à Next.js, Gatsby, Express.js, Medusa.js et Supabase",
-            "Mission de lead technique freelance sur un SaaS (avril à juillet 2026), voir l'expérience dédiée",
+            "Mission de lead technique freelance sur un SaaS, d'avril à juillet 2026 : audit, infrastructure et développement (voir Projets)",
             "Conception, développement et publication en solo de Stonecast, template Next.js distribué sous licence (voir Projets)"
           ]
         }
@@ -152,59 +152,16 @@
       ],
       "links": [
         {
-          "label": "Projet Stonecast",
-          "to": "/projets/stonecast"
-        },
-        {
           "label": "Site Attilio Terlizzi",
           "to": "/projets/attilio-terlizzi"
-        }
-      ]
-    },
-    {
-      "id": "aius-loquens",
-      "title": "Lead technique",
-      "type": "Freelance",
-      "organization": "ĀIUS LŎQUENS",
-      "location": "À distance",
-      "period": "Avr. – juil. 2026",
-      "start": "2026-04",
-      "end": "2026-07",
-      "current": false,
-      "summary": "Mission de lead technique freelance menée d'avril à juillet 2026 pour un SaaS, en interlocution directe avec le porteur de projet, articulée autour de trois axes.",
-      "details": [
-        {
-          "heading": "Audit & documentation",
-          "items": [
-            "Audit technique de l'infrastructure, de la code base et des services tiers",
-            "Schématisation UML et rédaction de la documentation technique",
-            "Recommandations d'évolution et cadrage des priorités"
-          ]
         },
         {
-          "heading": "Optimisation infrastructure",
-          "items": [
-            "Optimisation des services tiers et de la configuration mail professionnelle, pour un meilleur contrôle des coûts d'exploitation technique"
-          ]
-        },
-        {
-          "heading": "Développement & conceptualisation",
-          "items": [
-            "Conception produit du dashboard, composant majeur de l'application, en autonomie : vision, wireframing, cahier des charges",
-            "Développement en Next.js, React et TypeScript, avec démarche CI/CD, livré en préproduction"
-          ]
-        }
-      ],
-      "skills": [
-        "Next.js",
-        "React",
-        "TypeScript",
-        "CI/CD"
-      ],
-      "links": [
-        {
-          "label": "Projet ĀIUS LŎQUENS",
+          "label": "Mission ĀIUS LŎQUENS",
           "to": "/projets/aius-loquens"
+        },
+        {
+          "label": "Projet Stonecast",
+          "to": "/projets/stonecast"
         }
       ]
     },
