@@ -3,6 +3,7 @@ import { Link, graphql } from "gatsby";
 import { GatsbyImage } from "gatsby-plugin-image";
 import Badge from "../../common/Badge/Badge";
 import Icon from "../../common/Icon/Icon";
+import SkillChip, { findSkill } from "../../skills/SkillChip/SkillChip";
 import * as styles from "./ProjectCard.module.css";
 import type { Project } from "../../../types";
 
@@ -53,13 +54,11 @@ export default function ProjectCard({
       <div className={styles.content}>
         <h3 className={styles.title}>{project.title}</h3>
         <p className={styles.description}>{project.shortDescription}</p>
-        <div className={styles.technologies}>
-          {project.technologies.slice(0, 4).map((tech, index) => (
-            <Badge key={index} variant="tech">
-              {tech}
-            </Badge>
+        <ul className={styles.technologies}>
+          {project.technologies.slice(0, 4).map((tech) => (
+            <SkillChip key={tech} skill={findSkill(tech)} neutral />
           ))}
-        </div>
+        </ul>
         <span className={styles.link}>Voir le projet →</span>
       </div>
     </Link>

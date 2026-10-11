@@ -35,11 +35,3 @@
     background-color: var(--color-quaternary);
     color: var(--color-on-primary);
 }
-
-.tech {
-    background-color: var(--color-background-alt);
-    color: var(--color-text);
-    font-size: 0.7rem;
-    padding: 0.2rem 0.5rem;
-    text-transform: none;
-}

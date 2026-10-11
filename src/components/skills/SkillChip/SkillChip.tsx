@@ -22,18 +22,28 @@ const skillsByName = new Map<string, SkillItem>(
  * puce neutre, sans logo.
  */
 export function findSkill(name: string): SkillItem {
-  return skillsByName.get(name) ?? { name };
+  const exact = skillsByName.get(name);
+  if (exact) return exact;
+  // « Next.js 16 », « JavaScript vanilla » : même logo et même niveau que la
+  // compétence de base, en gardant le libellé d'origine.
+  const base = skillsByName.get(name.slice(0, name.lastIndexOf(" ")));
+  return base ? { ...base, name } : { name };
 }
 
 interface SkillChipProps {
   skill: SkillItem;
   /** Savoir-être : puce à bordure, pour la distinguer des technologies. */
   soft?: boolean;
+  /**
+   * Ignore le niveau de la compétence : puce grise avec logo. Pour les projets,
+   * où l'attention doit rester sur le projet et non sur la technologie.
+   */
+  neutral?: boolean;
 }
 
 /** Puce de compétence (logo + nom), à placer dans une liste `<ul>`. */
-export default function SkillChip({ skill, soft }: SkillChipProps) {
-  const variant = soft ? styles.soft : skill.level ? levelClass[skill.level] : "";
+export default function SkillChip({ skill, soft, neutral }: SkillChipProps) {
+  const variant = soft ? styles.soft : skill.level && !neutral ? levelClass[skill.level] : "";
   return (
     <li className={`${styles.chip} ${variant}`}>
       {skill.icon && <TechIcon name={skill.icon} size={14} />}

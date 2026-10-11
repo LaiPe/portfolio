@@ -17,7 +17,9 @@
 /* Importance (`level` dans skills.json) : key = bleu clair, signature = bleu plein. */
 .key {
     color: var(--color-primary);
-    background: var(--color-primary-soft);
+    /* Teinte opaque (et non --color-primary-soft, translucide) : la puce se pose
+       aussi sur une image ou un fond gris. */
+    background: color-mix(in srgb, var(--color-primary) 12%, var(--color-background));
     font-weight: 600;
 }
 

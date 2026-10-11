@@ -15,6 +15,7 @@ import {
 import Badge from "../../components/common/Badge/Badge";
 import Button from "../../components/common/Button/Button";
 import Icon from "../../components/common/Icon/Icon";
+import SkillChip, { findSkill } from "../../components/skills/SkillChip/SkillChip";
 import Seo from "../../components/Seo";
 import {
   ProjectProvider,
@@ -119,16 +120,14 @@ export default function ProjectMdxPreview({
             </div>
             <h1 className={detail.heroTitle}>{project.title}</h1>
             <p className={detail.heroDescription}>{project.shortDescription}</p>
-            <div className={detail.heroTechnologies}>
-              {project.technologies.slice(0, 6).map((tech, i) => (
-                <Badge key={i} variant="tech">
-                  {tech}
-                </Badge>
+            <ul className={detail.heroTechnologies}>
+              {project.technologies.slice(0, 6).map((tech) => (
+                <SkillChip key={tech} skill={findSkill(tech)} neutral />
               ))}
               {project.technologies.length > 6 && (
-                <Badge variant="tech">+{project.technologies.length - 6}</Badge>
+                <SkillChip skill={{ name: `+${project.technologies.length - 6}` }} />
               )}
-            </div>
+            </ul>
             <div className={detail.heroLinks}>
               {links?.live && (
                 <Button href={links.live} target="_blank" variant="primary">
@@ -173,13 +172,11 @@ export default function ProjectMdxPreview({
               <h3 className={detail.sidebarTitle}>
                 {project.architecture ? "Stack technique" : "Technologies"}
               </h3>
-              <div className={detail.sidebarTechnologies}>
-                {project.technologies.map((tech, i) => (
-                  <Badge key={i} variant="tech">
-                    {tech}
-                  </Badge>
+              <ul className={detail.sidebarTechnologies}>
+                {project.technologies.map((tech) => (
+                  <SkillChip key={tech} skill={findSkill(tech)} neutral />
                 ))}
-              </div>
+              </ul>
             </div>
 
             {(links?.live || links?.github || links?.pdf) && (
