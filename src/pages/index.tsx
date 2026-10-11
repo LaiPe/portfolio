@@ -10,6 +10,7 @@ import ProjectCard from "../components/projects/ProjectCard/ProjectCard";
 import Threads from "../components/backgrounds/threads/Threads";
 import Seo from "../components/Seo";
 
+import site from "../data/site.json";
 import skillsData from "../data/skills.json";
 import testimonialsData from "../data/testimonials.json";
 import * as styles from "../assets/css/pages/HomePage.module.css";
@@ -76,10 +77,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
           <h2 className={styles.heroTitle}>
             Développeur <strong>Full-Stack</strong>
           </h2>
-          <p className={styles.heroLead}>
-            Je conçois et livre des applications web et mobiles, du cadrage à
-            la mise en production.
-          </p>
+          <p className={styles.heroLead}>{site.tagline}</p>
           <div className={styles.heroCtas}>
             <Button to="/projets" variant="primary" size="lg">
               Voir mes projets
