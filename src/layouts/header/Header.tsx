@@ -68,7 +68,7 @@ export default function Header({ pathname = "/" }: HeaderProps) {
           nom est le titre principal de la page (h1) ; le hero juste dessous dit le métier. */}
       <Link to="/" onClick={closeNav} className={styles.brand}>
         <img className={styles.brandLogo} src="/img/logo-lp-raw.png" alt="" />
-        <BrandName className={styles.brandName}>Léo Peyronnet</BrandName>
+        <BrandName className={`wordmark ${styles.brandName}`}>Léo Peyronnet</BrandName>
       </Link>
       <nav id="primary-nav" className={openedNav ? styles.opened : undefined}>
         <button

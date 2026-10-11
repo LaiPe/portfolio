@@ -83,6 +83,16 @@
    480px toléré pour les très petits écrans. */
 
 /*CLASSES UNIVERSELLES*/
+/* Le nom « Léo Peyronnet » accolé au monogramme : un seul dessin pour le header et le
+   pied de page (la couleur et la place sont réglées par chacun). */
+.wordmark{
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 500;
+    letter-spacing: 0.2em;
+    white-space: nowrap;
+}
+
 header a.active{
     color: var(--color-primary);
 }

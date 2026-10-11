@@ -28,8 +28,7 @@
     gap: var(--spacing-sm);
 }
 
-/* Hauteur d'en-tête commune aux quatre rubriques (celle du logo) */
-.logoTitle,
+/* Titres des trois rubriques de liens : même hauteur d'en-tête */
 .sectionTitle {
     display: flex;
     align-items: center;
@@ -37,28 +36,53 @@
     margin: 0 0 var(--spacing-xs);
 }
 
-.logoTitle {
+/* La première rubrique (identité + phrase) est centrée verticalement dans la rangée,
+   au lieu d'être calée en haut comme les trois rubriques de liens. */
+.content > .section:first-child {
+    align-self: center;
+}
+
+/* Identité : monogramme à gauche, centré verticalement sur le bloc de texte à droite */
+.identity {
+    display: flex;
+    align-items: center;
     gap: var(--spacing-sm);
 }
 
 .logo {
-    height: 40px;
+    flex-shrink: 0;
+    height: 3.5rem;
     filter: brightness(0) invert(1);
 }
 
-.title {
-    font-family: var(--font-heading);
-    font-size: 1.5rem;
-    font-weight: 700;
-    margin: 0;
+/* Trois lignes (nom, métier, technologies) séparées par le même écart */
+.identityText {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    line-height: 1.2;
+}
+
+/* Le nom : dessin de la classe globale .wordmark (theme.css), partagée avec le header ;
+   ici en blanc et un peu plus petit. */
+.identity .title {
+    font-size: 1.35rem;
+    /* un peu plus d'air sous le nom qu'entre les deux lignes suivantes */
+    margin: 0 0 0.25rem;
     color: var(--color-on-primary);
 }
 
-.description {
+.role {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.stack {
     font-size: 0.95rem;
-    line-height: 1.6;
     margin: 0;
     opacity: 0.9;
+    white-space: nowrap;
 }
 
 .sectionTitle {

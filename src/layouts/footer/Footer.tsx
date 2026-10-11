@@ -4,6 +4,7 @@ import Button from "../../components/common/Button/Button";
 import Container from "../../components/common/Container/Container";
 import TechIcon from "../../components/common/TechIcon/TechIcon";
 import * as styles from "./Footer.module.css";
+import site from "../../data/site.json";
 import socialsData from "../../data/socials.json";
 import type { SocialLink } from "../../types";
 
@@ -22,21 +23,17 @@ export default function Footer() {
     <footer className={styles.footer}>
       <Container>
         <div className={styles.content}>
-          {/* Section À propos */}
+          {/* Identité : monogramme à gauche ; à droite le nom, le métier, les technologies
+              (l'intitulé du profil LinkedIn) */}
           <div className={styles.section}>
-            <div className={styles.logoTitle}>
-              <img
-                src="/img/logo-lp-raw.png"
-                alt="Logo Léo Peyronnet"
-                className={styles.logo}
-              />
-              <h3 className={styles.title}>Léo Peyronnet</h3>
+            <div className={styles.identity}>
+              <img src="/img/logo-lp-raw.png" alt="" className={styles.logo} />
+              <div className={styles.identityText}>
+                <h3 className={`wordmark ${styles.title}`}>Léo Peyronnet</h3>
+                <p className={styles.role}>{site.role}</p>
+                <p className={styles.stack}>{site.stack}</p>
+              </div>
             </div>
-            <p className={styles.description}>
-              Développeur Full-Stack
-              <br />
-              React · Next.js · Spring Boot
-            </p>
           </div>
 
           {/* Section Navigation rapide */}
