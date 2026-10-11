@@ -1,3 +1,5 @@
+/* Trois variantes, un seul gabarit : même bordure de 1px partout (donc même hauteur
+   côte à côte), survol par changement de couleur, sans déplacement ni ombre. */
 .button {
     display: inline-flex;
     align-items: center;
@@ -6,10 +8,9 @@
     font-family: var(--font-heading);
     font-weight: 600;
     text-decoration: none;
-    border: none;
+    border: 1px solid transparent;
     border-radius: var(--radius-sm);
     cursor: pointer;
-    /* Survol par teinte, sans déplacement (règle du site) */
     transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
@@ -17,47 +18,42 @@
     text-decoration: none;
 }
 
-/* Variants */
+/* Action principale : plein bleu, fonce au survol */
 .primary {
     background-color: var(--color-primary);
+    border-color: var(--color-primary);
     color: var(--color-on-primary);
 }
 
 .primary:hover {
     background-color: var(--color-primary-dark);
+    border-color: var(--color-primary-dark);
 }
 
-.secondary {
-    background-color: transparent;
-    color: var(--color-primary);
-    border: 2px solid var(--color-primary);
-}
-
-.secondary:hover {
-    background-color: var(--color-primary);
-    color: var(--color-on-primary);
-}
-
+/* Action secondaire : contour neutre, se teinte de bleu au survol */
 .outline {
-    background-color: transparent;
+    background-color: var(--color-background);
+    border-color: var(--color-border);
     color: var(--color-text);
-    border: 1px solid var(--color-border);
 }
 
 .outline:hover {
+    background-color: color-mix(in srgb, var(--color-primary) 6%, var(--color-background));
     border-color: var(--color-primary);
     color: var(--color-primary);
-    background-color: var(--color-primary-tint);
 }
 
-/* Sur fond bleu (dégradé d'accent, pied de page) */
+/* Sur fond bleu (dégradé d'accent, pied de page) : blanc plein, qui s'inverse au
+   survol en contour blanc sur le bleu. */
 .inverse {
     background-color: var(--color-background);
+    border-color: var(--color-background);
     color: var(--color-primary);
 }
 
 .inverse:hover {
-    background-color: var(--color-background-alt);
+    background-color: transparent;
+    color: var(--color-on-primary);
 }
 
 /* Sizes */

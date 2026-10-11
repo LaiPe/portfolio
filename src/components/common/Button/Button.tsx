@@ -2,7 +2,8 @@ import React from "react";
 import { Link } from "gatsby";
 import * as styles from "./Button.module.css";
 
-type ButtonVariant = "primary" | "secondary" | "outline" | "inverse";
+/** primary : action principale ; outline : action secondaire ; inverse : sur fond bleu. */
+type ButtonVariant = "primary" | "outline" | "inverse";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {

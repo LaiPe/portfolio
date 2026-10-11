@@ -20,13 +20,13 @@ export default function RedirectPage() {
           <div className={styles.actions}>
             <p className={styles.actionItem}>
               <span className={styles.label}>Vous êtes intrigué ?</span>
-              <Button to="/projets" variant="secondary" size="lg">
+              <Button to="/projets" variant="outline" size="lg">
                 Consulter mes projets
               </Button>
             </p>
             <p className={styles.actionItem}>
               <span className={styles.label}>Vous êtes intéressé ?</span>
-              <Button to="/contact" variant="secondary" size="lg">
+              <Button to="/contact" variant="outline" size="lg">
                 Rentrons en contact !
               </Button>
             </p>

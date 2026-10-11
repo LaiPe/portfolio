@@ -84,7 +84,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
             <Button to="/projets" variant="primary" size="lg">
               Voir mes projets
             </Button>
-            <Button to="/contact" variant="secondary" size="lg">
+            <Button to="/contact" variant="outline" size="lg">
               Me contacter
             </Button>
           </div>
