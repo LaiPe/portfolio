@@ -1,5 +1,6 @@
 import React from "react";
 import testimonialsData from "../../../data/testimonials.json";
+import TestimonialCard from "../../common/TestimonialCard/TestimonialCard";
 import { useProject } from "./ProjectContext";
 import type { Testimonial as TestimonialType } from "../../../types";
 import * as styles from "./blocks.module.css";
@@ -24,19 +25,7 @@ export default function Testimonial({ title }: { title?: string }) {
   return (
     <section className={styles.section}>
       {title && <h2 className={styles.sectionTitle}>{title}</h2>}
-      <div className={styles.testimonial}>
-        <p className={styles.testimonialQuote}>{testimonial.text}</p>
-        <div className={styles.testimonialAuthor}>
-          <span className={styles.testimonialAuthorName}>
-            {testimonial.author}
-          </span>
-          {testimonial.role && (
-            <span className={styles.testimonialAuthorRole}>
-              — {testimonial.role}
-            </span>
-          )}
-        </div>
-      </div>
+      <TestimonialCard testimonial={testimonial} />
     </section>
   );
 }

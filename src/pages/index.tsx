@@ -4,6 +4,7 @@ import { Rocket } from "lucide-react";
 
 import Button from "../components/common/Button/Button";
 import Container from "../components/common/Container/Container";
+import TestimonialCard from "../components/common/TestimonialCard/TestimonialCard";
 import SkillCard from "../components/skills/SkillCard/SkillCard";
 import ProjectCard from "../components/projects/ProjectCard/ProjectCard";
 import Threads from "../components/backgrounds/threads/Threads";
@@ -165,24 +166,7 @@ export default function HomePage({ data }: PageProps<HomePageData>) {
           <Container>
             <h2 className={styles.sectionTitle}>Ce qu'en disent mes clients</h2>
             <div className={styles.testimonialsContent}>
-              <div className={styles.testimonialCard}>
-                <div className={styles.testimonialQuote}>
-                  <span className={styles.quoteIcon}>"</span>
-                  <p className={styles.testimonialText}>
-                    {featuredTestimonial.text}
-                  </p>
-                </div>
-                <div className={styles.testimonialAuthor}>
-                  <div className={styles.authorInfo}>
-                    <p className={styles.authorName}>
-                      {featuredTestimonial.author}
-                    </p>
-                    <p className={styles.authorRole}>
-                      {featuredTestimonial.role}
-                    </p>
-                  </div>
-                </div>
-              </div>
+              <TestimonialCard testimonial={featuredTestimonial} />
               <div className={styles.testimonialCta}>
                 <div className={styles.testimonialCtaContent}>
                   <h3 className={styles.testimonialCtaTitle}>

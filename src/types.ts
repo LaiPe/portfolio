@@ -68,6 +68,8 @@ export interface Testimonial {
   text: string;
   author: string;
   role?: string;
+  /** Photo de profil du témoin (chemin sous `static/`), affichée à côté de son nom. */
+  photo?: string;
   projectId: string;
   featured?: boolean;
 }

@@ -201,67 +201,6 @@
     margin-top: var(--spacing-xl);
 }
 
-.testimonialCard {
-    background: var(--color-background);
-    border-radius: var(--radius-md);
-    padding: var(--spacing-xl);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    border: 1px solid var(--color-border);
-}
-
-.testimonialQuote {
-    position: relative;
-    margin-bottom: var(--spacing-lg);
-}
-
-.quoteIcon {
-    font-size: 4rem;
-    line-height: 1;
-    color: var(--color-primary);
-    opacity: 0.2;
-    font-family: Georgia, serif;
-    position: absolute;
-    top: -1rem;
-    left: -0.5rem;
-}
-
-.testimonialText {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color-text);
-    margin: 0;
-    padding-left: 2rem;
-    font-style: italic;
-}
-
-.testimonialAuthor {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-md);
-    padding-top: var(--spacing-md);
-    border-top: 2px solid var(--color-background-alt);
-}
-
-.authorInfo {
-    flex: 1;
-}
-
-.authorName {
-    font-family: var(--font-heading);
-    font-weight: 700;
-    font-size: 1.1rem;
-    color: var(--color-text);
-    margin: 0 0 0.25rem 0;
-}
-
-.authorRole {
-    color: var(--color-text-secondary);
-    font-size: 0.95rem;
-    margin: 0;
-}
-
 /* Testimonial CTA Card */
 .testimonialCta {
     background: var(--gradient-accent);
@@ -303,21 +242,5 @@
 
     .testimonialCtaTitle {
         font-size: 1.5rem;
-    }
-}
-
-@media (max-width: 750px) {
-    .testimonialText {
-        font-size: 1rem;
-        padding-left: 1rem;
-    }
-
-    .quoteIcon {
-        font-size: 3rem;
-        top: -0.75rem;
-    }
-
-    .testimonialCard {
-        padding: var(--spacing-lg);
     }
 }
