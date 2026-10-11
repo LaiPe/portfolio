@@ -65,7 +65,7 @@ export default function Header({ pathname = "/" }: HeaderProps) {
       <Link to="/" onClick={closeNav}>
         {isHomepage ? (
           <picture>
-            <source media="(min-width: 1025px)" srcSet="/img/logo-lp.png" />
+            <source media="(min-width: 1001px)" srcSet="/img/logo-lp.png" />
             <img
               className={styles.homeLogo}
               src="/img/logo-lp-raw.png"
