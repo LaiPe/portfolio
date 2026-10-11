@@ -302,11 +302,6 @@
     border: 1px solid var(--color-border);
     border-radius: var(--radius-md);
     text-align: center;
-    transition: transform 0.2s;
-}
-
-.passionCard:hover {
-    transform: translateY(-4px);
 }
 
 .passionIcon {

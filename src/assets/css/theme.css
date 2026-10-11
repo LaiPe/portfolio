@@ -66,6 +66,13 @@
 }
 
 
+/* Survol — règle du site : rien ne bouge, rien ne prend d'ombre, transitions de 0.2s.
+   - élément non cliquable : aucun effet ;
+   - bouton : changement de fond ;
+   - carte ou pastille cliquable : la bordure passe au bleu (une image peut zoomer
+     légèrement dans son cadre) ;
+   - lien texte : soulignement. */
+
 /* Points de rupture du site : 1000px (tablette) et 750px (mobile) ;
    480px toléré pour les très petits écrans. */
 

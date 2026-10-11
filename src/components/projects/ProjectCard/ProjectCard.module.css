@@ -1,18 +1,17 @@
 .projectCard {
     display: block;
     background: var(--color-background);
-    border-radius: var(--radius-sm);
+    border-radius: var(--radius-md);
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: border-color 0.2s ease;
     text-decoration: none;
     color: inherit;
+    border: 1px solid var(--color-border);
 }
 
 .projectCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
     text-decoration: none;
+    border-color: var(--color-primary);
 }
 
 .projectCard:hover .link {
@@ -32,7 +31,7 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
-    transition: transform 0.3s ease;
+    transition: transform 0.2s ease;
 }
 
 .projectCard:hover .image {
