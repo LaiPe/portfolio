@@ -25,10 +25,17 @@ export function findSkill(name: string): SkillItem {
   return skillsByName.get(name) ?? { name };
 }
 
+interface SkillChipProps {
+  skill: SkillItem;
+  /** Savoir-être : puce à bordure, pour la distinguer des technologies. */
+  soft?: boolean;
+}
+
 /** Puce de compétence (logo + nom), à placer dans une liste `<ul>`. */
-export default function SkillChip({ skill }: { skill: SkillItem }) {
+export default function SkillChip({ skill, soft }: SkillChipProps) {
+  const variant = soft ? styles.soft : skill.level ? levelClass[skill.level] : "";
   return (
-    <li className={`${styles.chip} ${skill.level ? levelClass[skill.level] : ""}`}>
+    <li className={`${styles.chip} ${variant}`}>
       {skill.icon && <TechIcon name={skill.icon} size={14} />}
       {skill.name}
     </li>

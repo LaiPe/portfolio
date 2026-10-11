@@ -117,10 +117,17 @@
 .skills {
     list-style: none;
     padding: 0;
-    margin: var(--spacing-sm) 0 0;
+    /* Entre --spacing-sm (1rem) et --spacing-md (1.5rem) */
+    margin: 1.25rem 0 0;
     display: flex;
     flex-wrap: wrap;
     gap: 0.4rem;
+}
+
+/* Ligne des compétences transverses : un peu plus d'air qu'entre deux rangées de puces
+   (0.4rem), mais nettement moins qu'avec le texte au-dessus */
+.skills + .skills {
+    margin-top: 0.75rem;
 }
 
 /* Détail dépliable : animation de hauteur via grid 0fr -> 1fr */

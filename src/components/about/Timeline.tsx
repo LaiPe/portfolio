@@ -33,6 +33,9 @@ export interface TimelineEntry {
   note?: string;
   /** Noms de compétences de `skills.json` (un nom inconnu donne une puce neutre). */
   skills?: string[];
+  /** Compétences transverses (savoir-être, analyse du besoin…) : tout ce qui n'est ni une
+   *  technologie ni un concept informatique. Affichées sur leur propre ligne, en puces à bordure. */
+  softSkills?: string[];
   /** Liens internes, affichés à la fin du détail. */
   links?: { label: string; to: string }[];
   current?: boolean;
@@ -147,6 +150,14 @@ function TimelineItem({ entry }: { entry: TimelineEntry }) {
           <ul className={styles.skills}>
             {entry.skills.map((name) => (
               <SkillChip key={name} skill={findSkill(name)} />
+            ))}
+          </ul>
+        )}
+        {/* Savoir-être sur leur propre ligne, distincts des technologies */}
+        {entry.softSkills && (
+          <ul className={styles.skills}>
+            {entry.softSkills.map((name) => (
+              <SkillChip key={name} skill={{ name }} soft />
             ))}
           </ul>
         )}
