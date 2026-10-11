@@ -1,0 +1,28 @@
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.3;
+    color: var(--color-text-secondary);
+    background: var(--color-background-alt);
+    border-radius: 999px;
+}
+
+.chip svg {
+    flex-shrink: 0;
+}
+
+/* Importance (`level` dans skills.json) : key = bleu clair, signature = bleu plein. */
+.key {
+    color: var(--color-primary);
+    background: rgba(0, 87, 187, 0.1);
+    font-weight: 600;
+}
+
+.signature {
+    color: var(--color-background);
+    background: var(--color-primary);
+    font-weight: 600;
+}
