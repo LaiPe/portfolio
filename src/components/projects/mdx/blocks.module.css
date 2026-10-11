@@ -348,12 +348,7 @@
     cursor: pointer;
     border-radius: var(--radius-md);
     overflow: hidden;
-    transition: border-color 0.2s ease;
     min-height: 200px;
-}
-
-.galleryButton:hover {
-    border-color: var(--color-primary);
 }
 
 .galleryButton:hover .galleryImage {

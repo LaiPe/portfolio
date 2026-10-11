@@ -71,8 +71,7 @@
 
 .rowIcon {
     flex-shrink: 0;
-    /* Gris foncé, entre --color-text et --color-text-secondary */
-    color: color-mix(in srgb, var(--color-text) 80%, white);
+    color: var(--color-neutral-dark);
 }
 
 /* Mobile (2 colonnes étroites) : tuile signature horizontale, lignes resserrées.

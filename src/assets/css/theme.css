@@ -27,6 +27,8 @@
     --color-background: #FFFFFF;
     --color-background-alt: #F5F5F5;
     --color-border: #E0E0E0;
+    /* Anthracite, entre --color-text et --color-text-secondary : logos des tuiles de l'accueil. */
+    --color-neutral-dark: color-mix(in srgb, var(--color-text) 80%, white);
     /* Bleu foncé : fin du dégradé d'accent */
     --color-primary-dark: #003d82;
     /* Teintes de bleu : survol (tint) et fond des éléments mis en avant (soft) */
@@ -69,8 +71,10 @@
 /* Survol — règle du site : rien ne bouge, rien ne prend d'ombre, transitions de 0.2s.
    - élément non cliquable : aucun effet ;
    - bouton : changement de fond ;
-   - carte ou pastille cliquable : la bordure passe au bleu (une image peut zoomer
-     légèrement dans son cadre) ;
+   - carte ou pastille cliquable : la bordure passe au bleu ;
+   - carte cliquable portant une image (carte projet, vignette de galerie) : l'image zoome
+     légèrement dans son cadre et le lien de la carte passe en bleu souligné ; pas de
+     bordure colorée, qui jurerait avec la bannière ;
    - lien texte : soulignement. */
 
 /* Points de rupture du site : 1000px (tablette) et 750px (mobile) ;
