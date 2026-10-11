@@ -88,6 +88,22 @@ header a.active{
 }
 
 
+/* Espace entre le contenu d'une page et le pied de page. Il est porté par <main> (et non
+   par le pied de page) pour qu'une page puisse l'annuler : sur une page projet, la
+   navigation entre projets touche le pied de page. */
+:root{
+    --page-end-gap: 6rem;
+}
+@media (max-width: 750px) {
+    :root{
+        --page-end-gap: var(--spacing-xxl);
+    }
+}
+main{
+    margin-bottom: var(--page-end-gap);
+}
+
+
 /*AUTRES REGLES UNIVERSELLES*/
 a{
     color: var(--color-text);

@@ -1,9 +1,13 @@
 .projectDetail {
     min-height: calc(100vh - var(--header));
+    /* La navigation entre projets, en bas de page, est collée au pied de page :
+       l'espace de fin de page passe au-dessus d'elle (cf. .projectNav). */
+    margin-bottom: 0;
 }
 
 /* Navigation inter-projets */
 .projectNav {
+    margin-top: var(--page-end-gap);
     background-color: var(--color-background-alt);
     border-top: 1px solid var(--color-border);
     padding: var(--spacing-lg) var(--spacing-md);
