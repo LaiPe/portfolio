@@ -30,7 +30,10 @@ import {
   Heart,
   Drum,
   Clapperboard,
-  Waves,
+  Languages,
+  PenTool,
+  Briefcase,
+  ArrowLeftRight,
   HelpCircle,
   type LucideIcon,
   type LucideProps,
@@ -73,7 +76,10 @@ const iconMap: Record<string, LucideIcon> = {
   heart: Heart,
   drum: Drum,
   clapperboard: Clapperboard,
-  waves: Waves,
+  languages: Languages,
+  "pen-tool": PenTool,
+  briefcase: Briefcase,
+  "arrow-left-right": ArrowLeftRight,
 };
 
 export type IconName = keyof typeof iconMap;

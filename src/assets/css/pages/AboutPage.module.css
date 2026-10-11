@@ -3,19 +3,10 @@
     padding: var(--spacing-xl) 0;
 }
 
-/* Layout avec sidebar */
 .layout {
-    display: grid;
-    grid-template-columns: 1fr 320px;
-    gap: var(--spacing-xl);
-    max-width: 1400px;
+    max-width: 1100px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
-}
-
-/* Main Content */
-.mainContent {
-    min-width: 0;
 }
 
 /* Hero Section */
@@ -56,13 +47,36 @@
     font-size: 1.1rem;
     line-height: 1.7;
     color: var(--color-text-secondary);
-    margin: 0 0 var(--spacing-lg);
+    margin: 0 0 var(--spacing-sm);
+}
+
+/* Renvoie vers la carte Mobilité de « Qui suis-je ? » */
+.mobilityHint {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: var(--spacing-lg);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
 }
 
 .heroCta {
     display: flex;
-    gap: var(--spacing-sm);
+    gap: var(--spacing-md);
     flex-wrap: wrap;
+}
+
+.ctaGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.ctaLabel {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-text-secondary);
 }
 
 /* Profile Image */
@@ -72,14 +86,6 @@
     justify-content: center;
     align-items: flex-start;
     position: relative;
-}
-
-.profileImageSpinner {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
 }
 
 .profileImage {
@@ -113,33 +119,132 @@
     color: var(--color-primary);
 }
 
-.introduction {
-    font-size: 1.1rem;
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-    padding: var(--spacing-lg);
-    background: var(--color-background-alt);
-    border-radius: 12px;
-    border-left: 4px solid var(--color-primary);
-}
-
-.introduction p {
-    margin: 0 0 var(--spacing-md);
-}
-
-/* Values Grid */
-.valuesGrid {
+/* Qui suis-je ? : trois facettes + la carte Mobilité en accent */
+.facetsGrid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
 }
 
-/* Desktop (sidebar visible) : les 4 cartes tiennent sur une seule ligne,
-   même quand la largeur restreinte par la sidebar empêcherait auto-fit
-   de les caser à 240px chacune. */
-@media (min-width: 1101px) {
+.facetCard,
+.mobilityCard {
+    padding: var(--spacing-lg);
+    border-radius: 12px;
+}
+
+.facetCard {
+    background: var(--color-background-alt);
+    border: 1px solid var(--color-border);
+}
+
+.facetTitle {
+    font-family: var(--font-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0 0 var(--spacing-sm);
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+}
+
+.facetIcon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+.facetText {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text-secondary);
+}
+
+.facetText p {
+    margin: 0;
+}
+
+.mobilityCard {
+    background: linear-gradient(135deg, var(--color-primary) 0%, #003d82 100%);
+    color: var(--color-background);
+    /* Arrivée directe sur /apropos#mobilite (hors clic JS) : ne pas passer sous la navbar */
+    scroll-margin-top: calc(var(--nav) + var(--spacing-lg));
+}
+
+.mobilityCard .facetText {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.mobilityIcon {
+    flex-shrink: 0;
+}
+
+.mobilityBody {
+    display: flex;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.mobilityMap {
+    flex-shrink: 0;
+    width: 130px;
+    height: auto;
+}
+
+.mobilityChips {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-md) 0 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.mobilityChips li {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    background: var(--color-background);
+    border-radius: 999px;
+}
+
+/* Même habillage que .facetCard, sur toute la largeur de la grille, padding réduit */
+.musicCard {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    background: var(--color-background-alt);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--color-text-secondary);
+}
+
+.musicCard p {
+    margin: 0;
+}
+
+.musicIcon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+}
+
+/* Values Grid */
+/* 4 tuiles : 4×1 sur desktop, 2×2 en dessous (jamais 3 + 1 orpheline) */
+.valuesGrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--spacing-md);
+}
+
+@media (max-width: 1000px) {
     .valuesGrid {
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 }
 
@@ -148,12 +253,6 @@
     background: var(--color-background);
     border: 1px solid var(--color-border);
     border-radius: 12px;
-    transition: transform 0.2s, box-shadow 0.2s;
-}
-
-.valueCard:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .valueIcon {
@@ -372,68 +471,23 @@
     flex-wrap: wrap;
 }
 
-/* Sidebar */
-.sidebar {
-    position: relative;
+/* Compétences : une carte par catégorie, items en puces */
+.skillsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--spacing-md);
 }
 
-.sidebarSticky {
-    position: sticky;
-    top: calc(var(--nav) + var(--spacing-lg));
+.skillCategory {
+    padding: var(--spacing-md);
     background: var(--color-background);
     border: 1px solid var(--color-border);
-    border-radius: 16px;
-    padding: var(--spacing-lg);
-    max-height: calc(100vh - var(--nav) - var(--spacing-xl));
-    overflow-y: auto;
-}
-
-.sidebarTitle {
-    font-family: var(--font-heading);
-    font-size: 1.25rem;
-    font-weight: 700;
-    margin: 0 0 var(--spacing-lg);
-    color: var(--color-text);
-    text-align: center;
-    padding-bottom: var(--spacing-sm);
-    border-bottom: 2px solid var(--color-primary);
-}
-
-/* Skills mobile grid */
-.skillsMobileGrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-md);
-
-    .skillCategory {
-        background: var(--color-background);
-        border: 1px solid var(--color-border);
-        padding: var(--spacing-md);
-        margin-bottom: var(--spacing-sm);
-        border-radius: 12px;
-        transition: transform 0.2s, box-shadow 0.2s;
-    }
-
-    .skillCategory:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
-}
-}
-
-
-
-/* Skill Categories */
-.skillCategory {
-    margin-bottom: var(--spacing-lg);
-}
-
-.skillCategory:last-of-type {
-    margin-bottom: var(--spacing-md);
+    border-radius: 12px;
 }
 
 .skillCategoryTitle {
     font-family: var(--font-heading);
-    font-size: 0.95rem;
+    font-size: 1.1rem;
     font-weight: 600;
     margin: 0 0 var(--spacing-sm);
     color: var(--color-text);
@@ -451,70 +505,41 @@
     list-style: none;
     padding: 0;
     margin: 0;
-}
-
-.skillItem {
     display: flex;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+
+.skillChip {
+    display: inline-flex;
     align-items: center;
-    margin-bottom: var(--spacing-xs);
-    padding: 4px 0;
-}
-
-.skillName {
-    font-size: 0.85rem;
+    gap: 0.4rem;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.95rem;
+    line-height: 1.3;
     color: var(--color-text-secondary);
+    background: var(--color-background-alt);
+    border-radius: 999px;
 }
 
-.skillBadge {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-    border-radius: 12px;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.02em;
-    white-space: nowrap;
+.skillChip svg {
+    flex-shrink: 0;
 }
 
-/* Badge variants */
-.mastered {
-    background: rgba(31, 187, 0, 0.15);
-    color: #1a8a00;
-}
-
-.advanced {
-    background: rgba(0, 87, 187, 0.15);
+/* Importance (`level` dans skills.json) : key = bleu clair, signature = bleu plein. */
+.skillChipKey {
     color: var(--color-primary);
+    background: rgba(0, 87, 187, 0.1);
+    font-weight: 600;
 }
 
-.intermediate {
-    background: rgba(187, 106, 0, 0.15);
-    color: var(--color-tertiary);
-}
-
-.beginner {
-    background: rgba(128, 0, 187, 0.15);
-    color: var(--color-quaternary);
-}
-
-.learning {
-    background: rgba(102, 102, 102, 0.15);
-    color: var(--color-text-secondary);
-}
-
-.sidebarCta {
-    text-align: center;
-    padding-top: var(--spacing-md);
-    border-top: 1px solid var(--color-border);
+.skillChipSignature {
+    color: var(--color-background);
+    background: var(--color-primary);
+    font-weight: 600;
 }
 
 /* Responsive */
-@media (max-width: 1100px) {
-    .layout {
-        grid-template-columns: 1fr;
-    }
-}
-
 @media (max-width: 768px) {
     .about {
         padding: var(--spacing-lg) 0;
@@ -542,9 +567,28 @@
         justify-content: center;
     }
 
-    .valuesGrid,
-    .passionsGrid {
+    .ctaGroup {
+        align-items: center;
+    }
+
+    .passionsGrid,
+    .facetsGrid {
         grid-template-columns: 1fr;
+    }
+
+    /* « Ce qui me guide » reste en 2×2 : tuiles resserrées pour tenir à ~160px */
+    .valuesGrid {
+        gap: var(--spacing-sm);
+    }
+
+    .valueCard {
+        padding: var(--spacing-sm);
+    }
+
+    .valueIcon {
+        width: 26px;
+        height: 26px;
+        margin-bottom: var(--spacing-xs);
     }
 
     .ctaSection {
@@ -558,6 +602,10 @@
 }
 
 @media (max-width: 480px) {
+    .mobilityBody {
+        flex-direction: column;
+    }
+
     .heroContent {
         flex-direction: column-reverse;
     }
