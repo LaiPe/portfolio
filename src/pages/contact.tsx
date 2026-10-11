@@ -145,7 +145,7 @@ export default function ContactPage() {
                     <option value="E-commerce">E-commerce</option>
                     <option value="Application web">Application web</option>
                     <option value="Opportunité CDI">
-                      Opportunité CDI / Recrutement
+                      Opportunité CDI / CDD / ESN
                     </option>
                     <option value="Autre">Autre</option>
                   </select>
@@ -220,8 +220,12 @@ export default function ContactPage() {
                   </span>
                   <div className={styles.infoContent}>
                     <h3 className={styles.infoLabel}>Localisation</h3>
-                    <p className={styles.infoText}>Clermont-Ferrand, France</p>
-                    <p className={styles.infoSubtext}>Disponible en remote</p>
+                    <p className={styles.infoText}>
+                      Clermont-Ferrand · Lyon · Annecy · Bordeaux
+                    </p>
+                    <p className={styles.infoSubtext}>
+                      Ouvert au télétravail et à l'international
+                    </p>
                   </div>
                 </div>
 

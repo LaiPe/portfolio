@@ -20,10 +20,10 @@ const toTypeName = (name: string): string =>
 
 const config: GatsbyConfig = {
   siteMetadata: {
-    title: "Léo Peyronnet — Développeur Full-Stack React",
+    title: "Léo Peyronnet — Développeur Full-Stack React & Spring Boot",
     description:
-      "Portfolio de Léo Peyronnet, développeur web full-stack spécialisé React. Projets, compétences et services.",
-    siteUrl: "https://leopeyronnet.fr",
+      "Portfolio de Léo Peyronnet, développeur full-stack React / Next.js et Java / Spring Boot. Projets, compétences et services.",
+    siteUrl: "https://portfolio.leopeyronnet.fr",
     lang: "fr",
     author: "Léo Peyronnet",
   },

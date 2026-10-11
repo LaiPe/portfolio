@@ -79,7 +79,7 @@ export default function ServicesPage() {
             <div className={styles.teaserItem}>
               <ShoppingCart className={styles.teaserIcon} size={40} />
               <h3>E-commerce</h3>
-              <p>Boutiques en ligne avec Shopify ou solutions sur mesure</p>
+              <p>Boutiques en ligne sur mesure, du catalogue au paiement</p>
             </div>
           </div>
           <p className={styles.teaserNote}>
