@@ -9,12 +9,12 @@
     border: none;
     border-radius: var(--radius-sm);
     cursor: pointer;
-    transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    /* Survol par teinte, sans déplacement (règle du site) */
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .button:hover {
     text-decoration: none;
-    transform: translateY(-2px);
 }
 
 /* Variants */
@@ -24,7 +24,7 @@
 }
 
 .primary:hover {
-    box-shadow: 0 4px 12px rgba(0, 87, 187, 0.3);
+    background-color: var(--color-primary-dark);
 }
 
 .secondary {
@@ -45,8 +45,19 @@
 }
 
 .outline:hover {
-    border-color: var(--color-text);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border-color: var(--color-primary);
+    color: var(--color-primary);
+    background-color: var(--color-primary-tint);
+}
+
+/* Sur fond bleu (dégradé d'accent, pied de page) */
+.inverse {
+    background-color: var(--color-background);
+    color: var(--color-primary);
+}
+
+.inverse:hover {
+    background-color: var(--color-background-alt);
 }
 
 /* Sizes */

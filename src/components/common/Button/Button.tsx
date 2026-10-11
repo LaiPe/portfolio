@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "gatsby";
 import * as styles from "./Button.module.css";
 
-type ButtonVariant = "primary" | "secondary" | "outline";
+type ButtonVariant = "primary" | "secondary" | "outline" | "inverse";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonProps {
@@ -14,6 +14,8 @@ interface ButtonProps {
   size?: ButtonSize;
   className?: string;
   target?: string;
+  /** Avec `href` : télécharge le fichier sous ce nom au lieu de l'ouvrir. */
+  download?: string;
   type?: "button" | "submit" | "reset";
   disabled?: boolean;
 }
